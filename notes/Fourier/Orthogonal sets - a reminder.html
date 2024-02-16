@@ -1,0 +1,907 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Orthogonal sets - a reminder · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Learn Fourier Analysis
+"><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Ofir David"><link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/style.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/rouge/colorful.css">
+
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/custom-local.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Fourier_Notes/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+<link rel="shortcut icon" href="/Fourier_Notes//assets/gitbook/images/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="/Fourier_Notes/css/style.css"><link rel="stylesheet" href="/Fourier_Notes/css/general.css"><link rel="stylesheet" href="/Fourier_Notes/css/hebrew.css">
+
+
+            <link rel="prev" href="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder" />
+        
+
+        
+            <link rel="next" href="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis"/>
+        
+    </head>
+    <body >
+        <div id="hiddenDiv" style="display: none;">
+            $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\cases}[1]{\begin{cases} #1 \end{cases}}
+\newcommand{\align}[1]{\begin{align} #1 \end{align}}
+\newcommand{\limfi}[1]{\displaystyle{\lim_{#1\to\infty}}}
+\newcommand{\limto}[2]{\displaystyle{\lim_{#1\to#2}}}
+
+\newcommand{\normto}{\overset{\left| \cdot \right|}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\cf}{\mathcal{F}}
+\newcommand{\cl}{\mathcal{L}}
+
+\newcommand{\dx}{\operatorname{dx}}
+\newcommand{\dy}{\operatorname{dy}}
+\newcommand{\dz}{\operatorname{dz}}
+\newcommand{\du}{\operatorname{du}}
+\newcommand{\dv}{\operatorname{dv}}
+\newcommand{\dt}{\operatorname{dt}}
+\newcommand{\ds}{\operatorname{ds}}$
+        </div>
+        <div class="book">
+<div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({scrollTop: 0});
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({scrollTop: $($(element).attr('href')).get(0).offsetTop});
+            }
+            return true;
+        }
+    </script>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/Fourier_Notes/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/Fourier_Notes">
+                
+                <a href="/Fourier_Notes/" onclick="pageScrollToTop(this)">
+                    Fourier Analysis notes
+                </a>
+            </li>
+            <li class="divider"></li>
+
+            
+                <!-- <p>Fourier</p> -->
+                
+                    
+
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Course%20Information">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Course%20Information" onclick="pageScrollToTop(this)">
+                                Fourier - course information
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Motivation">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Motivation" onclick="pageScrollToTop(this)">
+                                Motivation
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder" onclick="pageScrollToTop(this)">
+                                Inner product spaces - a reminder
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter active" data-level="1.2" data-path="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder" onclick="pageScrollToTop(this)">
+                                Orthogonal sets - a reminder
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis" onclick="pageScrollToTop(this)">
+                                Infinite Orthonormal basis
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Series">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Series" onclick="pageScrollToTop(this)">
+                                Fourier Series
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Transform">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Transform" onclick="pageScrollToTop(this)">
+                                Fourier Transform
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+                <!-- <p>FourierHebrew</p> -->
+                
+                    
+
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/FourierHebrew/hebrew_motivation">
+                        
+                            <a href="/Fourier_Notes/FourierHebrew/hebrew_motivation" onclick="pageScrollToTop(this)">
+                                מוטיבציה - התמרת פורייה
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/FourierHebrew/basic%20properties">
+                        
+                            <a href="/Fourier_Notes/FourierHebrew/basic%20properties" onclick="pageScrollToTop(this)">
+                                תכונות בסיסיות
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+                <!-- <p>posts</p> -->
+                
+                    
+
+                    
+
+                    
+                
+            
+
+            <li class="divider"></li>
+            <li>Inside this page:</li>
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder">
+                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
+                    Orthogonal sets - a reminder
+                </a>
+                
+                    <ul><li ><a href="#orthonormal-sets" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthonormal sets</a></li><li ><a href="#orthogonal-projection" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthogonal projection</a></li><li ><a href="#examples" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Examples</a></li></ul>
+
+                
+            </li>
+            <!--
+            
+
+            
+
+            <li class="divider"></li>
+            <li>Inside this page:</li>
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder">
+                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
+                    Orthogonal sets - a reminder
+                </a>
+                
+                    <ul><li ><a href="#orthonormal-sets" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthonormal sets</a></li><li ><a href="#orthogonal-projection" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthogonal projection</a></li><li ><a href="#examples" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Examples</a></li></ul>
+
+                
+            </li>
+        -->
+        </ul>
+    </nav>
+</div>
+<div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >Orthogonal sets - a reminder</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner">
+                    <div id="hiddenDiv" style="display: none;">
+                        $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\cases}[1]{\begin{cases} #1 \end{cases}}
+\newcommand{\align}[1]{\begin{align} #1 \end{align}}
+\newcommand{\limfi}[1]{\displaystyle{\lim_{#1\to\infty}}}
+\newcommand{\limto}[2]{\displaystyle{\lim_{#1\to#2}}}
+
+\newcommand{\normto}{\overset{\left| \cdot \right|}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\cf}{\mathcal{F}}
+\newcommand{\cl}{\mathcal{L}}
+
+\newcommand{\dx}{\operatorname{dx}}
+\newcommand{\dy}{\operatorname{dy}}
+\newcommand{\dz}{\operatorname{dz}}
+\newcommand{\du}{\operatorname{du}}
+\newcommand{\dv}{\operatorname{dv}}
+\newcommand{\dt}{\operatorname{dt}}
+\newcommand{\ds}{\operatorname{ds}}$
+                    </div><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <div class="page-inner">
+        <div id="book-search-results">
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/notes/Fourier/Orthogonal sets - a reminder">Orthogonal sets - a reminder</h1>
+                    
+
+                    <p>Course: <a href="\Fourier_Notes\notes\Fourier/Fourier Course Information">Fourier Course Information</a></p>
+<h1 id="orthonormal-sets">Orthonormal sets</h1>
+<p>Once we have a vector space, usually the next step is finding a nice basis. In the finite dimensional case, we had the standard basis, denoted by  <span> $\{e_1,...,e_n\}$ </span>  where
+ <span> 
+$$e_i= (0,...,0,\overbrace{1}^i,0,...,0).$$
+ </span> 
+This is a simple yet powerful basis which arises naturally and used in many places. One of the main reasons for its usefulness is that it also has nice “geometric” properties, and in a sense it provides a “direction” to the space.</p>
+
+<p><img src="\Fourier_Notes\notes\Fourier\images\orthogonality/standard_basis2.jpg" width="500" /></p>
+
+<p>Trying to understand and generalize this properties, led to the definition of orthonormal bases.</p>
+
+<div class="callout" data-callout="def">
+
+  <div class="callout-title" >Definition: Orthogonal and orthonormal bases</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $V$ </span>  be an inner product space and let  <span> $\Omega \subseteq V$ </span>  be a subset. The set is called:</p>
+
+      <ol>
+        <li>
+          <p><strong>Orthogonal</strong>: if  <span> $0 \not \in \Omega$ </span>   and any distinct pair of vectors  <span> $v\neq u$ </span>  in  <span> $\Omega$ </span>  are perpendicular, namely  <span> $\angles {u,v} =0$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>Orthonormal</strong>: if in addition  <span> $\norm v = 1$ </span>  for all  <span> $v\in \Omega.$ </span> </p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
+<p>We can also write the orthonormality condition it in a more “compact” way. For any  <span> $u,v\in \Omega$ </span> : 
+ <span> 
+$$\angles {u,v}=\begin{cases}1 & u = v \\0 & u\neq v\end{cases}.$$
+ </span> 
+The main advantage of this orthogonality definition, is that it lets us take our intuition from the standard Euclidean geometry to general spaces. In particular we have the following:</p>
+
+<div class="callout" data-callout="theorem">
+
+  <div class="callout-title" >Theorem: Orthonormal coefficients</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Suppose that  <span> $\{v_1,...,v_n\}\subseteq V$ </span>  is an orthogonal set. Then:</p>
+
+      <ol>
+        <li>
+          <p><strong>Pythagoras</strong>:  <span> $\norm {\sum_1^n v_i}^2 = \sum_1^n \norm {v_i}^2$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>Coefficients</strong>: If   <span> $v\in span \{ v_1, ..., v_n \}$ </span> , namely  <span> $v=\sum_1^n \alpha_i v_i$ </span> , then  <span> $\alpha_i = \frac{\angles {v,v_i}}{\norm {v_i}^2}$ </span> .</p>
+
+          <p>In particular for an orthonormal set we get</p>
+
+          <p> <span> 
+$$v = \sum_1^n \angles {v,v_i} v_i \; , \text{ and } \; \norm{v}^2 = \sum_1^n |\angles {v,v_i}|^2.$$
+ </span> </p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <ol>
+        <li>
+          <p>Under the assumption that  <span> $\angles {v_i,v_j} = 0$ </span>  for  <span> $i\neq j$ </span> , we get that</p>
+
+          <p> <span> 
+$$\norm{\sum_1^n v_i}^2 = \angles {\sum_{i=1}^n v_i, \sum_{j=1}^n v_j}=\sum_{i,j=1}^n \angles{v_i,v_j}=\sum_{i=1}^n \angles{v_i,v_i}=\sum_1^n \norm {v_i}^2.$$
+ </span> </p>
+        </li>
+        <li>
+          <p>This is a straight forward computation:</p>
+        </li>
+      </ol>
+
+      <p> <span> 
+$$\angles {v,v_j}= \angles{\sum_{i=1}^n \alpha_i v_i,v_j} = \sum_{i=1}^n \alpha_i \angles{v_i,v_j} = \alpha_i \norm {v_i}^2$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+<p>As a simple example you should have in mind, in the standard Euclidean space, for a vector  <span> $\bar{x}=(x_1,...,x_n)$ </span>  the i’th coordinate, namely the i’th coefficient in the standard basis, is just  <span> $x_i = \angles{\bar{x}, e_i}$ </span> .</p>
+
+<p>The last theorem already suggests that having a basis of orthonormal vectors can be quite helpful, since it is very easy to find the coefficients (both theoretically, and if needed numerically). Moreover, whenever we have an orthogonal set, it is already half of its way to being a basis:</p>
+
+<div class="callout" data-callout="lem">
+
+  <div class="callout-title" >Lemma:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Any orthogonal set is linearly independent.</p>
+
+      <p>In particular, in an inner product space of dimension  <span> $n$ </span> , an orthogonal set of size  <span> $n$ </span>  is a basis.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>Let  <span> $\Omega$ </span>  be an orthogonal set, and suppose that we can write zero as linear combination of its elements (which by definition is a finite combination). This means that</p>
+
+      <p> <span> 
+$$ 0 = \sum_1^n \alpha_i \omega_i $$
+ </span> </p>
+
+      <p>for some elements  <span> $\omega_i \in \Omega$ </span> . However, since the set is orthogonal, we know that  <span> $\alpha_i=\frac{\angles {0,\omega_i}}{\norm {\omega_i}^2}=0$ </span> , so that this combination is trivial, and we conclude that  <span> $\Omega$ </span>  is linearly independent.</p>
+
+    </div>
+  </div>
+</div>
+<p>In an infinite dimensional space, life is much more interesting, and the definition of a spanning set, and therefore of a basis is slightly different, though it has the same intuition (it spans, but with limits).</p>
+
+<p>For now, lets see a couple of interesting examples in this infinite dimensional case with the inner product  <span> $\angles{f,g}=\int_0^1 f(x)g(x)\dx$ </span> .</p>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" collapsible>Example: Orthogonal step functions</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>Consider the following set of functions which contains the constant 1 function, and for each integer  <span> $0\leq p$ </span> , and integer  <span> $0\leq n \leq 2^p - 1$ </span>  the function</p>
+
+      <p> <span> 
+$$s_{p,i}(x) = \begin{cases}-1 & \frac{n}{2^p}< x< \frac{n+0.5}{2^p} \\ 1  & \frac{n+0.5}{2^p} <  x <  \frac{n+1}{2^p} \\ 0  & else \end{cases}.$$
+ </span> </p>
+
+      <p>In words: each such function chooses a section of length  <span> $1/2^p$ </span>  and has  <span> $-1$ </span>  on half of it and  <span> $+1$ </span>  on the second half. It should not be very hard to convince yourselves that these functions form an orthogonal set (prove it!).</p>
+
+      <p>What would you change to make it an orthonormal set?</p>
+
+      <center><iframe scrolling="no" title="Orthogonal step functions" src="https://www.geogebra.org/material/iframe/id/vumxbcp7/width/627/height/300/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false" width="627px" height="300px" style="border:0px;"> </iframe></center>
+
+    </div>
+  </div>
+</div>
+
+<p>The second, and our main, example, is the smooth version of the previous one.</p>
+
+<div class="callout" data-callout="theorem">
+
+  <div class="callout-title" >Theorem: Sines and Cosines</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Consider the inner product on functions on  <span> $[-\pi,\pi]$ </span>  defined by</p>
+
+      <p> <span> 
+$$\frac {1}{\pi}\int_{-\pi}^\pi f(x)\overline{g(x)}\dx .$$
+ </span> </p>
+
+      <p>The set of functions</p>
+
+      <p> <span> 
+$$\Omega=\{\cos(kx) : k\geq 0\} \cup \{\sin(kx) : k\geq 1\}$$
+ </span> </p>
+
+      <p>is (almost) orthonormal - the only exception is that  <span> $cos(0x)\equiv 1$ </span>  has norm  <span> $2$ </span>  instead of  <span> $1$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<p>This last theorem is quite important that this is going to be our Fourier patterns. The proof of elementary, and you should try to do it by yourself.
+Once you do have a proof, you are welcome to check on of these three proof methods:</p>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof: Using **Complex integrations**:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+
+      <p>If you know some complex integration, this is a very simple exercise using exponentials. For example, writing  <span> $\cos(nx)=\frac{e^{inx}+e^{-inx}}{2}$ </span> , we get that</p>
+
+      <p> <span> 
+$$\align{\angles {\cos(mx),\cos(nx)} & =\angles {\frac{e^{imx}+e^{-imx}}{2},\frac{e^{inx}+e^{-inx}}{2}} \\ & =\frac {1}{4}(\angles {e^{imx},e^{inx}} + \angles {e^{imx},e^{-inx}} + \angles {e^{-imx},e^{inx}} + \angles {e^{-imx},e^{-inx}})}.$$
+ </span> </p>
+
+      <p>These expressions are easy to compute:</p>
+
+      <p> <span> 
+$$\angles {e^{inx},e^{imx}} = \frac{1}{\pi} \int_{-\pi}^\pi e^{i(m-n)x}dx.$$
+ </span> </p>
+
+      <p>If  <span> $m=n$ </span> , then the integrand is simply  <span> $1$ </span> , so the integral is  <span> $\frac{2\pi}{\pi} = 2$ </span> . Otherwise, when  <span> $m-n\neq 0$ </span>  we get that</p>
+
+      <p> <span> 
+$$\angles {e^{inx},e^{imx}} = \frac{1}{\pi} \frac{1}{i(m-n)}e^{i(m-n)x} \mid_{-\pi}^\pi = 0.$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof: Using **Trigonometric identities**: </div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+
+      <p>Ignoring the complex integration, we can use directly the trigonometric equalities. Recall that the product of two cosine satisfies:</p>
+
+      <p> <span> 
+$$\cos(\theta)\cos(\varphi) = \frac {\cos(\theta-\varphi)+\cos(\theta+\varphi)}{2}.$$
+ </span> </p>
+
+      <p>Using this equality, we obtain that for  <span> $m,n\geq 0$ </span>  we have that</p>
+
+      <p> <span> 
+$$\begin{align} \angles {\cos(mx),\cos(nx)} & =\frac {1}{\pi}\int_{-\pi}^\pi \cos(mx)\overline{\cos(nx)} \dx \\ & =\frac {1}{\pi}\int_{-\pi}^\pi \frac{\cos((m-n)x)+\overline{\cos((m+n)x)}}{2} \dx = \begin{cases} 2&m=n=0\\ 1&m=n\geq 1 \\ 0 & m\neq n \end{cases}. \end{align} $$
+ </span> </p>
+
+      <p>A similar computation can be done for the rest of the inner products.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof: Using **Integration tricks**:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+
+      <p>Finally, one more way is by using some basic integral operations in an interesting way. The integral above for  <span> $m=n=0$ </span>  is trivial, and in general it is symmetric, so let’s assume that  <span> $m\neq 0$ </span> . Using integration by parts, with the idea that integrating\differentiating  <span> $\cos(x)$ </span>  twice we return to the same place, we obtain the following:</p>
+
+      <p> <span> 
+$$\begin{align}\frac {1}{\pi}\int_{-\pi}^\pi \cos(mx)\overline{\cos(nx)} \dx & = \overbrace{\frac{1}{m\pi}\sin(mx)\cos(nx)\mid _{-\pi}^\pi}^{=0} + \frac {n}{m\pi}\int_{-\pi}^\pi \sin(mx)\sin(nx) \dx\\& = -\overbrace{\frac {n}{m^2\pi} \cos(mx)\sin(nx)\mid_{-\pi}^\pi} +\frac {n^2}{m^2\pi} \int_{-\pi}^\pi  \cos(mx)\cos(nx) \dx\end{align}.$$
+ </span> </p>
+
+      <p>It then follows that</p>
+
+      <p> <span> 
+$$\left(1-\frac{n^2}{m^2}\right)\frac {1}{\pi}\int_{-\pi}^\pi \cos(mx)\overline{\cos(nx)} \dx = 0,$$
+ </span> </p>
+
+      <p>so unless  <span> $m=n$ </span> , the integral must be  <span> $0$ </span> . As for the  <span> $m=n\geq 1$ </span>  case, namely integrating  <span> $\cos^2(nx)$ </span> , you should first convince yourself that  <span> $\int_{-\pi}^\pi \cos^2(nx) \dx = \int_{-\pi}^\pi \sin^2(nx) \dx$ </span>  (why?). Given that, we obtain that</p>
+
+      <p> <span> 
+$$2\int_{-\pi}^\pi \cos^2(nx) \dx = \int_{-\pi}^\pi \cos^2(nx) \dx+\int_{-\pi}^\pi \sin^2(nx) \dx =\int_{-\pi}^\pi 1 \dx = 2\pi,$$
+ </span> </p>
+
+      <p>so we conclude that for  <span> $n\geq 1$ </span>  we have</p>
+
+      <p> <span> 
+$$ \angles {\cos(nx),\overline{\cos(nx)}} = 1.$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+<p>The importance of orthogonal, and in particular orthonormal bases, is that it is very easy to find the coefficients in these bases.</p>
+
+<h1 id="orthogonal-projection">Orthogonal projection</h1>
+
+<p>At this point we already have one very interesting property of orthogonal (and better yet) orthonormal sets - it is very easy to find the coefficients for orthogonal bases. However, these sets have more interesting properties, and one of them is related to a very interesting problem that rises up naturally in many places:</p>
+
+<div class="callout" data-callout="problem">
+
+  <div class="callout-title" >Problem:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Given a point  <span> $v\in V$ </span>  and a set  <span> $W\subseteq V$ </span> , find the distance from  <span> $v$ </span>  to  <span> $W$ </span> , and if possible find the closest point to  <span> $v$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<p>It is not hard to see why this sort of problem appear in many places, since it basically looks for the shortest way from one point to get to some set. Just to make it even more interesting, sometimes this problem is hidden in other problems as well. For example, the famous problem of given a collection of points on the plane, and looking for the best linear approximation, is not only the same problem as above, but with the extra detail that  <span> $W$ </span>  is a subspace:</p>
+
+<p><img src="\Fourier_Notes\notes\Fourier\images\orthogonality/linear_approximation.jpg" width="500" /></p>
+
+<p>When  <span> $W$ </span>  is a subspace, the solution in general is simple, where the main idea is what we expect to see in the standard Euclidean plane:</p>
+
+<p>True[[invalid wikilink: Fourier/images/orthogonality/orthogonal projection.png]]</p>
+
+<p>As the image suggests, the point  <span> $w\in W$ </span>  closest to  <span> $v$ </span>  is its orthogonal (perpendicular) projection on  <span> $W$ </span> . Finally, the most important part, is that this orthogonal projection is very easy to compute:</p>
+
+<div class="callout" data-callout="theorem">
+
+  <div class="callout-title" >Theorem: Orthogonal projection</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $W\leq V$ </span>  be a finite dimensional subspace, and let  <span> $\{w_1,...,w_k\}$ </span>  be an orthonormal basis for  <span> $W$ </span> . The <strong>orthogonal projection</strong> to  <span> $W$ </span>  is defined by</p>
+
+      <p> <span> 
+$$P_W(v):=\sum_1^k \angles {v,w_i}w_i.$$
+ </span> </p>
+
+      <p>This orthogonal projection of  <span> $v$ </span>  is the closest point to  <span> $v$ </span>  in  <span> $W$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<h1 id="examples">Examples</h1>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" collapsible>Example: Orthogonal step function approximation</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>Let’s try to approximate the function  <span> $f(x)=x$ </span>  using the orthogonal step functions we defined previously, and we shall use only the first four such functions.</p>
+
+      <p>(soon to be pictures)</p>
+
+      <p>These four function form an orthogonal set, and in order to use the theorem we need to normalize them, namely  <span> $\hat{f}_i := \frac{f_i}{\norm {f_i}}$ </span> , so that</p>
+
+      <p> <span> 
+$$ \hat{f}_1 = f_1, \;\; \hat{f}_2 = f_2, \;\; \hat{f}_3 = \sqrt{2}f_3, \;\; \hat{f}_4 = \sqrt{2}f_4.$$
+ </span> </p>
+
+      <p>The coefficients are then going to be</p>
+
+      <p> <span> 
+$$\angles{x,\hat{f}_1}=\frac{1}{2}, \;\; \angles{x, \hat{f}_2}=\frac{1}{4}, \;\; \angles{x, \hat{f}_3} = \angles{x, \hat{f}_4} =\frac{1}{16}. $$
+ </span> </p>
+
+      <p>This means that we get the approximation:</p>
+
+      <p> <span> 
+$$ x \sim \frac{1}{2}\cdot f_1 + \frac{1}{4}\cdot f_2 + \frac{1}{16} \cdot 2 \cdot (f_3+f_4).$$
+ </span> </p>
+
+      <p>And finally, unsurprisingly, we get the approximation:</p>
+
+      <p><img src="\Fourier_Notes\notes\Fourier\images\orthogonality/approx_step_functions.jpg" width="500" /></p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="exc">
+
+  <div class="callout-title" collapsible>Exercise</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+
+      <p>Compute  <span> $\angles{x, f_i}$ </span>  for any of the step function in the orthogonal basis. Do it one time directly using the integral, and one time “geometrically”. Try to conjecture how the approximation will look like, when taking all the functions with  <span> $p\leq P$ </span>  for some positive integer  <span> $P$ </span> , and then prove it. Try to do the same for other function (e.g.  <span> $f(x)=x^2$ </span> ) - can you say in general how the approximation will look like?</p>
+
+      <p>Note that in the example above we had  <span> $P=2$ </span>  since the corresponding segments of our functions were of length  <span> $1=1/2^0$ </span> ,  <span> $1/2$ </span>  and  <span> $1/2^2$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<p>{: .exercise}</p>
+
+<hr />
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" >Example: Approximation with sine waves.</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Similar to the previous example, we can try to approximate  <span> $f(x)=x$ </span>  using sine waves (explain why we don’t need cosines).</p>
+
+      <p>Add some explanations…</p>
+
+      <center><iframe scrolling="no" title="Approximate with sine functions" src="https://www.geogebra.org/material/iframe/id/pa3rfcj3/width/800/height/450/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false" width="700px" height="393px" style="border:0px;"> </iframe></center>
+
+    </div>
+  </div>
+</div>
+
+<p>There was a very interesting phenomenon with the last approximation: The “distance” between the approximation and our original  <span> $f(x)=x$ </span>  function goes to zero. In our case this means that the integral</p>
+
+<p> <span> 
+$$\int_{-\pi}^\pi (f(x)-2\sum_1^N (-1)^{k+1} \frac{\sin(kx)}{k})^2 \dx \to 0.$$
+ </span> </p>
+
+<p>In other words, the area (more or less, up to the square in the integrand) between the function goes to zero. <strong>It does not mean that there is a pointwise convergence!</strong> For example, in all of our approximations, the values in both  <span> $x=\pm \pi$ </span>  remain zero, while the value of the original function is  <span> $\pm \pi$ </span> . However, we do have pointwise convergence in ALL the other points. This leads to a very interesting question, which we will later try to solve:</p>
+
+<div class="callout" data-callout="problem">
+
+  <div class="callout-title" >Problem:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>When does the norm convergence implies also pointwise convergence? And if there isn’t pointwise convergence, then what can we say?</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="exercise">
+
+  <div class="callout-title" collapsible>Exexcise: Sine and cosine approximation</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>To get some intuition about the last question, try to approximate some other “nice” function and try to guess the answer for this question for those functions. Try it on a range of families of functions like: constant, linear, polynomial, exponential, unbounded function, noncontinuous, etc.</p>
+
+    </div>
+  </div>
+</div>
+
+<p>&lt;-<a href="\Fourier_Notes\notes\Fourier/Inner product spaces - a reminder">Previous: Inner products</a>    ,    False[[invalid wikilink: Fourier Course Information#Table of contents]]    ,   <a href="\Fourier_Notes\notes\Fourier/Infinite Orthonormal basis">Next: Orthonormal basis</a> -&gt;</p>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<!-- introduce mathjax support -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+<!-- introduce per-page mermaid support -->
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+
+<script src="/Fourier_Notes/js/collapsible.js"></script>
+
+                        <a href="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Inner product spaces - a reminder">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis" class="navigation navigation-next navigation-unique" aria-label="Next page: Infinite Orthonormal basis">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                </div>
+            </div>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "Infinite Orthonormal basis",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_Fourier/Infinite Orthonormal basis.md",
+            "ref": "_Fourier/Infinite Orthonormal basis.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Tao He",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Fourier Analysis notes",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_Fourier/Orthogonal sets - a reminder.md",
+        "mtime": "2024-02-16 20:42:24 +0200",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-02-16 20:42:24 +0200"
+    },
+    "basePath": "/Fourier_Notes",
+    "book": {
+        "language": ""
+    }
+});
+            });
+            </script>
+        </div><script src="/Fourier_Notes/assets/gitbook/gitbook.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/theme.js"></script>
+
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+</body>
+</html>

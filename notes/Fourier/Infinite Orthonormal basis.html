@@ -1,0 +1,969 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Infinite Orthonormal basis · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Learn Fourier Analysis
+"><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Ofir David"><link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/style.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/rouge/colorful.css">
+
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/custom-local.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Fourier_Notes/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+<link rel="shortcut icon" href="/Fourier_Notes//assets/gitbook/images/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="/Fourier_Notes/css/style.css"><link rel="stylesheet" href="/Fourier_Notes/css/general.css"><link rel="stylesheet" href="/Fourier_Notes/css/hebrew.css">
+
+
+            <link rel="prev" href="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder" />
+        
+
+        
+            <link rel="next" href="/Fourier_Notes/notes/Fourier/Fourier%20Series"/>
+        
+    </head>
+    <body >
+        <div id="hiddenDiv" style="display: none;">
+            $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\cases}[1]{\begin{cases} #1 \end{cases}}
+\newcommand{\align}[1]{\begin{align} #1 \end{align}}
+\newcommand{\limfi}[1]{\displaystyle{\lim_{#1\to\infty}}}
+\newcommand{\limto}[2]{\displaystyle{\lim_{#1\to#2}}}
+
+\newcommand{\normto}{\overset{\left| \cdot \right|}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\cf}{\mathcal{F}}
+\newcommand{\cl}{\mathcal{L}}
+
+\newcommand{\dx}{\operatorname{dx}}
+\newcommand{\dy}{\operatorname{dy}}
+\newcommand{\dz}{\operatorname{dz}}
+\newcommand{\du}{\operatorname{du}}
+\newcommand{\dv}{\operatorname{dv}}
+\newcommand{\dt}{\operatorname{dt}}
+\newcommand{\ds}{\operatorname{ds}}$
+        </div>
+        <div class="book">
+<div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({scrollTop: 0});
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({scrollTop: $($(element).attr('href')).get(0).offsetTop});
+            }
+            return true;
+        }
+    </script>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/Fourier_Notes/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/Fourier_Notes">
+                
+                <a href="/Fourier_Notes/" onclick="pageScrollToTop(this)">
+                    Fourier Analysis notes
+                </a>
+            </li>
+            <li class="divider"></li>
+
+            
+                <!-- <p>Fourier</p> -->
+                
+                    
+
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Course%20Information">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Course%20Information" onclick="pageScrollToTop(this)">
+                                Fourier - course information
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Motivation">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Motivation" onclick="pageScrollToTop(this)">
+                                Motivation
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder" onclick="pageScrollToTop(this)">
+                                Inner product spaces - a reminder
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder" onclick="pageScrollToTop(this)">
+                                Orthogonal sets - a reminder
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter active" data-level="1.2" data-path="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis" onclick="pageScrollToTop(this)">
+                                Infinite Orthonormal basis
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Series">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Series" onclick="pageScrollToTop(this)">
+                                Fourier Series
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Transform">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Transform" onclick="pageScrollToTop(this)">
+                                Fourier Transform
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+                <!-- <p>FourierHebrew</p> -->
+                
+                    
+
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/FourierHebrew/hebrew_motivation">
+                        
+                            <a href="/Fourier_Notes/FourierHebrew/hebrew_motivation" onclick="pageScrollToTop(this)">
+                                מוטיבציה - התמרת פורייה
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/FourierHebrew/basic%20properties">
+                        
+                            <a href="/Fourier_Notes/FourierHebrew/basic%20properties" onclick="pageScrollToTop(this)">
+                                תכונות בסיסיות
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+                <!-- <p>posts</p> -->
+                
+                    
+
+                    
+
+                    
+                
+            
+
+            <li class="divider"></li>
+            <li>Inside this page:</li>
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis">
+                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
+                    Infinite Orthonormal basis
+                </a>
+                
+                    <ul><li ><a href="#orthonormal-basis---from-finite-to-infinite" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthonormal basis - from finite to infinite</a></li><li ><a href="#convergence-in-norm" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Convergence in norm</a><ul><li ><a href="#pointwise-convergence" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Pointwise convergence</a></li></ul></li><li ><a href="#continuous-functions" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Continuous functions</a></li><li ><a href="#infinite-sums-and-complete-orthonormal-bases" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Infinite sums and complete orthonormal bases</a></li></ul>
+
+                
+            </li>
+            <!--
+            
+
+            
+
+            <li class="divider"></li>
+            <li>Inside this page:</li>
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis">
+                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
+                    Infinite Orthonormal basis
+                </a>
+                
+                    <ul><li ><a href="#orthonormal-basis---from-finite-to-infinite" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthonormal basis - from finite to infinite</a></li><li ><a href="#convergence-in-norm" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Convergence in norm</a><ul><li ><a href="#pointwise-convergence" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Pointwise convergence</a></li></ul></li><li ><a href="#continuous-functions" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Continuous functions</a></li><li ><a href="#infinite-sums-and-complete-orthonormal-bases" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Infinite sums and complete orthonormal bases</a></li></ul>
+
+                
+            </li>
+        -->
+        </ul>
+    </nav>
+</div>
+<div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >Infinite Orthonormal basis</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner">
+                    <div id="hiddenDiv" style="display: none;">
+                        $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\cases}[1]{\begin{cases} #1 \end{cases}}
+\newcommand{\align}[1]{\begin{align} #1 \end{align}}
+\newcommand{\limfi}[1]{\displaystyle{\lim_{#1\to\infty}}}
+\newcommand{\limto}[2]{\displaystyle{\lim_{#1\to#2}}}
+
+\newcommand{\normto}{\overset{\left| \cdot \right|}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\cf}{\mathcal{F}}
+\newcommand{\cl}{\mathcal{L}}
+
+\newcommand{\dx}{\operatorname{dx}}
+\newcommand{\dy}{\operatorname{dy}}
+\newcommand{\dz}{\operatorname{dz}}
+\newcommand{\du}{\operatorname{du}}
+\newcommand{\dv}{\operatorname{dv}}
+\newcommand{\dt}{\operatorname{dt}}
+\newcommand{\ds}{\operatorname{ds}}$
+                    </div><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <div class="page-inner">
+        <div id="book-search-results">
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/notes/Fourier/Infinite Orthonormal basis">Infinite Orthonormal basis</h1>
+                    
+
+                    <p>Course: <a href="\Fourier_Notes\notes\Fourier/Fourier Course Information">Fourier Course Information</a></p>
+
+<h1 id="orthonormal-basis---from-finite-to-infinite">Orthonormal basis - from finite to infinite</h1>
+
+<p>The concept of a basis is fundamental in linear algebra (and generally in mathematics). Its formal definition is just a set of linearly independent vectors which span the given vector space. The other equivalent definition, was that  <span> $\{v_1,...,v_n\}$ </span>  is a basis for  <span> $V$ </span> , if and only if any vector  <span> $v\in V$ </span>  has a unique presentation as a linear combination
+ <span> 
+$$v = \sum_1^n \alpha_i v_i.$$
+ </span> 
+This allowed us to identify between the abstract vector  <span> $v$ </span>  and the coordinate vector  <span> $(\alpha_1,...,\alpha_n)$ </span>  (Though remember that different bases produce different coordinate vectors).
+Moreover, when our vector space can be spanned by finitely many vectors, we have seen that not only there exists a finite basis to the space, but all of the bases have the same size, which we call <strong>the dimension</strong> of the vector space. This has led to all sorts of interesting results, for example a linearly independent set which is the size of the dimension of the space, is also spanning, and therefore a basis.</p>
+
+<p>When dealing with “non finite dimensional” vector spaces, we need to reconsider the definition of a basis. Suddenly finite sums might not be enough to describe the whole space. For simplicity, consider a countable infinite set  <span> $S=\{v_i \mid i\in \NN\}$ </span> , for which we ask whether it is spanning or linearly independent. There are two main approaches:</p>
+<ol>
+  <li><strong>The algebraic approach</strong>: Here we only know how to add finitely many vectors, so the set  <span> $S$ </span>  is spanning, if every vector is a <strong>finite</strong> linear combination of finitely many vectors in  <span> $S$ </span> , and it is linearly independent if any <strong>finite</strong> subset of  <span> $S$ </span>  is linearly independent.</li>
+  <li><strong>The analytic approach</strong>: In special and interesting cases, we might be able to define infinite sums, namely   <span> $\sum_1^\infty \alpha_i v_i$ </span>  , and then the definition is the analogue to what we have for finite sets. As the spaces we deal with are special and interesting, this will be our next step.</li>
+</ol>
+
+<h1 id="convergence-in-norm">Convergence in norm</h1>
+
+<p>As usually, before talking about the limit of infinite sums, we need to define what are limits.</p>
+
+<div class="callout" data-callout="def">
+
+  <div class="callout-title" >Definition: Convergence in norm</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $V$ </span>  be a normed vector space. We say that a sequence of vectors  <span> $v_n$ </span>  converges in norm to  <span> $v$ </span>  in  <span> $V$ </span>  if  <span> $\norm{v_n - v}\to 0$ </span>  and we denote it by  <span> $v_n \overset{\norm{\cdot}}{\longrightarrow} v$ </span> , or just  <span> $v_n \to v$ </span>  if there is no ambiguity.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="remark">
+
+  <div class="callout-title" >Remark:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Note that we have defined convergence with convergence, namely:</p>
+
+      <p> <span> 
+$$v_n \normto v \iff \norm{v_n -v}\to 0.$$
+ </span> </p>
+
+      <p>This is not a cyclic definition, since the new norm convergence on the left is defined by the old known convergence of real numbers on the right.</p>
+
+    </div>
+  </div>
+</div>
+<p>Before we go over a few examples to get some intuition, recall our three “main” norms on function spaces (say on  <span> $[0,1]$ </span> ):</p>
+
+<p> <span> 
+$$\align{\norm{f}_1& = \int_0^1|f(x)|\dx \\ \norm{f}_2& = \sqrt{\int_0^1|f(x)|^2\dx} \\ \norm{f}_\infty& = \sup_{0\leq x\leq 1} |f(x)|. } $$
+ </span> </p>
+
+<p>The  <span> $\mathcal{L}^2$ </span>  norm is the induced norm from the standard inner product, and comes with all the benefits of such a norm. Unless said otherwise, the “norm” convergences will mean that norm. While the  <span> $\cl^1$ </span>  and  <span> $\cl^\infty$ </span>  are not induced norm, they have nice geometric intuition:</p>
+<ol>
+  <li>The norm  <span> $\norm{f}_1$ </span>  measures the area between  <span> $f$ </span>  and the  <span> $x$ </span> -axis in absolute value. In particular two functions are close in this norm is the area between them is small.</li>
+  <li>The norm  <span> $\norm{f}_\infty$ </span>  measures the “maximal” (supremum) distance of  <span> $f$ </span>  from the  <span> $x$ </span> -axis. In particular, a function  <span> $f$ </span>  is close to  <span> $g$ </span>  in the infinity norm if it is in a small strip around  <span> $g$ </span> </li>
+</ol>
+
+<p>(Add images)</p>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" collapsible>Example 1: The functions  <span> $f_n(x) = \frac{x}{n}$ </span> </div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p><img src="\Fourier_Notes\notes\Fourier\images\infinite basis/x divided by n.png" width="400" /></p>
+
+      <p>Looking at the picture, we guess that the functions should converge to the zero function, and this is indeed the case for all of the norms above. Indeed, we have that:</p>
+
+      <p> <span> 
+$$\align{\norm{f_n}_1&=\frac{1}{2n} \to 0 \\ \norm{f_n}_2&=\frac{1}{\sqrt{3n^2}} \to 0 \\ \norm{f_n}_\infty &=\frac{1}{n} \to 0 .}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" collapsible>Example 2: The functions  <span> $f_n(x) = x^n$ </span> </div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p><img src="\Fourier_Notes\notes\Fourier\images\infinite basis/x power n.png" width="400" /></p>
+
+      <p>This time, the functions look a bit more complicated, but still “seem” to be converging to the zero function. Let’s check if this is true:</p>
+
+      <p> <span> 
+$$\align{\norm{f_n}_1&=\frac{1}{n+1} \to 0 \\ \norm{f_n}_2&=\frac{1}{\sqrt{2n+1}} \to 0 \\ \norm{f_n}_\infty &=1 \not\to 0 .}$$
+ </span> </p>
+
+      <p>This time, unlike the previous example, the sequence converge to zero both in the  <span> $\mathcal{L}^1$ </span>  and  <span> $\mathcal{L}^2$ </span>  but not in  <span> $\mathcal{L}^\infty$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="exc">
+
+  <div class="callout-title" collapsible>Excercise:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>Show that in the space  <span> $C[0,1]$ </span>  of continuous functions with the  <span> $\cl^\infty$ </span>  norm, the sequence  <span> $x^n$ </span>  of functions does not converge.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="cor">
+
+  <div class="callout-title" >Corollary:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Different norm can have different convergence of the same sequence.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="exc">
+
+  <div class="callout-title" >Excercise:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Show that for any  <span> $f\in C[0,1]$ </span>  we have that  <span> $\norm{f}_1 \leq \norm{f}_2 \leq \norm{f}_\infty$ </span> .</p>
+
+      <p>Conclude that if  <span> $f_n$ </span>  converges in  <span> $\cl^\infty$ </span> , then it converges in both  <span> $\cl^1$ </span>  and  <span> $\cl^2$ </span> , and similarly if  <span> $f_n$ </span>  converges in  <span> $\cl^2$ </span> , then it converges in  <span> $\cl^1$ </span> .</p>
+
+      <p>So intuitively, the infinity norm is the “strongest norm”: convergence there implies convergence “everywhere”.</p>
+
+    </div>
+  </div>
+</div>
+<h2 id="pointwise-convergence">Pointwise convergence</h2>
+
+<p>One more important type of convergence for functions which we learned about in calculus, which is not a norm convergence (why?) is the pointwise convergence:</p>
+
+<div class="callout" data-callout="def">
+
+  <div class="callout-title" >Definition: Pointwise convergence of functions</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>We say that a sequence of functions  <span> $f_n$ </span>  converges pointwise in a set  <span> $X$ </span> , if  <span> $f_n(x)$ </span>  is a convergent sequence for any  <span> $x\in X$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="lem">
+
+  <div class="callout-title" >Lemma:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>If  <span> $f_n \to f$ </span>  in  <span> $\cl^\infty$ </span>  (unifrom convergence) then  <span> $f_n \to f$ </span>  pointwise.</p>
+
+    </div>
+  </div>
+</div>
+<p>The last lemma is an interesting one, and helped quite a lot in calculus. It meant that whenever we want to look for uniform convergence, the only candidate was the pointwise limit (if exists) which is usually much easier to find. 
+Unfortunately, there is no such connection with the induced norm.</p>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" collapsible>Example: Pointwise convergence doesn't imply  <span> $\norm{\cdot}_2$ </span>  convergence </div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>Consider the functions  <span> $f_n(x)=\cases{n& x\in(0,\frac{1}{n}) \\ 0 & else}$ </span> .</p>
+
+      <p>Then this sequence converges pointwise to the zero function (check!) however</p>
+
+      <p> <span> 
+$$\norm {f_n - 0}_2^2 = \int_0^{1/n} n^2 \dx =n \not \to 0 . $$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" collapsible>Example:  <span> $\norm{\cdot}_2$ </span>  convergence doesn't imply pointwise convergence</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>The idea is to build functions which are (1) have very small area, and (2) this area “shifts” around. Then (1) will imply norm convergence, and (2) will mean that no one point will actually converge.</p>
+
+      <p>More specifically, our functions will be characteristic (step) functions which are 1 on segment of size  <span> $\frac{1}{2^n}$ </span>  and zero otherwise, and we move around this segment. Formally, the first few functions are:</p>
+
+      <p> <span> 
+$$\align{f_1(x) \equiv 1=\chi_{[0,1]} \\ f_2(x)=\chi_{[0,1/2]} \; &, \; f_3(x) = \chi_{[1/2,1]} \\ f_4 = \chi_{[0,1/4]} &, \; f_5=\chi_{[1/4,2/4]}\;,\; f_6=\chi_{[2/4,3/4]}\;,\; f_6=\chi_{[3/4,1]}}$$
+ </span> </p>
+
+      <iframe scrolling="no" title="no pointwise covnergence" src="https://www.geogebra.org/material/iframe/id/msyqgctt/width/600/height/299/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="600px" height="299px" style="border:0px;"></iframe>
+
+      <p>Since our step functions always have height 1, then the normed squared equals to the area, which in turn equals to the width  <span> $\frac{1}{2^n}\to 0$ </span> . On the other hand, this sequence doesn’t converge point wise to any point!</p>
+
+    </div>
+  </div>
+</div>
+<h1 id="continuous-functions">Continuous functions</h1>
+
+<p>Given an inner product space  <span> $V$ </span>  with the inner product  <span> $\angles{\cdot,\cdot}$ </span> , we now know how to generate a norm  <span> $\norm{v}:=\sqrt{\angles{v,v}}$ </span> , and from the previous section use this norm to define limits. Of course, once we have “limits” we can ask whether given functions are continuous, and fortunately our standard arithmetic functions are continuous.</p>
+
+<div class="callout" data-callout="theorem">
+
+  <div class="callout-title" >Theorem: Inner products are continuous</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $V$ </span>  be an inner product space and suppose that  <span> $v_n \normto v$ </span>  and  <span> $u_n \normto u$ </span> . In addition, let  <span> $\alpha_n \to \alpha$ </span>  in the field. Then the following functions are continuous:</p>
+
+      <ol>
+        <li>
+          <p><strong>Addition</strong>:  <span> $v_n + u_n \normto v + u$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>Negation</strong>:  <span> $-v_n \normto -v$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>Scalar multiplication</strong>:  <span> $\alpha_n v_n \to \alpha v$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>Inner product</strong>:  <span> $\angles{v_n , u_n} \to \angles{v,u}$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>Norm</strong>:  <span> $\norm {v_n} \to \norm {v}$ </span> .</p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>All of the proofs are similar to the standard continuity proofs in  <span> $\RR$ </span> . Let’s prove as example only parts (4) and (5). Indeed, for part (4) we have</p>
+
+      <p> <span> 
+$$\align{|\angles{v_n, u_n}-\angles{v, u}| & \leq |\angles{v_n, u_n}-\angles{v_n, u}| + |\angles{v_n, u}-\angles{v, u}| \\ &= |\angles{v_n, u_n - u}| + |\angles{v_n - v, u}| \leq \norm{v_n}\norm{u_n-u} + \norm{v_n-v}\norm{u} = (*) ,}  $$
+ </span> </p>
+
+      <p>where the last inequality is the Cauchy-Shwartz inequality.</p>
+
+      <p>By assumption, we have that   <span> $\norm{u_n-u} , \norm{v_n-v} \to 0$ </span> . Since  <span> $\norm{u}$ </span>  is constant and  <span> $\norm{v_n} \leq \norm{v_n-v} + \norm{v}$ </span>  is bounded, we conclude that  <span> $(*)$ </span>  converges to zero, which is exactly what we wanted to show.</p>
+
+      <p>Part (5) now follows by taking  <span> $u_n=v_n$ </span> , together with the fact that the square root function is continuous.  <span> $\square$ </span> </p>
+
+    </div>
+  </div>
+</div>
+<h1 id="infinite-sums-and-complete-orthonormal-bases">Infinite sums and complete orthonormal bases</h1>
+
+<p>Now that we have the definition of limits in our normed space, we can define infinite sums  <span> $\sum_1^\infty v_k$ </span>  as the limit (if exists) of the partial sums  <span> $\sum_1^N v_k$ </span> .</p>
+
+<div class="callout" data-callout="remark">
+
+  <div class="callout-title" >Remark: Some notations issues</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Since we work with convergence of functions, where norm convergence and pointwise convergence are different, we will use  <span> $\sum_1^\infty \angles{v,e_k}e_k \sim v$ </span>  to indicate norm convergence and  <span> $\sum_1^\infty \angles{v,e_k}e_k = v$ </span>  for pointwise convergence. Later we will see that they coincide in many cases.</p>
+
+    </div>
+  </div>
+</div>
+<p>With this new infinite sum definition and the continuity we saw above, many of the results from finite dimensional spaces carry on naturally to infinite dimensional spaces. For example:</p>
+
+<div class="callout" data-callout="lem">
+
+  <div class="callout-title" >Lemma: Coefficients of orthonormal sets</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Suppose that  <span> $\{e_k|k\in\NN\}$ </span>  is an orthonormal set, and  <span> $v=\sum_1^\infty \alpha_k v_k$ </span> . Then  <span> $\alpha_n = \angles{v, e_n}$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>We have that</p>
+
+      <p> <span> 
+$$\align{ \angles{v, e_n} & = \angles{\sum_1^\infty \alpha_k e_k, e_n} = \angles{\limfi{N} \sum_1^N \alpha_k e_k, e_n} \\ &= \limfi{N} \angles{ \sum_1^N \alpha_k e_k, e_n}},$$
+ </span> </p>
+
+      <p>where in the last equality we used the continuity of inner products. Since  <span> $\angles{ \sum_1^N \alpha_k e_k, e_n}=\alpha_n$ </span>  for any  <span> $N\geq n$ </span> , we see that the limit is  <span> $\alpha_n$ </span>  and we are done.</p>
+
+    </div>
+  </div>
+</div>
+<p>With this in mind, we can define our new infinite orthonormal basis.</p>
+
+<div class="callout" data-callout="def">
+
+  <div class="callout-title" >Definition: An orthonormal basis</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $V$ </span>  be an inner product space, and  <span> $\{e_k\}$ </span>  an orthonormal set. We say that it is a orthonormal basis if every  <span> $v\in V$ </span>  is the limit  <span> $\sum_1^n\angles{v, e_k}e_k \normto v$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<p>Note that by the definition of a complete orthonormal basis each vector has a presentation  <span> $v\sim\sum_1^\infty \alpha_k e_k$ </span> , and by the lemma above it is unique, namely  <span> $\alpha_k=\angles{v, e_k}$ </span> , or in other words we again have a unique presentation for every vector, just like for finite dimensional vector spaces and their bases.</p>
+
+<p>We can now define the main orthonormal basis that we work with.</p>
+
+<div class="callout" data-callout="theorem">
+
+  <div class="callout-title" >Theorem: The Fourier system  <span> $E[-\pi, \pi]$ </span> </div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $V=E[-\pi,\pi]$ </span>  be the vector space of piecewise continuous functions on  <span> $[-\pi,\pi]$ </span> , with the inner product  <span> $\angles{f,g}:=\frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\overline{g(x)} \dx$ </span> . Then the functions</p>
+
+      <p> <span> 
+$$\{\frac {1}{2}\}\cup\{\cos(nx) \mid n\geq 1\} \cup \{\sin(nx) \mid n\geq 1\}$$
+ </span> </p>
+
+      <p>form a complete orthonormal basis.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>We already know that this system is orthonormal. The proof that it is “spanning” is more complicated and we will not prove in this course. However, for those interested, you should read about the <a href="https://en.wikipedia.org/wiki/Stone%E2%80%93Weierstrass_theorem">Stone-Weierstrass</a> theorem.</p>
+
+    </div>
+  </div>
+</div>
+<p>We can now extend two of the results we know for finite dimensional inner product spaces to the infinite dimensional case:</p>
+
+<div class="callout" data-callout="claim">
+
+  <div class="callout-title" >Claim:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $V$ </span>  be an inner product space with an orthonormal system  <span> $\{e_k \mid k\in\NN\}$ </span> .</p>
+
+      <ol>
+        <li>
+          <p><strong>Bessel inequality</strong>: For every  <span> $v\in V$ </span>  we have  <span> $\sum_1^\infty |\angles{v,e_k}|^2 \leq \norm{v}^2$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>Parseval identity</strong>: If the orthonormal system is a basis, then there is an equality  <span> $\sum_1^\infty |\angles{v,e_k}|^2 = \norm{v}^2$ </span>  for all  <span> $v$ </span> . On the other hand, if there is such an equality for all  <span> $v$ </span> , then the system is basis.</p>
+        </li>
+        <li>
+          <p><strong>Generalized Parseval identity</strong>: If the orthonormal system is a bsis and  <span> $u,v$ </span>  are any two vectors, then:</p>
+
+          <p> <span> 
+$$\angles{u,v} = \sum_1^\infty \angles{u,e_i}\overline{\angles{v,e_i}}.$$
+ </span> </p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>The claim here is in a sense the limit of the analogue claim for finite dimensional spaces, indeed, the main object here is none other than</p>
+
+      <p> <span> 
+$$\sum_1^\infty |\angles{v,e_k}|=\limfi{N} \sum_1^N |\angles{v,e_k}| = \norm{\limfi{N} \sum_1^N \angles{v,e_k}e}.$$
+ </span> </p>
+
+      <p>Moreover, recall that these approximations are the orthogonal projections of  <span> $v$ </span>  to the spaces spanned by  <span> $\{e_1,..., e_N\}$ </span> , so that we additionally have that</p>
+
+      <p> <span> 
+$$\sum_1^N \angles{v,e_k}e \perp (v-\sum_1^N \angles{v,e_k}e),$$
+ </span> </p>
+
+      <p>and therefore</p>
+
+      <p> <span> 
+$$\norm{v}^2 = \norm{\sum_1^N \angles{v,e_k}e}^2 + \norm{v-\sum_1^N \angles{v,e_k}e}^2 =(*).$$
+ </span> </p>
+
+      <ol>
+        <li>
+          <p>The orthogonal projection in  <span> $(*)$ </span>  implies the standard finite dimensional Bessel inequality  <span> $\sum_1^N |\angles{v,e_k}|^2 \leq \norm{v}^2$ </span>  for any  <span> $N$ </span> , and taking the limit produces the general Bessel inequality.</p>
+        </li>
+        <li>
+          <p>Using  <span> $(*)$ </span>  we see that  <span> $\norm{\sum_1^N \angles{v,e_k}e} \to \norm{v}$ </span>  if and only if  <span> $\norm{v-\sum_1^N \angles{v,e_k}e} \to 0$ </span>  or equivalently  <span> $\sum_1^N \angles{v,e_k}e \normto v$ </span> . Hence, Parsevel identity holds for all  <span> $v\in V$ </span>  if and only if the system is complete.</p>
+        </li>
+        <li>
+          <p>Finally, for an orthonormal basis, using the continuity of the inner product, we obtain that :</p>
+
+          <p> <span> 
+$$\align{\angles{u,v}&=\angles{\sum_{i=1}^\infty\angles{u,e_i}e_i,\sum_{j=1}^\infty\angles{v,e_j}e_j}\\&=\sum_{i,j=1}^\infty\angles{u,e_i}\overline{\angles{v,e_j}}\angles{e_i,e_j}=\sum_{i=1}^\infty\angles{u,e_i}\overline{\angles{v,e_i}}}$$
+ </span> </p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" >Example: The function  <span> $f(x)=x$ </span> </div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Recall that we have already seen that  <span> $\angles{x, \sin(nx)}=2\frac{(-1)^{n+1}}{n}$ </span> . On the other hand,</p>
+
+      <p> <span> 
+$$\angles{x, \cos(nx)} = \frac{1}{\pi}\int_{-\pi}^{\pi} x\cos(x)\dx 0$$
+ </span> </p>
+
+      <p>for all  <span> $n$ </span> , since  <span> $x\cos(nx)$ </span>  is an odd function. Thus we conclude that  <span> $x \sim 2\sum_1^\infty \frac{(-1)^{n+1}}{n} \sin(nx)$ </span> . Computing the Parseval identity, we obtain that</p>
+
+      <p> <span> 
+$$\frac{2\pi^2}{3}=\frac{1}{\pi}\int_{-\pi}^{\pi} x^2\dx = \sum_1^\infty \frac{4}{n^2}.$$
+ </span> </p>
+
+      <p>So while we already knew from calculus that  <span> $\sum_1^\infty \frac{1}{n^2}$ </span>  converge, now we can also find out its limit  <span> $\frac{\pi^2}{6}$ </span> .</p>
+
+      <center><iframe scrolling="no" title="Approximate with sine functions" src="https://www.geogebra.org/material/iframe/id/pa3rfcj3/width/800/height/450/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false" width="700px" height="393px" style="border:0px;"> </iframe></center>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="lem">
+
+  <div class="callout-title" >Lemma: The Riemann Lebesgue Lemma</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>For an orthonormal basis  <span> $\{e_k \mid k\in \NN \}$ </span>  and any vector  <span> $v$ </span>  we have that  <span> $\angles{v,e_k}\to 0$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<p>-Add intuition-</p>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>We know that  <span> $\norm v = \sum_1^\infty |\angles{v,e_k}|^2$ </span>  so we must have that  <span> $\limfi{n} |\angles{v,e_k}| = 0$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+
+<hr />
+
+<p>&lt;-<a href="\Fourier_Notes\notes\Fourier/Orthogonal sets - a reminder">Previous: Orthogonal sets</a>    ,    False[[invalid wikilink: Fourier Course Information#Table of contents]]    ,   <a href="\Fourier_Notes\notes\Fourier/Fourier Series">Next: Fourier series</a> -&gt;</p>
+
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<!-- introduce mathjax support -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+<!-- introduce per-page mermaid support -->
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+
+<script src="/Fourier_Notes/js/collapsible.js"></script>
+
+                        <a href="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Orthogonal sets - a reminder">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/Fourier_Notes/notes/Fourier/Fourier%20Series" class="navigation navigation-next navigation-unique" aria-label="Next page: Fourier Series">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                </div>
+            </div>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "Fourier Series",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_Fourier/Fourier Series.md",
+            "ref": "_Fourier/Fourier Series.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Tao He",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Fourier Analysis notes",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_Fourier/Infinite Orthonormal basis.md",
+        "mtime": "2024-02-16 20:42:24 +0200",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-02-16 20:42:24 +0200"
+    },
+    "basePath": "/Fourier_Notes",
+    "book": {
+        "language": ""
+    }
+});
+            });
+            </script>
+        </div><script src="/Fourier_Notes/assets/gitbook/gitbook.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/theme.js"></script>
+
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+</body>
+</html>

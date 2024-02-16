@@ -1,0 +1,1164 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="ltr">
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Fourier Series · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Learn Fourier Analysis
+"><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Ofir David"><link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/style.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/rouge/colorful.css">
+
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/custom-local.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Fourier_Notes/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+<link rel="shortcut icon" href="/Fourier_Notes//assets/gitbook/images/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="/Fourier_Notes/css/style.css"><link rel="stylesheet" href="/Fourier_Notes/css/general.css"><link rel="stylesheet" href="/Fourier_Notes/css/hebrew.css">
+
+
+            <link rel="prev" href="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis" />
+        
+
+        
+            <link rel="next" href="/Fourier_Notes/notes/Fourier/Fourier%20Transform"/>
+        
+    </head>
+    <body >
+        <div id="hiddenDiv" style="display: none;">
+            $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\cases}[1]{\begin{cases} #1 \end{cases}}
+\newcommand{\align}[1]{\begin{align} #1 \end{align}}
+\newcommand{\limfi}[1]{\displaystyle{\lim_{#1\to\infty}}}
+\newcommand{\limto}[2]{\displaystyle{\lim_{#1\to#2}}}
+
+\newcommand{\normto}{\overset{\left| \cdot \right|}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\cf}{\mathcal{F}}
+\newcommand{\cl}{\mathcal{L}}
+
+\newcommand{\dx}{\operatorname{dx}}
+\newcommand{\dy}{\operatorname{dy}}
+\newcommand{\dz}{\operatorname{dz}}
+\newcommand{\du}{\operatorname{du}}
+\newcommand{\dv}{\operatorname{dv}}
+\newcommand{\dt}{\operatorname{dt}}
+\newcommand{\ds}{\operatorname{ds}}$
+        </div>
+        <div class="book">
+<div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({scrollTop: 0});
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({scrollTop: $($(element).attr('href')).get(0).offsetTop});
+            }
+            return true;
+        }
+    </script>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/Fourier_Notes/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/Fourier_Notes">
+                
+                <a href="/Fourier_Notes/" onclick="pageScrollToTop(this)">
+                    Fourier Analysis notes
+                </a>
+            </li>
+            <li class="divider"></li>
+
+            
+                <!-- <p>Fourier</p> -->
+                
+                    
+
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Course%20Information">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Course%20Information" onclick="pageScrollToTop(this)">
+                                Fourier - course information
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Motivation">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Motivation" onclick="pageScrollToTop(this)">
+                                Motivation
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder" onclick="pageScrollToTop(this)">
+                                Inner product spaces - a reminder
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder" onclick="pageScrollToTop(this)">
+                                Orthogonal sets - a reminder
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis" onclick="pageScrollToTop(this)">
+                                Infinite Orthonormal basis
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter active" data-level="1.2" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Series">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Series" onclick="pageScrollToTop(this)">
+                                Fourier Series
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Transform">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Transform" onclick="pageScrollToTop(this)">
+                                Fourier Transform
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+                <!-- <p>FourierHebrew</p> -->
+                
+                    
+
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/FourierHebrew/hebrew_motivation">
+                        
+                            <a href="/Fourier_Notes/FourierHebrew/hebrew_motivation" onclick="pageScrollToTop(this)">
+                                מוטיבציה - התמרת פורייה
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/FourierHebrew/basic%20properties">
+                        
+                            <a href="/Fourier_Notes/FourierHebrew/basic%20properties" onclick="pageScrollToTop(this)">
+                                תכונות בסיסיות
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+                <!-- <p>posts</p> -->
+                
+                    
+
+                    
+
+                    
+                
+            
+
+            <li class="divider"></li>
+            <li>Inside this page:</li>
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Series">
+                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
+                    Fourier Series
+                </a>
+                
+                    <ul><li ><a href="#the-fourier-series" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The Fourier series</a></li><li ><a href="#pointwise-convergence" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Pointwise convergence</a></li><li ><a href="#uniform-convergence" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Uniform convergence</a></li><li ><a href="#convergence-summarization" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Convergence summarization</a></li></ul>
+
+                
+            </li>
+            <!--
+            
+
+            
+
+            <li class="divider"></li>
+            <li>Inside this page:</li>
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Series">
+                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
+                    Fourier Series
+                </a>
+                
+                    <ul><li ><a href="#the-fourier-series" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The Fourier series</a></li><li ><a href="#pointwise-convergence" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Pointwise convergence</a></li><li ><a href="#uniform-convergence" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Uniform convergence</a></li><li ><a href="#convergence-summarization" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Convergence summarization</a></li></ul>
+
+                
+            </li>
+        -->
+        </ul>
+    </nav>
+</div>
+<div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >Fourier Series</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner">
+                    <div id="hiddenDiv" style="display: none;">
+                        $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\cases}[1]{\begin{cases} #1 \end{cases}}
+\newcommand{\align}[1]{\begin{align} #1 \end{align}}
+\newcommand{\limfi}[1]{\displaystyle{\lim_{#1\to\infty}}}
+\newcommand{\limto}[2]{\displaystyle{\lim_{#1\to#2}}}
+
+\newcommand{\normto}{\overset{\left| \cdot \right|}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\cf}{\mathcal{F}}
+\newcommand{\cl}{\mathcal{L}}
+
+\newcommand{\dx}{\operatorname{dx}}
+\newcommand{\dy}{\operatorname{dy}}
+\newcommand{\dz}{\operatorname{dz}}
+\newcommand{\du}{\operatorname{du}}
+\newcommand{\dv}{\operatorname{dv}}
+\newcommand{\dt}{\operatorname{dt}}
+\newcommand{\ds}{\operatorname{ds}}$
+                    </div><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <div class="page-inner">
+        <div id="book-search-results">
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/notes/Fourier/Fourier Series">Fourier Series</h1>
+                    
+
+                    <p>Course: <a href="\Fourier_Notes\notes\Fourier/Fourier Course Information">Fourier Course Information</a></p>
+
+<h1 id="the-fourier-series">The Fourier series</h1>
+
+<p>After reminding ourselves the notations and results from inner product spaces, and combining it with the norm convergence in our new infinite dimensional vector spaces, we are ready to study the Fourier transforms on periodic function.</p>
+
+<p>In the following sections we would like to study the inner product space  <span> $E[-\pi,\pi]$ </span>  of piecewise continuous function on  <span> $[-\pi,\pi]$ </span>  (or equivalently  <span> $2\pi$ </span>  periodic functions on  <span> $\RR$ </span> ) with the inner product</p>
+
+<p> <span> 
+$$\angles{f,g}=\frac{1}{\pi} \int_{-\pi}^\pi f(x)\overline{g(x)}\dx.$$
+ </span> </p>
+
+<p>Our orthonormal basis will consist of</p>
+
+<p> <span> 
+$$\{\frac{1}{\sqrt{2}}, \sin(x), \cos(x), \sin(2x), \cos(2x),...\}.$$
+ </span> </p>
+
+<div class="callout" data-callout="remark">
+
+  <div class="callout-title" collapsible>Remark: Equality between functions</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>Recall that in our space  <span> $E[-\pi,\pi]$ </span>  we identify between two function  <span> $f,g$ </span>  if  <span> $f-g$ </span>  is zero almost everywhere (namely  <span> $f\equiv g$ </span>  for all but finitely many points).</p>
+
+      <p>In particular, if both  <span> $f$ </span>  and  <span> $g$ </span>  have the same Fourier series, then  <span> $f\sim g$ </span>  are the same in  <span> $E[-\pi, \pi]$ </span>  (both equivalent to the same Fourier series) and therefore are equal almost everywhere.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="def">
+
+  <div class="callout-title" >Definition: Fourier coefficients</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>The Fourier coefficients of  <span> $f\in E[-\pi,\pi]$ </span>  are  <span> $\angles{f,\frac{1}{\sqrt{2}}}$ </span>  ,  <span> $\angles{f,\sin(nx)}$ </span> , and  <span> $\angles{f,\cos(nx)}$ </span>  for all  <span> $n\geq 1$ </span> . In particular we have the classic Fourier series expansion:</p>
+
+      <p> <span> 
+$$f \sim \sum \angles{f,\frac{1}{\sqrt{2}}}\frac{1}{\sqrt{2}} + \sum_{n=1}^\infty \left( \angles{f,\cos(nx)}\cos(nx) + \angles{f,\sin(nx)}\sin(nx)\right).$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+<p>When there is no ambiguity, we will use the notation:</p>
+
+<p> <span> 
+$$\align{a_0&:=\angles{f,\cos(0x)}=\sqrt{2}\angles{f,\frac{1}{\sqrt{2}}} \\a_n&:=\angles{f,\cos(nx)} \; , \text{for } n\geq 1\\b_n&:=\angles{f,\sin(nx)} \; , \text{for } n\geq 1,}$$
+ </span> </p>
+
+<p>for which the Fourier series looks like:</p>
+
+<p> <span> 
+$$f \sim \frac{a_0}{2} + \sum_{n=1}^\infty \left(a_n\cos(nx) + b_n\sin(nx)\right).$$
+ </span> </p>
+
+<p>Before you look at the examples below (which are  <span> $f(x)=x,\;|x|,\;\chi_{[-\pi,0]}-\chi_{[0,\pi]}$ </span> ), try to compute some Fourier series for simple and nice functions (and in particular for these examples). 
+To visualize these result, you can use the following Desmos program:</p>
+<ol>
+  <li>Enter the  <span> $a_0$ </span>  in the simple  <span> $a_0$ </span>  cell.</li>
+  <li>The syntax for the  <span> $a_n$ </span>  (and similarly  <span> $b_n$ </span> ) should be
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a = a_n for n=[1,...,k]
+</code></pre></div>    </div>
+  </li>
+  <li>To plot steps functions like  <span> $f(x)=\chi_{[-\pi,0]}-\chi_{[0,\pi]}$ </span>  use the notation
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f={-pi&lt;x&lt;0:-1 , 0&lt;=x&lt;pi:1}
+</code></pre></div>    </div>
+    <p>or more generally</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> {condition1: value1, condition2: value2, ...}
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>Once you finish putting in the coefficients and choosing your function  <span> $f(x)$ </span> , you can close the menu and choose the approximation level using the  <span> $k=?$ </span>  slider below the graph.
+You can also go directly to the Desmos site <a href="https://www.desmos.com/calculator/bmne2o5ycg">here</a>.</p>
+
+<iframe src="https://www.desmos.com/calculator/bmne2o5ycg" width="700" height="400" style="border: 1px solid #ccc" frameborder="0"></iframe>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" collapsible>Examples: Fourier series</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <ol>
+        <li>
+          <p> <span> $f(x)=x$ </span> : In this case, we already saw that  <span> $b_n=2\frac{(-1)^{n+1}}{n}$ </span>  and  <span> $a_n=0$ </span>  for all  <span> $n$ </span>  (since  <span> $x\cos(nx)$ </span>  is an odd function).</p>
+        </li>
+        <li>
+          <p> <span> $f(x)=\chi_{[0,\pi]}-\chi_{[-\pi,0]}$ </span> : This is also an odd function, so that  <span> $a_n=0$ </span>  for all  <span> $n$ </span> . As for the  <span> $b_n$ </span> , the product  <span> $f(x)\sin(nx)$ </span>  is even, so we have that</p>
+
+          <p> <span> 
+$$\align{b_n & = \angles{\chi_{[0,\pi]}-\chi_{[-\pi,0]},\sin(nx)} = \frac{1}{\pi} \int_0^\pi \sin(nx) \dx  - \frac{1}{\pi} \int_{-\pi}^0 \sin(nx) \dx \\ & = \frac{2}{\pi} \int_0^\pi \sin(nx) \dx = \frac{2}{n\pi} \cos(nx)\mid_0^\pi=\frac{2}{n\pi}\left((-1)^n-1\right).}$$
+ </span> </p>
+
+          <p>It follows that  <span> $b_{2n}=0$ </span>  while  <span> $b_{2n+1}=\frac{4}{(2n+1)\pi}$ </span> . All in all, we get that</p>
+
+          <p> <span> 
+$$\chi_{[0,\pi]}-\chi_{[-\pi,0]}\sim\sum_0^\infty \frac{4}{(2n+1)\pi} \sin((2n+1)x).$$
+ </span> </p>
+
+          <iframe scrolling="no" title="approximate step function with sin(kx)" src="https://www.geogebra.org/material/iframe/id/zjz8avxw/width/600/height/320/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/false/rc/false/ld/false/sdz/false/ctl/false" width="600px" height="320px" style="border:0px;"></iframe>
+        </li>
+        <li>
+          <p> <span> $f(x)=|x|$ </span>  : Now we have an even function, so that  <span> $b_n=0$ </span>  for all  <span> $n$ </span> . Similarly, since  <span> $f(x)\cos(nx)$ </span>  is even we get:</p>
+
+          <p> <span> 
+$$\align{a_n&=\angles{|x|,\cos(nx)}=\frac{2}{\pi} \int_0^\pi x\cos(nx)\dx \\ &= \frac{2}{n\pi}  \left( x\sin(nx)\mid_0^\pi+ \int_0^\pi \sin(nx)\dx\right)=\frac{2}{n^2\pi}\left((-1)^n-1\right)}.$$
+ </span> </p>
+
+          <p>It follows that  <span> $a_{2n}=0$ </span>  while  <span> $a_{2n+1}=\frac{-4}{(2n+1)^2\pi}$ </span> .</p>
+
+          <p>However, if  <span> $n=0$ </span>  then the computation above is not well defined as we divided by zero! So for this case we need a separate computation, we produces</p>
+
+          <p> <span> 
+$$\angles{|x|,1}=\frac{1}{\pi}\int_{-\pi}^{\pi}|x|\dx = \pi.$$
+ </span> </p>
+
+          <p>Finally, we get that</p>
+
+          <p> <span> 
+$$|x|\sim \frac{\pi}{2} - \sum_1^\infty \frac{4}{(2n+1)^2\pi} \cos((2n+1)x).$$
+ </span> </p>
+        </li>
+        <li>
+          <p> <span> $f(x)=\sin^2(x)$ </span> : While we can compute all the coefficients using the integrals, here we can use another method. Recall that  <span> $\sin(x)=Im(e^{ix})=\frac{e^{ix}-e^{-ix}}{2i}$ </span> . Using this identity, we see that</p>
+
+          <p> <span> 
+$$\align{\sin^2(x) &= \left(\frac{e^{ix}-e^{-ix}}{2i}\right)^2 = \frac{e^{2ix}-2+e^{-2ix}}{-4} \\ & = \frac{\cos(2x)-1}{-2}= \frac{1}{2}-\frac{\cos(2x)}{2}.}$$
+ </span> </p>
+
+          <p>This is already Fourier series expression of  <span> $f(x)$ </span> , and since there is always a unique such combination, this is the Fourier series of  <span> $f(x)$ </span> .</p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
+<h1 id="pointwise-convergence">Pointwise convergence</h1>
+
+<p>In our Fourier series  <span> $f \sim \frac{a_0}{2} + \sum_{n=1}^\infty \left(a_n\cos(nx) + b_n\sin(nx)\right)$ </span>  , the limit on the right is the norm convergence, and we have already seen that it doesn’t imply pointwise convergence. However, as can be seen in the Fourier series in the step function  <span> $\chi_{[0,\pi]}-\chi_{[-\pi,0]}$ </span>  above, in most of the points we do have pointwise convergence. Moreover, the only points where it doesn’t seem to have pointwise convergence are the two edge points at  <span> $\pm \pi$ </span>  and in  <span> $0$ </span> . These are exactly the “problematic” points where the function is not continuous.</p>
+
+<p>Leaving the edges aside for now, where does the Fourier series converges at the point   <span> $x=0$ </span> ? This is actually quite simple to find, since</p>
+
+<p> <span> 
+$$\sum_0^\infty \frac{4}{(2n+1)\pi} \overbrace{\sin((2n+1)0)}^{=0}=0.$$
+ </span> 
+<img src="\Fourier_Notes\notes\Fourier\images\Fourier Series/step function approx.png" width="400" />
+More over, the intuition is that the approximation seems to converge to  <span> $-1$ </span>  just to the left of  <span> $x=0$ </span>  and to  <span> $+1$ </span>  just to the right of  <span> $x=0$ </span>  , and more or less go straight from  <span> $-1$ </span>  to  <span> $+1$ </span>  in the middle. In other words, the value at  <span> $x=0$ </span>  is exactly the average of the two values to its left and to its right!</p>
+
+<p>We actually see something similar at the edge points  <span> $\pm \pi$ </span> . If we think of  <span> $f$ </span>  as a periodic function, then as it passes through the point  <span> $x=\pi$ </span>  it jumps from  <span> $+1$ </span>  to  <span> $-1$ </span>  , which again has average  <span> $0$ </span>  which is where our blue approximation function is at.</p>
+
+<p>These observation are true in a more generalized setting where the functions are “smooth enough”. However, since we don’t even assume that our functions are continuous, we need a slightly different definition than just saying differentiable functions.</p>
+
+<div class="callout" data-callout="def">
+
+  <div class="callout-title" >Definition: Half derivative</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $f\in E[-\pi,\pi]$ </span>  and denote the right limit at a point by  <span> $f(a^+)=\displaystyle{\lim_{x\to a^+}}f(x)$ </span> </p>
+
+      <p>We define the right half derivative as the limit, if it exists, of</p>
+
+      <p> <span> 
+$$\displaystyle{\lim_{x\to a^+}}\frac{f(x)-f(a^+)}{x-a}.$$
+ </span> </p>
+
+      <p>Similarly we define the left half derivative.</p>
+
+      <p>For simplicity of notation, we identify between the edge points  <span> $\pm \pi$ </span>  and consider its left and right half derivatives as the left half derivative at  <span> $\pi$ </span>  and right half derivative at  <span> $-\pi$ </span> .</p>
+
+      <p>We denote by  <span> $E'[-\pi,\pi]\subseteq E[-\pi,\pi]$ </span>  all the piecewise continuous function on  <span> $[-\pi,\pi]$ </span>  that have left and right half derivative at every point in  <span> $[-\pi,\pi]$ </span> </p>
+
+    </div>
+  </div>
+</div>
+<p>We this new definition of “differentiable” function, we have the following:</p>
+
+<div class="callout" data-callout="theorem">
+
+  <div class="callout-title" >Theorem: Dirichlet's theorem for pointwise convergence</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $f\in E'[-\pi,\pi]$ </span> . Then at a given point  <span> $\lambda \in(-\pi,\pi)$ </span>  the Fourier series converges pointwise to the average of the left and right limits, namely</p>
+
+      <p> <span> 
+$$\frac{f(\lambda^+)+f(\lambda^-)}{2} = \frac{a_0}{2} + \sum_{n=1}^\infty \left(a_n\cos(n\lambda) + b_n\sin(n\lambda)\right).$$
+ </span> </p>
+
+      <p>At the edge points  <span> $\lambda =\pm \pi$ </span> , it converges to  <span> $\frac{f(-\pi^+)+f(\pi^-)}{2}$ </span> .</p>
+
+      <p>In particular, the series converges pointwise at each point where  <span> $f$ </span>  is continuous.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="remark">
+
+  <div class="callout-title" collapsible>Remark: Gluing the edges.</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>As the last theorem suggest, we should actually think about the edge points  <span> $\pm \pi$ </span>  as a single point.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" >Example:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <ol>
+        <li>
+          <p>We already saw that this theorem holds for the discontinuities of  <span> $f=\chi_{[0,\pi]}-\chi_{[-\pi,0]}$ </span> , namely the pointwise convergence there are to the average of the left and right limits.</p>
+
+          <p>Let’s consider the pointwise convergence at  <span> $x=\frac{\pi}{2}$ </span> . Since  <span> $f(x)$ </span>  is continuous there and  <span> $f(\frac{\pi}{2})=1$ </span> , this is going to be the limit. Writing the pointwise convergence of the Fourier series, we get:</p>
+
+          <p> <span> 
+$$1=\sum_0^\infty \frac{4}{(2n+1)\pi} \sin((2n+1)\frac{\pi}{2})=\frac{4}{\pi}\sum_0^\infty \frac{(-1)^n}{2n+1} .$$
+ </span> </p>
+
+          <p>Try to prove this using other methods (clue:  <span> $\arctan(1)=\frac{\pi}{4}$ </span> ).</p>
+        </li>
+        <li>
+          <p>As another example, recall that the approximation for  <span> $f(x)=x$ </span>  looks like:</p>
+
+          <p>True[[invalid wikilink: Pasted image 20240131120746.png]]</p>
+
+          <p>Here the function is “continuous” except for the edges, where it jumps from  <span> $f(\pi^-)=\pi$ </span>  to  <span> $f(-\pi^+)=-\pi$ </span> . The average is of course  <span> $\frac{f(-\pi^+)+f(\pi^-)}{2}=0$ </span> , and the pointwise convergence at these points are</p>
+
+          <p> <span> 
+$$2\sum_{k=1}^{\infty}\left(-1\right)^{k+1}\overbrace{\frac{\sin\left(\pm k\pi\right)}{k}}^{=0}=0.$$
+ </span> </p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="exc">
+
+  <div class="callout-title" >Excercise:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Compute the Fourier series for  <span> $f(x)=\chi_{[0,\pi]}$ </span> . Where are its discontinuity points, and what should be the pointwise convergence there for the Fourier series?</p>
+
+    </div>
+  </div>
+</div>
+<h1 id="uniform-convergence">Uniform convergence</h1>
+
+<p>We have now seen that for a “smooth” enough function  <span> $f(x)$ </span> , our Fourier series not only converges in norm but also pointwise (more or less). Can we strengthen this to a uniform convergence? In general, the answer is no. Our Fourier approximations are continuous (combination of sine and cosine functions), and the uniform limit of continuous functions is again continuous. So unless  <span> $f(x)$ </span>  by itself is continuous, this is false.</p>
+
+<p>However, if  <span> $f(x)$ </span>  is continuous and “smooth” enough, then we do actually have uniform convergence. Before stating the theorem and proving it, recall one of the main tools to prove uniform convergence:</p>
+
+<div class="callout" data-callout="theorem">
+
+  <div class="callout-title" >Theorem: Weierstrass theorem for uniform convergence</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $f_n:I\to \CC$ </span>  be a sequence of functions. If  <span> $\sum_1^\infty M_n< \infty$ </span>  for some sequence of numbers satisfying   <span> $\sup_x |f_n(x)|\leq M_n$ </span> , then  <span> $\sum_1^\infty f_n(x)$ </span>   converges uniformly and in absolute value.</p>
+
+    </div>
+  </div>
+</div>
+<p>In our case, we are dealing with sums of the form</p>
+
+<p> <span> 
+$$\frac{a_0}{2} + \sum_{n=1}^\infty \left(a_n\cos(nx) + b_n\sin(nx)\right).$$
+ </span> </p>
+
+<p>Since the sine and cosine functions are bounded by  <span> $1$ </span> , using Weierstrass’ theorem, if</p>
+
+<p> <span> 
+$$\sum_1^\infty \left(|a_n|+|b_n|\right)< \infty,$$
+ </span> </p>
+
+<p>then the Fourier series will converge uniformly.</p>
+
+<p>We already know that this sum is “not too large”, since Bessel inequality implies that</p>
+
+<p> <span> 
+$$\sum_1^\infty \left(|a_n|^2+|b_n|^2\right)\leq \norm{f}^2,$$
+ </span> </p>
+
+<p>however, this is not enough in general to show that the sum without the square is finite (for example, if  <span> $a_n=b_n=\frac{1}{n}$ </span> ). It turns our that the “smoother”  <span> $f$ </span>  is, the faster both  <span> $a_n$ </span>  and  <span> $b_n$ </span>  converge to zero, and the better the chance for the series above to converge.</p>
+
+<p>In particular, we have the following result for “smooth” functions.</p>
+
+<div class="callout" data-callout="theorem">
+
+  <div class="callout-title" >Theorem: Term by term derivatives</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Suppose that  <span> $f\in C[-\pi, \pi]$ </span>  is continuous and  <span> $f(\pi)=f(-\pi)$ </span>  and that  <span> $f'(x)\in E[-\pi,\pi]$ </span>  (and in particular  <span> $f'(x)$ </span>  exists except for finitely many points).</p>
+
+      <p>Then writing the Fourier series of  <span> $f$ </span>  as:</p>
+
+      <p> <span> 
+$$f(x)\sim \frac{a_0}{2} + \sum_1^\infty (a_n \cos(nx)+ b_n\sin(nx)),$$
+ </span> </p>
+
+      <p>we have that the Fourier series of  <span> $f'$ </span>  is the element wise derivative:</p>
+
+      <p> <span> 
+$$f'(x)\sim \sum_1^\infty (-na_n \sin(nx)+ nb_n\cos(nx)).$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<p>Note that going the other way around, given the  <span> $n$ </span> -th Fourier coefficients of  <span> $f'$ </span> , we can obtain the  <span> $n$ </span> -th Fourier coefficients of  <span> $f$ </span>  by dividing by  <span> $n$ </span> , so they converge to zero very fast. In particular we have the following:</p>
+
+<div class="callout" data-callout="cor">
+
+  <div class="callout-title" >Corollary: Uniform convergence</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Under the conditions of the Theorem above, the Fourier series of  <span> $f$ </span>  converges uniformly to  <span> $f$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>Denote by  <span> $a_n,b_n$ </span> , and  <span> $\tilde{a}_n,\tilde{b}_n$ </span>  the Fourier coefficients of  <span> $f(x)$ </span>  and  <span> $f'(x)$ </span>  respectively. By the theorem we know that  <span> $|a_n|=\frac{|\tilde{n}_n|}{n}, |b_n|=\frac{|\tilde{a}_n|}{n}$ </span>  for  <span> $n\geq 1$ </span> . Using this fact and the Cauchy Shwarz inequality, we get</p>
+
+      <p> <span> 
+$$\sum_1^N (|a_n|+|b_n|)=\sum_1^N \frac{1}{n}(|\tilde{a}_n|+|\tilde{b}_n|)\leq \sqrt{\sum_1^N \frac{2}{n^2}}\sqrt{\sum_1^N\left( |\tilde{a}_n|^2+|\tilde{b}_n|^2\right)}.$$
+ </span> </p>
+
+      <p>If we can show that the last expression is bounded (and therefore converge) we could use Weierstrass theorem to prove uniform convergence. We already know that   <span> $\sum_1^\infty \frac{1}{n^2}$ </span>  is finite (and even know how to compute it), and for the other term we can use Bessel’s inequality to obtain:</p>
+
+      <p> <span> 
+$$\sum_1^N \left(|\tilde{a}_n^2| + |\tilde{b}_n^2|\right) \leq \norm{f'},$$
+ </span> </p>
+
+      <p>which completes the proof.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" collapsible>Example:  <span> $f(x)=|x|$ </span> </div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>This function is periodic continuous, and its derivative is  <span> $f'=\chi_{[0,\pi]}-\chi_{[-\pi,0]}$ </span>  which is in  <span> $E[-\pi,\pi]$ </span>  so we can apply the last lemma. We already computed its Fourier series:</p>
+
+      <p> <span> 
+$$|x|\sim \frac{\pi}{2} - \sum_1^\infty \frac{4}{(2n+1)^2\pi} \cos((2n+1)x).$$
+ </span> </p>
+
+      <p>Since</p>
+
+      <p> <span> 
+$$\sum_1^\infty\sup_x|\frac{4}{(2n+1)^2\pi} \cos((2n+1)x)|\leq \sum_1^\infty \frac{4}{(2n+1)^2\pi}< \infty,$$
+ </span> </p>
+
+      <p>we can use Weierstrass’ theorem to conclude that its convergence is indeed uniform.</p>
+
+      <p>Furthermore, taking the term by term derivatives, we obtain another Fourier series that we already saw, namely:</p>
+
+      <p> <span> 
+$$\chi_{[0,\pi]}-\chi_{[-\pi,0]} \sim \sum_1^\infty \frac{4}{(2n+1)\pi} \sin((2n+1)x).$$
+ </span> </p>
+
+      <p>Note that the Fourier coefficients of  <span> $\chi_{[0,\pi]}-\chi_{[-\pi,0]}$ </span>  (which is not continuous) behave like  <span> $\frac{1}{n}$ </span>  while the coefficients of the continuous  <span> $|x|$ </span>  behave like  <span> $\frac{1}{n^2}$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof of term by term derivatives: </div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>The main idea of the proof is to move between the Fourier coefficients of  <span> $f$ </span>  and  <span> $f'$ </span>  via integration by parts. More specifically, write the Fourier series of both  <span> $f$ </span>  and  <span> $f'$ </span> :</p>
+
+      <p> <span> 
+$$\align{f(x)& \sim \frac{a_0}{2} + \sum_1^\infty (a_n \cos(nx)+ b_n\sin(nx))\\ f'(x) &\sim \frac{\tilde{a}_0}{2} + \sum_1^\infty (\tilde{a}_n \cos(nx)+ \tilde{b}_n\sin(nx))}$$
+ </span> </p>
+
+      <p>Using integration by parts we have that</p>
+
+      <p> <span> 
+$$\align{\tilde{a}_n &= \angles{f',\cos(nx)}=\frac{1}{\pi}\int_{-\pi}^{\pi}f'(x)\cos(x)\dx\\ &=\frac{1}{\pi}\left(f(x)\cos(nx)\mid_{-\pi}^{\pi} - \int_{-\pi}^{\pi}nf(x)\sin(nx)\dx \right)\\&=\overbrace{(f(\pi)-f(-\pi))}^{=0}(-1)^n+n\angles{f,\sin(nx)} = nb_n.}$$
+ </span> </p>
+
+      <p>A similar computation shows that  <span> $\tilde{b}_n = -na_n$ </span> . This shows that we can take the derivative element wise.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="exc">
+
+  <div class="callout-title" >Excercise:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Suppose that we are given  <span> $f$ </span>  as in the theorem, however, we don’t know if  <span> $f(\pi)=f(-\pi)$ </span> . Find the Fourier coefficients of  <span> $f'(x)$ </span> .</p>
+
+      <p>Try to use the last theorem, instead of reproving it.</p>
+
+    </div>
+  </div>
+</div>
+<p>We saw that we can take the derivative term by term. Similarly, we can also take the integral element wise in the Fourier series.</p>
+
+<div class="callout" data-callout="remark">
+
+  <div class="callout-title" collapsible>Remark: Integrals vs Derivative</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>We usually study derivatives before integrals, and we sometimes get the feeling that they are easier. While this is usually true when trying to actually compute these functions, when speaking about the results, the integral, namely the antiderivative of a function is usually much “better” than the derivative of a function. Indeed, if we measure a function by how smooth it is, namely how many derivatives it has, then we always get that the anti derivative has at least (!) one derivative.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="theorem">
+
+  <div class="callout-title" >Theorem: Term by term integrals</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Suppose that  <span> $f\in E[-\pi, \pi]$ </span>  and denote its Fourier series by</p>
+
+      <p> <span> 
+$$f(x)\sim \frac{a_0}{2} + \sum_1^\infty (a_n \cos(nx)+ b_n\sin(nx)).$$
+ </span> </p>
+
+      <p>Then for any  <span> $[c,d]\subseteq [-\pi,\pi]$ </span>  we have the term by term integral:</p>
+
+      <p> <span> 
+$$\int_c^d f(t)\dt = \frac{a_0(d-c)}{2} + \sum_1^\infty (\frac{a_n}{n} (\sin(nd)-\sin(nc)) - \frac{b_n}{n}(\cos(nd)-\cos(nc)).$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+
+      <p>The main step here is to note that we can write</p>
+
+      <p> <span> 
+$$\align{\int_c^d f(t) \dt &= \frac{1}{\pi}\int_{-\pi}^{\pi}f(t)\pi\chi_{[c,d]}\dt = \angles{f,\pi\chi_{[c,d]}} \\ & =\angles{\frac{a_0}{2} + \sum_1^\infty (a_n \cos(nx)+ b_n\sin(nx)),\pi\chi_{[c,d]}}.}$$
+ </span> </p>
+
+      <p>Using the fact that the inner product is continuous (with respect to the  <span> $\norm{\cdot}_2$ </span>  norm), we can take the summation outside the integral to obtain:</p>
+
+      <p> <span> 
+$$\align{\int_c^d f(t) \dt &=\angles{\frac{a_0}{2}, \pi\chi_{[c,d]}} + \sum_1^\infty\angles{a_n \cos(nx)+ b_n\sin(nx),\pi\chi_{[c,d]}} \\ & = \int_c^d\frac{a_0}{2} \dt + \sum_1^\infty\int_c^d(a_n \cos(nx)+ b_n\sin(nx))\dt \\ & = \frac{a_0(d-c)}{2} \dt + \sum_1^\infty(\frac{a_n}{n} (\sin(nd)-\sin(bc))- \frac{b_n}{n}(\cos(nd)-\cos(nc))\dt.}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="exc">
+
+  <div class="callout-title" >Is the indefinite integral differentiable?</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $f(x)=|x|$ </span>  which is continuous, and define</p>
+
+      <p> <span> 
+$$F(x)=\int_{-\pi}^{x} f(t)\dt-\frac{\pi^2}{2},$$
+ </span> </p>
+
+      <p>so that  <span> $F'(x)=f(x)$ </span> .</p>
+
+      <p>What can you say about the convergence of the Fourier series of  <span> $F(x)$ </span> ? What is it  <span> $\cl_2$ </span>  ,  <span> $\cl_\infty$ </span>  and pointwise limit? Check to see if your guess is correct.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>It is not hard to show that</p>
+
+      <p> <span> 
+$$F(x)=\cases{-\frac{x^2}{2}&x\leq 0\\ \frac{x^2}{2} & x\geq 0}.$$
+ </span> </p>
+
+      <p>Write it Fourier series as</p>
+
+      <p> <span> 
+$$F(x) \sim \frac{a_0}{2} + \sum_1^\infty (a_n \cos(nx)+ b_n\sin(nx)).$$
+ </span> </p>
+
+      <p>Since  <span> $F(x)$ </span>  is an odd function, we immediately get that  <span> $a_n=0$ </span>  for all  <span> $n$ </span> . As for  <span> $b_n$ </span> , using symmetry and integration by parts we get</p>
+
+      <p> <span> 
+$$\align{b_n&=\angles{F(x),\sin(nx)}=\frac{2}{\pi}\int_0^\pi \frac{x^2}{2} \sin(nx) \dx \\ & = -\frac{2}{\pi n} \left[ \frac{x^2\cos(nx)}{2}\mid_0^\pi -\int_0^\pi x\cos(nx)\dx  \right] = -\frac{2}{\pi n} \left[ \frac{\pi^2(-1)^n}{2} - \int_0^\pi x\cos(nx)\dx  \right].}$$
+ </span> </p>
+
+      <p>A second integration by parts gives:</p>
+
+      <p> <span> 
+$$\int_0^\pi x\cos(nx)\dx =  x\frac{\sin(nx)}{n}\mid_0^\pi - \int_0^\pi \frac{\sin(nx)}{n}\dx=\frac{\cos(nx)}{n^2}\mid_0^\pi=\frac{(-1)^n-1}{n^2}.$$
+ </span> </p>
+
+      <p>All together we have that  <span> $b_n=-\frac{2}{\pi n} \left[ \frac{\pi^2(-1)^n}{2} + \frac{(-1)^n-1}{n^2}  \right]$ </span> .</p>
+
+      <p>Considering the converge of the Fourier series, since  <span> $F\in E[-\pi, \pi]$ </span>  we automatically get the  <span> $\cl_2$ </span> -norm convergence. Also, the function is continuous “everywhere” (except the edge points) and has half derivatives, so Dirichlet’s theorem applies and we have pointwise convergence in  <span> $(-\pi,\pi)$ </span> . On the edges, the pointwise convergence is to the average:</p>
+
+      <p> <span> 
+$$\frac{\displaystyle{\lim_{x\to-\pi+}F(x)+\lim_{x\to\pi-}F(x)}}{2}=\frac{\pi^2/2-\pi^2/2}{2}=0.$$
+ </span> </p>
+
+      <p>The function  <span> $F(x)$ </span>  is not continuous at the edges, since  <span> $F(-\pi)\neq F(\pi)$ </span>  so we can’t use the theorem about uniform convergence. In general the fact that the conditions of the theorem don’t hold doesn’t mean that its result doesn’t hold. However, in this case it is true, since if there is uniform convergence in  <span> $[-\pi,\pi]$ </span> , then considering the functions as  <span> $2\pi$ </span>  periodic there will be uniform convergence everywhere, so the limit (of continuous function) is going to be continuous. As this is not true for  <span> $F$ </span> , the convergence is not uniform.</p>
+
+    </div>
+  </div>
+</div>
+<p>The last exercise shows that taking the integral of a continuous function doesn’t necessarily gives us a smooth function, since there can be issues with the edge points. However, we can fix these problems in a way.</p>
+
+<div class="callout" data-callout="exc">
+
+  <div class="callout-title" >Excercise:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $f_0(x)=sign(x)$ </span>  which is not continuous. Show that there are  <span> $f_1(x),f_2(x)$ </span>  such that  <span> $f_2'(x)=f_1(x)$ </span>  and  <span> $f_1'(x)=f_0(x)$ </span>  in almost every  <span> $x$ </span>  and both  <span> $f_1,f_2$ </span>  are continuous (including edge points).</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="proof">
+
+  <div class="callout-title" collapsible>Proof:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>The main idea is to start with  <span> $|x|$ </span>  as before, and to change it by a scalar to  <span> $f_1(x)=|x|+c$ </span> . This keeps  <span> $f_1(x)$ </span>  as a continuous function with  <span> $f_1'(x)=f_0(x)$ </span> . Let  <span> $F$ </span>  be as in the previous exercise, and define</p>
+
+      <p> <span> 
+$$F_C(x)=\int_{-\pi}^{x} (f_1(t)+C)\dt-\frac{\pi^2}{2} = F(x)+Cx.$$
+ </span> </p>
+
+      <p>The function  <span> $F_C(x)$ </span>  is still continuous in  <span> $(-\pi,\pi)$ </span>  and  <span> $F_C'(x)=f_1(x)$ </span> . Also, it limit at the edge points are</p>
+
+      <p> <span> 
+$$\lim_{x\to-\pi^+}F_C(x)=-\frac{\pi^2}{2}-C\pi\;\;;\;\;\lim_{x\to\pi^-}F_C(x)=\frac{\pi^2}{2}+C\pi.$$
+ </span> </p>
+
+      <p>Choosing  <span> $C=-\frac{\pi}{2}$ </span>  will cause them to be equal and therefore make  <span> $F_C(x)$ </span>  continuous.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="example">
+
+  <div class="callout-title" >Example: Fourier in differential \\ integral equations</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let’s try to find continuous  <span> $f$ </span>  solving the equation</p>
+
+      <p> <span> 
+$$ \int_0^x f(t)\dt = x - f'(x) .$$
+ </span> </p>
+
+      <p>If the equation above holds, then in particular  <span> $f'(x)$ </span>  is by itself defined and continuous. Let’s write the Fourier expansion of  <span> $f$ </span>  as</p>
+
+      <p> <span> 
+$$f(x)\sim \frac{a_0}{2} + \sum_1^\infty (a_n \cos(nx)+ b_n\sin(nx)).$$
+ </span> </p>
+
+      <p>We would like to take the term by term derivative, but not all the conditions of the theorem hold - we don’t know that  <span> $f(-\pi)=f(\pi)$ </span> . However, we can assume that it is true and continue on, but we need to check that our final solution does satisfy this condition (or alternatively, it satisfies the equation we started with). Under this assumption, we can write:</p>
+
+      <p> <span> 
+$$f'(x)\sim \sum_1^\infty (-n a_n \sin(nx)+ n b_n\cos(nx)).$$
+ </span> </p>
+
+      <p>For any function in  <span> $E[-\pi,\pi]$ </span>  we can do term by term integration, so putting everything together we obtain the equation:</p>
+
+      <p> <span> 
+$$\frac{a_0x}{2} + \sum_1^\infty (\frac{a_n}{n} \sin(nx)- \frac{b_n}{n}(\cos(nx)-1)) = x - \sum_1^\infty (-n a_n \sin(nx)+ n b_n\cos(nx)).$$
+ </span> </p>
+
+      <p>Moving everything to the same side, we get</p>
+
+      <p> <span> 
+$$\left(\frac{a_0}{2}-1\right)x + \sum_1^\infty \frac{b_n}{n} + \sum_2^\infty \left( a_n(\frac{1}{n}-n) \sin(nx) - b_n(\frac{1}{n}-n\right)\cos(nx))=0.$$
+ </span> </p>
+
+      <p>If all the “coefficients” are zero, then of course it solves the equation. However, note that the last equation is not a Fourier expansion (namely, it is not a linear combination of a basis), so we don’t know automatically that this is the only solution.</p>
+
+      <p>In any case, one way to make all the coefficient zero is by taking:</p>
+
+      <p> <span> 
+$$a_0=2,\; a_n =0\; \forall n\geq 2,\; b_n =0 \; \forall n\geq 1.$$
+ </span> </p>
+
+      <p>We are now left with  <span> $f(x)=1+a_1\cdot\cos(x)$ </span> , and note that the functions in this family do satisfy  <span> $f(-\pi)=f(\pi)$ </span> . Finally, just to be on the safe side, let’s see that they do satisfy our original equation:</p>
+
+      <p> <span> 
+$$\align{\int_0^x f(t)\dx & = \int_0^x (1+a_1\cos(t))\dx = x + a_1 \sin(t)\mid_0^x = x+a_1\sin(x)\\ x-f'(x) & = x-(1+a_1\cos(x))' = x + a_1\sin(x)}.$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+<h1 id="convergence-summarization">Convergence summarization</h1>
+
+<p>Let’s summarize our convergence results in the space  <span> $E[-\pi,\pi]$ </span> :</p>
+<ol>
+  <li>
+    <p>Norm and pointwise convergence implications for sequence  <span> $f_n$ </span>  of functions:</p>
+
+    <p> <span> 
+$$\align{\norm{\cdot}_\infty & \Rightarrow \norm{\cdot}_2 \Rightarrow \norm{\cdot}_1 \\ \norm{\cdot}_\infty&\Rightarrow \text{pointwise}.}$$
+ </span> </p>
+  </li>
+  <li>Neither the pointwise of  <span> $\norm\cdot_2$ </span>  convergence imply one another.</li>
+  <li>
+    <p>For any  <span> $f\in E[-\pi,\pi]$ </span>  there is  <span> $\norm\cdot_2$ </span>  convergence of the Fourier series: 
+ <span> 
+$$f(x)\sim \frac{a_0}{2} + \sum_1^\infty (a_n \cos(nx)+ b_n\sin(nx)).$$
+ </span> </p>
+
+    <p>The coefficients are determined uniquely by  <span> $f$ </span> , and if two functions  <span> $f,g$ </span>  have the same Fourier coefficients, then they are the same in  <span> $E[-\pi,\pi]$ </span> , namely  <span> $f(x)=g(x)$ </span>  except for finitely many points.</p>
+  </li>
+  <li>
+    <p>If  <span> $f$ </span>  has half derivatives at every point, then the Fourier series converges point wise to the averages:
+ <span> 
+$$\frac{f(x^+)+f(x^-)}{2}.$$
+ </span> </p>
+
+    <p>In particular, if  <span> $f$ </span>  is continuous at  <span> $x$ </span> , then the Fourier series converges pointwise to  <span> $f(x)$ </span> .</p>
+  </li>
+  <li>For any  <span> $f\in E[-\pi,\pi]$ </span>  we can do term by term integration of the Fourier series.</li>
+  <li>If  <span> $f$ </span>  is continuous (including edge points) and  <span> $f'\in E[-\pi,\pi]$ </span> , then we can also take derivatives term by term.</li>
+</ol>
+
+<hr />
+
+<p>&lt;-<a href="\Fourier_Notes\notes\Fourier/Infinite Orthonormal basis">Previous: Orthonormal basis</a>    ,    False[[invalid wikilink: Fourier Course Information#Table of contents]]    ,   <a href="\Fourier_Notes\notes\Fourier/Fourier Transform">Next: Fourier Transform</a> -&gt;</p>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<!-- introduce mathjax support -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+<!-- introduce per-page mermaid support -->
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+
+<script src="/Fourier_Notes/js/collapsible.js"></script>
+
+                        <a href="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Infinite Orthonormal basis">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a href="/Fourier_Notes/notes/Fourier/Fourier%20Transform" class="navigation navigation-next navigation-unique" aria-label="Next page: Fourier Transform">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+                </div>
+            </div>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "next": {
+            "title": "Fourier Transform",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_Fourier/Fourier Transform.md",
+            "ref": "_Fourier/Fourier Transform.md",
+            "articles": []
+        },
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Tao He",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Fourier Analysis notes",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_Fourier/Fourier Series.md",
+        "mtime": "2024-02-16 20:42:24 +0200",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-02-16 20:42:24 +0200"
+    },
+    "basePath": "/Fourier_Notes",
+    "book": {
+        "language": ""
+    }
+});
+            });
+            </script>
+        </div><script src="/Fourier_Notes/assets/gitbook/gitbook.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/theme.js"></script>
+
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+</body>
+</html>
