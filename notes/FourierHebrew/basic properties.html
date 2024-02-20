@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
-<html lang="en" dir="ltr">
+<html lang="en" dir="rtl">
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>Inner product spaces - a reminder · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>תכונות בסיסיות · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Learn Fourier Analysis
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Ofir David"><link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/style.css">
 <link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
@@ -25,14 +25,14 @@
 <link rel="stylesheet" href="/Fourier_Notes/css/style.css"><link rel="stylesheet" href="/Fourier_Notes/css/general.css"><link rel="stylesheet" href="/Fourier_Notes/css/hebrew.css">
 
 
-            <link rel="prev" href="/Fourier_Notes/notes/Fourier/Motivation" />
+            <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" />
         
 
         
-            <link rel="next" href="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder"/>
+            <link rel="next" href="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function"/>
         
     </head>
-    <body >
+    <body  class="hebrew">
         <div id="hiddenDiv" style="display: none;">
             $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
 \newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
@@ -126,7 +126,7 @@
                         </li>
                     
                         
-                        <li class="chapter active" data-level="1.2" data-path="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder">
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder">
                         
                             <a href="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder" onclick="pageScrollToTop(this)">
                                 Inner product spaces - a reminder
@@ -185,7 +185,7 @@
                         </li>
                     
                         
-                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/basic%20properties">
+                        <li class="chapter active" data-level="1.2" data-path="/Fourier_Notes/notes/FourierHebrew/basic%20properties">
                         
                             <a href="/Fourier_Notes/notes/FourierHebrew/basic%20properties" onclick="pageScrollToTop(this)">
                                 תכונות בסיסיות
@@ -218,12 +218,12 @@
 
             <li class="divider"></li>
             <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder">
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/basic%20properties">
                 <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    Inner product spaces - a reminder
+                    תכונות בסיסיות
                 </a>
                 
-                    <ul><li ><a href="#the-euclidean-prototype" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The Euclidean prototype</a></li><li ><a href="#the-inner-product" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The inner product</a></li><li ><a href="#the-norm" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The norm</a></li></ul>
+                    
 
                 
             </li>
@@ -234,12 +234,12 @@
 
             <li class="divider"></li>
             <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder">
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/basic%20properties">
                 <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    Inner product spaces - a reminder
+                    תכונות בסיסיות
                 </a>
                 
-                    <ul><li ><a href="#the-euclidean-prototype" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The Euclidean prototype</a></li><li ><a href="#the-inner-product" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The inner product</a></li><li ><a href="#the-norm" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The norm</a></li></ul>
+                    
 
                 
             </li>
@@ -253,7 +253,7 @@
                     <h1>
                         <i class="fa fa-circle-o-notch fa-spin"></i>
                         
-                            <a href="." >Inner product spaces - a reminder</a>
+                            <a href="." >תכונות בסיסיות</a>
                         
                     </h1>
                 </div>
@@ -298,75 +298,42 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                        <h1 id="/notes/Fourier/Inner product spaces - a reminder">Inner product spaces - a reminder</h1>
+                        <h1 id="/notes/FourierHebrew/basic properties">תכונות בסיסיות</h1>
                     
 
-                    <p>Course: <a href="\Fourier_Notes\notes\Fourier/Fourier Course Information">Fourier Course Information</a></p>
-<h1 id="the-euclidean-prototype">The Euclidean prototype</h1>
-<p>We start by recalling some elements from the theory of inner products, which are our ways to give standard vector spaces a new geometric structure. The prototype of this structure is the standard Euclidean dot product on  <span> $\RR^3$ </span>  defined by</p>
+                    <p>התמרת פורייה היא פעולה מאוד מעניינת והיא משמרת כל מני תכונות ופעולות שאנחנו רגילים לעבוד איתן. כפי שנראה מייד, רובן נובעות כמעט מיידית עקב העובדה שההתמרה מוגדרת באמצעות פונקציית האקספוננט  <span> $e^{iwx}$ </span>  המרוכבת, כאשר הכח הגדול שיש לפונקציה הזאת הוא שהיא לוקחת סכומים (הזזות) לכפל (סיבובים).</p>
 
-<p> <span> 
-$$\angles {(x_1, x_2, x_3),(y_1,y_2,y_3)}=x_1y_1+x_2y_2+x_3y_2.$$
- </span> </p>
+<p>לפני שנראה ונוכיח את התכונות האלו, נזכיר שההתמרה שלנו עובדת לכל  <span> $f\in E^1(\RR)$ </span>  ואף מתקיים ש  <span> $\norm {\hat{f}}_\infty \leq \frac{1}{2\pi}\norm f_1$ </span> . לא קשה לבדוק שאם  <span> $g\in E^\infty (\RR)$ </span>  היא חסומה, אז  <span> $\norm{f\cdot g}_1 \leq \norm{f}_1\norm{g}_\infty$ </span>  ולכן  <span> $f\cdot g\in E^1(\RR)$ </span>  וגם לה אפשר לבצע התמרה, ובפרט זה נכון לפונקציות סיבוב מהצורה  <span> $e^{icx}$ </span> .</p>
 
-<p>This dot product measures two very important quantities. First is the length of a vector:</p>
+<div class="callout" data-callout="טענה">
 
-<p> <span> 
-$$\norm {(x_1,x_2,x_3)} := \sqrt{\angles {(x_1,x_2,x_3),(x_1,x_2,x_3)}} = \sqrt{x_1^2+x_2^2+x_3^2}.$$
- </span> </p>
-
-<p>The second are angles between vectors - if  <span> $\theta$ </span>  is the angle between two vectors  <span> $u,v$ </span> , then</p>
-
-<p> <span> 
-$$\cos(\theta)=\frac{\angles {u,v}}{\norm{u}\norm{v}}.$$
- </span> </p>
-
-<p><img src="\Fourier_Notes\notes\Fourier\images\inner products/cosine between vectors.png" width="400" /></p>
-
-<p>In particular, two vectors are perpendicular, namely  <span> $\theta = \frac{\pi}{2}$ </span>  if
- <span> 
-$$u\perp v \iff \angles {u,v} = 0.$$
- </span> 
-This structure stands at the heart of the standard Euclidean geometry that we live in, and can be used to describe many of the interesting properties that our world has. In particular, one of the first theorems that most of us learn about, and is essential to many of the results in geometry:</p>
-
-<p><strong>The Pythagorean theorem</strong>”: If  <span> $u \perp v$ </span>  are perpendicular, then  <span> $\norm{u+v}^2 = \norm u^2 + \norm v^2$ </span> </p>
-
-<p><img src="\Fourier_Notes\notes\Fourier\images\inner products/pythagoras.jpg" width="400" /></p>
-<h1 id="the-inner-product">The inner product</h1>
-
-<p>With this geometric intuition, let us recall its generalization as “False[[invalid wikilink: Inner product]]”. In the following, our field will always be one of  <span> $\FF = \RR,\CC$ </span> .</p>
-
-<p>True[[invalid wikilink: Inner product#^9bddd8]]</p>
-
-<p>Let’s recall some interesting examples for inner product spaces:</p>
-
-<div class="callout" data-callout="example">
-
-  <div class="callout-title" collapsible>Examples:</div>
-  <div class="callout-content-wrapper" data-collapsed="">
+  <div class="callout-title" >טענה: פעולות אריתמטיות</div>
+  <div class="callout-content-wrapper">
     <div class="callout-content">
+      <p>תהא  <span> $f\in E^1(\RR)$ </span>  . אז :</p>
+
       <ol>
         <li>
-          <p><strong>Standard inner product</strong>:</p>
-
-          <p>Over  <span> $\FF^n$ </span>  we have the standard inner product defined by:</p>
-
-          <p> <span> 
-$$\angles {(x_1,...,x_n),(y_1,...,y_n)} = \sum_1^n x_i\overline{y_i}.$$
+          <p><strong>התמרת פורייה היא לינארית</strong>: כלומר  <span> $\cf(\alpha f + g) = \cf(f)+\cf(g)$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>כפל בסקלר</strong>: אם  <span> $\lambda\neq0$ </span> , אז עבור  <span> $g_\lambda(x)=f(\lambda x)$ </span>  נקבל ש  <span> 
+$$\hat g_\lambda (\omega) = \frac {\hat{f}(\omega/\lambda)}{\abs{\lambda}}.$$
  </span> </p>
         </li>
         <li>
-          <p><strong>Integrals</strong>: For continuous functions in  <span> $[0,1]$ </span>  we have the inner product:</p>
-
-          <p> <span> 
-$$\angles {f,g} =\int_0^1 f(x)\overline{g(x)}\dx$$
+          <p><strong>הזזה -&gt; סיבוב</strong>: עבור ההזזה  <span> $f_\alpha(x):=f(x+\alpha)$ </span>  נקבל את ההתמרה:  <span> 
+$$.\hat{f}_\alpha(\omega) = e^{i\alpha\omega}\hat{f}(\omega)$$
  </span> </p>
         </li>
         <li>
-          <p><strong>Weighted integral</strong>: For a nonnegative function  <span> $w:[0,1]\to[0,\infty)$ </span>  we define:</p>
-
-          <p> <span> 
-$$\angles {f,g}_w:=\int_0^1f(x)\overline{g(x)}w(x)\dx$$
+          <p><strong>סיבוב -&gt; הזזה:</strong> עבור  <span> $c\in \RR$ </span>  נסמן  <span> $h_c(x)= e^{icx} f(x)$ </span> . אז  <span> 
+$$\hat{h}_c(\omega) = \hat{f}(\omega - c)$$
+ </span> </p>
+        </li>
+        <li>
+          <p><strong>הצמדה</strong>: מתקיים ש  <span> 
+$$.\overline{\cf[f](\omega)}=\cf[\overline{f}](-\omega)$$
  </span> </p>
         </li>
       </ol>
@@ -374,82 +341,112 @@ $$\angles {f,g}_w:=\int_0^1f(x)\overline{g(x)}w(x)\dx$$
     </div>
   </div>
 </div>
-<p>The last two examples are for infinite dimensional inner products spaces (where the second example is a specific case of the third one). They can be further extended in two interesting ways:</p>
-<ul>
-  <li>
-    <p><strong>Infinite domains</strong>: Instead of integrating over  <span> $[0,1]$ </span>  we can of course integrate over any closed and bounded segment  <span> $[a,b]$ </span> . More over, we can integrate over unbounded segments, e.g.  <span> $[0,\infty)$ </span> , but then the inner product is not always well defined. For example, the constant 1 function  <span> $\bar{1}(x)$ </span>  is continuous on  <span> $[0,\infty)$ </span> , while</p>
 
-    <p> <span> 
-$$\angles {\bar{1},\bar{1}}_{[0,\infty)}=\int_0^\infty 1\cdot 1\cdot \dx = \infty.$$
- </span> </p>
+<div class="callout" data-callout="הוכחה">
 
-    <p>We can “solve” this problem by only considering functions which satisfy</p>
-
-    <p> <span> 
-$$\int_0^\infty |f(x)|^2\dx <  \infty.$$
- </span> </p>
-
-    <p>The space of these function is call the False[[invalid wikilink: L2 functions]] and denoted by  <span> $\mathcal{L}^2$ </span> .</p>
-  </li>
-  <li>
-    <p><strong>Piecewise continuous function</strong>: We can increase the set of functions we work with, and instead of just continuous functions, we can look at functions which are piecewise continuous. As in the previous case, this is again not an inner product space, though for a different reason. The “inner product” satisfies all the conditions except for  <span> $\angles {v,v} = 0$ </span>  if and only if  <span> $v=0$ </span> . For example, the function:
-<img src="\Fourier_Notes\notes\Fourier\images\inner products/discontinuity.jpg" width="300" /></p>
-  </li>
-</ul>
-
-<h1 id="the-norm">The norm</h1>
-
-<p>Once we have the inner product (which “corresponds” to angles), we also have the norm (which is the “length” of a vector):</p>
-
-<p>True[[invalid wikilink: Norm#^5a49a3]]</p>
-
-<p>There are many examples of interesting norms, but probably one of the most useful one for us is the induced norm:</p>
-
-<div class="callout" data-callout="theorem">
-
-  <div class="callout-title" >Theorem: The induced norm.</div>
-  <div class="callout-content-wrapper">
+  <div class="callout-title" collapsible>הוכחה: </div>
+  <div class="callout-content-wrapper" data-collapsed="">
     <div class="callout-content">
-      <p>If  <span> $V$ </span>  is an inner product space, then  <span> $\norm v := \sqrt {\angles {v,v}}$ </span>  is a norm function.</p>
+      <ol>
+        <li>
+          <p>נובע מכך שהאינטגרל זו פונקציה לינארית.</p>
+        </li>
+        <li>
+          <p>עבור  <span> $\lambda>0$ </span>  עושים החלפת משתנים (ל  <span> $\lambda x$ </span> ):</p>
+
+          <p> <span> 
+$$\hat{g}(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty} f(\lambda x)e^{-i\omega x}dx = \frac{1}{2\pi}\int_{-\infty}^{\infty} f(x)e^{-i(\omega/\lambda) x}\frac{1}{\lambda}dx = \frac{1}{\lambda}\hat f(\frac{\omega}{\lambda}).$$
+ </span> </p>
+
+          <p>עבור  <span> $\lambda< 0$ </span>  ההוכחה דומה.</p>
+        </li>
+        <li>
+          <p>נובע מהחלפת משתנים (ל  <span> $x+\alpha$ </span> ):</p>
+
+          <p> <span> 
+$$\hat{f_\alpha}(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty} f(x+\alpha)e^{-i\omega x}dx = \frac{1}{2\pi}\int_{-\infty}^{\infty} f(x)e^{-i\omega (x-\alpha)}dx = e^{i\omega\alpha}\hat f(\omega).$$
+ </span> </p>
+        </li>
+        <li>
+          <p>פה אפילו לא צריך לעשות החלפת משתנים, רק החלפת פרמטר:</p>
+
+          <p> <span> 
+$$\hat{h_c}(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty} e^{icx}f(x)e^{-i\omega x}dx = \frac{1}{2\pi}\int_{-\infty}^{\infty} f(x)e^{-i(\omega-c)x}dx = \hat f(\omega-c).$$
+ </span> </p>
+        </li>
+        <li>
+          <p>נובע מכך שהצמדה של אינטגרל זה אינטגרל של הצמדה:</p>
+
+          <p> <span> 
+$$2\pi \overline{\hat{f}(\omega)} = \overline{\int_{-\infty}^{\infty} f(x) e^{-i\omega x}\dx} = \int_{-\infty}^{\infty} \overline{f(x)} e^{i\omega x}\dx = 2\pi \hat{\overline{f}}(-\omega)$$
+ </span> </p>
+        </li>
+      </ol>
 
     </div>
   </div>
 </div>
-<p>In particular, in the Euclidean geometry, this norm is the standard 
- <span> $\norm {x_1,...,x_n} = \sqrt{\sum_1^n |x_i|^2}$ </span> , and in our new and improved integral inner product on functions, we get:</p>
+<p>מהטענה למעלה קיבלנו שההתמרה לינארית, כלומר היא מעבירה חיבור של פונקציות וכפל בסקלר לחיבור וכפל בסקלר. בנוסף, השילוב של כפל בסקלר ממשי והכפל  <span> $\lambda x$ </span>  שהם בעצם מתיחות/כיווצים עוברים גם למתיחות וכיווצים ובפרט
+ <span> 
+$$\sqrt{|\lambda|} \cdot f(\lambda x) \Rightarrow \sqrt{|\lambda|^{-1}} \hat{f}(\lambda^{-1} \omega)$$
+ </span> 
+לבסוף, גם ההצמדה של פונקציה מותמרת (פחות או יותר) להצמדה של ההתמרה.
+הפעולות של סיבוב והזזה לא מותמרות ל”עצמן”, אבל הן כן עוברות אחת לשניים: הזזה מותמרת לסיבוב וסיבוב מותמר חזרה להזזה. 
+הדואליות הזאת היא משהו מיוחד שמרמז שאולי אם נבצע את ההתמרה פעמיים, אז נחזור לפונקציה שממנה יצאנו, ובאמת נראה משהו כזה בהמשך.</p>
 
-<p> <span> 
-$$ \norm f = \sqrt{\int_0^1 |f(x)|^2\dx }. $$
+<p>לפני זה, בעוד שנוח מאוד לעשות חישובים עם האקספוננטים, הרבה פעמים נרצה לעבוד ממש עם פונקציות ממשיות, ומסקנה מיידית של סיבוב-&gt; הזזה נותן לנו את התוצאה הבאה:</p>
+
+<div class="callout" data-callout="מסקנה">
+
+  <div class="callout-title" >טענה: סיבוב -> הזזה בעולם הממשי</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>עבור כפל בסינוסים וקוסינוסים נקבל:</p>
+
+      <p> <span> 
+$$\align{ \cf[f(x)\sin(x)]&=\frac{\cf[f](\omega-c)-\cf[f](\omega+c)}{2i} \\ \cf[f(x)\cos(x)]&=\frac{\cf[f](\omega-c)+\cf[f](\omega+c)}{2} }$$
  </span> </p>
 
-<p>The importance of the norm functions, is that we use them to measure the size of vectors, and more over we can talk about distances between vector, by defining</p>
+    </div>
+  </div>
+</div>
+<p>ברגע שיש לנו את התכונות האלו והפעולות ש”נשמרות” תחת ההתמרה, שאלה מעניינת שאפשר לשאול זה מה אפשר להגיד על פונקציות “מיוחדות” יחסית לפעולות האלו. למשל, מה קורה לפונקציה שמראש צמודה לעצמה, כלומר  <span> $f(x)=\overline{f(x)}$ </span>  לכל  <span> $x$ </span>  או במילים אחרות פונקציה ממשית.</p>
 
-<p> <span> 
-$$\mathrm{dist}(u,v):=\norm{u-v}.$$
+<div class="callout" data-callout="טענה">
+
+  <div class="callout-title" >טענה: פונקציות שמורות</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>אם פונקציה  <span> $f$ </span>  היא זוגית (בהתאם אי זוגית), אז  <span> $\cf[f]$ </span>  היא זוגית (בהתאם אי זוגית).</p>
+
+      <p>אם פונקציה  <span> $f$ </span>  היא ממשית (בהתאם מדומה טהורה), אז  <span> $\overline{\cf[f](\omega)}=\cf[f](-\omega)$ </span>  (בהתאם שווה ל  <span> $-\cf[f](-\omega)$ </span>  ).</p>
+
+      <p>בפרט, אם  <span> $f$ </span>  היא ממשית וזוגית (למשל קוסינוס), אז  <span> $\hat{f}$ </span>  היא ממשית וזוגית, ואם  <span> $f$ </span>  היא ממשית ואי זוגית (למשל סינוס), אז  <span> $\hat{f}$ </span>  היא מדומה טהורה ואי זוגית.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הוכחה">
+
+  <div class="callout-title" collapsible>הוכחה: </div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>נסתכל על זהות הכפל בסקלר עם  <span> $\lambda = -1$ </span> , ונסמן  <span> $g(x)=f(-x)$ </span> . במקרה הזה נקבל ש  <span> $\hat{g}(\omega)=\hat{f}(-\omega)$ </span> .</p>
+
+      <p>אם  <span> $f$ </span>  זוגית, כלומר  <span> $g=f$ </span>  אז כמובן שגם</p>
+
+      <p> <span> 
+$$\hat{f}(\omega)=\hat{g}(\omega)=\hat {f}(-\omega)$$
  </span> </p>
 
-<p>Different norms define different distances, which have all sorts of relations between them. The norms above are usually called the  <span> $\mathcal {L}^2$ </span>  norms (since we take the square and then square root), and denoted by  <span> $\norm {\cdot}_2$ </span> . A couple more interesting norms that we will encounter later on are the  <span> $\mathcal{L}^1$ </span>  and  <span> $\mathcal {L}^\infty$ </span>  norms, both in the continues and discrete cases, defined respectively by:</p>
+      <p>או במילים אחרות  <span> $\hat{f}$ </span>  היא זוגית. באותה צורה אם  <span> $f$ </span>  היא אי זוגית אז גם  <span> $\hat{f}$ </span>  היא אי זוגית.</p>
 
-<p> <span> 
-$$\begin{align} \norm f_1 & := \int_0^1 |f(x)|\dx & \norm {(x_1,...,x_n)}_1 & := \sum_1^n |x_i| \\ \norm f_\infty & := \sup|f(x)| & \norm {(x_1,...,x_n)}_\infty & := \max_i |x_i| \end{align}.$$
- </span> </p>
+      <p>שאר הטענה נובעת עם הוכחה דומה יחד עם העובדה ש  <span> $f$ </span>  ממשית (בהתאם מדומה טהורה) אם  <span> $\bar{f}=f$ </span>  (בהתאם  <span> $\bar{f}=-f$ </span> ).</p>
 
-<p>Actually, these are part of a family of norms called  <span> $\mathcal{L}^p$ </span>  norms for  <span> $1\leq p\leq \infty$ </span>  defined by:</p>
-
-<p> <span> 
-$$\begin{align} \norm f_p & := \left(\int_0^1 |f(x)|^p\dx\right)^{1/p} & \norm {(x_1,...,x_n)}_p & := \left(\sum_1^n |x_i|^p\right)^{1/p} \end{align}.$$
- </span> </p>
-
-<p>For  <span> $p=1,2$ </span>  we get the  <span> $\mathcal{L}^1$ </span>  and  <span> $\mathcal{L}^2$ </span>  norms, and in the limit  <span> $p\to\infty$ </span>  we obtain the  <span> $\mathcal{L}^\infty$ </span>  norm.</p>
-
-<p>While there are similarities between the discrete and continuous case, the discrete finite dimensional norms are much more well behaved than their infinite dimensional analogues. We will later discuss more in depth about these infinite dimensional norms, but for now let’s get a little bit of visual intuition about the finite dimensional case, by simply drawing the unit circle  <span> $\norm{(x,y)}_p=1$ </span>  in the plane.</p>
-<center><iframe scrolling="no" title="L_p norms in the plane" src="https://www.geogebra.org/material/iframe/id/tqp6ewcv/width/700/height/333/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false" width="700px" height="333px" style="border:0px; "> </iframe></center>
-
-<p>As you can see, the standard unit circle for  <span> $p=2$ </span>  is an actual circle, while for  <span> $p=1$ </span>  we get a diamond, and as  <span> $p\to \infty$ </span>  it approaches (and in the limit is) a square lined up to the X and Y axes. Also, for  <span> $p< 1$ </span>  the formula defined above is not a norm, and we can “see” it, since the interior of the unit circle is not convex.</p>
-
-<hr />
-
-<p>&lt;-False[[invalid wikilink: Fourier/Motivation]]    ,    <a href="\Fourier_Notes\notes\Fourier/Fourier Course Information">Back to table of contents</a>    ,    <a href="\Fourier_Notes\notes\Fourier/Orthogonal sets - a reminder">Next: Orthogonal sets</a>-&gt;</p>
+    </div>
+  </div>
+</div>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -509,13 +506,13 @@ window.MathJax = {
 
 <script src="/Fourier_Notes/js/collapsible.js"></script>
 
-                        <a href="/Fourier_Notes/notes/Fourier/Motivation" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Motivation">
+                        <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" class="navigation navigation-prev navigation-unique" aria-label="Previous page: מוטיבציה - התמרת פורייה">
                             <i class="fa fa-angle-left"></i>
                         </a>
                     
 
                     
-                        <a href="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder" class="navigation navigation-next navigation-unique" aria-label="Next page: Orthogonal sets - a reminder">
+                        <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function" class="navigation navigation-next navigation-unique" aria-label="Next page: פונקציית דלתא">
                             <i class="fa fa-angle-right"></i>
                         </a>
                     
@@ -532,11 +529,11 @@ window.MathJax = {
         "depth": 1,
         
         "next": {
-            "title": "Orthogonal sets - a reminder",
+            "title": "פונקציית דלתא",
             "level": "1.2",
             "depth": 1,
-            "path": "_Fourier/Orthogonal sets - a reminder.md",
-            "ref": "_Fourier/Orthogonal sets - a reminder.md",
+            "path": "_FourierHebrew/hebrew_delta_function.md",
+            "ref": "_FourierHebrew/hebrew_delta_function.md",
             "articles": []
         },
         
@@ -628,7 +625,7 @@ window.MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_Fourier/Inner product spaces - a reminder.md",
+        "path": "_FourierHebrew/basic properties.md",
         "mtime": "2024-02-20 22:27:30 +0200",
         "type": "markdown"
     },

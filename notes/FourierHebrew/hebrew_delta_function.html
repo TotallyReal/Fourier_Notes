@@ -1,0 +1,890 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="rtl">
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>פונקציית דלתא · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Learn Fourier Analysis
+"><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Ofir David"><link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/style.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/rouge/colorful.css">
+
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/custom-local.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Fourier_Notes/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+<link rel="shortcut icon" href="/Fourier_Notes//assets/gitbook/images/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="/Fourier_Notes/css/style.css"><link rel="stylesheet" href="/Fourier_Notes/css/general.css"><link rel="stylesheet" href="/Fourier_Notes/css/hebrew.css">
+
+
+            <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/basic%20properties" />
+        
+
+        
+    </head>
+    <body  class="hebrew">
+        <div id="hiddenDiv" style="display: none;">
+            $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\cases}[1]{\begin{cases} #1 \end{cases}}
+\newcommand{\align}[1]{\begin{align} #1 \end{align}}
+\newcommand{\limfi}[1]{\displaystyle{\lim_{#1\to\infty}}}
+\newcommand{\limto}[2]{\displaystyle{\lim_{#1\to#2}}}
+
+\newcommand{\normto}{\overset{\left| \cdot \right|}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\cf}{\mathcal{F}}
+\newcommand{\cl}{\mathcal{L}}
+
+\newcommand{\dom}{\operatorname{d\omega}}
+\newcommand{\dx}{\operatorname{dx}}
+\newcommand{\dy}{\operatorname{dy}}
+\newcommand{\dz}{\operatorname{dz}}
+\newcommand{\du}{\operatorname{du}}
+\newcommand{\dv}{\operatorname{dv}}
+\newcommand{\dt}{\operatorname{dt}}
+\newcommand{\ds}{\operatorname{ds}}$
+        </div>
+        <div class="book">
+<div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({scrollTop: 0});
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({scrollTop: $($(element).attr('href')).get(0).offsetTop});
+            }
+            return true;
+        }
+    </script>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/Fourier_Notes/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            
+            <li class="chapter" data-level="1.1" data-path="/Fourier_Notes">
+                
+                <a href="/Fourier_Notes/" onclick="pageScrollToTop(this)">
+                    Fourier Analysis notes
+                </a>
+            </li>
+            <li class="divider"></li>
+
+            
+                <!-- <p>Fourier</p> -->
+                
+                    
+
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Course%20Information">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Course%20Information" onclick="pageScrollToTop(this)">
+                                Fourier - course information
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Motivation">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Motivation" onclick="pageScrollToTop(this)">
+                                Motivation
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder" onclick="pageScrollToTop(this)">
+                                Inner product spaces - a reminder
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder" onclick="pageScrollToTop(this)">
+                                Orthogonal sets - a reminder
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis" onclick="pageScrollToTop(this)">
+                                Infinite Orthonormal basis
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Series">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Series" onclick="pageScrollToTop(this)">
+                                Fourier Series
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Transform">
+                        
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Transform" onclick="pageScrollToTop(this)">
+                                Fourier Transform
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+                <!-- <p>FourierHebrew</p> -->
+                
+                    
+
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation">
+                        
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" onclick="pageScrollToTop(this)">
+                                מוטיבציה - התמרת פורייה
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/basic%20properties">
+                        
+                            <a href="/Fourier_Notes/notes/FourierHebrew/basic%20properties" onclick="pageScrollToTop(this)">
+                                תכונות בסיסיות
+                            </a>
+                        </li>
+                    
+                        
+                        <li class="chapter active" data-level="1.2" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function">
+                        
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function" onclick="pageScrollToTop(this)">
+                                פונקציית דלתא
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+                <!-- <p>posts</p> -->
+                
+                    
+
+                    
+
+                    
+                
+            
+
+            <li class="divider"></li>
+            <li>Inside this page:</li>
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function">
+                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
+                    פונקציית דלתא
+                </a>
+                
+                    <ul><li ><a href="#איך-מוצאים-את-ההתמרה-ההפוכה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>איך מוצאים את ההתמרה ההפוכה</a></li><li ><a href="#פונקצית-דלתא-של-דירק" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פונקצית דלתא של דירק</a></li><li ><a href="#פונקצית-דלתא-באי-רציפות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פונקצית דלתא באי רציפות</a><ul><li ><a href="#פונקציות-מציינות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פונקציות מציינות</a></li><li ><a href="#הפונקציה-הלא-רציפה-הכי-פשוטה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>הפונקציה הלא רציפה הכי פשוטה</a></li><li ><a href="#שינוי-רחוק-מהראשית" onclick="mobilePageScrollToAnchor(this)"  border=#000000>שינוי רחוק מהראשית</a></li><li ><a href="#מה-קורה-בראשית" onclick="mobilePageScrollToAnchor(this)"  border=#000000>מה קורה בראשית?</a></li><li ><a href="#התמרת-פורייה-ההפוכה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה ההפוכה</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul></li></ul>
+
+                
+            </li>
+            <!--
+            
+
+            
+
+            <li class="divider"></li>
+            <li>Inside this page:</li>
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function">
+                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
+                    פונקציית דלתא
+                </a>
+                
+                    <ul><li ><a href="#איך-מוצאים-את-ההתמרה-ההפוכה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>איך מוצאים את ההתמרה ההפוכה</a></li><li ><a href="#פונקצית-דלתא-של-דירק" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פונקצית דלתא של דירק</a></li><li ><a href="#פונקצית-דלתא-באי-רציפות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פונקצית דלתא באי רציפות</a><ul><li ><a href="#פונקציות-מציינות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פונקציות מציינות</a></li><li ><a href="#הפונקציה-הלא-רציפה-הכי-פשוטה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>הפונקציה הלא רציפה הכי פשוטה</a></li><li ><a href="#שינוי-רחוק-מהראשית" onclick="mobilePageScrollToAnchor(this)"  border=#000000>שינוי רחוק מהראשית</a></li><li ><a href="#מה-קורה-בראשית" onclick="mobilePageScrollToAnchor(this)"  border=#000000>מה קורה בראשית?</a></li><li ><a href="#התמרת-פורייה-ההפוכה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה ההפוכה</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul></li></ul>
+
+                
+            </li>
+        -->
+        </ul>
+    </nav>
+</div>
+<div class="book-body">
+                <div class="book-header" role="navigation">
+                    <!-- Title -->
+                    <h1>
+                        <i class="fa fa-circle-o-notch fa-spin"></i>
+                        
+                            <a href="." >פונקציית דלתא</a>
+                        
+                    </h1>
+                </div>
+
+                <div class="body-inner">
+                    <div id="hiddenDiv" style="display: none;">
+                        $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\cases}[1]{\begin{cases} #1 \end{cases}}
+\newcommand{\align}[1]{\begin{align} #1 \end{align}}
+\newcommand{\limfi}[1]{\displaystyle{\lim_{#1\to\infty}}}
+\newcommand{\limto}[2]{\displaystyle{\lim_{#1\to#2}}}
+
+\newcommand{\normto}{\overset{\left| \cdot \right|}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\cf}{\mathcal{F}}
+\newcommand{\cl}{\mathcal{L}}
+
+\newcommand{\dom}{\operatorname{d\omega}}
+\newcommand{\dx}{\operatorname{dx}}
+\newcommand{\dy}{\operatorname{dy}}
+\newcommand{\dz}{\operatorname{dz}}
+\newcommand{\du}{\operatorname{du}}
+\newcommand{\dv}{\operatorname{dv}}
+\newcommand{\dt}{\operatorname{dt}}
+\newcommand{\ds}{\operatorname{ds}}$
+                    </div><div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <div class="page-inner">
+        <div id="book-search-results">
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                        <h1 id="/notes/FourierHebrew/hebrew_delta_function">פונקציית דלתא</h1>
+                    
+
+                    <h1 id="איך-מוצאים-את-ההתמרה-ההפוכה">איך מוצאים את ההתמרה ההפוכה</h1>
+
+<p>כאשר למדנו על טורי פורייה, התחלנו עם פונקציה מחזורית על  <span> $f:[-\pi,\pi]\to \RR$ </span>  , חישבנו ממנה את מקדמי פורייה  <span> $a_n,b_n$ </span>  והדרך העיקרית להבין בעזרתם את הפונקציה הקבועה הייתה להרכיב חזרה אתה פונקציה , כלומר 
+ <span> 
+$$.f(x) \sim \frac{a_0}{2} + \sum_{n=1}^\infty \left(a_n \cos(nx)+b_n \sin(nx)\right)$$
+ </span> </p>
+
+<p>היינו רוצים לעשות דבר דומה גם בהתמרת פורייה. הפעם ה”מקדמים” שלנו הם  <span> $\hat{f}(\omega)=\angles{f,e^{i\omega x}}$ </span>  והם מוגדרים לכל  <span> $\omega$ </span> . אם זה היה דומה לפונקציות המחזוריות, אז היינו מחפשים משהו בסגנון  <span> $\sum_\omega \hat{f}(\omega) e^{i\omega x}$ </span>  , אבל בגלל שהמקדמים הם לא דיסקרטים, אז נצטרך להסתכל על אינטגרל. תחת ההנחה שמותר לנו לעשות את כל המעברים הבאים, נקבל ש
+ <span> 
+$$\align{f(x_0)&\overset{?}{=}\int_{-\infty}^\infty \hat{f}(\omega)e^{i\omega x_0}\dom=\frac{1}{2\pi}\int_{-\infty}^\infty \int_{-\infty}^\infty f(x)e^{-i \omega x}e^{i\omega x_0}\dx \dom \\&  =\frac{1}{2\pi} \int_{-\infty}^\infty  f(x) \left(\int_{-\infty}^\infty e^{i\omega (x_0-x)} \dom\right) \dx }$$
+ </span> 
+יש שני דברים מוזרים בחישוב הזה:</p>
+<ol>
+  <li>הפונקציה  <span> $\omega\mapsto e^{i\omega(x_0-x)}$ </span>  היא לא אינטגרבילית בהחלט על כל השיר, כי בערך מוחלט היא שווה ל 1.</li>
+  <li>יותר מכך, אפילו אם היה לה אינטגרל, שנסמן ב  <span> $g(t,x)$ </span> , איזה פונקציה זו אמורה להיות כדי ש  <span> 
+$$?\;\;\;f(x_0)\overset{?}{=}\frac{1}{2\pi}\int_{-\infty}^\infty f(x)g(x_0,x)\dx$$
+ </span> 
+ נזכיר שאם נשנה פונקציה בנקודה אחת, האינטגרל שלה לא ישתנה, כלומר אם נשנה את הערך  <span> $f(x_0)$ </span>  בנקודה אחת  <span> $x_0$ </span>  אז אגף ימין לא ישתנה, בעוד שאגף שמאל ישתנה.</li>
+</ol>
+
+<p>למרות שתי הבעיות האלו, עדיין אפשר “להגדיר” את ההתמרה ההפוכה, ולמרות שלא נכנס לכל ההוכחה המתמטית, בואו ננסה להבין קצת מאיפה היא מגיעה.</p>
+
+<p>נתחיל קודם עם הבעיה השנייה. למרות שאין אינטגרל שמקיים את המעבר הזה, יש פונקציה מאוד פשוטה שמתחילה עם  <span> $f$ </span>  ומסיימת עם  <span> $f(x_0)$ </span>  שהיא פשוט ההצבה בנקודה  <span> $x_0$ </span>  ונסמן אותה ב
+ <span> 
+$$. \;\; \delta_{x_0}(f):=f(x_0)$$
+ </span> 
+נשים לב תחילה שזו פונקציה מהצורה  <span> $\delta_{x_0} : E^1(\RR)\to \RR$ </span>  בדיוק כמו פונקציית האינטגרל (כלומר היא לוקחת פונקציה ומחזירה סקלר) ובנוסף כמו האינטגרל זוהי פונקציה לינארית, כי לפי ההגדרה:
+ <span> 
+$$.\;\;\delta_{x_0}(\alpha f_1 + f_2) = \alpha f_1(x_0) + f_2(x_0) = \alpha \delta_{x_0}(f_1)+\delta_{x_0}(f_2)$$
+ </span> </p>
+
+<p>אמנם אי אפשר להגדיר אותה ע”י רק אינטגרל, אבל האם ניתן לקרב אותה ע”י אינטגרל? אם הפונקציה  <span> $f$ </span>  היא רציפה, אז כן!</p>
+
+<p>למשל, אם ניקח את הפונקציות:
+ <span> 
+$$\sigma_{h,x_0}(x):=\frac{2}{h}\cdot \chi_{[x_0-h,x_0+h]}(x)=\cases{\frac{2}{h} & |x-x_0|\leq h\\ 0 & else}$$
+ </span> 
+אז נקבל ש
+ <span> 
+$$\int_{-\infty}^{\infty}f(x)\sigma_{h,x_0}(x)\dx = \frac{2}{h} \int_{x_0-h}^{x_0+h}f(x)\dx\overset{h\to 0}{\longrightarrow} f(x_0)$$
+ </span> </p>
+
+<p>במילים אחרות, פונקצית ההצבה שלנו היא גבול של פונקציות שמבוטאות באמצעות אינטגרלים.</p>
+
+<p>זה גם מסביר קצת את הבעיה הראשונה. במקום לחשוב על 
+ <span> 
+$$x\mapsto\int_{-\infty}^\infty e^{i\omega (x_0-x)} \dom$$
+ </span> 
+כפונקציה במשתנה  <span> $x$ </span>  שלא מוגדרת היטב כי האינטגרל לא מוגדר היטב, צריך לחשוב עליה כגבול של פונקציות (שיקבע לפי גבולות האינטגרציה כמו שנראה למטה) ואז פתאום נקבל את ההתמרה ההפוכה:
+ <span> 
+$$.\align{f(x_0)=\frac{1}{2\pi} \int_{-\infty}^\infty  f(x) \left(\int_{-\infty}^\infty e^{i\omega (x_0-x)} \dom\right) \dx }$$
+ </span> </p>
+
+<h1 id="פונקצית-דלתא-של-דירק">פונקצית דלתא של דירק</h1>
+
+<p>עם האינטואיציה מלמעלה, נגדיר את פונקציית דלתא של דירק, עם אותו סימון כמו פונקציית דלתא למעלה:</p>
+
+<div class="callout" data-callout="הגדרה">
+
+  <div class="callout-title" >סימון: פונקציית דלתא של דירק</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>נסמן  <span> $\delta_a:\RR \to \RR$ </span>  להיות ה”פונקציה” שמקיימת</p>
+
+      <p> <span> 
+$$f(a)=\int_I f(t)\delta_a(t)\dt $$
+ </span> </p>
+
+      <p>עבור כל פונקציה רציפה ב  <span> $a$ </span>  וקבוצה  <span> $I$ </span>  שמכילה את  <span> $a$ </span>  כנקודה פנימית.</p>
+
+      <p>כאשר  <span> $a=0$ </span>  נסמן פשוט  <span> $\delta(t):=\delta_0(t)$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הערה">
+
+  <div class="callout-title" >הערה:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>בדרך כלל הקבוצה  <span> $I$ </span>  הולכת להיות כל הישר, אך כמובן שהפונקציה תלויה רק האיך ש  <span> $f$ </span>  מתנהגת באזור הנקודה  <span> $a$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<p>שימו לב שכמו שאמרנו למעלה, זהו סימון ואנחנו לא באמת מבצעים אינטגרציה במובן הרגיל. מה שכן, בגלל שפונקציית ההשמה  <span> $f\mapsto f(a)$ </span>  מקיימת תכונות דומות לפונקצית האינטגרל, אז זהו סימון נוח. באופן רשמי פונקציה כזאת נקראת <strong>פונקציונלי</strong>. בפרט “נניח” שאפשר לבצע החלפת משתנים, ואז נקבל ש</p>
+
+<div class="callout" data-callout="טענה">
+
+  <div class="callout-title" >הזזה של פונקציית דיראק</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>מתקיים:</p>
+
+      <p> <span> 
+$$f(a+b)=\int_{-\infty}^{\infty} f(t)\delta_a(t-b)\dt $$
+ </span> </p>
+
+      <p>ובפרט:</p>
+
+      <p> <span> 
+$$f(b)=\int_{-\infty}^{\infty} f(t)\delta(t-b)\dt $$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הוכחה">
+
+  <div class="callout-title" collapsible>הוכחה:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>אם נרשה החלפת משתנים  <span> $s=t-b$ </span>  אז נקבל ש</p>
+
+      <p> <span> 
+$$.\int_{-\infty}^{\infty} f(t)\delta_a(t-b)\dt=\int_{-\infty}^{\infty} f(s+b)\delta_a(s)\dt=f(a+b)$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הגדרה">
+
+  <div class="callout-title" >סימון: התכנסות לפונקציית דלתא</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>כאשר נסמן התכנסות של פונקציות  <span> $g_n(x)\to\delta_a(x)$ </span>  לפונקציית דירק, הכוונה היא ש</p>
+
+      <p> <span> 
+$$\int_{-\infty}^{\infty}f(x)g_n(x)\dx \to f(a)$$
+ </span> </p>
+
+      <p>לכל פונקציה  <span> $f\in E^1(\RR)$ </span>  רציפה בנקודה  <span> $a$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<p>תחת הסימון הזה, בעצם בחלק הקודם הראנו ש  <span> $\sigma_{h,a}\to\delta_a$ </span>  כאשר  <span> $h\to 0$ </span> . נשים לב שגם אם נחשוב על פונקציית דירק כגבול של אינטגרלים, אז לא מפתיע שהיא מקיימת תכונות כמו אינטגרציה ובפרט השימוש בהחלפת משתנים כמו שראינו למעלה.</p>
+
+<p>כדי להראות שתוצאה דומה נכונה עבור פונקציות האקספוננטים שלנו נציין תחילה טענה ללא הוכחה. עוד מעט נוכיח משהו יותר חזק, כרגע זה רק לשם האינטואיציה.</p>
+
+<div class="callout" data-callout="טענה">
+
+  <div class="callout-title" >טענה:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>מתקיים ש  <span> $\displaystyle{\lim_{M\to\infty}} \frac{\sin(Mx)}{\pi x} = \delta(x)$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+
+<p>באמצעות הטענה הזאת נוכל עכשיו להראות ש:</p>
+
+<div class="callout" data-callout="טענה">
+
+  <div class="callout-title" >גבול של אקספוננטים הוא דירק:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>לכל  <span> $a\in\RR$ </span>  מתקיים ש</p>
+
+      <p> <span> 
+$$\limfi{N} \frac{1}{2\pi} \int_{N}^{N} e^{i\omega(t-a)}\dom \to \delta_a(t)$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הוכחה">
+
+  <div class="callout-title" collapsible>הוכחה:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>בגלל שהראנו שאפשר להזיז את פונקציית דירק, כלומר  <span> $\delta_a(t)=\delta(t-a)$ </span>  אז נוכל לסמן  <span> $T=t-a$ </span>  ולהראות שהגבול הוא  <span> $\delta(T)$ </span> . עתה נקבל:</p>
+
+      <p> <span> 
+$$\frac{1}{2\pi} \int_{-N}^{N} e^{i\omega T}\dom = \frac{1}{2\pi}\left( \int_{-N}^{N} \cos(\omega T)\dom + \int_{-N}^{N} i\sin(\omega T)\dom\right)$$
+ </span> </p>
+
+      <p>פונקציה הסינוס היא אי זוגית, ולכן האינטגרל שלה מתאפס, וסה”כ נשאר עם</p>
+
+      <p> <span> 
+$$\frac{1}{2\pi} \int_{-N}^{N} e^{i\omega T}\dom = \frac{1}{2\pi} \frac{\sin(\omega T)}{T}\mid_{-N}^N =  \frac{\sin(N T)}{\pi T}$$
+ </span> </p>
+
+      <p>והתוצאה נובעת מהטענה הקודמת.</p>
+
+    </div>
+  </div>
+</div>
+<p>עכשיו נוכל לחזור לטיעון שלנו בראש הדף בשביל לקבל שקיימת לנו התמרה הפוכה שמקיימת
+ <span> 
+$$\align{f(x_0) &  =\frac{1}{2\pi} \int_{-\infty}^\infty  f(x) \left(\int_{-\infty}^\infty e^{i\omega (x_0-x)} \dom\right) \dx }$$
+ </span> </p>
+
+<p>בנקודות רציפות של  <span> $f$ </span> .</p>
+
+<h1 id="פונקצית-דלתא-באי-רציפות">פונקצית דלתא באי רציפות</h1>
+
+<p>מאחר והפונקציות שלנו באופן כללי הן לא רציפות, אז הטענה מלמעלה (שלא הוכחה לחלוטין) לא תעזור ועדיין נרצה לדעת מה קורה בנקודות אי רציפות.
+ כדי לקבל קצת אינטואיציה בואו נסתכל על דוגמאות פשוטות וננסה להבין מה קורה שם, כאשר נשים דגש על הנקודה בראשית, כלומר אנחנו רוצים להבין את 
+  <span> 
+$$.\int_{-\infty}^\infty f(x)\frac{\sin(Mx)}{\pi x} \dx$$
+ </span> </p>
+<h2 id="פונקציות-מציינות">פונקציות מציינות</h2>
+
+<p>אם נסתכל על הפונקציה  <span> $f(x)=\chi_{[a,b]}(x)$ </span>  אז נקבל את האינטגרל
+ <span> 
+$$\int_{a}^b \frac{\sin(Mx)}{\pi x} \dx = \int_{Ma}^{Mb} \frac{\sin(x)}{\pi x} \dx$$
+ </span> 
+הראו כתרגיל שהאינטגרל  <span> $\int_0^\infty \frac{\sin(x)}{x}\dx$ </span>  מתכנס. מסתבר שגם אפשר לחשב את האינטגרל הזה (למשל עם כלים מפונקציות מרוכבות) ולהראות שהוא שווה ל  <span> $\frac{\pi}{2}$ </span> . אם אנחנו מאמינים לזה, אבל הגבול כאשר  <span> $M\to \infty$ </span>  למעלה תלוי באיפה נמצאת הראשית יחסית לקטע  <span> $(a,b)$ </span> : 
+ <span> 
+$$\limfi{M} \int_{a}^b \frac{\sin(Mx)}{\pi x} \dx = \cases{1 & a< 0< b \\ \frac{1}{2} & 0=a< b\text{  or  } a< b=0 \\ 0 & else}$$
+ </span> </p>
+
+<p>נשים לב שאם הפונקציה היא רציפה בראשית, כלומר  <span> $a< 0< b$ </span>  או  <span> $0\notin [a,b]$ </span>  אז באמת קיבלנו שהגבול של האינטגרל הוא הערך הראשית. אחרת, קיבלנו  <span> $\frac{1}{2}$ </span>  שהוא “ממוצע” הערכים, כלומר
+ <span> 
+$$.\frac{f(0^-)+f(0^+)}{2}$$
+ </span> </p>
+<h2 id="הפונקציה-הלא-רציפה-הכי-פשוטה">הפונקציה הלא רציפה הכי פשוטה</h2>
+<p>מתחיל עם הפונקציה 
+ <span> 
+$$.f(x)=\cases{\frac{1}{1+x^2}&x\geq 0 \\ \frac{-1}{1+x^2} & x< 0}$$
+ </span> 
+זוהי כמובן פונקציה רציפה פרט לראשית, ובחרנו אותה כך שהאינטגרל שלה יתכנס, כלומר  <span> $f\in E^1(\RR)$ </span> . בנוסף זוהי פונקציה אי זוגית, ולכן האינטגרל
+ <span> 
+$$.\int_{-\infty}^\infty f(x) \frac{\sin(Mx)}{\pi x}\dx = 0$$
+ </span> 
+כמובן, שעבור פונקציות אי זוגיות, הממוצע של הגבולות בראשית (בהנחה והם קיימים) גם חייב להיות אפס.</p>
+
+<h2 id="שינוי-רחוק-מהראשית">שינוי רחוק מהראשית</h2>
+<p>מה יקרה אם נשנה אותה רחוק מהראשית, נניח בתחום  <span> $[100,200]$ </span> ? אם נסמן את הפונקציה החדשה ב  <span> $\tilde{f}(x)$ </span>  אז נקבל ש 
+ <span> 
+$$\align{\int_{-\infty}^\infty \tilde{f}(x) \frac{\sin(Mx)}{\pi x}\dx & = \overbrace{\int_{-\infty}^\infty f(x) \frac{\sin(Mx)}{\pi x}\dx}^{=0} + \int_{100}^{200} (\tilde{f}(x)-f(x)) \frac{\sin(Mx)}{\pi x}\dx \\ & = \int_{100}^{200} \frac{\tilde{f}(x)-f(x)}{\pi x} \sin(Mx)\dx }$$
+ </span> 
+בתחום  <span> $[100,200]$ </span>  הפונקציה  <span> $g(x)=\frac{\tilde{f}(x)-f(x)}{\pi x}$ </span>  היא תחילה הפרש של שתי פונקציה ב  <span> $E^1(\RR)$ </span>  ולכן היא גם שם, וחילקנו ב  <span> $x$ </span>  , שלא יוצר בעיות כי אנחנו לא ליד האפס. עכשיו נשארנו עם הגבול של האינטגרל 
+ <span> 
+$$\limfi{M}\int_{100}^{200} g(x) \sin(Mx) \dx$$
+ </span> 
+אבל ראינו שאינטגרל כזה שואף לאפס, כי זו בדיוק הלמה של רימן לבג. אפילו לא היינו צריכים לעצור ב 200, ויכולנו לעשות אינטגרל עד אינסוף, ואותו הדבר בחלק השלילי. במילים אחרות, הגבול של האינטגרל כולו תלוי רק באיך ש  <span> $f$ </span>  נראית מאוד קרוב לראשית!</p>
+
+<p>כרגע לפחות אנחנו יודעים שהאינטגרל הוא אפס אם הפונקציה שלנו אי זוגית + שינויים “הרחק” מהראשית, כלומר היא “אי זוגית רק בסביבת הראשית”. זה כמובן גורר שסכום הגבולות מימין ומשמאל הראשית (אם קיימים) הוא עדיין אפס.</p>
+
+<h2 id="מה-קורה-בראשית">מה קורה בראשית?</h2>
+
+<p>אזור הראשית הוא יותר בעייתי, כי אי אפשר פשוט לעשות את ה”מעבר”:
+ <span> 
+$$ f(x)\cdot \frac{\sin(Mx)}{\pi x} = \frac{f(x)}{\pi x} \cdot \sin(Mx)$$
+ </span> 
+ולהשתמש ברימן לבג, כי באופן כללי הפונקציה  <span> $\frac{f(x)}{x}$ </span>  היא כבר לא צריכה להיות עם אינטגרל סופי. מצד שני, לפונקציה  <span> $\frac{\sin(Mx)}{\pi x}$ </span>  כן יש גבול בראשית, ולכן אם במקרה  <span> $f(x)$ </span>  הייתה קבועה מימין לראשית, נניח ב  <span> $(0,\varepsilon)$ </span>  אז נוכל ממש לחשב שם את האינטגרל (זה היה החישוב הראשון שלנו עם פונקציות מציינות). אם היא לא קבועה, אז בתקווה יש לנו את הדבר הכי טוב הבא בתור, ויש לה שם גבול שנסמן ב  <span> $f(0^+)$ </span>  ואז נקבל ש 
+ <span> 
+$$\align{\int_0^\varepsilon f(x)\cdot \frac{\sin(Mx)}{\pi x} \dx & = \int_0^\varepsilon \left(f(x)-f(0^+)+f(0^+)\right)\cdot \frac{\sin(Mx)}{\pi x} \dx \\ & \int_0^\varepsilon \left[\frac{f(x)-f(0^+)}{x}\cdot\frac{\sin(Mx)}{\pi} +f(0^+)\cdot \frac{\sin(Mx)}{\pi x}\right] \dx} $$
+ </span> 
+כמו שכבר אמרנו, למחובר השני אנחנו ממש יכולים לחשב את האינטגרל. במחובר הראשון עדיין יש בעיה, אבל אם  <span> $\frac{f(x)-f(0^+)}{x}$ </span>  פונקציה מספיק יפה, למשל יש לה גבול בראשית, אז שוב נוכל להשתמש בלמה של רימן לבג. אבל בעצם כבר ראינו את הביטויים האלו - להגיד שיש גבול בראשית בדיוק שקול לכך שיש נגזרת מתואמת מצד ימין.</p>
+
+<h2 id="התמרת-פורייה-ההפוכה">התמרת פורייה ההפוכה</h2>
+
+<p>עכשיו אפשר לחבר את כל החלקים כדי לקבל את התוצאה הבאה:</p>
+
+<div class="callout" data-callout="משפט">
+
+  <div class="callout-title" >התמרת פורייה ההפוכה</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>תהא  <span> $f\in E^1(\RR)$ </span> . בכל נקודה  <span> $x_0\in \RR$ </span>  בה יש לפונקציה נגזרות מתואמות, מתקיים ש</p>
+
+      <p> <span> 
+$$\limfi{M} \int_{-M}^M \hat{f}(\omega)e^{i\omega x_0}\dom = \frac{f(x_0^-)+f(x_0^+)}{2}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הוכחה">
+
+  <div class="callout-title" collapsible>הוכחה:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>כרגיל, כדאי להתחיל עם פישוט הבעיה, למשל נרצה לעבור מ  <span> $x_0$ </span>  כללי לראשית. לשם כך נגדיר את  <span> $g(x)=f(x_0+x)$ </span>  ואז נקבל ש  <span> $\hat{g}(\omega)=\hat{f}(\omega)e^{i\omega x_0}$ </span> </p>
+
+      <p>בסימון החדש הזה מספיק להראות ש</p>
+
+      <p> <span> 
+$$\align{\frac{g(0^-)+g(0^+)}{2}& \overset{?}{=}\limfi{M} \int_{-M}^M \hat{g}(\omega)\dom = \frac{1}{2\pi}\limfi{M}  \int_{-\infty}^{\infty} g(x)\int_{-M}^M e^{-i\omega x}  \dom \dx \\ &  = \limfi{M}  \int_{-\infty}^{\infty} g(x) \frac{\sin(Mx)}{\pi x} \dx}$$
+ </span> </p>
+
+      <p>נחשב את האינטגרל על החלק החיובי של ציר ה  <span> $x$ </span> . כמו מקודם נכתוב  <span> $g(x)=g(x)-g(0^+)-g(0^+)$ </span>  ואז האינטגרל למעלה (ללא הגבול) יהיה:</p>
+
+      <p> <span> 
+$$\int_{0}^{\infty} \frac{g(x)-g(0^+)}{\pi x} \sin(Mx) \dx+g(0^+)\int_{0}^{\infty} \frac{\sin(Mx)}{\pi x} \dx$$
+ </span> </p>
+
+      <p>כבר ראינו שהאינטגרל השני שואף ל  <span> $\frac{1}{2}$ </span>  כאשר  <span> $M\to \infty$ </span> . עבור הפונקציה  <span> $\frac{g(x)-g(0^+)}{\pi x}$ </span>  היא ב  <span> $E^1(\RR)$ </span>  כי  <span> $g(x)\in E^1(\RR)$ </span>  ולא הוספנו בעיה בראשית בחלוקה ב  <span> $x$ </span>  בגלל הנגזרת המתואמת.</p>
+
+      <p>עכשיו אפשר להשתמש בלמה של רימן לבג על האינטגרל הראשון כדי לקבל שהגבול הוא אפס, ולכן סה”כ קיבלנו שהגבול הוא  <span> $\frac{g(0^+)}{2}$ </span> . חישוב דומה נעשה בחלק השלילי של ציר האיקס ויחד איתו מקבלים את התוצאה שרצינו.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="מסקנה">
+
+  <div class="callout-title" >התמרה כפולה היא (כמעט) הזהות</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>אם  <span> $f,\hat{f}\in E^1(\RR)$ </span>   ול  <span> $f$ </span>  יש נגזרות מתואמות ב  <span> $x_0$ </span>  אז מתקיים ש</p>
+
+      <p> <span> 
+$$\hat{\hat{f}}(x_0) = \frac{1}{2\pi} \frac{f(-x_0^+)+f(-x_0^-)}{2}$$
+ </span> </p>
+
+      <p>ובפרט אם  <span> $f$ </span>  רציפה ב  <span> $x_0$ </span>  אז מתקיים ש</p>
+
+      <p> <span> 
+$$\hat{\hat{f}}(x_0) = \frac{1}{2\pi} f(-x_0)$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הוכחה">
+
+  <div class="callout-title" collapsible>הוכחה:</div>
+  <div class="callout-content-wrapper" data-collapsed="">
+    <div class="callout-content">
+      <p>נשים לב תחילה שתחת ההנחה ש  <span> $f,\hat{f} \in E^1(\RR)$ </span>  הביטוי  <span> $\hat{\hat{f}}(x)$ </span>  מוגדר היטב. בפרט, בגלל ש  <span> $\hat{f}\in E^1(\RR)$ </span>  הקצב שאיפה ל  <span> $\pm \infty$ </span>  באינטגרל לא משנה, ולכן</p>
+
+      <p> <span> 
+$$\align{\hat{\hat{f}}(x_0) & = \frac{1}{2\pi}\int_{-\infty}^\infty \hat{f}(\omega) e^{-i\omega x_0} \dom = \frac{1}{2\pi}\limfi{M}\int_{-M}^M \hat{f}(\omega) e^{i\omega (-x_0)} \dom \\ &= \frac{1}{2\pi} \frac{f(-x_0^+)+f(-x_0^-)}{2}}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+<hr />
+<h2 id="דוגמאות">דוגמאות</h2>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title" >דוגמא: הפונקציה  <span> $e^{-\abs{x}}$ </span> </div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>כבר ראינו ש  <span> $\cf\left[e^{\abs{x}}\right] = \frac{1}{\pi (\omega^2+1)}$ </span> . מאחר ושתי הפונקציות  <span> $e^{-\abs{x}}, \frac{1}{\pi (\omega^2+1)}\in E^1(\RR)$ </span> , הן גזירות ברציפות בכל מקום פרט לראשית, אבל שם יש גזירות מתואמות, אז ממשפט ההתמרה ההפוכה נקבל ש</p>
+
+      <p> <span> 
+$$.e^{-\abs{x}}=\int_{-\infty}^\infty \frac{1}{\pi (\omega^2+1)} e^{i \omega x} \dom$$
+ </span> </p>
+
+      <p>שימו לב שביטלנו את החלוקה ב  <span> $2\pi$ </span>  בשני האגפים, ולא צריך לקחת  <span> $-x$ </span>  באגף שמאל, כי הוא גם ככה מופיע בערך מוחלט.</p>
+
+      <p>נוכל עכשיו להשתמש בזהות אוילר  <span> $e^{i \omega x} = \cos(\omega x)+i\sin(\omega x)$ </span>  יחד עם העובדה שהפונקציה  <span> $\frac{1}{\pi (\omega^2+1)}$ </span>  היא ממשית וזוגית, כדי להסיק ש:</p>
+
+      <p> <span> 
+$$.e^{-\abs{x}}=\int_{-\infty}^\infty \frac{\cos(\omega x)}{\pi (\omega^2+1)} \dom$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title" >דוגמא: הפונקציה המציינת  <span> $\chi_{[-a,a]}$ </span> </div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>ראינו ש  <span> $\cf[\chi_{[-a,a]}](\omega) = \frac{\sin(\omega a)}{\omega \pi}$ </span> . הפונקציה הזאת היא בעצם הפונקציה שהשתמשנו כדי להוכיח את קיום ההתמרה ההפוכה! כלומר, כאשר  <span> $a\to \infty$ </span>  ההתמרה של הפונקציה שואפת לפונקציית דלתא, בעוד שהפונקציה המקורית עצמה “שואפת” לפונקציה הקבועה  <span> $1$ </span> .</p>
+
+      <p>אם נחשוב עליה עכשיו בתור ההתמרה, ונבצע לה התמרה הפוכה, אז בגלל שזו פונקציה זוגית, אז כמו בדוגמא הקודמת נקבל ש:</p>
+
+      <p> <span> 
+$$\limfi{M}\frac{1}{2\pi}\int_{-M}^M \frac{\sin(\omega a)}{\omega \pi} \cos(\omega x) \dom = \frac{\chi_{[-a,a]}(x^+)+\chi_{[-a,a]}(x^-)}{2}$$
+ </span> </p>
+
+      <p>שוב נשתמש בכך שהפונקציה באינטגרל היא זוגית, כדי לקבל ש</p>
+
+      <p> <span> 
+$$\frac{1}{\pi}\int_{0}^\infty \frac{\sin(\omega a)}{\omega \pi} \cos(\omega x) \dom = \cases{1&\abs{x}< a\\ \frac{1}{2} & \abs{x}=a \\ 0 & \abs{x}>a}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<!-- introduce mathjax support -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+<!-- introduce per-page mermaid support -->
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+
+<script src="/Fourier_Notes/js/collapsible.js"></script>
+
+                        <a href="/Fourier_Notes/notes/FourierHebrew/basic%20properties" class="navigation navigation-prev navigation-unique" aria-label="Previous page: תכונות בסיסיות">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                </div>
+            </div>
+
+            <script>
+            var gitbook = gitbook || [];
+            gitbook.push(function() {
+                gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Tao He",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Fourier Analysis notes",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_FourierHebrew/hebrew_delta_function.md",
+        "mtime": "2024-02-20 22:27:30 +0200",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-02-20 22:27:30 +0200"
+    },
+    "basePath": "/Fourier_Notes",
+    "book": {
+        "language": ""
+    }
+});
+            });
+            </script>
+        </div><script src="/Fourier_Notes/assets/gitbook/gitbook.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/theme.js"></script>
+
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+</body>
+</html>
