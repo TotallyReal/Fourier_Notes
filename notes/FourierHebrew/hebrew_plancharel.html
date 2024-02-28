@@ -29,6 +29,8 @@
         <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function" />
 
         
+            <link rel="next" href="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution"/>
+        
     </head>
     <body  class="hebrew">
         <div id="hiddenDiv" style="display: none;">
@@ -232,6 +234,16 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution" onclick="pageScrollToTop(this)">
+                                5. קונבולוציה
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -255,7 +267,7 @@
                     נוסחת פלנשרל
                 </a>
                 
-                    <ul><li ><a href="#נוסחת-פלנשרל" onclick="mobilePageScrollToAnchor(this)"  border=#000000>נוסחת פלנשרל</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul>
+                    <ul><li ><a href="#נוסחת-פלנשרל" onclick="mobilePageScrollToAnchor(this)"  border=#000000>נוסחת פלנשרל</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li><li ><a href="#התמרות-פורייה-ב-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרות פורייה ב  <span> $E^2 (\RR)$ </span> </a></li></ul>
 
                 
             </li>
@@ -271,7 +283,7 @@
                     נוסחת פלנשרל
                 </a>
                 
-                    <ul><li ><a href="#נוסחת-פלנשרל" onclick="mobilePageScrollToAnchor(this)"  border=#000000>נוסחת פלנשרל</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul>
+                    <ul><li ><a href="#נוסחת-פלנשרל" onclick="mobilePageScrollToAnchor(this)"  border=#000000>נוסחת פלנשרל</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li><li ><a href="#התמרות-פורייה-ב-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרות פורייה ב  <span> $E^2 (\RR)$ </span> </a></li></ul>
 
                 
             </li>
@@ -354,7 +366,7 @@ $$.\norm{f}_2^2=C\int_{-\infty}^\infty \abs{\hat{f}(\omega)}^2\dom=C\norm{\hat{f
   <div class="callout-title">משפט פלנשרל:</div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>יהיו  <span> $f,g\in E^1(\RR)\cap E^1 (\RR)$ </span>  אז:</p>
+      <p>יהיו  <span> $f,g\in E^1(\RR)\cap E^2 (\RR)$ </span>  אז:</p>
 
       <ol>
         <li>
@@ -383,9 +395,11 @@ $$\int_{-\infty}^\infty \hat{f}(\omega) \overline{\hat{g}(\omega)} \dom = \frac{
   <div class="callout-title">הוכחה:</div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>הרעיון באופן כללי הוא החלפת סדרי אינטגרציה, ואם מותר לנו לעשות אותם אז “קל” להראות שהטענה נכונה. נראה שכאשר ל  <span> $f,g$ </span>  יש תומכים סופיים, כלומר קיים  <span> $M>0$ </span>  מספיק גדול כך ש  <span> $f(x)=g(x)=0$ </span>  עבור  <span> $|x|>M$ </span> , אז ההחלפות מותרות. באופן כללי, יש צורך להשתמש בקירובים של פונקציות כלליות ע”י צמצום שלהם לקטעים סופיים, כלומר  <span> $f_M(x):=f(x)\cdot \chi_{[-M,M]}$ </span>  אבל לא נכנס לפרטים האלו כאן.</p>
+      <p>הרעיון באופן כללי הוא החלפת סדרי אינטגרציה, ואם מותר לנו לעשות אותם אז “קל” להראות שהטענה נכונה.</p>
 
-      <p>נתחיל גם עם ההנחה שגבולות אינטגרציה ששואפים ל  <span> $\pm \infty$ </span>  באותו קצב, ואז נראה איך נפתרים מזה. תחת ההנחות האלו נקבל ש</p>
+      <p>מבחינה פורמלית, נראה תחילה שכאשר ל  <span> $f,g$ </span>  יש תומכים סופיים, כלומר קיים  <span> $M>0$ </span>  מספיק גדול כך ש  <span> $f(x)=g(x)=0$ </span>  עבור  <span> $|x|>M$ </span> , אז ההחלפות מותרות. באופן כללי, יש צורך להשתמש בקירובים של פונקציות כלליות ע”י צמצום שלהם לקטעים סופיים, כלומר  <span> $f_M(x):=f(x)\cdot \chi_{[-M,M]}$ </span>  אבל לא נכנס לפרטים האלו כאן.</p>
+
+      <p>בנוסף, נתחיל גם עם ההנחה שגבולות אינטגרציה ששואפים ל  <span> $\pm \infty$ </span>  באותו קצב, ואז נראה איך נפתרים מזה. תחת ההנחות האלו נקבל ש</p>
 
       <p> <span> 
 $$\align{\int_{-N}^N \hat{f}(\omega) \overline{\hat{g}(\omega)} \dom & = \frac{1}{4\pi^2} \int_{-N}^N \left(\int_{-\infty}^\infty f(x)e^{-i \omega x} \dx \overline{\int_{-\infty}^\infty g(y)e^{-i \omega y} \dy} \right)\dom \\ & = \frac{1}{4\pi^2} \int_{-N}^N \left(\int_{-M}^M f(x)e^{-i \omega x} \dx \overline{\int_{-M}^M g(y)e^{-i \omega y} \dy} \right)\dom \\ & = \frac{1}{2\pi} \int_{-M}^M \int_{-M}^M  f(x)\overline{g(y)} \left( \int_{-N}^N\frac{e^{-i \omega (x-y)}}{2\pi} \dom \right)\dx \dy} $$
@@ -403,9 +417,9 @@ $$.(*)=\frac{1}{2\pi} \int_{-M}^M f(x)\overline{g(x)} \dx=\frac{1}{2\pi} \int_{-
 $$.\limfi{N}\int_{-N}^N \abs{\hat{f}(\omega)}^2 \dom = \frac{1}{2\pi} \int_{-\infty}^\infty \abs{f(x)}^2 \dx$$
  </span> </p>
 
-      <p>פה האינטגרלים הם על פונקציות אי שליליות, ולכן הקצב שאיפה ל  <span> $\pm \infty$ </span>  בגבולות האינטגרציה לא משנה את ההתכנסות, ולכן נקבל ש  <span> $\norm {\hat{f}}_2^2= \frac{1}{2\pi}\norm{f}_2^2$ </span> .</p>
+      <p>מאחר ופה האינטגרלים הם על פונקציות אי שליליות, קצב השאיפה ל  <span> $\pm \infty$ </span>  בגבולות האינטגרציה לא משנה את ההתכנסות, ולכן נקבל ש  <span> $\norm {\hat{f}}_2^2= \frac{1}{2\pi}\norm{f}_2^2< \infty$ </span> , וזה כבר מראה ש  <span> $\hat{f}\in E^2(\RR)$ </span> , וכמובן גם  <span> $\hat{g}\in E^2(\RR)$ </span> .</p>
 
-      <p>אם נחזור עכשיו לחישוב הראשון למעלה, אז נוכל להשתמש באי שוויון קושי שוורץ כדי לקבל ש</p>
+      <p>אם נחזור עכשיו לחישוב הראשון למעלה, אז נוכל להשתמש באי שוויון קושי שוורץ (או בכך שהמכפלה הפנימית מוגדרת היטב על  <span> $E^2(\RR)$ </span>  ), כדי לקבל ש</p>
 
       <p> <span> 
 $$.\int_{-N}^N \abs{\hat{f}(\omega) \overline{\hat{g}(\omega)}} \dom =\angles{|\hat{f}|,|\hat{g}|} \leq \norm{\hat{f}}_2 \norm{\hat{g}}_2 = \frac{1}{4\pi^2}\norm{f}_2 \norm{g}_2 <  \infty $$
@@ -461,6 +475,87 @@ $$.f_a(x)=\chi_{[-a,a]}(x)=\cases{1 & |x|\leq a \\ 0 & |x| > a}$$
       <p> <span> 
 $$\align{\int_{-\infty}^\infty \frac{\sin(\omega a)}{\omega \pi} \cdot \frac{\sin(\omega b)}{\omega \pi} \dom &= \frac{1}{2\pi} \int_{-\infty}^\infty f_a(x) f_b(x) \dx = \frac{1}{2\pi} \int_{-\infty}^\infty f_{\min(a,b)}(x) \dx \\&= \frac{\min(a,b)}{\pi}}$$
  </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<h1 id="התמרות-פורייה-ב-">התמרות פורייה ב  <span> $E^2 (\RR)$ </span> </h1>
+
+<p>אם נתונה פונקציה  <span> $f\in E^2(\RR)$ </span>  שלא ידוע מראש שהיא גם ב  <span> $E^1(\RR)$ </span> , אז באופן כללי אין סיבה שהאינטגרל בהתמרת פורייה יתכנס. למרות זאת, יש דרך להרחיב את ההגדרה של התמרת פורייה גם לפונקציות כאלו.</p>
+
+<div class="callout" data-callout="הגדרה">
+
+  <div class="callout-title">התמרת פורייה ב  <span> $E^2(\RR)$ </span> </div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>תהא  <span> $f\in E^2(\RR)$ </span>  ועבור  <span> $M>0$ </span>  נסמן</p>
+
+      <p> <span> 
+$$.f_M(x):=f(x)\cdot \chi_{[-M,M]}(x)=\cases{f(x) & |x|\leq M \\ 0 & |x|>M}$$
+ </span> </p>
+
+      <p>הפונקציות  <span> $f_M(x)$ </span>  נמצאות ב  <span> $E^1(\RR) \cap E^2(\RR)$ </span>  ונגדיר את התמרת פורייה של  <span> $f$ </span>  להיות</p>
+
+      <p> <span> 
+$$\hat{f}(\omega) = \limfi{M} \hat{f}_M(\omega)= \limfi{M} \frac{1}{2\pi} \int_{-M}^M f(x)e^{-i \omega x}\dx$$
+ </span> </p>
+
+      <p>כאשר הגבול הוא בנורמת  <span> $\norm{\cdot}_2$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הערה">
+
+  <div class="callout-title">הערה:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>דבר ראשון כדאי לשים לב שקל להראות ש  <span> $f_M$ </span>  אינטגרביליות בהחלט, כי</p>
+
+      <p> <span> 
+$$\norm{f_M}_1=\int_{-\infty}^\infty \abs{f_M} \dx=\int_{-M}^M \abs{f}\cdot 1 \dx\overset{(*)}{\leq} \sqrt{\int_{-M}^M |f|^2(x)\dx \int_{-M}^M |1|^2(x)\dx}\leq \norm{f}_2 \sqrt{2M} $$
+ </span> </p>
+
+      <p>כאשר האי שוויון ב  <span> $(*)$ </span>  הוא אי שוויון קושי שוורץ.</p>
+
+      <p>החלק היותר מסובך בהגדרה, הוא שאם  <span> $f$ </span>  הייתה מראש ב  <span> $E^1(\RR)$ </span>  אז בעצם עכשיו יש לנו שתי הגדרות להתמרה שלה, וצריך להראות ששתיהן מחזירות את אותה פונקציה. הטענה הזאת נכונה, אבל לא נוכיח אותה פה.</p>
+
+      <p>לבסוף, ההתמרה של פונקציה ב  <span> $E^2(\RR)$ </span>  כמו שמוגדרת למעלה, מחזירה גבול של פונקציות אינטגרבילית בריבוע, שהוא בפרט פונקציה אינטגרבילית בריבוע שהן לא מוגדרות <strong>נקודתית</strong>. כלומר כאשר אנחנו אומרים ששתי פונקציות כאלו הן שוות, אז הן שוות כמעט לכל  <span> $x$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<p>תחת ההגדרה הזאת, מקבלים שהתמרת פורייה לוקחת פונקציות מהמרחב הפונקציות האינטגרביליות בריבוע לעצמו והתכונות שתיארנו עד עכשיו להתמרה עדיין נכונות, ובפרט ההתמרה ההפוכה ומשפט פלנשרל.</p>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title">דוגמא: הפונקציה  <span> $f(x)=\frac{\sin(x)}{x}$ </span> </div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>הפונקציה  <span> $f(x)$ </span>  היא לא אינטגרבילית בהחלט אבל היא כן אינטגרבילית בריבוע כי  <span> $|f(x)|^2\leq \frac{1}{x^2}$ </span>  והאינטגרל של הפונקציות הזאת מתכנס באינסוף.</p>
+
+      <p>לפי ההגדרה החדשה שלנו מתקיים ש</p>
+
+      <p> <span> 
+$$.\hat{f}(\omega)=\limfi{M} \frac{1}{2\pi} \int_{-M}^M \frac{\sin(x)}{x}e^{-i \omega x}\dx$$
+ </span> </p>
+
+      <p>החישוב עצמו הוא די מסובך, אבל למזלנו כבר נתקלנו בפונקציה הזאת ואנחנו יודעים ש  <span> $\cf[\chi_{[-T,T]}](\omega)=\frac{\sin(\omega T)}{\omega \pi}$ </span>  , ולכן בפרט   <span> $\pi\cf[\chi_{[-1,1]}](\omega)=\frac{\sin(\omega)}{\omega}$ </span> .</p>
+
+      <p>אם נשתמש במשפט ההתמרה ההפוכה נקבל ש</p>
+
+      <p> <span> 
+$$.\cf\left[\frac{\sin(\omega)}{\omega}\right](x) = \pi \cf\left[\cf\left[\chi_{[-1,1]}\right]\right](x) = \frac{1}{2} \chi_{[-1,1]}(-x) = \frac{1}{2} \chi_{[-1,1]}(x)$$
+ </span> </p>
+
+      <p>ובאופן כללי יותר נקבל ש</p>
+
+      <p> <span> 
+$$.\cf\left[\frac{\sin(\omega T)}{\omega}\right](x) = \frac{1}{2} \chi_{[-T,T]}(x)$$
+ </span> </p>
+
     </div>
   </div>
 </div>
@@ -528,6 +623,10 @@ window.MathJax = {
                 </a>
 
                 
+                    <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution" class="navigation navigation-next navigation-unique" aria-label="Next page: קונבולוציה">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
             </div>
         </div>
 
@@ -539,6 +638,15 @@ window.MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "קונבולוציה",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_FourierHebrew/hebrew_convolution.md",
+            "ref": "_FourierHebrew/hebrew_convolution.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -629,12 +737,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/hebrew_plancharel.md",
-        "mtime": "2024-02-24 11:19:07 +0200",
+        "mtime": "2024-02-28 18:53:41 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-02-24 11:19:07 +0200"
+        "time": "2024-02-28 18:53:41 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

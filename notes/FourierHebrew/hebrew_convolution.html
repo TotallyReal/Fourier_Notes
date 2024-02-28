@@ -1,0 +1,918 @@
+<!DOCTYPE HTML>
+<html lang="en" dir="rtl">
+    <head><meta charset="UTF-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>קונבולוציה · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Learn Fourier Analysis
+"><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Ofir David"><link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/style.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-fontsettings/website.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/search.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-splitter/splitter.css">
+
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/rouge/colorful.css">
+
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/custom.css">
+<link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/custom-local.css">
+
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Fourier_Notes/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
+<link rel="shortcut icon" href="/Fourier_Notes//assets/gitbook/images/favicon.ico" type="image/x-icon">
+
+<link rel="stylesheet" href="/Fourier_Notes/css/style.css"><link rel="stylesheet" href="/Fourier_Notes/css/general.css"><link rel="stylesheet" href="/Fourier_Notes/css/hebrew.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+        <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel" />
+
+        
+    </head>
+    <body  class="hebrew">
+        <div id="hiddenDiv" style="display: none;">
+            $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\cases}[1]{\begin{cases} #1 \end{cases}}
+\newcommand{\align}[1]{\begin{align} #1 \end{align}}
+\newcommand{\limfi}[1]{\displaystyle{\lim_{#1\to\infty}}}
+\newcommand{\limto}[2]{\displaystyle{\lim_{#1\to#2}}}
+
+\newcommand{\normto}{\overset{\left| \cdot \right|}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\cf}{\mathcal{F}}
+\newcommand{\cl}{\mathcal{L}}
+
+\newcommand{\dom}{\operatorname{d\omega}}
+\newcommand{\dx}{\operatorname{dx}}
+\newcommand{\dy}{\operatorname{dy}}
+\newcommand{\dz}{\operatorname{dz}}
+\newcommand{\du}{\operatorname{du}}
+\newcommand{\dv}{\operatorname{dv}}
+\newcommand{\dt}{\operatorname{dt}}
+\newcommand{\ds}{\operatorname{ds}}
+
+\newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
+        </div>
+        <div class="book">
+<div class="book-summary">
+    <script type="text/javascript">
+        // Fixes the page links scroll problem on both desktop and mobile browsers
+        function pageScrollToTop(element) {
+            // both mobile and non-mobile
+            $('div.body-inner').animate({scrollTop: 0});
+            $(element).parent().find('li>ul>li').removeClass('active');
+            return true;  // propagate
+        }
+        // Fixes the anchor links scroll problem on mobile browsers
+        function mobilePageScrollToAnchor(element) {
+            $(element).closest('li.chapter').find('ul>li').removeClass('active');
+            $(element).parent().addClass('active');
+            if ($(document).width() <= 1240) {
+                $('div.body-inner').animate({scrollTop: $($(element).attr('href')).get(0).offsetTop});
+            }
+            return true;
+        }
+    </script>
+
+    <nav role="navigation">
+        <div id="book-search-input" role="search">
+            <input type="text" placeholder="Type to search" />
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="/Fourier_Notes/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+
+            
+            
+
+            <li class="chapter " data-level="1.1" data-path="/Fourier_Notes">
+                <a href="/Fourier_Notes/" onclick="pageScrollToTop(this)">
+                    Fourier Analysis notes
+                </a>
+            </li>
+            <li class="divider"></li>
+
+            
+                <!-- <p>Fourier</p> -->
+                
+                    
+
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Course%20Information">
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Course%20Information" onclick="pageScrollToTop(this)">
+                                1. Course notes in Fourier Analysis
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Motivation">
+                            <a href="/Fourier_Notes/notes/Fourier/Motivation" onclick="pageScrollToTop(this)">
+                                2. Motivation
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder">
+                            <a href="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder" onclick="pageScrollToTop(this)">
+                                3. Inner product spaces - a reminder
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder">
+                            <a href="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder" onclick="pageScrollToTop(this)">
+                                4. Orthogonal sets - a reminder
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis">
+                            <a href="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis" onclick="pageScrollToTop(this)">
+                                5. Infinite Orthonormal basis
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Series">
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Series" onclick="pageScrollToTop(this)">
+                                6. Fourier Series
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Transform">
+                            <a href="/Fourier_Notes/notes/Fourier/Fourier%20Transform" onclick="pageScrollToTop(this)">
+                                7. Fourier Transform
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+                <!-- <p>FourierHebrew</p> -->
+                
+                    
+
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" onclick="pageScrollToTop(this)">
+                                1. מוטיבציה - התמרת פורייה
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/basic%20properties">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/basic%20properties" onclick="pageScrollToTop(this)">
+                                2. תכונות בסיסיות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function" onclick="pageScrollToTop(this)">
+                                3. התמרת פורייה ההפוכה
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel" onclick="pageScrollToTop(this)">
+                                4. נוסחת פלנשרל
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter active" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution" onclick="pageScrollToTop(this)">
+                                5. קונבולוציה
+                            </a>
+                        </li>
+                    
+
+                    
+                        <li class="divider"></li>
+                    
+                
+            
+                <!-- <p>posts</p> -->
+                
+                    
+
+                    
+
+                    
+                
+            
+
+            <li class="divider"></li>
+            <li class="chapter">Inside this page:</li>
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution">
+                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
+                    קונבולוציה
+                </a>
+                
+                    <ul><li ><a href="#מה-זו-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>מה זו קונבולוציה</a></li><li ><a href="#קונבולוציה-של-פונקציות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>קונבולוציה של פונקציות</a></li><li ><a href="#תכונות-של-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>תכונות של קונבולוציה</a></li><li ><a href="#התמרת-פורייה-של-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה של קונבולוציה</a></li></ul>
+
+                
+            </li>
+            <!--
+            
+
+            
+
+            <li class="divider"></li>
+            <li>Inside this page:</li>
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution">
+                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
+                    קונבולוציה
+                </a>
+                
+                    <ul><li ><a href="#מה-זו-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>מה זו קונבולוציה</a></li><li ><a href="#קונבולוציה-של-פונקציות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>קונבולוציה של פונקציות</a></li><li ><a href="#תכונות-של-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>תכונות של קונבולוציה</a></li><li ><a href="#התמרת-פורייה-של-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה של קונבולוציה</a></li></ul>
+
+                
+            </li>
+        -->
+        </ul>
+    </nav>
+</div>
+<div class="book-body">
+            <div class="book-header" role="navigation">
+                <!-- Title -->
+                <h1>
+                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                    
+                        <a href="." >קונבולוציה</a>
+                    
+                </h1>
+            </div>
+
+            <div class="body-inner">
+                <div id="hiddenDiv" style="display: none;">
+                    $\newcommand{\angles}[1]{\left\langle #1 \right\rangle }
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+\newcommand{\cases}[1]{\begin{cases} #1 \end{cases}}
+\newcommand{\align}[1]{\begin{align} #1 \end{align}}
+\newcommand{\limfi}[1]{\displaystyle{\lim_{#1\to\infty}}}
+\newcommand{\limto}[2]{\displaystyle{\lim_{#1\to#2}}}
+
+\newcommand{\normto}{\overset{\left| \cdot \right|}{\longrightarrow}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\cf}{\mathcal{F}}
+\newcommand{\cl}{\mathcal{L}}
+
+\newcommand{\dom}{\operatorname{d\omega}}
+\newcommand{\dx}{\operatorname{dx}}
+\newcommand{\dy}{\operatorname{dy}}
+\newcommand{\dz}{\operatorname{dz}}
+\newcommand{\du}{\operatorname{du}}
+\newcommand{\dv}{\operatorname{dv}}
+\newcommand{\dt}{\operatorname{dt}}
+\newcommand{\ds}{\operatorname{ds}}
+
+\newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
+                </div><!-- Body.html -->
+<div class="page-wrapper" tabindex="-1" role="main">
+    
+
+    <div class="page-inner">
+        <div id="book-search-results">
+            <div class="search-noresults">
+                <section class="normal markdown-section">
+                    
+                    <h1 id="/notes/FourierHebrew/hebrew_convolution" class="centered">קונבולוציה</h1>
+                    <hr/>
+                    <h1 id="מה-זו-קונבולוציה">מה זו קונבולוציה</h1>
+
+<p>ראינו כבר הרבה תכונות מעניינות של התמרת פורייה, ובפרט ראינו שהיא לוקחת פעולות שאנו רגילים לעבור איתם כל חיבור, כפל, סיבוב, הצמדה וכו’ פחות או יותר לעצמן. פעולה נוספת מאוד חשובה היא כפל של פונקציות, ונרצה להראות איך לבטא את ההתמרה  <span> $\widehat{f\cdot g}$ </span>  באמצעות ההתמרות  <span> $\hat{f},\hat{g}$ </span> . פה מגיעה פעולת הקונבולוציה, אבל לפני שנגדיר אותה ונראה אותה מופיעה בהתמרות האלו, בואו נראה שבעצם אנחנו מכירים אותה כבר.
+אחת ממשפחות הפונקציות הכי פשוטה שאנחנו מכירים היא משפחת הפולינומים, כלומר פונקציות מהצורה:
+ <span> 
+$$.f(x)=a_0+a_1 x + a_2 x^2 +\cdots +a_d x^d = \sum_0^d a_k x^k$$
+ </span> 
+גם פה במובן מסויים יש לנו “התמרה”. אם מתחילים עם הפונקציה  <span> $f$ </span>  אז המקביל למקדמי פורייה אלו פשוט המקדמים  <span> $a_k$ </span>  ו”ההתמרה ההפוכה” זו הקומבינציה שלהם שבאגף ימין בביטוי למעלה.
+ <span> 
+$$\align{f&\overset{'\cf'}{\longrightarrow}(a_0,a_1,...,a_d)\\. \sum_0^da_kx^k & \overset{'\cf^{-1}\;'}{\longleftarrow}(a_0,a_1,...,a_d)}$$
+ </span> </p>
+
+<p>אם נתון לנו פולינום נוסף
+ <span> 
+$$,g(x)=b_0+b_1 x + b_2 x^2 +\cdots +b_d x^d = \sum_0^d b_k x^k$$
+ </span> 
+אז הפונקציה  <span> $f(x)g(x)$ </span>  היא גם פולינום, ולכן נוכל לשאול איך מבטאים את המקדמים שלה ע”י המקדמים  <span> $a_k,b_k$ </span>  של  <span> $f(x),g(x)$ </span> . במקרה הזה נקבל ש :
+ <span> 
+$$\align{f(x)g(x) & = \left(\sum_{i=0}^d a_i x^i\right)\left(\sum_{j=0}^d b_j x^j\right) = \sum_{i=0}^d\sum_{j=0}^d a_i b_j \cdot x^{i+j} = \sum_{k=0}^{2d} \left(\sum_{i+j=k} a_i b_j\right) \cdot x^{k} = \sum_{k=0}^{2d} \left(\sum_{i} a_i b_{k-i}\right) \cdot x^{k} \\ &= a_0b_0+(a_0b_1+a_1b_0)x+(a_0b_2+a_1b_1+a_2b_0)x^2+\cdots +(a_{d-1}b_d+a_db_{d-1})x^{2d-1}+a_db_dx^{2d}}$$
+ </span> </p>
+
+<p>כלומר, המקדם של  <span> $x^k$ </span>  הוא סכום של מכפלות של המקדמים של  <span> $f,g$ </span>  כך שהאינדקסים שלהם נסכמים ל  <span> $k$ </span> . הסיבה למבנה המעניין הזה הוא בעצם חוקי החזקות שהמונומים מקיימים, כלומר  <span> $x^i x^j = x^{i+j}$ </span> .</p>
+
+<p>כדי לקבל קצת יותר אינטואיציה לכפל הזה, ולקונבולוציה שעוד מעט נגדיר, נניח שהפולינומים הם מדרגה  <span> $d=2$ </span>  ורוצים למצוא את המקדם החופשי. נכתוב מקדמי הפולינומים בטבלה, כאשר המקדמים של  <span> $f$ </span>  גדלים באינדקס כאשר זזים ימינה, והמקדמים של  <span> $g$ </span>  קטנים באינדקס, ואם נשים אותה כך שהמקדם החופשי של  <span> $f$ </span>  יהיה מעל המקדם החופשי של  <span> $g$ </span>  אז רק צריך לכפול את התא בשורה הראשונה (של  <span> $f$ </span> ) בתא מתחתיו (של  <span> $g$ </span> ) לכתוב בתא בשורה השלישית ואז לסכום את השורה השלישית:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> <span> $a_2x^2$ </span> </th>
+      <th style="text-align: center"> <span> $a_1x^1$ </span> </th>
+      <th style="text-align: center"> <span> $a_0 x^0$ </span> </th>
+      <th style="text-align: center">0</th>
+      <th style="text-align: center">0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center"> <span> $b_0 x^0$ </span> </td>
+      <td style="text-align: center"> <span> $b_1 x^1$ </span> </td>
+      <td style="text-align: center"> <span> $b_2x^2$ </span> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center"> <span> $a_0b_0x^0$ </span> </td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>אם נרצה את המקדם של  <span> $x$ </span> , אז זה יהיה אותו הדבר, רק צריך להזיז את כל המקדמים בשורה הראשונה תא אחד שמאלה:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"> <span> $a_2x^2$ </span> </th>
+      <th style="text-align: center"> <span> $a_1x^1$ </span> </th>
+      <th style="text-align: center"> <span> $a_0 x^0$ </span> </th>
+      <th style="text-align: center">0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center"> <span> $b_0 x^0$ </span> </td>
+      <td style="text-align: center"> <span> $b_1 x^1$ </span> </td>
+      <td style="text-align: center"> <span> $b_2x^2$ </span> </td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center"> <span> $a_1b_0x^1$ </span> </td>
+      <td style="text-align: center"> <span> $a_0b_1x^1$ </span> </td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>ואם נרצה את המקדם של  <span> $x^2$ </span>  אז נזיז אותם עוד תא שמאלה וכך הלאה:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">0</th>
+      <th style="text-align: center"> <span> $a_2x^2$ </span> </th>
+      <th style="text-align: center"> <span> $a_1x^1$ </span> </th>
+      <th style="text-align: center"> <span> $a_0 x^0$ </span> </th>
+      <th style="text-align: center">0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center"> <span> $b_0 x^0$ </span> </td>
+      <td style="text-align: center"> <span> $b_1 x^1$ </span> </td>
+      <td style="text-align: center"> <span> $b_2x^2$ </span> </td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center"> <span> $a_2b_0x^2$ </span> </td>
+      <td style="text-align: center"> <span> $a_1b_1x^2$ </span> </td>
+      <td style="text-align: center"> <span> $a_0b_2x^2$ </span> </td>
+      <td style="text-align: center">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>מאחר וחוקי החזקות האלו מתקיים גם עבור האקספוננטים שלנו, נקבל משהו דומה, פרט לכך שבמקום מקדמים דיסקרטים, יש לנו מקדמים רציפים.</p>
+
+<h1 id="קונבולוציה-של-פונקציות">קונבולוציה של פונקציות</h1>
+
+<div class="callout" data-callout="הגדרה">
+
+  <div class="callout-title">הגדרה: קונבולוציה:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>עבור שתי פונקציות  <span> $f,g:\RR \to \CC$ </span>  נגדיר את הקונבולוציה שלהן  <span> $(f*g)$ </span>  להיות האינטגרל (כאשר הוא מוגדר):</p>
+
+      <p> <span> 
+$$.(f*g)(x)=\int_{-\infty}^\infty f(x-y)g(y) \dy$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+<p>נשים לב תחילה ש”סכום האינדקסים” בתוך הקונבולוציה הוא תמיד  <span> $(x-y)+y=x$ </span>  בדיוק כמו שבכפל פולינומים הסכום תמיד היה  <span> $(k-i)+i=k$ </span> .
+ההגדרה של הקונבולוציה דומה להגדרה של מכפלה פנימית, רק במקום לכפול באינטגרנד ב  <span> $f(y)$ </span>  אנחנו עושים שיקוף  <span> $y\mapsto-y$ </span>  ואז הזזה ב  <span> $x$ </span> . בדומה למכפלה הפנימית, יש שני מקרים בהם הקונבולוציה מוגדרת לכל  <span> $x$ </span>  עם הוכחות דומה לאלו מהמכפלה הפנימית:</p>
+<ul>
+  <li>אם אחת מהפונקציות היא חסומה והשנייה אינטגרבילית בהחלט (כלומר ב  <span> $E^\infty(\RR)$ </span>  ו  <span> $E^1(\RR)$ </span>  בהתאם).</li>
+  <li>אם שתי הפונקציות נמצאות ב  <span> $E^2(\RR)$ </span> .
+מקרה נוסף מעניין שדורש קצת יותר מאמץ הוא כאשר שתי הפונקציות הן ב  <span> $E^1(\RR)$ </span>  אך לפני שנוכיח את זה, בואו נראה דוגמא בסיסית בשביל האינטואיציה.</li>
+</ul>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title">דוגמא: קונבולוציה של פונקציות מציינות</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>נסתכל על שתי פונקציות מציינות של קטעים, הראשונה של  <span> $[-1,1]$ </span>  והשנייה של  <span> $[-h,h]$ </span> :</p>
+
+      <p> <span> 
+$$\align{f(x)=\chi_{[-1,1]}(x)=\cases{1&|x|\leq 1 \\ 0 & |x|>1} \\ .g(x)=\chi_{[-h,h]}(x)=\cases{1&|x|\leq h \\ 0 & |x|>h}}$$
+ </span> </p>
+
+      <p>בחישוב של הקונבולוציה, אנחנו מכפילים בין שתי הפונקציות ומבצעים אינטגרציה. הפונקציה  <span> $g(y)$ </span>  שמופיעה באינטגרל “לא זזה” כאשר  <span> $x$ </span>  משתנה, בעוד שהפונקציה  <span> $f(x-y)$ </span>  כן. מאחר ושתיהן מתארות קטע, המכפלה שלהן מתארת את החיתוך, ואז האינטגרל מתאר את אורך הקטע.</p>
+
+      <p>בתכנה למטה מ<a href="https://www.desmos.com/calculator/er3rndwu4n">דסמוס</a> אפשר לראות באדום את הפונקציה  <span> $g$ </span>  בירוק את  <span> $f$ </span>  והגרף השחור הוא של הקונבולוציה.</p>
+
+      <iframe src="https://www.desmos.com/calculator/96tqlwyply?embed" width="800" height="400" style="border: 1px solid #ccc" frameborder="0"></iframe>
+
+      <p>נסו לשחק עם הפרמטרים  <span> $x,h$ </span>  ולראות שאתם מבינים למה גרף הקונבולוציה נראה כמו שהוא נראה.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="תרגיל">
+
+  <div class="callout-title">תרגיל:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>חשבו את הקונבולוציה של שתי פונקציות מציינות  <span> $f(x)=\chi_{[-a,a]}$ </span>  ו  <span> $g(x)=\chi_{[-b,b]}$ </span>  כפונקציה של הפרמטרים  <span> $a,b\geq 0$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<h1 id="תכונות-של-קונבולוציה">תכונות של קונבולוציה</h1>
+
+<p>לפני שנתחיל עם תכונות, נזכיר את משפט פוביני טונלי שעוזר בחישוב אינטגרלים:</p>
+
+<div class="callout" data-callout="משפט">
+
+  <div class="callout-title">משפט פוביני טונלי.</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>תהא  <span> $H(x,y):\RR^2\to \CC$ </span>  פונקציה מדידה, אז</p>
+
+      <p> <span> 
+$$\int_{-\infty}^\infty\left(\int_{-\infty}^\infty |H(x,y)| \dx\right)\dy = \int_{-\infty}^\infty\left(\int_{-\infty}^\infty |H(x,y)| \dy\right)\dx = \int_{\RR^2} |H(x,y)| \operatorname{d(x,y)}$$
+ </span> </p>
+
+      <p>בנוסף, אם האינטגרלים האלו סופיים אז</p>
+
+      <p> <span> 
+$$\int_{-\infty}^\infty\left(\int_{-\infty}^\infty H(x,y) \dx\right)\dy = \int_{-\infty}^\infty\left(\int_{-\infty}^\infty H(x,y) \dy\right)\dx = \int_{\RR^2} H(x,y) \operatorname{d(x,y)}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+<p>באמצעות משפט פוביני טונלי, אנחנו יכולים להראות סגירות לכפל קונבולוציה.</p>
+
+<div class="callout" data-callout="משפט">
+
+  <div class="callout-title">משפט: קונבולוציה של פונקציות ב  <span> $E^1(\RR)$ </span> .</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>יהיו  <span> $f,g\in E^1(\RR)$ </span> . אז הקונבולוציה  <span> $(f*g)(x)$ </span>  מוגדרת כמעט לכל  <span> $x$ </span>  והיא אינטגרבילית בהחלט.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הוכחה">
+
+  <div class="callout-title">הוכחה:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>אם נניח שהקונבולוציה מוגדרת לכל  <span> $x$ </span> , ונרצה להראות שהיא אינטגרבילית בהחלט, אז בגלל ש</p>
+
+      <p> <span> 
+$$\int_{-\infty}^\infty \abs{(f*g)(x)}\dx = \int_{-\infty}^\infty \abs{\int_{-\infty}^\infty f(x-y)g(y)\dy}\dx \leq \int_{-\infty}^\infty  \int_{-\infty}^\infty \abs{f(x-y)}\abs{g(y)} \dy \dx$$
+ </span> </p>
+
+      <p>מספיק שנראה שהאינטגרל האחרון הוא חסום ולא אינסוף. מצד שני, אם האינטגרל האחרון הוא סופי, זה אומר שהאינטגרל הראשון הוא סופי ובפרט  <span> $(f*g)(x)$ </span>  מוגדר וסופי כמעט לכל  <span> $x$ </span> .</p>
+
+      <p>נשים לב שהאינטגרנד בצד ימין הוא על פונקציה אי שלילית ולכן ניתן להפעיל את פוביני ולקבל שהוא שווה ל</p>
+
+      <p> <span> 
+$$.\int_{-\infty}^\infty  \abs{g(y)}\left(\int_{-\infty}^\infty \abs{f(x-y)} \dx\right) \dy\overset{t=x-y}{=}\int_{-\infty}^\infty  \abs{g(y)}\left(\int_{-\infty}^\infty \abs{f(t)} \dt\right) \dy = \norm{f}_1\norm{g}_1< \infty$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הערה" collapsible="hide">
+
+  <div class="callout-title">הערה:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <ol>
+        <li>
+          <p>כדאי לשים לב שאינטגרל של פונקציה יכול להיות לא קיים לא רק בגלל אי התכנסות בגבולות  <span> $\pm \infty$ </span>   של האינטגרציה, אלא גם בגלל שהפונקציה עצמה לא אינטגרבילית. למשל, עבור אינטגרל רימן, פונקציית דיריכלה המוגדרת ע”י  <span> $D(x)=\cases{1 & x\in \QQ \\ 0 & else}$ </span>  היא כלל לא אינטגרבילית ללא קשר לגבולות האינטגרציה. דילגנו על החלק הזה בהוכחה, אבל באופן כללי זה גם משהו שצריך להראות.</p>
+        </li>
+        <li>
+          <p>בנוסף, חשוב לשים לב שמה שמראים למעלה זה ש  <span> $\abs{(f*g)(x)}$ </span>  מוגדרת וסופית <strong>כמעט לכל  <span> $x$ </span> </strong> ולא לכל  <span> $x$ </span> . למשל, נסתכל על הפונקציה  <span> $f(x)=\frac{1}{\sqrt{|x|+x^{10}}}$ </span> . זוהי פונקציה רציפה שאינטגרבילית בהחלט מאחר ועבור  <span> $x$ </span> -ים קטנים מתקיים ש  <span> $f(x)\sim \frac{1}{\sqrt{|x|}}$ </span>  שהאינטגרל שלה מתכנס ליד הראשית, ועבור  <span> $x$ </span> -ים גדולים מתקיים ש  <span> $f(x)\sim \frac{1}{\abs{x}^5}$ </span>  שהאינטגרל שלה מתכנס באינסוף. המשפט למעלה מראה שהקונבולוציה  <span> $(f*f)(x)$ </span>  קיימת כמעט לכל  <span> $x$ </span> , אבל אם נחשב את הקונבולוציה בראשית נקבל ש</p>
+
+          <p> <span> 
+$$,(f*f)(0)=\int_{-\infty}^\infty f(-y)f(y)\dy=\int_{-\infty}^\infty f(y)^2\dy=\int_{-\infty}^\infty \frac{1}{|y|+y^{10}}\dy=\infty$$
+ </span> </p>
+
+          <p>וזה בגלל שעבור  <span> $y$ </span> -ים קטנים מתקיים ש  <span> $f(y)^2 \sim \frac{1}{|y|}$ </span> . לעומת זאת, לכל  <span> $x\neq 0$ </span>  הקבונולוציה  <span> $(f*f)(x)$ </span>  מוגדרת וסופית.</p>
+
+          <p>ניתן לראות את זה ב<a href="https://www.desmos.com/calculator/subt8zphlu">תכנת דסמוס</a> למטה: בסגול רואים את הפונקציה  <span> $f(y)$ </span>  בשחור את  <span> $f(x_0-y)$ </span>  ובאדום את המכפלה שלהם שעליה רוצים לעשות אינטגרציה. שימו לב שניתן להזיז את הנקודה האדומה למטה וכך לשלוט על  <span> $x_0$ </span> . כל עוד  <span> $x_0\neq 0$ </span>  השטח יחסית קטן, ורק כאשר  <span> $x_0=0$ </span>  אז שני המקומות בהן  <span> $f(y),f(x_0-y)$ </span>  גדלים לאינסוף נופלים אחד על השני, ואז גם השטח הוא אינסופי.</p>
+
+          <iframe src="https://www.desmos.com/calculator/subt8zphlu?embed" width="800" height="500" style="border: 1px solid #ccc" frameborder="0"></iframe>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
+<p>בשלב הזה אנחנו יודעים שעבור פונקציות במרחב  <span> $E^1(\RR)$ </span>  ניתן לחבר אותן ולכפול בסקלר (זה מרחב ווקטורי) ועכשיו גם אפשר לעשות בינהן קונבולוציה. כבר ראינו במקרה של פולינומים איך אפשר לכפל קונבולוציה מתוך מכפלה, ומסתבר שיש לה גם תכונות שאנחנו רגילים לשייך לכפל.</p>
+
+<div class="callout" data-callout="טענה">
+
+  <div class="callout-title">תכונות אריתמטיות של קונבולוציה</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>יהיו  <span> $f,g,h\in E^1(\RR)$ </span> , ו  <span> $\alpha \in \CC$ </span>  סקלר, אז:</p>
+
+      <ol>
+        <li>
+          <p>אסוציאטיביות:  <span> $f*(g*h)=(f*g)*h$ </span> .</p>
+        </li>
+        <li>
+          <p>קומוטטיביות:  <span> $f*g=g*f$ </span> .</p>
+        </li>
+        <li>
+          <p>לינאריות (דיסטריביוטיביות + כפל בסקלר):  <span> $f*(\alpha g + h) = \alpha f*g + f*h$ </span> .</p>
+        </li>
+        <li>
+          <p>נגזרת: אם  <span> $f$ </span>  גזירה ואם  <span> $f*g$ </span>  קיימת וגזירה, אז  <span> $(f*g)'(x)=(f'*g)(x)$ </span> .</p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
+<h1 id="התמרת-פורייה-של-קונבולוציה">התמרת פורייה של קונבולוציה</h1>
+
+<div class="callout" data-callout="משפט">
+
+  <div class="callout-title">משפט הקונבולוציה</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>יהיו  <span> $f,g\in E^1(\RR)$ </span> , אז</p>
+
+      <p> <span> 
+$$.\widehat{f*g}(\omega) = 2\pi\hat {f}(\omega) \cdot \hat{g}(\omega)$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הוכחה">
+
+  <div class="callout-title">הוכחה:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>נשים לב תחילה שבגלל ש  <span> $f,g\in E^1(\RR)$ </span>  אז אנחנו יודעים ש  <span> $f*g$ </span>  אינטגרבילית בהחלט ולכן יש לה התמרת פורייה, ששווה ל:</p>
+
+      <p> <span> 
+$$.\widehat{f*g}(\omega)= \frac{1}{2\pi} \int_{-\infty}^{\infty} (f*g)(x)e^{-i\omega x}\dx= \frac{1}{2\pi} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(x-y)g(y)e^{-i\omega x}\dy\dx$$
+ </span> </p>
+
+      <p>כבר ראינו שהאינטגרל הזה מתכנס בהחלט ולכן מותר לנו להחליף סדר אינטגרציה ולקבל את</p>
+
+      <p> <span> 
+$$.\frac{1}{2\pi} \int_{-\infty}^{\infty} g(y) \int_{-\infty}^{\infty} f(x-y)e^{-i\omega x}\dx\dy\overset{x=t+y}{=}\frac{1}{2\pi} \int_{-\infty}^{\infty} g(y)e^{-i\omega y} \int_{-\infty}^{\infty} f(t)e^{-i\omega t}\dt\dy=2\pi \hat{f}(\omega) \hat{g}(\omega)$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title">דוגמא: הקונבולוציה של  <span> $e^{-x^2}*e^{-x^2}$ </span> .</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>הרעיון פה הוא שבעוד קונבולוציה זו פעולה “מסובכת” לחשב, אם נבצע לה התמרה אז זה יהפוך לפשוט כפל פונקציות, ואז אפשר לעשות התמרה הפוכה כדי לחזור לפונקציה שרצינו לחשב, או במילים אחרות</p>
+
+      <p> <span> 
+$$.(f*f)(x)=2\pi\cf\left[\cf[f*f]\right](-x)$$
+ </span> </p>
+
+      <p>מבחינה פורמלית, נסמן ב  <span> $f(x)=e^{-x^2}$ </span>  נזכיר שראינו ש  <span> $\cf[f](\omega)=\frac{1}{2\sqrt{\pi}} e^{-\frac{\omega^2}{4}}$ </span> . שימוש במשפט הקונבולוציה יתן לנו ש</p>
+
+      <p> <span> 
+$$.\cf[f*f](\omega)=2\pi\cf[f]^2(\omega)=\frac{1}{2} e^{-\frac{\omega^2}{2}}=\frac{1}{2}f(\frac{\omega}{\sqrt{2}})$$
+ </span> </p>
+
+      <p>נחשב התמרה נוספת, תוך שימוש בתכונת ההתמרה של כפל המשתנה בסקלר ונקבל ש</p>
+
+      <p> <span> 
+$$.2\pi\cf[\cf[f*f]](-x)=\pi \cf\left[f(\frac{\omega}{\sqrt{2}})\right](-x)=\sqrt{2}\pi \cf\left[f\right](-\sqrt{2}x)=\sqrt{\frac{\pi}{2}} e^{-\frac{x^2}{2}}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title">דוגמא: חסימות בתדר</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>אנחנו יודעים שבהינתן  <span> $f\in E^1(\RR)$ </span>  הלמה של רימן לבג אומרת ש  <span> $\hat{f}(\omega)\to 0$ </span>  כש  <span> $\abs{\omega} \to \infty$ </span> . כלומר, במובן מסויים רב ה”אנרגיה” של הפונקציה נמצאת בתדרים הנמוכים (כלומר  <span> $\abs{\omega}$ </span>  קטן). האם נוכל להפוך את הפונקציה ליותר “נקייה” במובן שנשתיק את התדרים המאוד גדולים? או בצורה יותר פורמלית, האם עבור  <span> $M>0$ </span>  קיימת פונקציה  <span> $f_M$ </span>  כך ש</p>
+
+      <p> <span> 
+$$? \;\;\;\widehat{f_M}(\omega)=\cases{\hat{f}(\omega) & |\omega|\leq M \\ 0 & |\omega|>M}$$
+ </span> </p>
+
+      <p>נשים לב, שהדרישות על  <span> $\widehat{f_M}$ </span>  בעצם אומרות שההתמרה שלה צריכה להיות  <span> $\widehat{f_M}=\hat{f}\cdot \chi_{[-M,M]}$ </span>  ופה נוכל להעזר במשפט הקונבולוציה.</p>
+
+      <p>נזכיר ש  <span> $\cf[\chi_{[-M,M]}](\omega)=\frac{\sin(\omega M)}{\omega \pi}$ </span> , ואם נשתמש בהתמרה ההפוכה (עבור פונקציות ב  <span> $E^2$ </span> ) נקבל ש  <span> $\cf[\frac{2\sin(xM)}{x}] = \chi_{[-M,M]}$ </span>  ולכן</p>
+
+      <p> <span> 
+$$\cf\left[ (f*\frac{\sin(xM)}{\pi x})\right](\omega) = \cf\left[ f\right](\omega) \cdot \cf\left[ \frac{2\sin(xM)}{x}\right]= \cf\left[ f\right](\omega) \cdot \chi_{[-M,M]}(\omega)$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+</section>
+            </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div></div>
+    </div>
+</div>
+
+<!-- introduce mathjax support -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [ ['$', '$'], ['\\(', '\\)'] ]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script
+  type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+<!-- introduce per-page mermaid support -->
+
+
+<!-- introduce mathjax support -->
+<script>
+    function fixes_chrome_anchors() {
+        let chrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        if (window.location.hash && chrome) {
+            setTimeout(function () {
+                var hash = window.location.hash;
+                window.location.hash = "";
+                window.location.hash = hash;
+            }, 300);
+        }
+    }
+
+    if (document.readyState === "loading") {
+        // Loading hasn't finished yet
+        document.addEventListener("DOMContentLoaded", fixes_chrome_anchors);
+    } else {
+        // `DOMContentLoaded` has already fired
+        fixes_chrome_anchors();
+    }
+</script>
+
+
+
+<script src="/Fourier_Notes/js/collapsible.js"></script>
+
+                <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel" class="navigation navigation-prev navigation-unique" aria-label="Previous page: נוסחת פלנשרל">
+                    <i class="fa fa-angle-left"/>
+                </a>
+
+                
+            </div>
+        </div>
+
+        <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({
+    "page": {
+        "title": "Introduction",
+        "level": "1.1",
+        "depth": 1,
+        
+        "dir": "ltr"
+    },    "config": {
+        "plugins": ["fontsettings", "highlight", "livereload", "lunr", "search", "sharing", "theme-default", "livereload"],
+        "styles": {
+            "ebook": "styles/ebook.css",
+            "epub": "styles/epub.css",
+            "mobi": "styles/mobi.css",
+            "pdf": "styles/pdf.css",
+            "print": "styles/print.css",
+            "website": "styles/website.css"
+        },
+        "pluginsConfig": {
+            "expandable-chapter-small2": {
+                "articlesExpand": true,
+            },
+            "fontsettings": {
+                "family": "sans",
+                "size": 2,
+                "theme": "white"
+            },
+            "highlight": {},
+            "livereload": {},
+            "lunr": {
+                "ignoreSpecialCharacters": false,
+                "maxIndexSize": 1000000
+            },
+            "search": {},            "sharing": {
+                "facebook": true,
+
+                "google": false,
+
+                "github": true,
+              
+                "github_link": "https://github.com",
+              
+
+                "telegram": false,
+                "telegram_link": "https://t.me",
+
+                "instapaper": false,
+
+                "twitter": true,
+              
+
+                "vk": false,
+
+                "weibo": false,
+
+                "all": ["facebook", "google", "twitter", "weibo", "instapaper", "github", "telegram"]
+            },
+"theme-default": {
+                "showLevel": false,
+                "styles": {
+                    "ebook": "styles/ebook.css",
+                    "epub": "styles/epub.css",
+                    "mobi": "styles/mobi.css",
+                    "pdf": "styles/pdf.css",
+                    "print": "styles/print.css",
+                    "website": "styles/website.css"
+                }
+            },
+        },
+        "theme": "default",
+        "author": "Tao He",
+        "pdf": {
+            "pageNumbers": true,
+            "fontSize": 12,
+            "fontFamily": "Arial",
+            "paperSize": "a4",
+            "chapterMark": "pagebreak",
+            "pageBreaksBefore": "/",
+            "margin": {
+                "right": 62,
+                "left": 62,
+                "top": 56,
+                "bottom": 56
+            }
+        },
+        "structure": {
+            "langs": "LANGS.md",
+            "readme": "README.md",
+        },
+        "variables": {},
+        "title": "Fourier Analysis notes",
+        "language": "en",
+        "gitbook": "*"
+    },
+    "file": {
+        "path": "_FourierHebrew/hebrew_convolution.md",
+        "mtime": "2024-02-28 18:53:41 +0200",
+        "type": "markdown"
+    },
+    "gitbook": {
+        "version": "3.2.3",
+        "time": "2024-02-28 18:53:41 +0200"
+    },
+    "basePath": "/Fourier_Notes",
+    "book": {
+        "language": ""
+    }
+});
+        });
+        </script>
+    </div><script src="/Fourier_Notes/assets/gitbook/gitbook.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/theme.js"></script>
+
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-expandable-chapters-small2/expandable-chapters-small.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-search-pro/search.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-sharing/buttons.js"></script>
+<script src="/Fourier_Notes/assets/gitbook/gitbook-plugin-splitter/splitter.js"></script>
+
+<!--
+<script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+<script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+<script src="../gitbook/gitbook-plugin-search/search.js"></script>
+-->
+
+</body>
+</html>

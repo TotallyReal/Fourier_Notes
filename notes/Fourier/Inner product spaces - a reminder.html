@@ -234,6 +234,16 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution" onclick="pageScrollToTop(this)">
+                                5. קונבולוציה
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -372,8 +382,36 @@ This structure stands at the heart of the standard Euclidean geometry that we li
 
 <p>With this geometric intuition, let us recall its generalization as “False[[invalid wikilink: Inner product]]”. In the following, our field will always be one of  <span> $\FF = \RR,\CC$ </span> .</p>
 
-<p>True[[invalid wikilink: Inner product#^9bddd8]]</p>
+<div class="callout" data-callout="def">
 
+  <div class="callout-title">Definition: Inner Products</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $V$ </span>  be a vector space. An <strong>inner product</strong> on  <span> $V$ </span>  is a function  <span> 
+$$\angles{\cdot,\cdot}:V\times V \to \FF$$
+ </span> </p>
+
+      <p>such that</p>
+
+      <ol>
+        <li>
+          <p><strong>Positive</strong>: For any  <span> $v\in V$ </span>  we have  <span> $\angles {v,v} \geq 0$ </span>  with equality if and only if  <span> $v=0.$ </span> </p>
+        </li>
+        <li>
+          <p><strong>Hermitian</strong>: For any  <span> $u,v\in V$ </span>  we have that  <span> $\angles {u,v} = \overline{\angles {v,u}}$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>Linear in first coordinate</strong>: For any  <span> $u,v,w\in V$ </span>  and  <span> $\alpha \in \FF$ </span>  we have</p>
+
+          <p> <span> 
+$$\angles {u+\alpha v,w} = \angles {u,w} + \alpha \angles {v,w}.$$
+ </span> </p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
 <p>Let’s recall some interesting examples for inner product spaces:</p>
 
 <div class="callout" data-callout="example" collapsible="hide">
@@ -410,35 +448,85 @@ $$\angles {f,g}_w:=\int_0^1f(x)\overline{g(x)}w(x)\dx$$
     </div>
   </div>
 </div>
-<p>The last two examples are for infinite dimensional inner products spaces (where the second example is a specific case of the third one). They can be further extended in two interesting ways:</p>
+<p>The last two examples are for infinite dimensional inner products spaces (where the second example is a specific case of the third one). If we extend our space of continuous functions even a little bit to piecewise continuous functions, we suddenly have two interesting problems that need to be solved:</p>
 <ul>
-  <li>
-    <p><strong>Infinite domains</strong>: Instead of integrating over  <span> $[0,1]$ </span>  we can of course integrate over any closed and bounded segment  <span> $[a,b]$ </span> . More over, we can integrate over unbounded segments, e.g.  <span> $[0,\infty)$ </span> , but then the inner product is not always well defined. For example, the constant 1 function  <span> $\bar{1}(x)$ </span>  is continuous on  <span> $[0,\infty)$ </span> , while</p>
-
-    <p> <span> 
-$$\angles {\bar{1},\bar{1}}_{[0,\infty)}=\int_0^\infty 1\cdot 1\cdot \dx = \infty.$$
- </span> </p>
-
-    <p>We can “solve” this problem by only considering functions which satisfy</p>
-
-    <p> <span> 
+  <li><strong>The zero function</strong>: Consider the function:
+<img src="\Fourier_Notes\notes\Fourier\images\inner products/discontinuity.jpg" width="300" />
+This is clearly a piecewise continuous function with one discontinuity at  <span> $x=1$ </span> . While it is not the zero function, it does satisfy  <span> $\angles{f,f}=0$ </span> , so that the function  <span> $\angles{\cdot,\cdot}$ </span>  is no longer an inner product. However, this is the only problem with the definition, which can be fixed easily by “increasing” the zero function to contain such functions. 
+More formally, we will say that two functions are equivalent  <span> $f_1\sim f_2$ </span>  if  <span> $f_1-f_2$ </span>  is almost zero, in the sense that  <span> $\angles{f_1-f_2, f_1-f_2}=0$ </span> . The inner product is well defined modulo this equivalence, namely if  <span> $f_1 \sim f_2$ </span>  and  <span> $g_1 \sim g_2$ </span> , then  <span> $\angles{f_1,g_1}=\angles{f_2,g_2}$ </span> . This should not be two surprising because for piecewise continuous function  <span> $f_1 \sim f_2$ </span>  just means that  <span> $f_1(x)=f_2(x)$ </span>  except for finitely many points.</li>
+  <li><strong>Infinite integrals</strong>: Consider the function  <span> $f:[0,1]\to\RR$ </span>  defined by  <span> $f(x)=\cases{\frac{1}{x} & x>0 \\ 0 & x=0}.$ </span>  This too is a piecewise continuous function with only one discontinuity at  <span> $x=0$ </span> . However this time  <span> $\angles{f,f}=\int_0^1\frac{1}{x^2}\dx = \infty$ </span>  , so our inner product doesn’t necessarily return finite numbers.
+This problem can be solved by restricting our space of functions to “small” enough functions, namely just  <span> $f$ </span>  which satisfy
+ <span> 
 $$\int_0^\infty |f(x)|^2\dx <  \infty.$$
+ </span> 
+If we have two such functions  <span> $f,g$ </span>  , then 
+ <span> 
+$$\abs{f(x)\overline{g(x)}} \leq \max\{\abs{f(x)}^2,\abs{g(x)}^2\}\leq \abs{f(x)}^2 + \abs{g(x)}^2.$$
+ </span> 
+It follows that the integral in the inner product
+ <span> 
+$$\angles {f,g} =\int_0^1 f(x)\overline{g(x)}\dx$$
+ </span> 
+converges in absolute value (and is at most  <span> $\int_0^1 \abs{f(x)}^2 dx + \int_0^1\abs{g(x)}^2\dx$ </span> ), and therefore converges.</li>
+</ul>
+
+<div class="callout" data-callout="def">
+
+  <div class="callout-title">Definition: The space of piecewise continuous functions.</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>For a segment  <span> $I\subseteq \RR$ </span>  we define:</p>
+
+      <p> <span> 
+$$E^2(I)=\{f:I\to \CC\;\mid\;f\text{ piecewise continuous, }\int_I\abs{f(x)}^2\dx <  \infty\}.$$
  </span> </p>
 
-    <p>The space of these function is call the False[[invalid wikilink: L2 functions]] and denoted by  <span> $\mathcal{L}^2$ </span> .</p>
-  </li>
-  <li>
-    <p><strong>Piecewise continuous function</strong>: We can increase the set of functions we work with, and instead of just continuous functions, we can look at functions which are piecewise continuous. As in the previous case, this is again not an inner product space, though for a different reason. The “inner product” satisfies all the conditions except for  <span> $\angles {v,v} = 0$ </span>  if and only if  <span> $v=0$ </span> . For example, the function:
-<img src="\Fourier_Notes\notes\Fourier\images\inner products/discontinuity.jpg" width="300" /></p>
-  </li>
-</ul>
+      <p>We sometimes also denote it by  <span> $E(I)$ </span> .</p>
+
+    </div>
+  </div>
+</div>
+<blockquote>
+  <p>[!remark] Remark:  <span> $\mathcal{L}^2$ </span> v-functions.
+This space can (and should be) extended a little bit, and instead of piecewise continuous function, we can talk about integrable functions, and then it is denoted by  <span> $\mathcal{L}^2$ </span> . However, for simplicity we will continue to work with the piecewise continuous functions.</p>
+</blockquote>
 
 <h1 id="the-norm">The norm</h1>
 
 <p>Once we have the inner product (which “corresponds” to angles), we also have the norm (which is the “length” of a vector):</p>
 
-<p>True[[invalid wikilink: Norm#^5a49a3]]</p>
+<div class="callout" data-callout="def">
 
+  <div class="callout-title">Definition: Norms</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Let  <span> $V$ </span>  be a vector space. A <strong>norm</strong> on  <span> $V$ </span>  is a function</p>
+
+      <p> <span> 
+$$\norm {\cdot} : V \to \RR$$
+ </span> </p>
+
+      <p>such that:</p>
+
+      <ol>
+        <li>
+          <p><strong>Positive</strong>: For any  <span> $v \in V$ </span>  we have that  <span> $\norm v\geq 0$ </span>  with equality if and only if  <span> $v=0$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>Absolute homogeneous</strong>: For any  <span> $v\in V$ </span>  and  <span> $\alpha \in \FF$ </span>  we have  <span> 
+$$\norm {\alpha v} = |\alpha|\cdot \norm v.$$
+ </span> </p>
+        </li>
+        <li>
+          <p><strong>Triangle inequality</strong>: For any  <span> $u,v\in V$ </span>  we have  <span> 
+$$\norm {u+v} \leq \norm u + \norm v.$$
+ </span> </p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
 <p>There are many examples of interesting norms, but probably one of the most useful one for us is the induced norm:</p>
 
 <div class="callout" data-callout="theorem">
@@ -664,12 +752,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_Fourier/Inner product spaces - a reminder.md",
-        "mtime": "2024-02-24 11:19:07 +0200",
+        "mtime": "2024-02-28 18:53:41 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-02-24 11:19:07 +0200"
+        "time": "2024-02-28 18:53:41 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

@@ -232,6 +232,16 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution" onclick="pageScrollToTop(this)">
+                                5. קונבולוציה
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -378,14 +388,14 @@ $$E^p(\RR) = \{f:\RR \to \CC \;\mid\; f \text{ piecewise continuous}, \norm f_p 
     </div>
   </div>
 </div>
-<p>We already saw that the inner product is not well defined for just bounded functions in  <span> $L^\infty (\RR)$ </span> , but it is well defined for function in  <span> $L^2(\RR)$ </span> .</p>
+<p>We already saw that the inner product is not well defined for just bounded functions in  <span> $E^\infty (\RR)$ </span> , but it is well defined for function in  <span> $E^2(\RR)$ </span> .</p>
 
 <div class="callout" data-callout="lem">
 
   <div class="callout-title">Lemma: Inner product on  <span> $E^2(\RR)$ </span> </div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>The map  <span> $\angles{f,g}$ </span>  defined above is an inner product on  <span> $L^2(\RR)$ </span> .</p>
+      <p>The map  <span> $\angles{f,g}$ </span>  defined above is an inner product on  <span> $E^2(\RR)$ </span> .</p>
 
     </div>
   </div>
@@ -396,19 +406,11 @@ $$E^p(\RR) = \{f:\RR \to \CC \;\mid\; f \text{ piecewise continuous}, \norm f_p 
   <div class="callout-title">Proof:</div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>The Cauchy-Shwarz inequality on finite segments show that</p>
+      <p>Once we know that  <span> $\angles{f,g}$ </span>  is well defined, the rest of properties of inner products are easy to prove. We already saw in <a href="\Fourier_Notes\notes\Fourier/Inner product spaces - a reminder">Inner product spaces - a reminder</a> that the integral converges, but as a reminder, because  <span> $\abs{f(x)\overline{g(x)}}\leq \abs{f(x)}^2+\abs{g(x)}^2$ </span> , we get that the integral even converges in absolute value since</p>
 
       <p> <span> 
-$$\abs{ \int_a^b f(x)\overline{g(x)}\dx }^2 \leq  \int_a^b \abs{f(x)}^2 \dx \cdot \int_a^b \abs{g(x)}^2 \dx \leq  \int_{-\infty}^{\infty} \abs{f(x)}^2 \dx \cdot \int_{-\infty}^{\infty} \abs{g(x)}^2 \dx. $$
+$$\int_{-\infty}^\infty\abs{f(x)g(x)}\dx \leq \norm{f(x)}_2^2+\norm{g(x)}_2^2< \infty.$$
  </span> </p>
-
-      <p>Taking the limit of  <span> $a\to -\infty$ </span>  and  <span> $b\to \infty$ </span>  on the left hand side, gives us the infinite Cauchy-Shawrz analogue, and in particular :</p>
-
-      <p> <span> 
-$$\abs{\angles{f,g}} \leq \norm f_2 \norm g_2,$$
- </span> </p>
-
-      <p>so if both  <span> $f,g\in L^2(\RR)$ </span> , then their inner product is finite (and actually converges in absolute value).</p>
 
     </div>
   </div>
@@ -1042,12 +1044,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_Fourier/Fourier Transform.md",
-        "mtime": "2024-02-24 11:19:07 +0200",
+        "mtime": "2024-02-28 18:53:41 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-02-24 11:19:07 +0200"
+        "time": "2024-02-28 18:53:41 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {
