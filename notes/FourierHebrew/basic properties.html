@@ -22,8 +22,9 @@
 <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Fourier_Notes/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
 <link rel="shortcut icon" href="/Fourier_Notes//assets/gitbook/images/favicon.ico" type="image/x-icon">
 
-<link rel="stylesheet" href="/Fourier_Notes/css/style.css"><link rel="stylesheet" href="/Fourier_Notes/css/general.css"><link rel="stylesheet" href="/Fourier_Notes/css/hebrew.css">
+<link rel="stylesheet" href="/Fourier_Notes/css/style.css"><link rel="stylesheet" href="/Fourier_Notes/css/general.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://tikzjax.com/v1/fonts.css">
 
 
         <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" />
@@ -198,9 +199,19 @@
 
                         
                         
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform" onclick="pageScrollToTop(this)">
+                                1. התמרת פורייה
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
                         <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" onclick="pageScrollToTop(this)">
-                                1. מוטיבציה - התמרת פורייה
+                                2. מוטיבציה - התמרת פורייה
                             </a>
                         </li>
                     
@@ -210,7 +221,7 @@
                         
                         <li class="chapter active" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/basic%20properties">
                             <a href="/Fourier_Notes/notes/FourierHebrew/basic%20properties" onclick="pageScrollToTop(this)">
-                                2. תכונות בסיסיות
+                                3. תכונות בסיסיות
                             </a>
                         </li>
                     
@@ -220,7 +231,7 @@
                         
                         <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function" onclick="pageScrollToTop(this)">
-                                3. התמרת פורייה ההפוכה
+                                4. התמרת פורייה ההפוכה
                             </a>
                         </li>
                     
@@ -230,7 +241,7 @@
                         
                         <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel" onclick="pageScrollToTop(this)">
-                                4. נוסחת פלנשרל
+                                5. נוסחת פלנשרל
                             </a>
                         </li>
                     
@@ -240,7 +251,17 @@
                         
                         <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution" onclick="pageScrollToTop(this)">
-                                5. קונבולוציה
+                                6. קונבולוציה
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization" onclick="pageScrollToTop(this)">
+                                7. התמרת פורייה - סיכום
                             </a>
                         </li>
                     
@@ -450,7 +471,7 @@ $$\sqrt{|\lambda|} \cdot f(\lambda x) \Rightarrow \sqrt{|\lambda|^{-1}} \hat{f}(
       <p>עבור כפל בסינוסים וקוסינוסים נקבל:</p>
 
       <p> <span> 
-$$\align{ \cf[f(x)\sin(x)]&=\frac{\cf[f](\omega-c)-\cf[f](\omega+c)}{2i} \\ \cf[f(x)\cos(x)]&=\frac{\cf[f](\omega-c)+\cf[f](\omega+c)}{2} }$$
+$$\align{ \cf[f(x)\sin(cx)]&=\frac{\cf[f](\omega-c)-\cf[f](\omega+c)}{2i} \\     \cf[f(x)\cos(cx)]&=\frac{\cf[f](\omega-c)+\cf[f](\omega+c)}{2} }$$
  </span> </p>
 
     </div>
@@ -467,7 +488,7 @@ $$\align{ \cf[f(x)\sin(x)]&=\frac{\cf[f](\omega-c)-\cf[f](\omega+c)}{2i} \\ \cf[
 
       <p>אם פונקציה  <span> $f$ </span>  היא ממשית (בהתאם מדומה טהורה), אז  <span> $\overline{\cf[f](\omega)}=\cf[f](-\omega)$ </span>  (בהתאם שווה ל  <span> $-\cf[f](-\omega)$ </span>  ).</p>
 
-      <p>בפרט, אם  <span> $f$ </span>  היא ממשית וזוגית (למשל קוסינוס), אז  <span> $\hat{f}$ </span>  היא ממשית וזוגית, ואם  <span> $f$ </span>  היא ממשית ואי זוגית (למשל סינוס), אז  <span> $\hat{f}$ </span>  היא מדומה טהורה ואי זוגית.</p>
+      <p>בפרט, אם  <span> $f$ </span>  היא ממשית וזוגית, אז  <span> $\hat{f}$ </span>  היא ממשית וזוגית, ואם  <span> $f$ </span>  היא ממשית ואי זוגית, אז  <span> $\hat{f}$ </span>  היא מדומה טהורה ואי זוגית.</p>
 
     </div>
   </div>
@@ -489,6 +510,31 @@ $$\hat{f}(\omega)=\hat{g}(\omega)=\hat {f}(-\omega)$$
       <p>או במילים אחרות  <span> $\hat{f}$ </span>  היא זוגית. באותה צורה אם  <span> $f$ </span>  היא אי זוגית אז גם  <span> $\hat{f}$ </span>  היא אי זוגית.</p>
 
       <p>שאר הטענה נובעת עם הוכחה דומה יחד עם העובדה ש  <span> $f$ </span>  ממשית (בהתאם מדומה טהורה) אם  <span> $\bar{f}=f$ </span>  (בהתאם  <span> $\bar{f}=-f$ </span> ).</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title">דוגמא:</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>ראינו כבר את ההתמרות של הפונקציות הממשיות וזוגיות:</p>
+
+      <p> <span> 
+$$\align{e^{-a|x|},a>0 & \longrightarrow \frac{a}{\pi(\omega^2+a^2)} \\ \chi_{[-a,a]} & \longrightarrow \frac{\sin(\omega a)}{\omega \pi}}$$
+ </span> </p>
+
+      <p>עבור דוגמאות לפונקציות ממשיות אי זוגיות, אפשר למשל לכפול את הפונקציות למעלה ב  <span> $x$ </span> . בהמשך נראה ש  <span> $\cf[xf(x)] = i\cf[f]'$ </span>  , ולכן בגלל ש  <span> $\cf[f]$ </span>  היא פונקציה זוגית ממשית אז הנגזרת שלה אי זוגית ממשית, ולכן  <span> $i\cf[f]'$ </span>  היא אי זוגית ומדומה טהורה.</p>
+
+      <p>דוגמא יותר פשוטה, בואו נחשב את ההתמרה סינוס על קטע סופי (כדי שהפונקציה תהיה אינטגרבילית), למשל  <span> $\chi_{[-\pi,\pi]}(x)\cdot \sin(x)$ </span> . מהתכונות שראינו למעלה על התמרות של סיבובים (כפל בסינוס), נקבל ש</p>
+
+      <p> <span> 
+$$\cf\left[\chi_{[-\pi,\pi]}(x)\cdot \sin(x) \right](\omega) = \frac{\cf\left[\chi_{[-\pi,\pi]}\right](\omega-1) - \cf\left[\chi_{[-\pi,\pi]}\right](\omega+1)}{2i} = \frac{\frac{\sin((\omega-1)\pi)}{(\omega-1)\pi} - \frac{\sin((\omega+1)\pi)}{(\omega+1)\pi}}{2i}$$
+ </span> </p>
+
+      <p>הפונקציה שקיבלנו היא מדומה טהורה. בנוסף, הפונקציה היא אי זוגית כי הפונקציה במכנה היא אי זוגית, בדיוק כפי שציפינו.</p>
 
     </div>
   </div>
@@ -551,6 +597,8 @@ window.MathJax = {
 
 
 <script src="/Fourier_Notes/js/collapsible.js"></script>
+
+<!-- Finish Body.html -->
 
                 <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" class="navigation navigation-prev navigation-unique" aria-label="Previous page: מוטיבציה - התמרת פורייה">
                     <i class="fa fa-angle-left"/>
@@ -671,12 +719,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/basic properties.md",
-        "mtime": "2024-02-28 18:53:41 +0200",
+        "mtime": "2024-03-06 16:44:04 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-02-28 18:53:41 +0200"
+        "time": "2024-03-06 16:44:04 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

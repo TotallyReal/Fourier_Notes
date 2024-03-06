@@ -22,8 +22,9 @@
 <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Fourier_Notes/assets/gitbook/images/apple-touch-icon-precomposed-152.png">
 <link rel="shortcut icon" href="/Fourier_Notes//assets/gitbook/images/favicon.ico" type="image/x-icon">
 
-<link rel="stylesheet" href="/Fourier_Notes/css/style.css"><link rel="stylesheet" href="/Fourier_Notes/css/general.css"><link rel="stylesheet" href="/Fourier_Notes/css/hebrew.css">
+<link rel="stylesheet" href="/Fourier_Notes/css/style.css"><link rel="stylesheet" href="/Fourier_Notes/css/general.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://tikzjax.com/v1/fonts.css">
 
 
         <link rel="prev" href="/Fourier_Notes/notes/Fourier/Fourier%20Series" />
@@ -196,9 +197,19 @@
 
                         
                         
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform" onclick="pageScrollToTop(this)">
+                                1. התמרת פורייה
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
                         <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" onclick="pageScrollToTop(this)">
-                                1. מוטיבציה - התמרת פורייה
+                                2. מוטיבציה - התמרת פורייה
                             </a>
                         </li>
                     
@@ -208,7 +219,7 @@
                         
                         <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/basic%20properties">
                             <a href="/Fourier_Notes/notes/FourierHebrew/basic%20properties" onclick="pageScrollToTop(this)">
-                                2. תכונות בסיסיות
+                                3. תכונות בסיסיות
                             </a>
                         </li>
                     
@@ -218,7 +229,7 @@
                         
                         <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function" onclick="pageScrollToTop(this)">
-                                3. התמרת פורייה ההפוכה
+                                4. התמרת פורייה ההפוכה
                             </a>
                         </li>
                     
@@ -228,7 +239,7 @@
                         
                         <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel" onclick="pageScrollToTop(this)">
-                                4. נוסחת פלנשרל
+                                5. נוסחת פלנשרל
                             </a>
                         </li>
                     
@@ -238,7 +249,17 @@
                         
                         <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution" onclick="pageScrollToTop(this)">
-                                5. קונבולוציה
+                                6. קונבולוציה
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization" onclick="pageScrollToTop(this)">
+                                7. התמרת פורייה - סיכום
                             </a>
                         </li>
                     
@@ -462,7 +483,7 @@ $$2\pi \hat{f}(w)= \int_{-\infty}^{\infty} \chi_{[a,b]}(x)e^{-i\omega x}dx = \in
 $$\hat{f}(0)=\frac{1}{2\pi} \int_{-\infty}^{\infty} \chi_{[a,b]}(x)dx=\frac {b-a}{2\pi}. $$
  </span> </p>
 
-      <p>The function  <span> $\hat f(\omega)$ </span>  is easily seen to be continuous for  <span> $\omega \neq 0$ </span> , but you can also check that it is continuous at  <span> $\omega = 0$ </span>  as well. Also, since  <span> $e^{i\omega x}$ </span>  is bounded, as  <span> $\omega \to \infty$ </span>  we see that  <span> $\hat{f}(\omega)\to 0$ </span> </p>
+      <p>The function  <span> $\hat f(\omega)$ </span>  is easily seen to be continuous for  <span> $\omega \neq 0$ </span> , but you can also check that it is continuous at  <span> $\omega = 0$ </span>  as well. Also, since  <span> $e^{i\omega x}$ </span>  is bounded, as  <span> $\omega \to \infty$ </span>  we see that  <span> $\hat{f}(\omega)\to 0$ </span> . We will see later on that this is a much more general phenomena.</p>
 
       <p>More over, when  <span> $a=-b$ </span>  is symmetric, the expression above is the real function:</p>
 
@@ -505,7 +526,7 @@ $$2\pi \cdot \hat f(\omega) = \frac{1}{i\omega+a}-\frac{1}{i\omega-a} = \frac{2a
   <div class="callout-title">Lemma:</div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>If  <span> $f\in E^1(\RR)$ </span> , then  <span> $\hat{f}(\omega)$ </span>  is well defined for all  <span> $\omega$ </span>  and  <span> $\norm {\hat{f}}_\infty \leq \norm f_1$ </span> .</p>
+      <p>If  <span> $f\in E^1(\RR)$ </span> , then  <span> $\hat{f}(\omega)$ </span>  is well defined for all  <span> $\omega$ </span>  and  <span> $\norm {\hat{f}}_\infty \leq \frac{1}{2\pi} \norm f_1$ </span> .</p>
 
     </div>
   </div>
@@ -839,6 +860,25 @@ $$\align{ 2\pi\left(\cf[f]'(\omega) -\cf[-ixf(x)] \right) & =\lim_{h\to 0}\int_{
 
 <div class="callout" data-callout="example">
 
+  <div class="callout-title"> <span> $f(x)=e^{-|x|} x^n$ </span> </div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>Note first that the function  <span> $f(x)$ </span>  is in  <span> $E^1(\RR)$ </span> , so it has a Fourier transform.</p>
+
+      <p>For the  <span> $n=0$ </span>  case we know that  <span> $\cf\left[e^{-|x|}\right](\omega) = \frac{1}{\omega^2 + 1}$ </span> . Using the last claim and a bit of induction, we get that :</p>
+
+      <p> <span> 
+$$\cf\left[x^ne^{-|x|}\right](\omega) = (-i)^n \cf\left[(-ix)^ne^{-|x|}\right](\omega) = (-i)^n \cf\left[e^{-|x|}\right]^{(n)}(\omega) = (-i)^n \frac{\partial^n}{\partial\omega^n}\left(\frac{1}{\omega^2+1}\right).$$
+ </span> </p>
+
+      <p>For example, for  <span> $n=1$ </span>  we simply get  <span> $\cf\left[xe^{-|x|}\right](\omega)=\frac{2\omega}{(\omega^2+1)^2}i$ </span>  .</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="example">
+
   <div class="callout-title">Example: Fourier transform of the Gaussian</div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
@@ -877,8 +917,6 @@ $$\hat{f}(\omega) = \frac{1}{2\sqrt{\pi}} e^{-\omega^2/4}.$$
     </div>
   </div>
 </div>
-
-<p>&lt;- <a href="\Fourier_Notes\notes\Fourier/Fourier Series">Previous: Fourier Series</a>    ,    False[[invalid wikilink: Fourier Course Information#Table of contents]]    ,   ??? -&gt;</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -937,6 +975,8 @@ window.MathJax = {
 
 
 <script src="/Fourier_Notes/js/collapsible.js"></script>
+
+<!-- Finish Body.html -->
 
                 <a href="/Fourier_Notes/notes/Fourier/Fourier%20Series" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Fourier Series">
                     <i class="fa fa-angle-left"/>
@@ -1044,12 +1084,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_Fourier/Fourier Transform.md",
-        "mtime": "2024-02-28 18:53:41 +0200",
+        "mtime": "2024-03-06 16:44:04 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-02-28 18:53:41 +0200"
+        "time": "2024-03-06 16:44:04 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {
