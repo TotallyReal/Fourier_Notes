@@ -27,7 +27,7 @@
 <link rel="stylesheet" href="http://tikzjax.com/v1/fonts.css">
 
 
-        <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" />
+        <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform" />
 
         
             <link rel="next" href="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function"/>
@@ -199,9 +199,9 @@
 
                         
                         
-                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform">
-                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform" onclick="pageScrollToTop(this)">
-                                1. התמרת פורייה
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" onclick="pageScrollToTop(this)">
+                                1. מוטיבציה - התמרת פורייה
                             </a>
                         </li>
                     
@@ -209,9 +209,9 @@
 
                         
                         
-                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation">
-                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" onclick="pageScrollToTop(this)">
-                                2. מוטיבציה - התמרת פורייה
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform" onclick="pageScrollToTop(this)">
+                                2. התמרת פורייה
                             </a>
                         </li>
                     
@@ -259,9 +259,39 @@
 
                         
                         
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_bounded_frequency">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_bounded_frequency" onclick="pageScrollToTop(this)">
+                                7. חסימות בתדר
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heat_equation">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heat_equation" onclick="pageScrollToTop(this)">
+                                8. משוואת החום
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
                         <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization" onclick="pageScrollToTop(this)">
-                                7. התמרת פורייה - סיכום
+                                9. התמרת פורייה - סיכום
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace" onclick="pageScrollToTop(this)">
+                                10. התמרת לפלס
                             </a>
                         </li>
                     
@@ -453,6 +483,64 @@ $$2\pi \overline{\hat{f}(\omega)} = \overline{\int_{-\infty}^{\infty} f(x) e^{-i
     </div>
   </div>
 </div>
+
+<div class="callout" data-callout="דוגמא" collapsible="hide">
+
+  <div class="callout-title">דוגמא: הפונקציות  <span> $\chi_{[a,b]}(x)$ </span>  ו  <span> $e^{-|ax|}$ </span> .</div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>כבר חישבנו את התמרה של   <span> $\chi_{[a,b]}(x)$ </span>  :</p>
+
+      <p> <span> 
+$$.\hat{ \chi}_{[a,b]}(\omega)=\cases{\frac{e^{-i\omega a}-e^{-i\omega b}}{2\pi\omega i} & \omega\neq 0 \\ \frac{b-a}{2\pi} & \omega=0}$$
+ </span> </p>
+
+      <p>במקרה המאוד פשוט של  <span> $[a,b]=[-1,1]$ </span>  נקבל את ההתמרה</p>
+
+      <p> <span> 
+$$.\hat{\chi}_{[-1,1]}(\omega)=\cases{\frac{\sin(\omega)}{\pi\omega} & \omega\neq 0 \\ \frac{1}{\pi} & \omega=0}$$
+ </span> </p>
+
+      <p>עד כדי הזזות מתיחה, פונקציה מציינת של קטע סופי תמיד ניתן להעביר לפונקציה מציינת של  <span> $[-1,1]$ </span> , למשל:</p>
+
+      <p> <span> 
+$$.\chi_{[a,b]}(x) =\chi_{[-\frac{b-a}{2},\frac{b-a}{2}]}(x-\frac{a+b}{2}) =\chi_{[-1,1]}(\frac{2x}{b-a}-\frac{a+b}{b-a})$$
+ </span> </p>
+
+      <p>זה מקשר לנו בין ההתמרות של שתי הפונקציות ע”י מתיחות וסיבובים, ובפרט:</p>
+
+      <p> <span> 
+$$\hat{\chi}_{[a,b]}(\omega)=e^{i\frac{a+b}{a-b}\omega}\cdot \frac{b-a}{2}\cdot \hat{\chi}_{[-1,1]}\left(\frac{b-a}{2}\omega\right)$$
+ </span> </p>
+
+      <p>במילים אחרות, כל הפונקציות האלו “נובעות” מאותה פונקציה, ולכן כל ההתמרות ניתן לחשב מאותה התמרה.</p>
+
+      <p>בצורה דומה הפונקציה  <span> $e^{-|ax|}$ </span>  היא מתיחה של הפונקציה  <span> $e^{-x}$ </span>  ולכן ניתן לקשר בין ההתמרות שלהן.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא" collapsible="hide">
+
+  <div class="callout-title">הפונקציה  <span> $f(x)=e^{-x}\cdot \chi_{[0,\infty)}(x)$ </span> </div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>החישוב היחיד של ההתמרה של הפונקציה הזאת הוא לא קשה:</p>
+
+      <p> <span> 
+$$.\hat{f}(\omega) = \frac{1}{2\pi}\int_{-\infty}^\infty e^{-x}\chi_{[0,\infty)}(x)e^{-i\omega x}\dx = \frac{1}{2\pi}\int_{0}^\infty e^{-(1+i\omega) x}\dx = \frac {1}{2\pi(1+i\omega)}$$
+ </span> </p>
+
+      <p>אם נשים לב ש  <span> $e^{-|x|}$ </span>  מורכבת משני עותקים של  <span> $f(x)$ </span>  כלומר  <span> $e^{-|x|}=f(x)+f(-x)$ </span>  אז נוכל לחשב את ההתמרה של  <span> $e^{-|x|}$ </span>  גם דרך הפירוק הזה:</p>
+
+      <p> <span> 
+$$.\widehat{e^{-|x|}}(\omega) =\hat{f}(\omega)+\frac{1}{|-1|}\hat{f}(\frac{\omega}{-1}) =\hat{f}(\omega)+\hat{f}(-\omega)= \frac{1}{2\pi}\left(\frac{1}{1+i\omega}+\frac{1}{1-i\omega}\right)=\frac{1}{\pi(1+\omega^2)}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
 <p>מהטענה למעלה קיבלנו שההתמרה לינארית, כלומר היא מעבירה חיבור של פונקציות וכפל בסקלר לחיבור וכפל בסקלר. בנוסף, השילוב של כפל בסקלר ממשי והכפל  <span> $\lambda x$ </span>  שהם בעצם מתיחות/כיווצים עוברים גם למתיחות וכיווצים ובפרט
  <span> 
 $$\sqrt{|\lambda|} \cdot f(\lambda x) \Rightarrow \sqrt{|\lambda|^{-1}} \hat{f}(\lambda^{-1} \omega)$$
@@ -600,7 +688,7 @@ window.MathJax = {
 
 <!-- Finish Body.html -->
 
-                <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_motivation" class="navigation navigation-prev navigation-unique" aria-label="Previous page: מוטיבציה - התמרת פורייה">
+                <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform" class="navigation navigation-prev navigation-unique" aria-label="Previous page: התמרת פורייה">
                     <i class="fa fa-angle-left"/>
                 </a>
 
@@ -719,12 +807,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/basic properties.md",
-        "mtime": "2024-03-06 16:44:04 +0200",
+        "mtime": "2024-03-12 12:26:11 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-06 16:44:04 +0200"
+        "time": "2024-03-12 12:26:11 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {
