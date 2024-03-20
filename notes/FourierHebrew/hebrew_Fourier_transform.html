@@ -68,7 +68,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -295,6 +295,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -318,27 +338,13 @@
                     התמרת פורייה
                 </a>
                 
-                    <ul><li ><a href="#מכפלות-פנימיות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>מכפלות פנימיות</a></li><li ><a href="#התמרת-פורייה-על-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה על  <span> $E^1(\RR)$ </span> </a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul>
+                    <!-- begin toc.html -->
+<ul><li ><a href="#מכפלות-פנימיות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>מכפלות פנימיות</a></li><li ><a href="#התמרת-פורייה-על-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה על  <span> $E^1(\RR)$ </span> </a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul>
 
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    התמרת פורייה
-                </a>
-                
-                    <ul><li ><a href="#מכפלות-פנימיות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>מכפלות פנימיות</a></li><li ><a href="#התמרת-פורייה-על-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה על  <span> $E^1(\RR)$ </span> </a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul>
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -348,7 +354,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >התמרת פורייה</a>
+                        <a href="." >Fourier Analysis notes : התמרת פורייה</a>
                     
                 </h1>
             </div>
@@ -400,7 +406,7 @@
                     <hr/>
                     <p>עד כה עבדנו עם פונקציות על הקטע  <span> $[-\pi, \pi]$ </span> , או בצורה שקולה פונקציות שהן  <span> $2\pi$ </span>  מחזוריות. עכשיו נרחיב את העולם שלנו ונסתכל על פונקציות כלליות על הישר הממשי  <span> $\RR$ </span> .</p>
 
-<h1 id="מכפלות-פנימיות">מכפלות פנימיות</h1>
+<h2 id="מכפלות-פנימיות">מכפלות פנימיות</h2>
 
 <p>עוד לפני שננסה להבין מה אומרת תורת פורייה על הישר הממשי, יש לנו כבר בעיה בהגדרה של המכפלה הפנימית:
  <span> 
@@ -411,7 +417,7 @@ $$.\angles{f,g}:=\frac{1}{2\pi}\int_{-\infty}^{\infty}f(x)\overline{g(x)}\dx$$
 
 <div class="callout" data-callout="הגדרה">
 
-  <div class="callout-title">הגדרה: נורמות על פונקציות על  <span> $\RR$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">הגדרה: נורמות על פונקציות על  <span> $\RR$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>עבור פונקציה  <span> $f:\RR\to\CC$ </span>  נגדיר את הנורמות הבאות:</p>
@@ -433,7 +439,7 @@ $$.E^p(\RR) = \{f:\RR \to \CC \;\mid\; f \text{ piecewise continuous}, \norm f_p
 
 <div class="callout" data-callout="תרגיל">
 
-  <div class="callout-title">תרגיל:</div>
+  <div class="callout-title"><span class="callout-title-inner">תרגיל:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>לכל  <span> $p\in\{1,2,\infty\}$ </span>  מצאו פונקציה  <span> $f$ </span>  כך ש  <span> $\norm{f}_p< \infty$ </span>  בעוד ששתי הנורמות האחרות הן אינסוף.</p>
@@ -445,7 +451,7 @@ $$.E^p(\RR) = \{f:\RR \to \CC \;\mid\; f \text{ piecewise continuous}, \norm f_p
 
 <div class="callout" data-callout="למה">
 
-  <div class="callout-title">המכפלה הפנימית על  <span> $E^2(\RR)$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">המכפלה הפנימית על  <span> $E^2(\RR)$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>הפונקציה  <span> $\angles{f,g}$ </span>  מלמעלה מוגדרת היטב ומגדירה מכפלה פנימית על  <span> $E^2(\RR)$ </span> .</p>
@@ -456,7 +462,7 @@ $$.E^p(\RR) = \{f:\RR \to \CC \;\mid\; f \text{ piecewise continuous}, \norm f_p
 
 <div class="callout" data-callout="הוכחה" collapsible="hide">
 
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>ברגע שנראה שהפונקציה מוגדרת היטב (כלומר האינטגל מתכנס), שאר התכונות של המכפלה הפנימית מוכחות בקלות (כתרגיל). כבר ראינו את ההוכחה במקרה של הקטע החסום, אך כתזכורת, בגלל ש  <span> $\abs{f(x)\overline{g(x)}}\leq \abs{f(x)}^2+\abs{g(x)}^2$ </span>  , אנחנו מקבלים שהאינטגרל מתכנס בהחלט וחסום ע”י:</p>
@@ -470,11 +476,11 @@ $$.\int_{-\infty}^\infty\abs{f(x)g(x)}\dx \leq \norm{f(x)}_2^2+\norm{g(x)}_2^2< 
 </div>
 <p>בשלב הזה, נוכל להתחיל לחפש בסיס אורתונורמלי ולעשות תהליך דומה למרחב של הפונקציות על  <span> $[-\pi,\pi]$ </span> . אבל, המטרה העיקרית שלנו היא להבין פונקציות כלליות ע”י פונקציות מחזוריות, ופרט לפונקציית האפס, אף פונקציה מחזורית היא לא ב  <span> $E^2(\RR)$ </span>  כי האינטגרל של הריבוע שלה בערך מוחלט תמיד יהיה אינסוף. לכן, במקום לעבוד מעל  <span> $E^2(\RR)$ </span>  דווקא נעבוד מעל “מרחב” אחר שם יש לנו את הפונקציות המחזוריות, ובהמשך נראה את הקשר חזרה לפונקציות ב  <span> $E^2(\RR)$ </span> .</p>
 
-<h1 id="התמרת-פורייה-על-">התמרת פורייה על  <span> $E^1(\RR)$ </span> </h1>
+<h2 id="התמרת-פורייה-על-">התמרת פורייה על  <span> $E^1(\RR)$ </span> </h2>
 
 <div class="callout" data-callout="הגדרה">
 
-  <div class="callout-title">הגדרה: התמרת פורייה</div>
+  <div class="callout-title"><span class="callout-title-inner">הגדרה: התמרת פורייה</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>עבור פונקציה  <span> $f:\RR\to \CC$ </span>  ו  <span> $\omega\in \RR$ </span>  נכתוב</p>
@@ -494,7 +500,7 @@ $$.\hat f(\omega) := \frac{1}{2\pi} \int_{-\infty}^{\infty} f(x)e^{-i\omega x}dx
 
 <div class="callout" data-callout="למה">
 
-  <div class="callout-title">למה:</div>
+  <div class="callout-title"><span class="callout-title-inner">למה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>אם  <span> $f\in\ E^1(\RR)$ </span> , אז  <span> $\hat{f}(\omega)$ </span>  מוגדרת היטב לכל  <span> $\omega$ </span>  ומתקיים ש  <span> $\norm{\hat{f}}_\infty \leq \frac{1}{2\pi} \norm{f}_1$ </span> .</p>
@@ -505,7 +511,7 @@ $$.\hat f(\omega) := \frac{1}{2\pi} \int_{-\infty}^{\infty} f(x)e^{-i\omega x}dx
 
 <div class="callout" data-callout="הוכחה" collapsible="hide">
 
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>זהו חישוב פשוט, ע”י שנראה שהאינטגרל מתכנס בהחלט:</p>
@@ -520,7 +526,7 @@ $$.\abs{\hat{f}(\omega)}=\abs{\frac{1}{2\pi} \int_{-\infty}^{\infty} f(x)e^{-i\o
 
 <div class="callout" data-callout="הערה" collapsible="hide">
 
-  <div class="callout-title">הכללה של מכפלות פנימיות:</div>
+  <div class="callout-title"><span class="callout-title-inner">הערה: הכללה של מכפלות פנימיות</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>כפי שאמרנו, ה”מכפלה הפנימית”  <span> $\angles{f,e^{i\omega x}}$ </span>  היא כבר לא מכפלה פנימית סטנדרטית לפי ההגדרה, כי אנחנו לא לוקחים פונקציות מתוך אותו מרחב  <span> $E^2(\RR)$ </span> , אך כן יש משמעות לביטוי הזה. למעבר למכפלה הפנימית בין פונקציות ב  <span> $E^2(\RR)$ </span>  זוהי עכשיו גם מכפלה בין פונקציה ב  <span> $E^1(\RR)$ </span>  ו  <span> $E^\infty(\RR)$ </span> . שני הזוגות מספרים האלו מקיימים את ה”משוואה” המעניינת:</p>
@@ -534,13 +540,13 @@ $$.\frac{1}{1}+\frac{1}{\infty}=\frac{1}{2}+\frac{1}{2}=1$$
     </div>
   </div>
 </div>
-<h1 id="דוגמאות">דוגמאות</h1>
+<h2 id="דוגמאות">דוגמאות</h2>
 
 <p>נראה שתי דוגמאות חשובות להתמרת פורייה:</p>
 
 <div class="callout" data-callout="דוגמא" collapsible="hide">
 
-  <div class="callout-title">דוגמא: הפונקציה  <span> $\chi_{[a,b]}$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: הפונקציה  <span> $\chi_{[a,b]}$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>עבור  <span> $a< b$ </span>  נגדיר את הפונקציה המציינת</p>
@@ -575,9 +581,9 @@ $$\hat{f}(\omega)=\cases{\frac{\sin(\omega b)}{\omega \pi} & \omega \neq 0 \\ \f
   </div>
 </div>
 
-<div class="callout" data-callout="דוגמא">
+<div class="callout" data-callout="דוגמא" collapsible="hide">
 
-  <div class="callout-title">דוגמא: הפונקציה  <span> $e^{-a|x|}$ </span>  עבור  <span> $a>0$ </span> .</div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: הפונקציה  <span> $e^{-a|x|}$ </span>  עבור  <span> $a>0$ </span> .</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>קודם כל, נשים לב ש  <span> $f(x):=e^{-a|x|}\in E^1(\RR)$ </span>  ולכן ההתמרה שלה מוגדרת היטב. החישוב עצמו של ההתמרה הוא:</p>
@@ -774,12 +780,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/hebrew_Fourier_transform.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

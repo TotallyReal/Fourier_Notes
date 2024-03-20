@@ -68,7 +68,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -295,6 +295,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -318,27 +338,13 @@
                     קונבולוציה
                 </a>
                 
-                    <ul><li ><a href="#מה-זו-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>מה זו קונבולוציה</a></li><li ><a href="#קונבולוציה-של-פונקציות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>קונבולוציה של פונקציות</a></li><li ><a href="#תכונות-של-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>תכונות של קונבולוציה</a></li><li ><a href="#התמרת-פורייה-של-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה של קונבולוציה</a></li></ul>
+                    <!-- begin toc.html -->
+<ul><li ><a href="#מאיפה-מגיעה-הקונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>מאיפה מגיעה הקונבולוציה</a></li><li ><a href="#קונבולוציה-של-פונקציות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>קונבולוציה של פונקציות</a></li><li ><a href="#תכונות-של-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>תכונות של קונבולוציה</a></li><li ><a href="#התמרת-פורייה-של-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה של קונבולוציה</a></li></ul>
 
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    קונבולוציה
-                </a>
-                
-                    <ul><li ><a href="#מה-זו-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>מה זו קונבולוציה</a></li><li ><a href="#קונבולוציה-של-פונקציות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>קונבולוציה של פונקציות</a></li><li ><a href="#תכונות-של-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>תכונות של קונבולוציה</a></li><li ><a href="#התמרת-פורייה-של-קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה של קונבולוציה</a></li></ul>
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -348,7 +354,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >קונבולוציה</a>
+                        <a href="." >Fourier Analysis notes : קונבולוציה</a>
                     
                 </h1>
             </div>
@@ -398,9 +404,9 @@
                     
                     <h1 id="/notes/FourierHebrew/hebrew_convolution" class="centered">קונבולוציה</h1>
                     <hr/>
-                    <h1 id="מה-זו-קונבולוציה">מה זו קונבולוציה</h1>
+                    <p>ראינו כבר הרבה תכונות מעניינות של התמרת פורייה, ובפרט ראינו שהיא לוקחת פעולות שאנו רגילים לעבור איתם כמו חיבור, כפל, סיבוב, הצמדה וכו’ פחות או יותר לעצמן. פעולה נוספת מאוד חשובה היא כפל של פונקציות, ונרצה להראות איך לבטא את ההתמרה  <span> $\widehat{f\cdot g}$ </span>  באמצעות ההתמרות  <span> $\hat{f},\hat{g}$ </span> . פה מגיעה פעולת הקונבולוציה, אבל לפני שנגדיר אותה ונראה אותה מופיעה בהתמרות האלו, בואו נראה שבעצם אנחנו מכירים אותה כבר.</p>
 
-<p>ראינו כבר הרבה תכונות מעניינות של התמרת פורייה, ובפרט ראינו שהיא לוקחת פעולות שאנו רגילים לעבור איתם כל חיבור, כפל, סיבוב, הצמדה וכו’ פחות או יותר לעצמן. פעולה נוספת מאוד חשובה היא כפל של פונקציות, ונרצה להראות איך לבטא את ההתמרה  <span> $\widehat{f\cdot g}$ </span>  באמצעות ההתמרות  <span> $\hat{f},\hat{g}$ </span> . פה מגיעה פעולת הקונבולוציה, אבל לפני שנגדיר אותה ונראה אותה מופיעה בהתמרות האלו, בואו נראה שבעצם אנחנו מכירים אותה כבר.</p>
+<h2 id="מאיפה-מגיעה-הקונבולוציה">מאיפה מגיעה הקונבולוציה</h2>
 
 <p>אחת ממשפחות הפונקציות הכי פשוטה שאנחנו מכירים היא משפחת הפולינומים, כלומר פונקציות מהצורה:
  <span> 
@@ -413,7 +419,7 @@ $$\align{f&\overset{'\cf'}{\longrightarrow}(a_0,a_1,...,a_d)\\. \sum_0^da_kx^k &
 
 <div class="callout" data-callout="הערה" collapsible="hide">
 
-  <div class="callout-title">הערה: </div>
+  <div class="callout-title"><span class="callout-title-inner">הערה: </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>במקרה של פולינומים (מעל  <span> $\CC$ </span> ) קיבלנו ממש את השוויון  <span> $f(x)=\sum_0^d a_kx^k$ </span>  לכל  <span> $x$ </span> . כפי שכבר ראינו, במקרה של טורי והתמרות פורייה, צריך לעבוד קצת יותר בשביל השוויון הזה.</p>
@@ -425,14 +431,18 @@ $$\align{f&\overset{'\cf'}{\longrightarrow}(a_0,a_1,...,a_d)\\. \sum_0^da_kx^k &
  <span> 
 $$,g(x)=b_0+b_1 x + b_2 x^2 +\cdots +b_d x^d = \sum_0^d b_k x^k$$
  </span> 
-אז הפונקציה  <span> $f(x)g(x)$ </span>  היא גם פולינום, ולכן נוכל לשאול איך מבטאים את המקדמים שלה ע”י המקדמים  <span> $a_k,b_k$ </span>  של  <span> $f(x),g(x)$ </span> . במקרה הזה נקבל ש :
+אז הפונקציה  <span> $f(x)g(x)$ </span>  היא גם פולינום:
  <span> 
-$$\align{f(x)g(x) & = \left(\sum_{i=0}^d a_i x^i\right)\left(\sum_{j=0}^d b_j x^j\right) = \sum_{i=0}^d\sum_{j=0}^d a_i b_j \cdot x^{i+j} = \sum_{k=0}^{2d} \left(\sum_{i+j=k} a_i b_j\right) \cdot x^{k} = \sum_{k=0}^{2d} \left(\sum_{i} a_i b_{k-i}\right) \cdot x^{k} \\ &= a_0b_0+(a_0b_1+a_1b_0)x+(a_0b_2+a_1b_1+a_2b_0)x^2+\cdots +(a_{d-1}b_d+a_db_{d-1})x^{2d-1}+a_db_dx^{2d}}$$
+$$,f(x)g(x) = \sum_0^{2d} c_kx^k$$
+ </span> 
+ולכן נוכל לשאול איך מבטאים את המקדמים שלה  <span> $c_k$ </span>  ע”י המקדמים  <span> $a_k,b_k$ </span>  של  <span> $f(x),g(x)$ </span> . במקרה הזה נקבל ש :
+ <span> 
+$$\align{f(x)g(x) & = \left(\sum_{i=0}^d a_i x^i\right)\left(\sum_{j=0}^d b_j x^j\right) = \sum_{i=0}^d\sum_{j=0}^d a_i b_j \cdot x^{i+j} = \sum_{k=0}^{2d} \left(\sum_{i+j=k} a_i b_j\right) \cdot x^{k} = \sum_{k=0}^{2d} \left(\sum_{i} a_i b_{k-i}\right) \cdot x^{k} \\ &= \overbrace{a_0b_0}^{c_0}+\overbrace{(a_0b_1+a_1b_0)}^{c_1}x+\overbrace{(a_0b_2+a_1b_1+a_2b_0)}^{c_2}x^2+\cdots +\overbrace{(a_{d-1}b_d+a_db_{d-1})}^{c_{2d-1}}x^{2d-1}+\overbrace{a_db_d}^{c_{2d}}x^{2d}}$$
  </span> </p>
 
 <p>כלומר, המקדם של  <span> $x^k$ </span>  הוא סכום של מכפלות של המקדמים של  <span> $f,g$ </span>  כך שהאינדקסים שלהם נסכמים ל  <span> $k$ </span> . הסיבה למבנה המעניין הזה הוא בעצם חוקי החזקות שהמונומים מקיימים, כלומר  <span> $x^i x^j = x^{i+j}$ </span> .</p>
 
-<p>כדי לקבל קצת יותר אינטואיציה לכפל הזה, ולקונבולוציה שעוד מעט נגדיר, נניח שהפולינומים הם מדרגה  <span> $d=2$ </span>  ורוצים למצוא את המקדם החופשי. נכתוב מקדמי הפולינומים בטבלה, כאשר המקדמים של  <span> $f$ </span>  גדלים באינדקס כאשר זזים ימינה, והמקדמים של  <span> $g$ </span>  קטנים באינדקס, ואם נשים אותה כך שהמקדם החופשי של  <span> $f$ </span>  יהיה מעל המקדם החופשי של  <span> $g$ </span>  אז רק צריך לכפול את התא בשורה הראשונה (של  <span> $f$ </span> ) בתא מתחתיו (של  <span> $g$ </span> ) לכתוב בתא בשורה השלישית ואז לסכום את השורה השלישית:</p>
+<p>כדי לקבל קצת יותר אינטואיציה ויזואלית לכפל הזה, ולקונבולוציה שעוד מעט נגדיר, נניח שהפולינומים הם מדרגה  <span> $d=2$ </span>  ורוצים למצוא את המקדם החופשי. נכתוב מקדמי הפולינומים בטבלה, כאשר המקדמים של  <span> $f$ </span>  גדלים באינדקס כאשר זזים ימינה, והמקדמים של  <span> $g$ </span>  קטנים באינדקס, ואם נשים אותה כך שהמקדם החופשי של  <span> $f$ </span>  יהיה מעל המקדם החופשי של  <span> $g$ </span>  אז רק צריך לכפול את התא בשורה הראשונה (של  <span> $f$ </span> ) בתא מתחתיו (של  <span> $g$ </span> ) לכתוב בתא בשורה השלישית ואז לסכום את השורה השלישית:</p>
 
 <table>
   <thead>
@@ -525,11 +535,11 @@ $$\align{f(x) & \Rightarrow (a_0, a_1, ...)\\ g(x) & \Rightarrow (b_0, b_1, ...)
  </span> 
 מאחר וחוקי החזקות האלו מתקיים גם עבור האקספוננטים שלנו, נקבל משהו דומה, פרט לכך שבמקום מקדמים דיסקרטים, יש לנו מקדמים רציפים.</p>
 
-<h1 id="קונבולוציה-של-פונקציות">קונבולוציה של פונקציות</h1>
+<h2 id="קונבולוציה-של-פונקציות">קונבולוציה של פונקציות</h2>
 
 <div class="callout" data-callout="הגדרה">
 
-  <div class="callout-title">הגדרה: קונבולוציה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הגדרה: קונבולוציה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>עבור שתי פונקציות  <span> $f,g:\RR \to \CC$ </span>  נגדיר את הקונבולוציה שלהן  <span> $(f*g)$ </span>  להיות האינטגרל (כאשר הוא מוגדר):</p>
@@ -551,7 +561,7 @@ $$.(f*g)(x)=\int_{-\infty}^\infty f(x-y)g(y) \dy$$
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title">דוגמא: קונבולוציה של פונקציות מציינות</div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: קונבולוציה של פונקציות מציינות</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>נסתכל על שתי פונקציות מציינות של קטעים, הראשונה של  <span> $[-1,1]$ </span>  והשנייה של  <span> $[-h,h]$ </span> :</p>
@@ -574,7 +584,7 @@ $$\align{f(x)=\chi_{[-1,1]}(x)=\cases{1&|x|\leq 1 \\ 0 & |x|>1} \\ .g(x)=\chi_{[
 
 <div class="callout" data-callout="תרגיל">
 
-  <div class="callout-title">תרגיל:</div>
+  <div class="callout-title"><span class="callout-title-inner">תרגיל:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>חשבו את הקונבולוציה של שתי פונקציות מציינות  <span> $f(x)=\chi_{[-a,a]}$ </span>  ו  <span> $g(x)=\chi_{[-b,b]}$ </span>  כפונקציה של הפרמטרים  <span> $a,b\geq 0$ </span> .</p>
@@ -582,13 +592,13 @@ $$\align{f(x)=\chi_{[-1,1]}(x)=\cases{1&|x|\leq 1 \\ 0 & |x|>1} \\ .g(x)=\chi_{[
     </div>
   </div>
 </div>
-<h1 id="תכונות-של-קונבולוציה">תכונות של קונבולוציה</h1>
+<h2 id="תכונות-של-קונבולוציה">תכונות של קונבולוציה</h2>
 
 <p>לפני שנתחיל עם תכונות, נזכיר את משפט פוביני טונלי שעוזר בחישוב אינטגרלים:</p>
 
 <div class="callout" data-callout="משפט">
 
-  <div class="callout-title">משפט פוביני טונלי.</div>
+  <div class="callout-title"><span class="callout-title-inner">משפט פוביני טונלי.</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>תהא  <span> $H(x,y):\RR^2\to \CC$ </span>  פונקציה מדידה, אז</p>
@@ -610,7 +620,7 @@ $$\int_{-\infty}^\infty\left(\int_{-\infty}^\infty H(x,y) \dx\right)\dy = \int_{
 
 <div class="callout" data-callout="משפט">
 
-  <div class="callout-title">משפט: קונבולוציה של פונקציות ב  <span> $E^1(\RR)$ </span> .</div>
+  <div class="callout-title"><span class="callout-title-inner">משפט: קונבולוציה של פונקציות ב  <span> $E^1(\RR)$ </span> .</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>יהיו  <span> $f,g\in E^1(\RR)$ </span> . אז הקונבולוציה  <span> $(f*g)(x)$ </span>  מוגדרת כמעט לכל  <span> $x$ </span>  והיא אינטגרבילית בהחלט.</p>
@@ -621,7 +631,7 @@ $$\int_{-\infty}^\infty\left(\int_{-\infty}^\infty H(x,y) \dx\right)\dy = \int_{
 
 <div class="callout" data-callout="הוכחה">
 
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>אם נניח שהקונבולוציה מוגדרת לכל  <span> $x$ </span> , ונרצה להראות שהיא אינטגרבילית בהחלט, אז בגלל ש</p>
@@ -644,7 +654,7 @@ $$.\int_{-\infty}^\infty  \abs{g(y)}\left(\int_{-\infty}^\infty \abs{f(x-y)} \dx
 
 <div class="callout" data-callout="הערה" collapsible="hide">
 
-  <div class="callout-title">הערה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הערה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
@@ -682,7 +692,7 @@ $$,(f*f)(0)=\int_{-\infty}^\infty f(-y)f(y)\dy=\int_{-\infty}^\infty f(y)^2\dy=\
 
 <div class="callout" data-callout="טענה">
 
-  <div class="callout-title">תכונות אריתמטיות של קונבולוציה</div>
+  <div class="callout-title"><span class="callout-title-inner">תכונות אריתמטיות של קונבולוציה</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>יהיו  <span> $f,g,h\in E^1(\RR)$ </span> , ו  <span> $\alpha \in \CC$ </span>  סקלר, אז:</p>
@@ -714,7 +724,7 @@ $$,(f*f)(0)=\int_{-\infty}^\infty f(-y)f(y)\dy=\int_{-\infty}^\infty f(y)^2\dy=\
 <div class="callout" data-callout="הוכחה" >
 
   
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   
   <div class="callout-content-wrapper">
   <div class="callout-content">
@@ -736,11 +746,11 @@ $$\align{(f*g)'(0)-(f'*g)(0)| & = \lim_{h\to 0}\frac {(f*g)(h)-(f*g)(0)}{h}-(f'*
 </div>
 {::options parse_block_html="false" /}-->
 
-<h1 id="התמרת-פורייה-של-קונבולוציה">התמרת פורייה של קונבולוציה</h1>
+<h2 id="התמרת-פורייה-של-קונבולוציה">התמרת פורייה של קונבולוציה</h2>
 
 <div class="callout" data-callout="משפט">
 
-  <div class="callout-title">משפט הקונבולוציה</div>
+  <div class="callout-title"><span class="callout-title-inner">משפט הקונבולוציה</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>יהיו  <span> $f,g\in E^1(\RR)$ </span> , אז</p>
@@ -755,7 +765,7 @@ $$.\widehat{f*g}(\omega) = 2\pi\hat {f}(\omega) \cdot \hat{g}(\omega)$$
 
 <div class="callout" data-callout="הוכחה">
 
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>נשים לב תחילה שבגלל ש  <span> $f,g\in E^1(\RR)$ </span>  אז אנחנו יודעים ש  <span> $f*g$ </span>  אינטגרבילית בהחלט ולכן יש לה התמרת פורייה, ששווה ל:</p>
@@ -776,7 +786,7 @@ $$.\frac{1}{2\pi} \int_{-\infty}^{\infty} g(y) \int_{-\infty}^{\infty} f(x-y)e^{
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title">דוגמא: הקונבולוציה של  <span> $e^{-x^2}*e^{-x^2}$ </span> .</div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: הקונבולוציה של  <span> $e^{-x^2}*e^{-x^2}$ </span> .</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>אם נסמן  <span> $f(x)=e^{-x^2}$ </span>  ונרצה לחשב ישירות את הקונבולוציה, אז נקבל את האינטגרל:</p>
@@ -986,12 +996,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/hebrew_convolution.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

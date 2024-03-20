@@ -68,7 +68,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -295,6 +295,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -318,27 +338,13 @@
                     נוסחת פלנשרל
                 </a>
                 
-                    <ul><li ><a href="#נוסחת-פלנשרל" onclick="mobilePageScrollToAnchor(this)"  border=#000000>נוסחת פלנשרל</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li><li ><a href="#התמרות-פורייה-ב-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרות פורייה ב  <span> $E^2 (\RR)$ </span> </a></li></ul>
+                    <!-- begin toc.html -->
+<ul><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li><li ><a href="#התמרות-פורייה-ב-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרות פורייה ב  <span> $E^2 (\RR)$ </span> </a></li></ul>
 
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    נוסחת פלנשרל
-                </a>
-                
-                    <ul><li ><a href="#נוסחת-פלנשרל" onclick="mobilePageScrollToAnchor(this)"  border=#000000>נוסחת פלנשרל</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li><li ><a href="#התמרות-פורייה-ב-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרות פורייה ב  <span> $E^2 (\RR)$ </span> </a></li></ul>
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -348,7 +354,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >נוסחת פלנשרל</a>
+                        <a href="." >Fourier Analysis notes : נוסחת פלנשרל</a>
                     
                 </h1>
             </div>
@@ -398,9 +404,7 @@
                     
                     <h1 id="/notes/FourierHebrew/hebrew_plancharel" class="centered">נוסחת פלנשרל</h1>
                     <hr/>
-                    <h1 id="נוסחת-פלנשרל">נוסחת פלנשרל</h1>
-
-<p>אם נחזור שוב לעולם של טורי פורייה, אז יכולנו להשתמש שם בשוויון פרסיבל ולקבל שעבור פונקציה  <span> $f:[-\pi,\pi]\to\CC$ </span>  רציפה למקוטעין עם מקדמי פורייה  <span> $a_n,b_n$ </span>  מתקיים ש
+                    <p>אם נחזור שוב לעולם של טורי פורייה, אז יכולנו להשתמש שם בשוויון פרסיבל ולקבל שעבור פונקציה  <span> $f:[-\pi,\pi]\to\CC$ </span>  רציפה למקוטעין עם מקדמי פורייה  <span> $a_n,b_n$ </span>  מתקיים ש
  <span> 
 $$.\norm{f}_2^2=\frac{\abs{a_0}^2}{2}+ \sum_1^\infty \left(\abs{a_n}^2+\abs{b_n}^2\right)$$
  </span> </p>
@@ -414,7 +418,7 @@ $$.\norm{f}_2^2=C\int_{-\infty}^\infty \abs{\hat{f}(\omega)}^2\dom=C\norm{\hat{f
 
 <div class="callout" data-callout="משפט">
 
-  <div class="callout-title">משפט פלנשרל:</div>
+  <div class="callout-title"><span class="callout-title-inner">משפט פלנשרל:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>יהיו  <span> $f,g\in E^1(\RR)\cap E^2 (\RR)$ </span>  אז:</p>
@@ -443,7 +447,7 @@ $$\int_{-\infty}^\infty \hat{f}(\omega) \overline{\hat{g}(\omega)} \dom = \frac{
 
 <div class="callout" data-callout="הוכחה" collapsible="hide">
 
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>הרעיון באופן כללי הוא החלפת סדרי אינטגרציה, ואם מותר לנו לעשות אותם אז “קל” להראות שהטענה נכונה.</p>
@@ -481,11 +485,11 @@ $$.\int_{-N}^N \abs{\hat{f}(\omega) \overline{\hat{g}(\omega)}} \dom =\angles{|\
     </div>
   </div>
 </div>
-<h1 id="דוגמאות">דוגמאות</h1>
+<h2 id="דוגמאות">דוגמאות</h2>
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title">דוגמא: הפונקציה  <span> $e^{-a|x|}$ </span>  עבור  <span> $a>0$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: הפונקציה  <span> $e^{-a|x|}$ </span>  עבור  <span> $a>0$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>ראינו כבר שההתמרה של הפונקציה הזאת היא  <span> $\cf[e^{-a|x|}](\omega)=\frac{a}{\pi(\omega^2+a^2)}$ </span> . אם נחשב את הנורמה של הפונקציה נקבל ש</p>
@@ -512,7 +516,7 @@ $$.\dboxed{\int_{0}^\infty \frac{1}{(\omega^2+a^2)^2} \dom = \frac{\pi}{4a^3}} $
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title">דוגמא: פונקציות מדרגה סימטריות</div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: פונקציות מדרגה סימטריות</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>עבור  <span> $a>0$ </span>  נסתכל על הפונקציה</p>
@@ -531,13 +535,13 @@ $$\align{\int_{-\infty}^\infty \frac{\sin(\omega a)}{\omega \pi} \cdot \frac{\si
   </div>
 </div>
 
-<h1 id="התמרות-פורייה-ב-">התמרות פורייה ב  <span> $E^2 (\RR)$ </span> </h1>
+<h2 id="התמרות-פורייה-ב-">התמרות פורייה ב  <span> $E^2 (\RR)$ </span> </h2>
 
 <p>אם נתונה פונקציה  <span> $f\in E^2(\RR)$ </span>  שלא ידוע מראש שהיא גם ב  <span> $E^1(\RR)$ </span> , אז באופן כללי אין סיבה שהאינטגרל בהתמרת פורייה יתכנס. למרות זאת, יש דרך להרחיב את ההגדרה של התמרת פורייה גם לפונקציות כאלו.</p>
 
 <div class="callout" data-callout="הגדרה">
 
-  <div class="callout-title">התמרת פורייה ב  <span> $E^2(\RR)$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">התמרת פורייה ב  <span> $E^2(\RR)$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>תהא  <span> $f\in E^2(\RR)$ </span>  ועבור  <span> $M>0$ </span>  נסמן</p>
@@ -560,7 +564,7 @@ $$\hat{f}(\omega) = \limfi{M} \hat{f}_M(\omega)= \limfi{M} \frac{1}{2\pi} \int_{
 
 <div class="callout" data-callout="הערה">
 
-  <div class="callout-title">הערה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הערה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>דבר ראשון כדאי לשים לב שקל להראות ש  <span> $f_M$ </span>  אינטגרביליות בהחלט, כי</p>
@@ -582,7 +586,7 @@ $$\norm{f_M}_1=\int_{-\infty}^\infty \abs{f_M} \dx=\int_{-M}^M \abs{f}\cdot 1 \d
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title">דוגמא: הפונקציה  <span> $f(x)=\frac{\sin(x)}{x}$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: הפונקציה  <span> $f(x)=\frac{\sin(x)}{x}$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>הפונקציה  <span> $f(x)$ </span>  היא לא אינטגרבילית בהחלט אבל היא כן אינטגרבילית בריבוע כי  <span> $|f(x)|^2\leq \frac{1}{x^2}$ </span>  והאינטגרל של הפונקציות הזאת מתכנס באינסוף.</p>
@@ -790,12 +794,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/hebrew_plancharel.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" dir="rtl">
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>התמרת פורייה - סיכום · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>פונקציית הביסייד · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Learn Fourier Analysis
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Ofir David"><link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/style.css">
 <link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
@@ -27,10 +27,8 @@
 <link rel="stylesheet" href="http://tikzjax.com/v1/fonts.css">
 
 
-        <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_heat_equation" />
+        <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" />
 
-        
-            <link rel="next" href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace"/>
         
     </head>
     <body  class="hebrew">
@@ -279,7 +277,7 @@
 
                         
                         
-                        <li class="chapter active" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization">
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization" onclick="pageScrollToTop(this)">
                                 9. התמרת פורייה - סיכום
                             </a>
@@ -309,7 +307,7 @@
 
                         
                         
-                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                        <li class="chapter active" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
                                 12. פונקציית הביסייד
                             </a>
@@ -333,13 +331,13 @@
 
             <li class="divider"></li>
             <li class="chapter">Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization">
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
                 <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    התמרת פורייה - סיכום
+                    פונקציית הביסייד
                 </a>
                 
                     <!-- begin toc.html -->
-<ul><li ><a href="#התמרת-פורייה-על-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת פורייה על  <span> $E^1(\RR)$ </span> </a></li><li ><a href="#דוגמאות-חשובות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות חשובות</a></li><li ><a href="#פעולות-גאומטריות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פעולות גאומטריות</a></li><li ><a href="#נגזרות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>נגזרות</a></li><li ><a href="#ההתמרה-ההפוכה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>ההתמרה ההפוכה</a></li><li ><a href="#פלנשרל" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פלנשרל</a></li><li ><a href="#קונבולוציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>קונבולוציה</a></li></ul>
+<ul><li ><a href="#הגדרה-ודוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>הגדרה ודוגמאות</a></li><li ><a href="#שימושים-במשוואות-דיפרנציאליות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>שימושים במשוואות דיפרנציאליות</a></li></ul>
 
 <!-- end toc.html -->
                 
@@ -354,7 +352,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >Fourier Analysis notes : התמרת פורייה - סיכום</a>
+                        <a href="." >Fourier Analysis notes : פונקציית הביסייד</a>
                     
                 </h1>
             </div>
@@ -402,364 +400,262 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                    <h1 id="/notes/FourierHebrew/hebrew_Fourier_transform_summerization" class="centered">התמרת פורייה - סיכום</h1>
+                    <h1 id="/notes/FourierHebrew/hebrew_heaviside" class="centered">פונקציית הביסייד</h1>
                     <hr/>
-                    <h2 id="התמרת-פורייה-על-">התמרת פורייה על  <span> $E^1(\RR)$ </span> </h2>
+                    <p> <span> $\newcommand{\Hs}[1]{H_{[#1, \infty)}}$ </span> 
+בהגדרה של התמרת לפלס עשינו אינטגרציה על התחום  <span> $[0,\infty)$ </span> . יש יתרונות לחד צדדיות הזאת - למשל החסמים על  <span> $\frac{|f(t)|}{e^{s_0t}}$ </span>  זה תנאי מאוד חלש שנותן לנו הרבה מאוד בהתמרה הזאת, אבל אם מסתכלים על כל הישר הממשי  <span> $(-\infty, \infty)$ </span>  זה פתאום מכריח את הגבול  <span> $\displaystyle{\lim_{t\to -\infty}} f(t) = 0$ </span> . אפשר להגדיר את החסם בצורה סימטרית כדי להמנע מזה, אבל זה לא נוח כל כך מצד אחד, ומצד שני בהרבה מהתופעות הפיזיקליות שאנחנו מנסים למדל, ה”התפתחות” לאינסוף גם ככה נעשית רק בכיוון אחד (למשל התקדמות של הזמן) ויש לנו נקודת התחלה טבעית שאנחנו חושבים עליה כזמן  <span> $t=0$ </span> .
+בנסיון לשנות את הנקודת פתיחה הזאת גם לנקודות אחרות ולפתח יותר את מה שאנחנו מסוגלים לעשות עם ההתמרה, מגדירים את פונקצית הביסייד (על שמו של המתמטיקאי ופיזיקאי <a href="https://en.wikipedia.org/wiki/Oliver_Heaviside">Oliver Heaviside</a>).</p>
 
-<p>(<a href="\Fourier_Notes\notes\FourierHebrew/hebrew_Fourier_transform">רשימות</a>)</p>
-
-<div class="callout" data-callout="הגדרה">
-
-  <div class="callout-title"><span class="callout-title-inner">הגדרה: התמרת פורייה</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>עבור פונקציה  <span> $f:\RR\to \CC$ </span>  ו  <span> $\omega\in \RR$ </span>  נכתוב</p>
-
-      <p> <span> 
-$$.\hat f(\omega) := \frac{1}{2\pi} \int_{-\infty}^{\infty} f(x)e^{-i\omega x}dx = \angles{f,e^{i\omega x}}$$
- </span> </p>
-
-      <p>אם הגבול הזה קיים לכל  <span> $\omega \in \RR$ </span>  נקרא לפונקציה  <span> $\hat{f}:\RR\to\CC$ </span>  בשם <strong>ההתמרת פורייה</strong> של  <span> $f$ </span> .</p>
-
-      <p>לעיתים נכתוב גם  <span> $\cf[f]=\hat{f}$ </span> .</p>
-
-    </div>
-  </div>
-</div>
-
-<div class="callout" data-callout="למה">
-
-  <div class="callout-title"><span class="callout-title-inner">למה:</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>אם  <span> $f\in\ E^1(\RR)$ </span> , אז  <span> $\hat{f}(\omega)$ </span>  מוגדרת היטב לכל  <span> $\omega$ </span>  ומתקיים ש  <span> $\norm{\hat{f}}_\infty \leq \frac{1}{2\pi} \norm{f}_1$ </span> .</p>
-
-    </div>
-  </div>
-</div>
-
-<div class="callout" data-callout="משפט">
-
-  <div class="callout-title"><span class="callout-title-inner">משפט:</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>עבור  <span> $f\in E^1(\RR)$ </span>  ההתמרה מקיימת:</p>
-
-      <ol>
-        <li>
-          <p>הפונקציה  <span> $\hat{f}$ </span>  היא רציפה.</p>
-        </li>
-        <li>
-          <p>(הלמה של רימן לבג)  <span> $\limfi{\abs{\omega}} \hat{f}(\omega) = 0$ </span> .</p>
-        </li>
-      </ol>
-
-    </div>
-  </div>
-</div>
-<hr />
-<h2 id="דוגמאות-חשובות">דוגמאות חשובות</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center"> <span> $\hat{f}(\omega)$ </span> </th>
-      <th style="text-align: center"> <span> $f(x)$ </span> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center"> <span> $\hat{f}(\omega)=\cases{\frac{\sin(\omega b)}{\omega \pi} & \omega \neq 0 \\ \frac{b}{\pi} & \omega = 0.}$ </span> </td>
-      <td style="text-align: center"> <span> $\chi_{[-a,a]}(x)$ </span> </td>
-    </tr>
-    <tr>
-      <td style="text-align: center"> <span> $\frac{1}{\pi(\omega^2+1)}$ </span> </td>
-      <td style="text-align: center"> <span> $e^{-\abs{x}}$ </span> </td>
-    </tr>
-    <tr>
-      <td style="text-align: center"> <span> $\frac{1}{1+i\omega}$ </span> </td>
-      <td style="text-align: center"> <span> $\chi_{[0,\infty)}(x) \cdot e^{-\abs{x}}$ </span> </td>
-    </tr>
-    <tr>
-      <td style="text-align: center"> <span> $\frac{1}{2\sqrt{\pi}} e^{-\omega^2/4}$ </span> </td>
-      <td style="text-align: center"> <span> $e^{-x^2}$ </span> </td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="פעולות-גאומטריות">פעולות גאומטריות</h2>
-
-<p>(<a href="\Fourier_Notes\notes\FourierHebrew/basic properties">רשימות</a>)</p>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> <span> $\hat{f}(\omega)$ </span> </th>
-      <th style="text-align: center"> <span> $f(x)$ </span> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>לינאריות</strong>:</td>
-      <td style="text-align: center"> <span> $\alpha  \cdot \hat{f}(\omega)+\beta \cdot \hat{g}(\omega)$ </span> </td>
-      <td style="text-align: center"> <span> $\alpha \cdot  f(x) + \beta \cdot  g(x)$ </span> </td>
-    </tr>
-    <tr>
-      <td><strong>מתיחה</strong>:</td>
-      <td style="text-align: center"> <span> $\frac{\hat{f}(\omega/\lambda)}{|\lambda|}$ </span> </td>
-      <td style="text-align: center"> <span> $f(\lambda x)$ </span> </td>
-    </tr>
-    <tr>
-      <td><strong>הצמדה</strong>:</td>
-      <td style="text-align: center"> <span> $\overline{\hat{f}(-\omega)}$ </span> </td>
-      <td style="text-align: center"> <span> $\overline{f(x)}$ </span> </td>
-    </tr>
-    <tr>
-      <td><strong>הזזה לסיבוב:</strong></td>
-      <td style="text-align: center"> <span> $e^{i\alpha \omega}\hat{f}(\omega)$ </span> </td>
-      <td style="text-align: center"> <span> $f(x+\alpha)$ </span> </td>
-    </tr>
-    <tr>
-      <td><strong>סיבוב להזזה</strong>:</td>
-      <td style="text-align: center"> <span> $\hat{f}(\omega-c)$ </span> </td>
-      <td style="text-align: center"> <span> $e^{icx}f(x)$ </span> </td>
-    </tr>
-    <tr>
-      <td><strong>סינוס</strong>:</td>
-      <td style="text-align: center"> <span> $\frac{\cf[f](\omega-c)-\cf[f](\omega+c)}{2i}$ </span> </td>
-      <td style="text-align: center"> <span> $f(x)\sin(cx)$ </span> </td>
-    </tr>
-    <tr>
-      <td><strong>קוסינוס</strong>:</td>
-      <td style="text-align: center"> <span> $\frac{\cf[f](\omega-c)+\cf[f](\omega+c)}{2}$ </span> </td>
-      <td style="text-align: center"> <span> $f(x)\cos(cx)$ </span> </td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="נגזרות">נגזרות</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th> </th>
-      <th style="text-align: center"> <span> $\hat{f}(\omega)$ </span> </th>
-      <th style="text-align: center"> <span> $f(x)$ </span> </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>עבור  <span> $f(x),f'(x)\in E^1(\RR)$ </span> </td>
-      <td style="text-align: center"> <span> $i\omega \hat{f}(\omega)$ </span> </td>
-      <td style="text-align: center"> <span> $f'(x)$ </span> </td>
-    </tr>
-    <tr>
-      <td>עבור  <span> $f(x),x\cdot f(x)\in E^1(\RR)$ </span> </td>
-      <td style="text-align: center"> <span> $\hat{f}'(\omega)$ </span> </td>
-      <td style="text-align: center"> <span> $-ix\cdot f(x)$ </span> </td>
-    </tr>
-  </tbody>
-</table>
-
-<hr />
-<h2 id="ההתמרה-ההפוכה">ההתמרה ההפוכה</h2>
-
-<p>(<a href="\Fourier_Notes\notes\FourierHebrew/hebrew_delta_function">רשימות</a>)</p>
-
-<div class="callout" data-callout="משפט">
-
-  <div class="callout-title"><span class="callout-title-inner">משפט: התמרת פורייה ההפוכה</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>תהא  <span> $f\in E^1(\RR)$ </span> . בכל נקודה  <span> $x_0\in \RR$ </span>  בה יש לפונקציה נגזרות מתואמות, מתקיים ש</p>
-
-      <p> <span> 
-$$\limfi{M} \int_{-M}^M \hat{f}(\omega)e^{i\omega x_0}\dom = \frac{f(x_0^-)+f(x_0^+)}{2}$$
- </span> </p>
-
-    </div>
-  </div>
-</div>
-
-<div class="callout" data-callout="מסקנה">
-
-  <div class="callout-title"><span class="callout-title-inner">מסקנה: התמרה כפולה היא (כמעט) הזהות</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>אם  <span> $f,\hat{f}\in E^1(\RR)$ </span>   ול  <span> $f$ </span>  יש נגזרות מתואמות ב  <span> $x_0$ </span>  אז מתקיים ש</p>
-
-      <p> <span> 
-$$\hat{\hat{f}}(x_0) = \frac{1}{2\pi} \frac{f(-x_0^+)+f(-x_0^-)}{2}$$
- </span> </p>
-
-      <p>ובפרט אם  <span> $f$ </span>  רציפה ב  <span> $x_0$ </span>  אז מתקיים ש</p>
-
-      <p> <span> 
-$$\hat{\hat{f}}(x_0) = \frac{1}{2\pi} f(-x_0)$$
- </span> </p>
-
-    </div>
-  </div>
-</div>
-
-<div class="callout" data-callout="מסקנה">
-
-  <div class="callout-title"><span class="callout-title-inner">מסקנה:</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>אם  <span> $f,\hat{f} \in E^1(\RR)$ </span>  ו  <span> $f$ </span>  רציפה עם נגזרות מתואמות, אז  <span> $f$ </span>  חסומה ומתקיים ש</p>
-
-      <p> <span> 
-$$.\norm f_\infty \leq \norm {\hat{f}}_1$$
- </span> </p>
-
-    </div>
-  </div>
-</div>
-<h2 id="פלנשרל">פלנשרל</h2>
-
-<p>(<a href="\Fourier_Notes\notes\FourierHebrew/hebrew_plancharel">רשימות</a>)</p>
+<h2 id="הגדרה-ודוגמאות">הגדרה ודוגמאות</h2>
 
 <div class="callout" data-callout="הגדרה">
 
-  <div class="callout-title"><span class="callout-title-inner">התמרת פורייה ב  <span> $E^2(\RR)$ </span> </span></div>
+  <div class="callout-title"><span class="callout-title-inner">הגדרה: פונקצית הביסייד</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>תהא  <span> $f\in E^2(\RR)$ </span>  ועבור  <span> $M>0$ </span>  נסמן</p>
+      <p>לכל קבוע ממשי  <span> $c \in \RR$ </span>  נגדיר את פונקציית הביסייד:</p>
 
       <p> <span> 
-$$.f_M(x):=f(x)\cdot \chi_{[-M,M]}(x)=\cases{f(x) & |x|\leq M \\ 0 & |x|>M}$$
+$$.H_{[c,\infty)}(t)=\cases{0 & t<  c \\ 1 & c\leq t}$$
  </span> </p>
 
-      <p>הפונקציות  <span> $f_M(x)$ </span>  נמצאות ב  <span> $E^1(\RR) \cap E^2(\RR)$ </span>  ונגדיר את התמרת פורייה של  <span> $f$ </span>  להיות</p>
-
-      <p> <span> 
-$$\hat{f}(\omega) = \limfi{M} \hat{f}_M(\omega)= \limfi{M} \frac{1}{2\pi} \int_{-M}^M f(x)e^{-i \omega x}\dx$$
- </span> </p>
-
-      <p>כאשר הגבול הוא בנורמת  <span> $\norm{\cdot}_2$ </span> .</p>
+      <p>עבור  <span> $c=0$ </span>  נסמן פשוט  <span> $H(t):=H_{[0,\infty)}(t)$ </span>  ואז נקבל גם ש  <span> $H_{[c,\infty)}(t)=H(t-c)$ </span> .</p>
 
     </div>
   </div>
 </div>
-
-<div class="callout" data-callout="משפט">
-
-  <div class="callout-title"><span class="callout-title-inner">משפט פלנשרל:</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>יהיו  <span> $f,g\in E^1(\RR)\cap E^2 (\RR)$ </span>  אז:</p>
-
-      <ol>
-        <li>
-          <p>ההתמרות  <span> $\hat{f}, \hat{g}$ </span>  גם נמצאות ב  <span> $E^2(\RR)$ </span> ,</p>
-        </li>
-        <li>
-          <p>מתקיים ש:</p>
-
-          <p> <span> 
-$$\int_{-\infty}^\infty \hat{f}(\omega) \overline{\hat{g}(\omega)} \dom = \frac{1}{2\pi} \int _{-\infty}^\infty f(x)\overline{g(x)} \dx$$
- </span> </p>
-
-          <p>או בכתיב של מכפלות פנימיות  <span> $2\pi\angles{\hat{f}, \hat{g}}=\angles{f,g}$ </span> ,</p>
-        </li>
-        <li>
-          <p>ובפרט מתקיים ש  <span> $\norm{f}_2=\norm{\hat{f}}_2$ </span> .</p>
-        </li>
-      </ol>
-
-    </div>
-  </div>
-</div>
-<h2 id="קונבולוציה">קונבולוציה</h2>
-
-<p>(<a href="\Fourier_Notes\notes\FourierHebrew/hebrew_convolution">hebrew_convolution</a>)</p>
-
-<div class="callout" data-callout="הגדרה">
-
-  <div class="callout-title"><span class="callout-title-inner">הגדרה: קונבולוציה:</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>עבור שתי פונקציות  <span> $f,g:\RR \to \CC$ </span>  נגדיר את הקונבולוציה שלהן  <span> $(f*g)$ </span>  להיות האינטגרל (כאשר הוא מוגדר):</p>
-
-      <p> <span> 
-$$.(f*g)(x)=\int_{-\infty}^\infty f(x-y)g(y) \dy$$
- </span> </p>
-
-    </div>
-  </div>
-</div>
+<p>נשים לב שבאמצעות פונקציית הביסייד אפשר (כמו שכבר ראינו) לחשוב על התמרת לפלס כאינטגרל על כל הישר ולא רק על  <span> $[0,\infty)$ </span> . בהינתן פונקציה כלשהי  <span> $f:[0,\infty)\to \CC$ </span>  אם נשלים אותה לפונקציה כלשהי על כל הישר  <span> $\tilde{f}:\RR \to \CC$ </span>  אז נקבל ש:
+ <span> 
+$$.\cl[f](s)=\int_0^\infty f(t)e^{-st}\dt=\int_{-\infty}^\infty H(t)\tilde{f}(t)e^{-st}\dt $$
+ </span> 
+במילים אחרות, צריך לחשוב כאילו הפונקציות שלנו הן תמיד מהצורה  <span> $H(t)\tilde{f}(t)$ </span> . בנוסף, זה מרמז שאפשר עכשיו לעשות את הכיוון של “הזזה  <span> $\Leftarrow$ </span>  סיבוב” גם להתמרת לפלס:</p>
 
 <div class="callout" data-callout="טענה">
 
   <div class="callout-title"><span class="callout-title-inner">טענה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>הקונבולוציה מוגדרת היטב אם:</p>
-
-      <ol>
-        <li>
-          <p>אחת מהפונקציות אינטגרבילית בהחלט והשנייה חסומה (כלומר בה”כ  <span> $\norm{f}_1, \norm{g}_\infty <  \infty$ </span> ).</p>
-        </li>
-        <li>
-          <p>שני הפונקציות אינטגרביליות בריבוע, כלומר  <span> $\norm{f}_2, \norm{g}_2 < \infty$ </span> .</p>
-        </li>
-      </ol>
-
-    </div>
-  </div>
-</div>
-
-<div class="callout" data-callout="משפט">
-
-  <div class="callout-title"><span class="callout-title-inner">משפט: קונבולוציה של פונקציות ב  <span> $E^1(\RR)$ </span> .</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>יהיו  <span> $f,g\in E^1(\RR)$ </span> . אז הקונבולוציה  <span> $(f*g)(x)$ </span>  מוגדרת כמעט לכל  <span> $x$ </span>  והיא אינטגרבילית בהחלט.</p>
-
-    </div>
-  </div>
-</div>
-
-<div class="callout" data-callout="טענה">
-
-  <div class="callout-title"><span class="callout-title-inner">תכונות אריתמטיות של קונבולוציה</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>יהיו  <span> $f,g,h\in E^1(\RR)$ </span> , ו  <span> $\alpha \in \CC$ </span>  סקלר, אז:</p>
-
-      <ol>
-        <li>
-          <p><strong>לינאריות (דיסטריביוטיביות + כפל בסקלר)</strong>:  <span> $f*(\alpha g + h) = \alpha f*g + f*h$ </span> .</p>
-        </li>
-        <li>
-          <p><strong>אסוציאטיביות</strong>:  <span> $f*(g*h)=(f*g)*h$ </span> .</p>
-        </li>
-        <li>
-          <p><strong>קומוטטיביות</strong>:  <span> $f*g=g*f$ </span> .</p>
-        </li>
-        <li>
-          <p><strong>הזזה</strong>: אם נסמן  <span> $g_\alpha(x)=g(x+\alpha)$ </span>  אז  <span> $(f*g_\alpha)(x)=(f*g)(x+\alpha)$ </span> .</p>
-        </li>
-        <li>
-          <p><strong>נגזרת</strong>: אם  <span> $f$ </span>  גזירה ואם  <span> $f*g$ </span>  קיימת וגזירה, אז  <span> $(f*g)'(x)=(f'*g)(x)$ </span> .</p>
-        </li>
-      </ol>
-
-    </div>
-  </div>
-</div>
-
-<div class="callout" data-callout="משפט">
-
-  <div class="callout-title"><span class="callout-title-inner">משפט הקונבולוציה</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>יהיו  <span> $f,g\in E^1(\RR)$ </span> , אז</p>
+      <p>תהא  <span> $f:[0,\infty)\to \CC$ </span>  כך ש  <span> $\cl[f](s)$ </span>  קיים לכל  <span> $s>s_0$ </span> . אז לכל  <span> $c\geq 0$ </span>  ו  <span> $s>s_0$ </span>  מתקיים ש</p>
 
       <p> <span> 
-$$.\widehat{f*g}(\omega) = 2\pi\hat {f}(\omega) \cdot \hat{g}(\omega)$$
+$$.\cl\left[H_{[c,\infty)}(t)f(t-c)\right](s) = \cl\left[H(t-c)f(t-c)\right](s) =e^{-sc}\cl[f](s)$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הוכחה" collapsible="hide">
+
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>ההוכחה היא עכשיו החלפת משתנים פשוטה:</p>
+
+      <p> <span> 
+$$\align{\cl[H(t-c)f(t-c)](s) &=\int_0^\infty H(t-c)f(t-c)e^{-st}\dt = \int_{-c}^\infty H(x)f(x)e^{-s(x+c)}\dx \\ &=\int_{0}^\infty f(x)e^{-s(x+c)}\dx = e^{-sc}\cl[f](s)}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: </span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>כדי לחשב את ההתמרה של פונקציית הביסייד  <span> $H_{[c,\infty)}$ </span> , אפשר להשתמש בטענה הקודמת (או לחשב ישירות - תרגיל) ולקבל</p>
+
+      <p> <span> 
+$$.\cl[H(t-c)](s)=e^{-sc}\cl[1]=\frac{e^{-sc}}{s}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: פונקציה מציינת</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>פונקצייה מציינת על קטע  <span> $[a,b)$ </span>  היא פשוט הפרש של שתי פונקציות הביסייד:</p>
+
+      <p> <span> 
+$$.\chi_{[a,b)}=H_{[a,\infty)} - H_{[b,\infty)}$$
+ </span> </p>
+
+      <p>מפה נקבל שעבור  <span> $0\leq a<  b$ </span>  מתקיים ש</p>
+
+      <p> <span> 
+$$.\cl[\chi_{[a,b)}](s)=\frac{e^{-sa}-e^{-sb}}{s}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: "הדבקת פונקציות"</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>נסתכל על ה”הדבקה” של פונקציה לינארית ופונקציה קבועה:</p>
+
+      <p> <span> 
+$$.h(t)=\cases{t & 0\leq t \leq 1 \\ 1 & 1< t}$$
+ </span> </p>
+
+      <p>אפשר גם לחשוב על הפונקציה הזאת כפונקציה לינארית פחות הזזה שלה, ונראה את זה פורמלית עם פונקציות הביסייד:</p>
+
+      <p> <span> 
+$$.h(t) = t\cdot \chi_{[0,1)}(t)+\Hs{1}(t)=t\left(\Hs{0}(t)-\Hs{1}(t)\right)+\Hs{1}(t)=(t-0)\Hs0(t)-(t-1)\Hs{1}(t)$$
+ </span> </p>
+
+      <iframe src="https://www.desmos.com/calculator/rksypiz545?embed" width="500" height="300" style="border: 1px solid #ccc" frameborder="0"></iframe>
+
+      <p>סה”כ ההתמרה תהיה</p>
+
+      <p> <span> 
+$$.\cl[h](s) = \cl[t] - e^{-s}\cl[t] = \frac{1 - e^{-s}}{s^2}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: הזזות של פולינומים</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>באופן כללי כל מכפלה של פונקציית הביסייד בפולינום ניתן לשנות לצורה בה מופיעות הזזות, כלומר  <span> $f(t-c)\Hs c(t)=f(t-c)H(t-c)$ </span>  .</p>
+
+      <p>כדוגמא, נסתכל על הפונקציה  <span> $f(t)=t^2\Hs 2(t)$ </span> . נפתח את הפונקציה בצורה הבאה:</p>
+
+      <p> <span> 
+$$.f(t)=t^2H(t-2)=(t-2+2)^2H(t-2)=(t-2)^2H(t-2)+4(t-2)H(t-2)+4H(t-2)$$
+ </span> </p>
+
+      <p>כלומר, קיבלנו הזזות של  <span> $1,t,t^2$ </span> . סה”כ ההתמרה של הפונקציה הזאת תהיה :</p>
+
+      <p> <span> 
+$$.\cl[f(t)](s)=e^{-2t}\cl[t^2+4t+4] = e^{-2t} \left[\frac{2}{s^3} + \frac{1}{s^2}+\frac{1}{s}\right]$$
+ </span> </p>
+
+      <p>אם יש לנו הדבקות של פולינומים כמו בדוגמא הקודמת, אז זה בעצם סכומים של מכפלות של פולינומים בהביסייד, ולכן תמיד ניתן לפתח אותם לסכום של הזזות כאלו.</p>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="שימושים-במשוואות-דיפרנציאליות">שימושים במשוואות דיפרנציאליות</h2>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title"><span class="callout-title-inner">דוגמא 1:</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>נחפש פתרון למשוואה הדיפרנציאלית:</p>
+
+      <p> <span> 
+$$,\align{y''(t)+y(t)&=f(t) \\ y(0)=y'(0)&=0}$$
+ </span> </p>
+
+      <p>כאשר</p>
+
+      <p> <span> 
+$$.f(t)=\cases{\sin(\pi t) & 0\leq t\leq 1 \\ 0 & 1< t}$$
+ </span> </p>
+
+      <p>נבצע התמרת לפלס לשני האגפים של המשוואה. עבור האגף השמאלי נקבל:</p>
+
+      <p> <span> 
+$$.\cl[y''+y](s)=s^2\cl[y](s)-sy(0)-y'(0)+\cl[y](s)=(1+s^2)\cl[y](s)$$
+ </span> </p>
+
+      <p>באגף ימין נשתמש בפונקציית הביסייד כדי לקבל ש:</p>
+
+      <p> <span> 
+$$.f(t)=(\Hs0-\Hs1)\sin(\pi t)=H(t)\sin(\pi t) - H(t-1)\sin(\pi(t-1+1))=H(t)\sin(\pi t)+H(t-1)\sin(\pi(t-1))$$
+ </span> </p>
+
+      <p>מכאן נקבל שההתמרה של אגף ימין של המשוואה הדיפרנציאלית היא</p>
+
+      <p> <span> 
+$$,\cl[f](s) =(1+e^{-s})\cl[\sin(\pi t)](s) =(1+e^{-s})\cl[\sin(\pi t)](s) = (1+e^{-s})\frac{\pi}{s^2+\pi^2}$$
+ </span> </p>
+
+      <p>ועכשיו סה”כ המשוואה הדיפרנציאלית הותמרה ל :</p>
+
+      <p> <span> 
+$$.\cl[y](s)=(1+e^{-s})\frac {\pi}{(s^2+\pi^2)(1+s^2)}$$
+ </span> </p>
+
+      <p>נשים לב שאם נמצא פונקציה המקיימת  <span> $\cl[g(t)]=\frac {\pi}{(s^2+\pi^2)(1+s^2)}$ </span>   אז שוב שימוש בפונקציית הביסייד יתן לנו ש</p>
+
+      <p> <span> 
+$$,\cl[y](s)=\cl\left[ H(t)g(t)+H(t-1)g(t-1) \right]$$
+ </span> </p>
+
+      <p>ולכן נוכל לנחש ש  <span> $y(t)=H(t)g(t)+H(t-1)g(t-1)$ </span> . קצת פירוק לפונקציות רציונליות יתן לנו ש:</p>
+
+      <p> <span> 
+$$.\frac {\pi}{(s^2+\pi^2)(1+s^2)} = \frac{\pi}{1-\pi^2}\left(\frac {1}{s^2+\pi^2} - \frac {1}{1+s^2} \right) = \frac{1}{1-\pi^2}\cl[\sin(\pi t)-\pi\sin(t)](s)$$
+ </span> </p>
+
+      <p>סה”כ, נקבל את הפתרון למשוואה:</p>
+
+      <p> <span> 
+$$y(t)=\frac{1}{1-\pi^2}\left[H(t)\left(\sin(\pi t)-\pi\sin(t)\right) - H(t-1)\left(\sin(\pi (t-1))-\pi\sin(t-1)\right)\right]$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: משוואה דיפרנציאלית חלקית</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>נשתמש בלפלס כדי לפתור את המשוואה הבאה:</p>
+
+      <p> <span> 
+$$.\align{0< t,x & :\;u''_{tt}(x,t)+10=u''_{xx}(x,t) \\ 0 \leq t & : \;u(0,t) = 0 \\ 0\leq x & : \; u(x,0) = 0 \\ 0\leq x & : u'_t(x,0)=0}$$
+ </span> </p>
+
+      <p>נבצע התמרת לפלס יחסית למשתנה  <span> $t$ </span>  ונסמן את ההתמרה ב  <span> $\tilde{u}(x,s)=\cl[u(x,t)](s)$ </span> .</p>
+
+      <p>קודם כל, התמרה של תנאי ההתחלה הראשון למעלה, תיתן לנו ש</p>
+
+      <p> <span> 
+$$.\tilde{u}(0,s)=0\;,\;\forall s$$
+ </span> </p>
+
+      <p>שימוש בתכונות ההתמרה ותחת ההנחה שמותר להחליף סדר גזירה והתמרה (עבור המשתנה  <span> $x$ </span> ) נקבל ש:</p>
+
+      <p> <span> 
+$$.s^2\tilde{u}(x,s)-s\overbrace{u'_t(x,0)}^{=0}-\overbrace{u(x,0)}^{=0}+\frac{10}{s}=\tilde{u}''_{xx}(x,s)$$
+ </span> </p>
+
+      <p>נקבע עכשיו את  <span> $s>0$ </span>  ואז פתרון כללי למשוואה הזאת הוא מהצורה :</p>
+
+      <p> <span> 
+$$.U(x,s)=Ae^{-xs}+Be^{xs}-\frac{10}{s^3}$$
+ </span> </p>
+
+      <p>מהתנאי התחלה עבור  <span> $x=0$ </span>  נקבל ש  <span> $0=A+B-\frac{10}{s^3}$ </span> . בדרך כלל מסיבות פיזיקליות נרצה להניח שההתמרה שלנו חסומה, ולכן בהכרח נקבל ש  <span> $B=0$ </span> , כלומר סה”כ הפתרון שלנו יהיה</p>
+
+      <p> <span> 
+$$.\tilde{u}(x,s)=\frac{10}{s^3}(e^{-xs}-1)$$
+ </span> </p>
+
+      <p>כמו בדוגמא הקודמת, בגלל ש  <span> $\cl[5t^2]=\frac{10}{s^3}$ </span>  אז נקבל שהביטוי למעלה שווה ל  <span> $\cl[H(t-x)5(t-x)^2 - H(t)5t^2]$ </span> , ולכן ננחש שהפתרון הוא</p>
+
+      <p> <span> 
+$$u(t,x)=H(t-x)5(t-x)^2 - H(t)5t^2=\cases{5(t-x)^2-5t^2 & t\geq x \geq 0 \\-5t^2 & x>t\geq 0}$$
  </span> </p>
 
     </div>
@@ -826,14 +722,10 @@ window.MathJax = {
 
 <!-- Finish Body.html -->
 
-                <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heat_equation" class="navigation navigation-prev navigation-unique" aria-label="Previous page: משוואת החום">
+                <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" class="navigation navigation-prev navigation-unique" aria-label="Previous page: משוואות דיפרנציאליות">
                     <i class="fa fa-angle-left"/>
                 </a>
 
-                
-                    <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace" class="navigation navigation-next navigation-unique" aria-label="Next page: התמרת לפלס">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </div>
         </div>
@@ -846,15 +738,6 @@ window.MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "התמרת לפלס",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_FourierHebrew/hebrew_laplace.md",
-            "ref": "_FourierHebrew/hebrew_laplace.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -944,7 +827,7 @@ window.MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_FourierHebrew/hebrew_Fourier_transform_summerization.md",
+        "path": "_FourierHebrew/hebrew_heaviside.md",
         "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },

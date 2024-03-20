@@ -66,7 +66,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -293,6 +293,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -316,27 +336,13 @@
                     Fourier Transform
                 </a>
                 
-                    <ul><li ><a href="#inner-products" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Inner products</a></li><li ><a href="#the-fourier-transform-in-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The Fourier Transform in  <span> $E^1(\RR)$ </span> </a><ul><li ><a href="#basic-properties" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Basic properties</a></li><li ><a href="#continuity-and-derivatives" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Continuity and derivatives</a></li></ul></li></ul>
+                    <!-- begin toc.html -->
+<ul><li ><a href="#inner-products" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Inner products</a></li><li ><a href="#the-fourier-transform-in-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The Fourier Transform in  <span> $E^1(\RR)$ </span> </a><ul><li ><a href="#basic-properties" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Basic properties</a></li><li ><a href="#continuity-and-derivatives" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Continuity and derivatives</a></li></ul></li></ul>
 
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Fourier%20Transform">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    Fourier Transform
-                </a>
-                
-                    <ul><li ><a href="#inner-products" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Inner products</a></li><li ><a href="#the-fourier-transform-in-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The Fourier Transform in  <span> $E^1(\RR)$ </span> </a><ul><li ><a href="#basic-properties" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Basic properties</a></li><li ><a href="#continuity-and-derivatives" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Continuity and derivatives</a></li></ul></li></ul>
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -346,7 +352,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >Fourier Transform</a>
+                        <a href="." >Fourier Analysis notes : Fourier Transform</a>
                     
                 </h1>
             </div>
@@ -396,10 +402,8 @@
                     
                     <h1 id="/notes/Fourier/Fourier Transform" class="centered">Fourier Transform</h1>
                     <hr/>
-                    <p>Course: <a href="\Fourier_Notes\notes\Fourier/Fourier Course Information">Fourier Course Information</a></p>
-
-<p>Up until now we talked about functions on  <span> $[-\pi,\pi]$ </span> , or equivalently  <span> $2\pi$ </span>  periodic functions. We now shift our focus to general function on  <span> $\RR$ </span> .</p>
-<h1 id="inner-products">Inner products</h1>
+                    <p>Up until now we talked about functions on  <span> $[-\pi,\pi]$ </span> , or equivalently  <span> $2\pi$ </span>  periodic functions. We now shift our focus to general function on  <span> $\RR$ </span> .</p>
+<h2 id="inner-products">Inner products</h2>
 
 <p>The first issue we encounter with these general functions, is that the corresponding inner products is on an infinite segment :
  <span> 
@@ -409,7 +413,7 @@ This integral can diverge even for very nice functions, and in particular  <span
 
 <div class="callout" data-callout="def">
 
-  <div class="callout-title">Definition: Norms on functions on  <span> $\RR$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">Definition: Norms on functions on  <span> $\RR$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>For a function  <span> $f:\RR \to \CC$ </span>  we define:</p>
@@ -431,7 +435,7 @@ $$E^p(\RR) = \{f:\RR \to \CC \;\mid\; f \text{ piecewise continuous}, \norm f_p 
 
 <div class="callout" data-callout="exc">
 
-  <div class="callout-title">Excercise:</div>
+  <div class="callout-title"><span class="callout-title-inner">Excercise:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>For each  <span> $p\in\{1,2,\infty\}$ </span>  find a function  <span> $f$ </span>  such that  <span> $\norm f_p < \infty$ </span> , while the other two norms are infinity.</p>
@@ -443,7 +447,7 @@ $$E^p(\RR) = \{f:\RR \to \CC \;\mid\; f \text{ piecewise continuous}, \norm f_p 
 
 <div class="callout" data-callout="lem">
 
-  <div class="callout-title">Lemma: Inner product on  <span> $E^2(\RR)$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">Lemma: Inner product on  <span> $E^2(\RR)$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>The map  <span> $\angles{f,g}$ </span>  defined above is an inner product on  <span> $E^2(\RR)$ </span> .</p>
@@ -454,7 +458,7 @@ $$E^p(\RR) = \{f:\RR \to \CC \;\mid\; f \text{ piecewise continuous}, \norm f_p 
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Once we know that  <span> $\angles{f,g}$ </span>  is well defined, the rest of properties of inner products are easy to prove. We already saw in <a href="\Fourier_Notes\notes\Fourier/Inner product spaces - a reminder">Inner product spaces - a reminder</a> that the integral converges, but as a reminder, because  <span> $\abs{f(x)\overline{g(x)}}\leq \abs{f(x)}^2+\abs{g(x)}^2$ </span> , we get that the integral even converges in absolute value since</p>
@@ -468,11 +472,11 @@ $$\int_{-\infty}^\infty\abs{f(x)g(x)}\dx \leq \norm{f(x)}_2^2+\norm{g(x)}_2^2< \
 </div>
 <p>We can now look for an orthonormal basis and do a similar process as with the Fourier series. However, our main goal is to study functions through their periodicity (namely translation to the left and right), and the only periodic function which is in  <span> $E^2(\RR)$ </span>  is the zero function. Instead, we will just “extend” what we saw in the finite segment case to all of  <span> $\RR$ </span> .</p>
 
-<h1 id="the-fourier-transform-in-">The Fourier Transform in  <span> $E^1(\RR)$ </span> </h1>
+<h2 id="the-fourier-transform-in-">The Fourier Transform in  <span> $E^1(\RR)$ </span> </h2>
 
 <div class="callout" data-callout="def">
 
-  <div class="callout-title">Definition: The Fourier transform</div>
+  <div class="callout-title"><span class="callout-title-inner">Definition: The Fourier transform</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>For a function  <span> $f:\RR \to \CC$ </span>  and  <span> $\omega \in \RR$ </span>  we write:</p>
@@ -492,7 +496,7 @@ $$\hat f(\omega) := \frac{1}{2\pi} \int_{-\infty}^{\infty} f(x)e^{-i\omega x}dx 
 
 <div class="callout" data-callout="example" collapsible="hide">
 
-  <div class="callout-title">Example: The function  <span> $\chi_{[a,b]}$ </span> .</div>
+  <div class="callout-title"><span class="callout-title-inner">Example: The function  <span> $\chi_{[a,b]}$ </span> .</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>For  <span> $a< b$ </span>  define the characteristic function:</p>
@@ -529,7 +533,7 @@ $$\hat{f}(\omega)=\cases{\frac{\sin(\omega b)}{\omega \pi} & \omega \neq 0 \\ \f
 
 <div class="callout" data-callout="example" collapsible="hide">
 
-  <div class="callout-title">Example: The function  <span> $e^{-a|x|}$ </span> , for  <span> $a>0$ </span> .</div>
+  <div class="callout-title"><span class="callout-title-inner">Example: The function  <span> $e^{-a|x|}$ </span> , for  <span> $a>0$ </span> .</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>First we note that  <span> $f(x):=e^{-a|x|}\in E^1(\RR)$ </span> . Next, we have that</p>
@@ -547,13 +551,13 @@ $$2\pi \cdot \hat f(\omega) = \frac{1}{i\omega+a}-\frac{1}{i\omega-a} = \frac{2a
     </div>
   </div>
 </div>
-<h2 id="basic-properties">Basic properties</h2>
+<h3 id="basic-properties">Basic properties</h3>
 
 <p>Before proving some basic results about the Fourier transform, we need to actually show that it is well defined for our functions, namely that  <span> $\angles{f,e^{i\omega x}}$ </span>  is finite when  <span> $f\in E^1(\RR)$ </span> .</p>
 
 <div class="callout" data-callout="lem">
 
-  <div class="callout-title">Lemma:</div>
+  <div class="callout-title"><span class="callout-title-inner">Lemma:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>If  <span> $f\in E^1(\RR)$ </span> , then  <span> $\hat{f}(\omega)$ </span>  is well defined for all  <span> $\omega$ </span>  and  <span> $\norm {\hat{f}}_\infty \leq \frac{1}{2\pi} \norm f_1$ </span> .</p>
@@ -564,7 +568,7 @@ $$2\pi \cdot \hat f(\omega) = \frac{1}{i\omega+a}-\frac{1}{i\omega-a} = \frac{2a
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>This is a simple upper bound computation:</p>
@@ -579,7 +583,7 @@ $$\abs{\hat{f}(\omega)}=\abs{\frac{1}{2\pi} \int_{-\infty}^{\infty} f(x)e^{-i\om
 
 <div class="callout" data-callout="remark" collapsible="hide">
 
-  <div class="callout-title">Remark: Generalized inner products</div>
+  <div class="callout-title"><span class="callout-title-inner">Remark: Generalized inner products</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>As we mentioned before, the “inner product”  <span> $\angles{f,e^{i\omega x}}$ </span>  is no longer a standard an inner product, however there is some method to this madness. This is is a product between a function in  <span> $L^1(\RR)$ </span>  and  <span> $L^\infty(\RR)$ </span> , where it is usually between two functions in  <span> $L^2(\RR)$ </span> . These two pairs of numbers satisfy the simple “equation”  <span> $\frac{1}{1}+\frac{1}{\infty} = \frac{1}{2} + \frac{1}{2} = 1$ </span> , and as it turns out, this is enough for the “inner product” to be defined. For more details, you should read about <a href="https://en.wikipedia.org/wiki/H%C3%B6lder's_inequality">Holder inequality</a>.</p>
@@ -591,7 +595,7 @@ $$\abs{\hat{f}(\omega)}=\abs{\frac{1}{2\pi} \int_{-\infty}^{\infty} f(x)e^{-i\om
 
 <div class="callout" data-callout="claim">
 
-  <div class="callout-title">Claim: Arithmetic operations</div>
+  <div class="callout-title"><span class="callout-title-inner">Claim: Arithmetic operations</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $f\in E^1(\RR)$ </span> . Then:</p>
@@ -623,7 +627,7 @@ $$\hat g (\omega) = \frac {\hat{f}(\omega/\lambda)}{\abs{\lambda}}.$$
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
@@ -660,7 +664,7 @@ $$2\pi \overline{\hat{f}(\omega)} = \overline{\int_{-\infty}^{\infty} f(x) e^{-i
 
 <div class="callout" data-callout="claim">
 
-  <div class="callout-title">Claim: Rotation->translation.</div>
+  <div class="callout-title"><span class="callout-title-inner">Claim: Rotation  <span> $\Rightarrow$ </span>  translation.</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $f\in E^1(\RR)$ </span>  and for  <span> $c\in \RR$ </span>  let  <span> $h_c(x):=e^{icx}f(x)$ </span> . Then</p>
@@ -681,7 +685,7 @@ $$\align{ \cf[f(x)\sin(x)]&=\frac{\cf[f](\omega-c)-\cf[f](\omega+c)}{2i} \\ \cf[
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>This is again a simple computation:</p>
@@ -699,7 +703,7 @@ $$\hat{h_c}(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty} e^{icx}f(x)e^{-i\ome
 
 <div class="callout" data-callout="cor">
 
-  <div class="callout-title">Corollary:</div>
+  <div class="callout-title"><span class="callout-title-inner">Corollary:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>If  <span> $f$ </span>  is even (resp. odd) then  <span> $\cf[f]$ </span>  is even (resp. odd).</p>
@@ -714,7 +718,7 @@ $$\hat{h_c}(\omega) = \frac{1}{2\pi}\int_{-\infty}^{\infty} e^{icx}f(x)e^{-i\ome
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Take the multiplication identity with  <span> $\lambda = -1$ </span> , so that  <span> $g(x)=f(-x)$ </span> . In this case we get that  <span> $\hat{g}(\omega)=\hat{f}(-\omega)$ </span> . If  <span> $f$ </span>  is symmetric, then  <span> $g=f$ </span> , so that  <span> $\hat{f}(\omega)=\hat{f}(-\omega)$ </span>  is symmetric, and if  <span> $f$ </span>  is odd, then  <span> $g(x)=-f(x)$ </span>  in which case</p>
@@ -730,13 +734,13 @@ $$\hat{f}(-\omega)=\widehat{g}(\omega)=\widehat{-f}(\omega)=-\widehat{f}(\omega)
     </div>
   </div>
 </div>
-<h2 id="continuity-and-derivatives">Continuity and derivatives</h2>
+<h3 id="continuity-and-derivatives">Continuity and derivatives</h3>
 
 <p>Our next step is to show some properties on the function  <span> $\hat {f}$ </span>  itself, and we start by showing that it is continuous.</p>
 
 <div class="callout" data-callout="claim">
 
-  <div class="callout-title">Claim: The Fourier transform is continuous</div>
+  <div class="callout-title"><span class="callout-title-inner">Claim: The Fourier transform is continuous</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>If  <span> $f\in E^1(\RR)$ </span> , then:</p>
@@ -756,7 +760,7 @@ $$\hat{f}(-\omega)=\widehat{g}(\omega)=\widehat{-f}(\omega)=-\widehat{f}(\omega)
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
@@ -827,7 +831,7 @@ $$\align{ \abs{\int_{\abs{x}\leq M} e^{-i\omega x}f(x)\dx}&=\abs{\int_{\abs{x}\l
 
 <div class="callout" data-callout="claim">
 
-  <div class="callout-title">Claim: Fourier transform and derivatives</div>
+  <div class="callout-title"><span class="callout-title-inner">Claim: Fourier transform and derivatives</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Suppose that both  <span> $f\in E^1(\RR)$ </span> , and  <span> $f'\in E^1 (\RR)$ </span> . Then</p>
@@ -848,7 +852,7 @@ $$\cf[-ixf(x)](\omega) = \cf[f]'(\omega).$$
 
 <div class="callout" data-callout="remark">
 
-  <div class="callout-title">Remark:</div>
+  <div class="callout-title"><span class="callout-title-inner">Remark:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Before we give a proper proof, note that if we are allowed to change the order of derivation and integration, then the second part is almost automatic. However, we don’t know that we can do this, and we basically prove it here.</p>
@@ -859,7 +863,7 @@ $$\cf[-ixf(x)](\omega) = \cf[f]'(\omega).$$
 
 <div class="callout" data-callout="proof">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>For the first part, we use integration by parts</p>
@@ -890,7 +894,7 @@ $$\align{ 2\pi\left(\cf[f]'(\omega) -\cf[-ixf(x)] \right) & =\lim_{h\to 0}\int_{
 
 <div class="callout" data-callout="example">
 
-  <div class="callout-title"> <span> $f(x)=e^{-|x|} x^n$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner"> <span> $f(x)=e^{-|x|} x^n$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Note first that the function  <span> $f(x)$ </span>  is in  <span> $E^1(\RR)$ </span> , so it has a Fourier transform.</p>
@@ -909,7 +913,7 @@ $$\cf\left[x^ne^{-|x|}\right](\omega) = (-i)^n \cf\left[(-ix)^ne^{-|x|}\right](\
 
 <div class="callout" data-callout="example">
 
-  <div class="callout-title">Example: Fourier transform of the Gaussian</div>
+  <div class="callout-title"><span class="callout-title-inner">Example: Fourier transform of the Gaussian</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Letting  <span> $f(x)=e^{-x^2}$ </span> , its Fourier transform is</p>
@@ -1114,12 +1118,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_Fourier/Fourier Transform.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

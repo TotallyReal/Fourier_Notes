@@ -30,6 +30,8 @@
         <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_Fourier_transform_summerization" />
 
         
+            <link rel="next" href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations"/>
+        
     </head>
     <body  class="hebrew">
         <div id="hiddenDiv" style="display: none;">
@@ -66,7 +68,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -293,6 +295,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -316,27 +338,13 @@
                     התמרת לפלס
                 </a>
                 
-                    <ul><li ><a href="#הגדרה-ודוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>הגדרה ודוגמאות</a></li><li ><a href="#תכונות-בסיסיות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>תכונות בסיסיות</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul>
+                    <!-- begin toc.html -->
+<ul><li ><a href="#הגדרה-ודוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>הגדרה ודוגמאות</a></li><li ><a href="#תכונות-בסיסיות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>תכונות בסיסיות</a></li><li ><a href="#התמרת-לפלס-ונגזרות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרת לפלס ונגזרות</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul>
 
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    התמרת לפלס
-                </a>
-                
-                    <ul><li ><a href="#הגדרה-ודוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>הגדרה ודוגמאות</a></li><li ><a href="#תכונות-בסיסיות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>תכונות בסיסיות</a></li><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul>
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -346,7 +354,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >התמרת לפלס</a>
+                        <a href="." >Fourier Analysis notes : התמרת לפלס</a>
                     
                 </h1>
             </div>
@@ -396,15 +404,17 @@
                     
                     <h1 id="/notes/FourierHebrew/hebrew_laplace" class="centered">התמרת לפלס</h1>
                     <hr/>
-                    <h1 id="הגדרה-ודוגמאות">הגדרה ודוגמאות</h1>
+                    <p>עד עכשיו ראינו כבר הרבה תכונות ושימושים להתמרת פורייה, ובפרט ראינו איך אפשר להפוך באמצעות ההתמרות האלו משוואות דיפרנציאליות למשוואות אלגבריות. אבל, אחת הדרישות החשובות שכל הזמן היינו צריכים היא שהפונקציות שלנו הן אינטגרביליות בהחלט או בריבוע. זו יכולה להיות  בעיה כן יש המון פונקציות שאנחנו עובדים איתן שלא נמצאות שם, למשל כמו פולינומים, או אפילו פונקציות האקספוננט (או בעולם הממשי - הסינוס והקוסינוס).</p>
 
-<p>עד עכשיו ראינו כבר הרבה תכונות ושימושים להתמרת פורייה, אבל אחת הדרישות שכל הזמן היינו צריכים היא שהפונקציות שלנו הן אינטגרביליות בהחלט או בריבוע. זו די בעיה כן יש המון פונקציות שאנחנו עובדים איתן שלא נמצאות שם, למשל כמו פולינומים, או אפילו פונקציות האקספוננט (או בעולם הממשי - הסינוס והקוסינוס).</p>
+<p>למשל, אם היינו רוצים לפתור את המשוואה הדיפרנציאלית  <span> $y(x)=y'(x)$ </span>  אז הפתרון שלה הוא  <span> $ce^x$ </span>  עבור קבוע  <span> $c$ </span>  כלשהו. זו כמובן לא פונקציה אינטגרבילית בהחלט (אלא אם כן  <span> $c=0$ </span> ). אם בכל זאת היינו מנסים להפעיל את התמרת פורייה, אז היינו מקבלים ש  <span> $\cf[y](\omega)=i\omega\cf[y](\omega)$ </span>   ולכן  <span> $(1-i\omega) \cf[y](\omega)=0$ </span> . הפתרון היחיד של המשוואה הזאת הוא  <span> $\cf[y](\omega)\equiv 0$ </span>  ואז מההתמרה ההפוכה נקבל ש  <span> $y(x)\equiv 0$ </span> .</p>
 
-<p>כדי שנוכל לעבוד גם עם פונקציות כאלו ולהוכיח תוצאות דומות כמו עם התמרת פורייה (למשל לפתור משוואות דיפרנציאליות), נגדיר התמרה נוספת שנקראת התמרת לפלס.</p>
+<p>כדי שנוכל לעבוד גם עם פונקציות כאלו, נגדיר את התמרת לפלס, שכפי שנראה היא פחות או יותר התמרת פורייה אבל על הציר המדומה, ולכן יהיו לה הרבה תכונות דומות למה שראינו בהתמרת פורייה.</p>
+
+<h2 id="הגדרה-ודוגמאות">הגדרה ודוגמאות</h2>
 
 <div class="callout" data-callout="הגדרה">
 
-  <div class="callout-title">הגדרה: התמרת לפלס</div>
+  <div class="callout-title"><span class="callout-title-inner">הגדרה: התמרת לפלס</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>תהא  <span> $f:[0,\infty)\to \CC$ </span>  פונקציה רציפה למקוטעין. נגדיר את התמרת לפלס  <span> $\cl[f]$ </span>  להיות הפונקציה:</p>
@@ -418,27 +428,19 @@ $$\cl[f](s)=\int_0^\infty f(t)e^{-st}\dt$$
     </div>
   </div>
 </div>
-
-<div class="callout" data-callout="הערה" collapsible="hide">
-
-  <div class="callout-title">מפורייה ללפלס</div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>אפשר לחשוב על התמרת לפלס כמעין התמרת פורייר על הישר המדומה. בצורה יותר פורמלית, אם נרחיב את  <span> $f$ </span>  לכל  <span> $\RR$ </span>  ע”י כך שנגדיר אותה להיות  <span> $f(x)=0$ </span>  על  <span> $x< 0$ </span>  אז נקבל ש</p>
-
-      <p> <span> 
+<p>אפשר וכדאי לחשוב על התמרת לפלס כמעין התמרת פורייה על הישר המדומה. בצורה יותר פורמלית, אם נרחיב את  <span> $f$ </span>  לכל  <span> $\RR$ </span>  ע”י כך שנגדיר אותה להיות  <span> $f(x)=0$ </span>  על  <span> $x< 0$ </span> , אז נקבל ש 
+  <span> 
 $$.\cl[f](s)=\int_0^\infty f(t)e^{-st}\dt = \int_{-\infty}^\infty f(t)e^{-st}\dt = 2\pi \cf[f](-is)$$
  </span> </p>
 
-    </div>
-  </div>
-</div>
-
 <div class="callout" data-callout="דוגמא" collapsible="hide">
 
-  <div class="callout-title">דוגמא: הפונקציה  <span> $f(t)=e^{zt}$ </span>  עבור  <span> $z\in \CC$ </span> .</div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: הפונקציה  <span> $f(t)=e^{zt}$ </span>  עבור  <span> $z\in \CC$ </span> .</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
+
+      <p>נזכיר תחילה שפונקציות האקספוננט הן לחלוטין לא אינטגרביליות בהחלט או בריבוע, ולכן אי אפשר לבצע עליהן התמרת פורייה רגילה. לעומת זאת, התמרת לפלס עובדת בסדר גמור.</p>
+
       <p>נתחיל עם המקרה שבו  <span> $z=0$ </span>  כלומר  <span> $f(t)\equiv 1$ </span> . במקרה הזה נקבל ש</p>
 
       <p> <span> 
@@ -454,13 +456,15 @@ $$.\cl[f](s) = \int_0^\infty  e^{(x-s)t}\dt  = \frac{e^{(x-s)t}}{(x-s)}\mid_{t=0
       <p>לעומת זאת, אם נשנה בכיוון הציר המדומה, כלומר  <span> $z=iy$ </span>  עבור  <span> $y\in \RR$ </span>  אז נקבל</p>
 
       <p> <span> 
-$$.\cl[f](s) = \int_0^\infty  e^{(iy-s)t}\dt  = \frac{e^{-st}e^{iyt}}{(iy-s)}\mid_{t=0}^\infty \; = \cases{\frac{1}{s-iy} & s>0 \\ \infty & s\leq 0} $$
+$$.\cl[f](s) = \int_0^\infty  e^{(iy-s)t}\dt  = \frac{e^{-st}e^{iyt}}{(iy-s)}\mid_{t=0}^\infty \; = \cases{\frac{1}{s-iy} & s>0 \\ \infty/\text{undefind} & s\leq 0} $$
  </span> </p>
+
+      <p>נשים לב שכאשר  <span> $t\to \infty$ </span>  הביטוי  <span> $e^{iyt}$ </span>  הוא חסום (על מעגל היחידה) ו  <span> $e^{-st}\to 0$ </span>  עבור  <span> $s>0$ </span>  ולכן יש התכנסות. עבור  <span> $s\leq 0$ </span>  לעומת זאת האינטגרל מתבדר.</p>
 
       <p>עבור  <span> $z=x+iy$ </span>  כללי, צריך לשלב את שני המקרים ולקבל</p>
 
       <p> <span> 
-$$.\cl[f](s) = \int_0^\infty  e^{(z-s)t}\dt  = \frac{e^{(x-s)t}e^{iyt}}{(z-s)}\mid_{t=0}^\infty \; = \cases{\frac{1}{s-z} & s>x \\ \infty & s\leq x} $$
+$$.\cl[f](s) = \int_0^\infty  e^{(z-s)t}\dt  = \frac{e^{(x-s)t}e^{iyt}}{(z-s)}\mid_{t=0}^\infty \; = \cases{\frac{1}{s-z} & s>x \\ \infty/\text{undefind} & s\leq x} $$
  </span> </p>
 
     </div>
@@ -469,7 +473,7 @@ $$.\cl[f](s) = \int_0^\infty  e^{(z-s)t}\dt  = \frac{e^{(x-s)t}e^{iyt}}{(z-s)}\m
 
 <div class="callout" data-callout="דוגמא" collapsible="hide">
 
-  <div class="callout-title">דוגמא: פונקציות סינוס  <span> $f(t)=\sin(at)$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: פונקציות סינוס  <span> $f(t)=\sin(at)$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>נזכר שאפשר לכתוב  <span> $\sin(at)=\frac{e^{iat}-e^{-iat}}{2i}$ </span>  , ובגלל שההתמרה היא לינארית (כי אינטגרל זו פונקציה לינארית) נקבל ש</p>
@@ -480,19 +484,27 @@ $$\cl[\sin(at)](s) = \frac{1}{2i}\left(\cl[e^{iat}]-\cl[e^{-iat}]\right)(s) =\fr
 
       <p>והאינטגרל הזה מתכנס עבור  <span> $s>0$ </span>  עבור  <span> $s\leq 0$ </span>  נקבל  <span> $\infty - \infty$ </span>  שהוא לא מוגדר ולכן חייבים לבדוק לפי ההגדרה האם בכל זאת יש התכנסות. בדקו שאין באמת התכנסות במקרה הזה, כלומר התמרת לפלס תקפה רק עבור  <span> $s>0$ </span> .</p>
 
+      <p>דרך נוספת לעשות את החישוב למעלה זה לשים לב שהשתמשנו בכך ש  <span> $\sin(at)=Im(e^{iat})$ </span> , ובגלל שבהתמרת לפלס באינטגנד אנחנו כופלים בפונקציה הממשית  <span> $e^{-st}$ </span> , אז נקבל ש</p>
+
+      <p> <span> 
+$$.\cl[\sin(at)]=\cl\left[Im(e^{iat})\right]=Im\left(\cl[e^{iat}]\right)= Im\left(\frac{1}{s-ia}\right) = Im\left(\frac{s+ia}{s^2+a^2}\right)=\frac{a}{s^2+a^2}$$
+ </span> </p>
+
+      <p>בצורה דומה גם מחשבים את ההתמרה של קוסינוס להיות  <span> $\cl[\cos(at)] = \frac{s}{s^2+a^2}$ </span> .</p>
+
     </div>
   </div>
 </div>
-<h1 id="תכונות-בסיסיות">תכונות בסיסיות</h1>
+<h2 id="תכונות-בסיסיות">תכונות בסיסיות</h2>
 
-<p>בדוגמאות שראינו למעלה, ההתמרה תמיד הייתה קיימת בתחום מהצורה  <span> $(s_0, \infty)$ </span> . מסתבר שתמיד יש  <span> $s_0$ </span>  כזה, ועבור משפחה די גדולה של פונקציות ה  <span> $s_0$ </span>  הזה הוא סופי.</p>
+<p>בדוגמאות שראינו למעלה, ההתמרה תמיד הייתה קיימת בתחום מהצורה  <span> $(s_0, \infty)$ </span> . מסתבר שבהרבה מהפונקציות שאנחנו עובדים איתן יהיה  <span> $s_0$ </span>  כזה:</p>
 
 <div class="callout" data-callout="משפט">
 
-  <div class="callout-title">משפט</div>
+  <div class="callout-title"><span class="callout-title-inner">משפט</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>תהא  <span> $f:\RR \to \CC$ </span>  רציפה למקוטעין. אם קיים  <span> $s_0\in \RR$ </span>  ו  <span> $0< K$ </span>  כך ש  <span> $|f(t)|\leq Ke^{s_0t}$ </span> לכל  <span> $t\geq 0$ </span> , או בצורה שקולה הפונקציה  <span> $\frac{|f(t)|}{e^{s_0t}}$ </span>   חסומה ב  <span> $t\geq 0$ </span> , אז  <span> $\cl[f](s)$ </span>  מוגדר לכל  <span> $s>s_0$ </span>  ומתקיים ש</p>
+      <p>תהא  <span> $f:\RR \to \CC$ </span>  רציפה למקוטעין. אם קיים  <span> $s_0\in \RR$ </span>  ו  <span> $0< K$ </span>  כך ש  <span> $|f(t)|\leq Ke^{s_0t}$ </span>  לכל  <span> $t\geq 0$ </span> , או בצורה שקולה הפונקציה  <span> $\frac{|f(t)|}{e^{s_0t}}$ </span>   חסומה ב  <span> $t\geq 0$ </span> , אז  <span> $\cl[f](s)$ </span>  מוגדר לכל  <span> $s>s_0$ </span>  ומתקיים ש</p>
 
       <p> <span> 
 $$.\limfi{s} \cl[f](s)=0$$
@@ -502,12 +514,12 @@ $$.\limfi{s} \cl[f](s)=0$$
   </div>
 </div>
 
-<div class="callout" data-callout="הוכחה">
+<div class="callout" data-callout="הוכחה" collapsible="hide">
 
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>נראה שהאינטגרל מתכנס בהחלט ואפילו מתכנס לאפס בהחלט. עבור  <span> $s>s_0$ </span>  מתקיים ש :</p>
+      <p>נראה שהאינטגרל מתכנס בהחלט עבור  <span> $s>s_0$ </span>  ואפילו האינטגרל בהחלט שואף לאפס כאשר  <span> $s\to \infty$ </span> . עבור  <span> $s>s_0$ </span>  מתקיים ש :</p>
 
       <p> <span> 
 $$\int_0^\infty |f(t)e^{-st}|\dt\leq \int_0^\infty K e^{(s_0-s)t}\dt = K\frac{e^{(s_0-s)t}}{s_0-s}\mid_0^\infty=\frac{K}{s-s_0}\overset{s\to \infty}{\longrightarrow} 0$$
@@ -522,7 +534,7 @@ $$\int_0^\infty |f(t)e^{-st}|\dt\leq \int_0^\infty K e^{(s_0-s)t}\dt = K\frac{e^
 
 <div class="callout" data-callout="טענה">
 
-  <div class="callout-title">טענה: תכונות גאומטריות של התמרת לפלס</div>
+  <div class="callout-title"><span class="callout-title-inner">טענה: תכונות גאומטריות של התמרת לפלס</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>בכל התכונות למטה, הפונקציות הן רציפות למקוטעין עם התמרת פורייה שמוגדרת בנקודה  <span> $s$ </span> .</p>
@@ -545,7 +557,7 @@ $$\int_0^\infty |f(t)e^{-st}|\dt\leq \int_0^\infty K e^{(s_0-s)t}\dt = K\frac{e^
 
 <div class="callout" data-callout="הערה" collapsible="hide">
 
-  <div class="callout-title">הערה: הכיוון ההפוך של הזזה  <span> $\Leftarrow$ </span>  כפל באקספוננט</div>
+  <div class="callout-title"><span class="callout-title-inner">הערה: הכיוון ההפוך של הזזה  <span> $\Leftarrow$ </span>  כפל באקספוננט</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>אין לנו את הכיוון ההפוך בגלל שהאינטגרל שלנו מוגדר בקטע  <span> $[0,\infty)$ </span>  והזזה תשנה את גבולות האינטגרציה. נסו לחשוב איך להכליל את התמרת לפלס כדי שכן יהיה את הכיוון הזה.</p>
@@ -556,7 +568,7 @@ $$\int_0^\infty |f(t)e^{-st}|\dt\leq \int_0^\infty K e^{(s_0-s)t}\dt = K\frac{e^
 
 <div class="callout" data-callout="הוכחה" collapsible="hide">
 
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>כל ההוכחות נובעות כמעט מיידית מתכונות האינטגרל ומההגדרה של ההתמרה.</p>
@@ -588,10 +600,13 @@ $$.\cl[e^{at}f(t)](s)= \int_0^\infty e^{at}f(t)e^{-st}\dt = \int_0^\infty f(t)e^
     </div>
   </div>
 </div>
+<h2 id="התמרת-לפלס-ונגזרות">התמרת לפלס ונגזרות</h2>
+
+<p>כמו בהתמרת פורייה, גם בהתמרת לפלס נוכל להפוך נגזרות לכפל במשתנה, וכך להפוך משוואות דיפרנציאליות למשוואות אלגבריות.</p>
 
 <div class="callout" data-callout="טענה">
 
-  <div class="callout-title">טענה: כפל ב  <span> $t$ </span>  מותמר לנגזרת (והפוך)</div>
+  <div class="callout-title"><span class="callout-title-inner">טענה: כפל ב  <span> $t$ </span>  מותמר לנגזרת (והפוך)</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>תהא  <span> $f:[0,\infty)\to \CC$ </span>  פונקציה רציפה למקוטעין כך ש  <span> $\frac{|f(t)|}{e^{s_0t}}$ </span>  חסומה.</p>
@@ -620,7 +635,7 @@ $$ .\cl[tf(t)](s)=-\frac{d}{ds} \cl[f](s)$$
 
 <div class="callout" data-callout="הוכחה" collapsible="hide">
 
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
@@ -631,13 +646,15 @@ $$ .\cl[tf(t)](s)=-\frac{d}{ds} \cl[f](s)$$
 $$ ,\frac{\partial}{\partial t}(f(t)e^{-st}) =  f'(t)e^{-st}  -sf(t)e^{-st} $$
  </span> </p>
 
-          <p>רק שבגלל ש  <span> $f$ </span>  גזירה למקוטעין, אז השוויון הזה נכון למקוטעין, כלומר פרט אולי לסדרה דיסקרטית  <span> $0\leq t_1 <  t_2 <  t_3 <  \cdots$ </span>  . למזלנו, כאשר מבצעים אינטגרציה, האינטגרל לא משתנה כאשר משנים פונציה על סדרה כזאת (למשל אם משנים את הפונקציה במספר שופי של נקודות) ולכן נקבל ש</p>
+          <p>רק שבגלל ש  <span> $f$ </span>  גזירה למקוטעין, אז השוויון הזה נכון למקוטעין, כלומר פרט אולי לסדרה דיסקרטית  <span> $0\leq t_1 <  t_2 <  t_3 <  \cdots$ </span>  . למזלנו, כאשר מבצעים אינטגרציה, האינטגרל לא משתנה כאשר משנים פונציה על סדרה כזאת (למשל אם משנים את הפונקציה במספר סופי של נקודות) ולכן נקבל ש</p>
 
           <p> <span> 
-$$. \int_0^\infty \frac{\partial}{\partial t}(f(t)e^{-st})\dt = \int_0^\infty f'(t)e^{-st}\dt  - s \int_0^\infty f(t)e^{-st}\dt = \cl[f'](s)-s\cl[f](s) $$
+$$. \int_0^L \frac{\partial}{\partial t}(f(t)e^{-st})\dt = \int_0^L f'(t)e^{-st}\dt  - s \int_0^L f(t)e^{-st}\dt \to \cl[f'](s)-s\cl[f](s) $$
  </span> </p>
 
-          <p>כדי לחשב את אגף שמאל נרצה להשתמש במשפט היסודי של החדוו”א עבור הפונקציה  <span> $g(t)=f(t)e^{-st}$ </span>  אבל לשם כך צריך ש  <span> $g$ </span>  תהיה פונקציה גזירה ואנחנו רק יודעים שהיא גזירה למקוטעין. מסתבר שהמשפט הזה עדיין נכון אם  <span> $g$ </span>  גזירה למקוטעין כל עוד יודעים שבנוסף היא רציפה. למשל, אם בתחום  <span> $(0,L)$ </span>  נקודות האי גזירות של הפונקציה הן  <span> $0=t_0< t_1< t_2< \cdots <  t_n< t_{n+1}=L$ </span>  אז נקבל ש</p>
+          <p>נשים לב שאם נראה שאגף שמאל מתכנס, אז בגלל שאנחנו יודעים שהאינטגרל ב  <span> $\cl[f](s)$ </span>  מתכנס, אז נקבל במתנה שגם  <span> $\cl[f'](s)$ </span>  מתכנס.</p>
+
+          <p>כדי לחשב את אגף שמאל נרצה להשתמש במשפט היסודי של החדו”א עבור הפונקציה  <span> $g(t)=f(t)e^{-st}$ </span>  אבל לשם כך צריך ש  <span> $g$ </span>  תהיה פונקציה גזירה ואנחנו רק יודעים שהיא גזירה למקוטעין. מסתבר שהמשפט הזה עדיין נכון אם  <span> $g$ </span>  גזירה למקוטעין כל עוד יודעים שבנוסף היא רציפה. למשל, אם בתחום  <span> $(0,L)$ </span>  נקודות האי גזירות של הפונקציה הן  <span> $0=t_0< t_1< t_2< \cdots <  t_n< t_{n+1}=L$ </span>  אז נקבל ש</p>
 
           <p> <span> 
 $$.\int_0^L g'(t)\dt = \sum_0^n \int_{t_i}^{t_{i+1}}g'(t)\dt = \sum_0^n (g(t_{i+1})-g(t_i))=g(t_{n+1})-g(t_0)=g(L)-g(0)$$
@@ -652,12 +669,65 @@ $$,\cl[f'](s)-s\cl[f](s) = f(t)e^{-st}\mid_{t=0}^\infty = \limfi{s} \frac {f(t)}
           <p>וזה מסיים את ההוכחה.</p>
         </li>
         <li>
-          <p>בשביל הכיוון השני, נשתמש ללא הוכחה בכך שמותר להחליף סדר אינטגרציה ונגזרת ונקבל ש</p>
+          <p>בשביל הכיוון השני, אם היה מותר לנו להחליף סדר אינטגרציה ונגזרת, אז בקלות נקבל את התוצאה:</p>
+
+          <p> <span> 
+$$.\frac{\partial}{\partial s}\cl[f](s) = \int_0^\infty \frac{\partial}{\partial s}( f(t)e^{-st})\dt = -\int_0^\infty  tf(t)e^{-st}\dt = -\cl[tf(t)](s)$$
+ </span> </p>
+
+          <p>אם נרצה להוכיח בצורה פורמלית, אז נעשה את התהליך הרגיל:</p>
+
+          <ol>
+            <li>
+              <p>נחליף את הנגזרת בהגדרה שלה עם הגבול,</p>
+            </li>
+            <li>
+              <p>נעביר אגפים למעלה כדי להראות שהגבול הוא אפס,</p>
+            </li>
+            <li>
+              <p>נוסיף ערך מוחלט, ועכשיו רק צריך לחסום מלמעלה,</p>
+            </li>
+            <li>
+              <p>נבצע אי שוויון משולש לאינטגרל:</p>
+            </li>
+          </ol>
         </li>
       </ol>
 
       <p> <span> 
-$$\frac{\partial}{\partial s}\cl[f](s) = \int_0^\infty \frac{\partial}{\partial s}( f(t)e^{-st})\dt = -\int_0^\infty  tf(t)e^{-st}\dt = -\cl[tf(t)](s)$$
+$$.\limsup_{h\to 0}\abs{\frac{\cl[f](s+h)-\cl[f](s)}{h} + \cl[tf(t)](s)} \leq \limsup_{h\to0}\int_0^\infty \abs{\frac{f(t)e^{-(s+h)t}-f(t)e^{-st}}{h} + tf(t)e^{-st}}\dt=(*)$$
+ </span> </p>
+
+      <p>עכשיו עושים קצת סידור אלגברי של המשוואה ומקבלים שהאינטגרנד הוא</p>
+
+      <p> <span> 
+$$.\abs{f(t)e^{-st}\left[\frac{e^{-ht}-1}{h}+t\right]} = \abs{tf(t)e^{-st}\left[\frac{e^{-ht}-(1-ht)}{ht}\right]}$$
+ </span> </p>
+
+      <p>נרצה להראות שלא רק הביטוי הזה מאוד קטן כאשר  <span> $h\to 0$ </span> , אלא גם האינטגרל עליו שואף לאפס.</p>
+
+      <p>נתחיל עם הגורם השני, ונשים לב שאם נציב  <span> $u=-ht$ </span>  אז רשום שם:</p>
+
+      <p> <span> 
+$$.\abs{\frac{1}{u}(e^u-(1+u))} = \abs{\sum_2^\infty \frac{u^{n-1}}{n!}} = \abs{u\sum_0^\infty \frac{u^n}{(n+2)!}}\leq \abs{u}e^\abs{u} = \abs{ht}e^{\abs{ht}}$$
+ </span> </p>
+
+      <p>אם נחזור חזרה לאינטגרל נקבל שהוא קטן שווה ל</p>
+
+      <p> <span> 
+$$,(*)\leq\limsup_{h\to 0} \abs{h}\int_0^\infty \abs{t^2 f(t)e^{(|h|-s)t}}\dt$$
+ </span> </p>
+
+      <p>ועכשיו בעצם אם נראה שהאינטגרל החדש הזה מתכנס, אז כאשר כופלים ב  <span> $|h|$ </span>  כל הביטוי ישאף לאפס וסיימנו. אבל זה ינבע מכך שהאקספוננט שואף לאפס הרבה יותר מהר מפולינומים, כי עבור  <span> $s>s_0$ </span>  נקבל ש</p>
+
+      <p> <span> 
+$$\frac{\abs{t^2 f(t)}}{e^{(s-|h|)t}} = \overbrace{\frac{\abs{f(t)}}{e^{s_0t}}}^\text{bounded} \cdot \overbrace{\frac{t^2}{e^{(s-s_0)\cdot t/2}}}^\text{bounded} \cdot \frac{1}{e^{(s-s_0-2|h|)\cdot t/2}} \leq K \frac{1}{e^{(s-s_0-2|h|)\cdot t/2}} $$
+ </span> </p>
+
+      <p>סה”כ נקבל שאם  <span> $|h|$ </span>  מספיק קטן, אז  <span> $s-s_0-2|h|>0$ </span>  ולכן</p>
+
+      <p> <span> 
+$$.|h|\int_0^\infty \abs{t^2 f(t)e^{(|h|-s)t}}\dt\leq |h|K \int_0^\infty \frac{1}{e^{(s-s_0-2|h|)\cdot t/2}}\dt =  \frac{2K|h|}{s-s_0-2|h|}\to 0 $$
  </span> </p>
 
     </div>
@@ -666,14 +736,14 @@ $$\frac{\partial}{\partial s}\cl[f](s) = \int_0^\infty \frac{\partial}{\partial 
 
 <div class="callout" data-callout="מסקנה">
 
-  <div class="callout-title">מסקנה: נגזרות מסדר גבוה</div>
+  <div class="callout-title"><span class="callout-title-inner">מסקנה: נגזרות מסדר גבוה</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>תהא  <span> $f:[0,\infty)\to \CC$ </span>  פונקציה רציפה למקוטעין כך ש  <span> $\frac{|f(t)|}{e^{s_0t}}$ </span>  חסומה.</p>
 
       <ol>
         <li>
-          <p>אם הנגזרות  <span> $f^{(k)}(t)$ </span>  קיימות ורציפות עבור  <span> $k\leq n-1$ </span>  ובנוסף  <span> $f^{(n)}$ </span>  רציפה למקוטעין, אז לכל  <span> $s>s_0$ </span>  מתקיים ש</p>
+          <p>אם הנגזרות  <span> $f^{(k)}(t)$ </span>  קיימות רציפות וחסומות ע”י  <span> $Ke^{s_0t}$ </span>  עבור  <span> $k\leq n-1$ </span>  ובנוסף  <span> $f^{(n)}$ </span>  רציפה למקוטעין, אז לכל  <span> $s>s_0$ </span>  מתקיים ש</p>
 
           <p> <span> 
 $$.\cl[f^{(n)}](s)=s^n\cl[f](s)-\sum_{k=0}^{n-1} s^{n-1-k}f^{(k)}(0)$$
@@ -694,7 +764,7 @@ $$.\cl[t^nf(t)](s)=(-1)^n\frac{d^n}{\ds^n}\cl[f](s)$$
 
 <div class="callout" data-callout="הוכחה" collapsible="hide">
 
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>נובע מהטענה הקודמת יחד עם אינדוקציה.</p>
@@ -705,7 +775,7 @@ $$.\cl[t^nf(t)](s)=(-1)^n\frac{d^n}{\ds^n}\cl[f](s)$$
 
 <div class="callout" data-callout="טענה">
 
-  <div class="callout-title">טענה: חלוקה ב  <span> $t$ </span>  מותמרת לאינטגרל (והפוך)</div>
+  <div class="callout-title"><span class="callout-title-inner">טענה: חלוקה ב  <span> $t$ </span>  מותמרת לאינטגרל (והפוך)</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
@@ -731,7 +801,7 @@ $$.\cl[g](s)=\frac{1}{s}\cl[f](s)$$
 
 <div class="callout" data-callout="הוכחה" collapsible="hide">
 
-  <div class="callout-title">הוכחה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
@@ -767,11 +837,11 @@ $$.\cl[f](s)=\cl[g'(t)](s)=s\cl[g](s)-g(0)=s\cl[g](s)$$
   </div>
 </div>
 
-<h1 id="דוגמאות">דוגמאות</h1>
+<h2 id="דוגמאות">דוגמאות</h2>
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title">דוגמא: התמרת לפלס של  <span> $t^n$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: התמרת לפלס של  <span> $t^n$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>שימוש בתכונה של  <span> $\cl[t^nf(t)](s)=(-1)^n\frac{d^n}{\ds^n}\cl[f](s)$ </span>  יחד עם ההתמרה של  <span> $\cl[1](s)=\frac{1}{s}$ </span>  בתחום  <span> $s>0$ </span>  תיתן לנו בתחום הזה:</p>
@@ -786,7 +856,7 @@ $$.\cl[t^n](s)=(-1)^n\frac{d^n}{\ds^n}\left(\frac{1}{s}\right)=\frac{n!}{s^{n+1}
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title">דוגמא: חשבו את  <span> $\int_0^\infty \frac{t\cos(t)}{e^t}\dt$ </span> .</div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: חשבו את  <span> $\int_0^\infty \frac{t\cos(t)}{e^t}\dt$ </span> .</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>כפי שהתרגיל כתוב, אנחנו בעצם רוצים לחשב את  <span> $\cl[t\cos(t)](1)$ </span> . לשם כך שוב נשתמש בכך שכפל ב  <span> $t$ </span>  הופך לנגזרת ולכן</p>
@@ -866,6 +936,10 @@ window.MathJax = {
                 </a>
 
                 
+                    <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" class="navigation navigation-next navigation-unique" aria-label="Next page: משוואות דיפרנציאליות">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
             </div>
         </div>
 
@@ -877,6 +951,15 @@ window.MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "משוואות דיפרנציאליות",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_FourierHebrew/hebrew_laplace_differential_equations.md",
+            "ref": "_FourierHebrew/hebrew_laplace_differential_equations.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -967,12 +1050,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/hebrew_laplace.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

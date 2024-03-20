@@ -68,7 +68,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -295,6 +295,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -318,27 +338,13 @@
                     חסימות בתדר
                 </a>
                 
-                    <ul><li ><a href="#איך-חוסמים-את-התדירות-של-פונקציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>איך חוסמים את התדירות של פונקציה</a></li><li ><a href="#למה-פונקציות-שחסומות-בתדר-מעניינות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>למה פונקציות שחסומות בתדר מעניינות?</a></li><li ><a href="#הוכחת-משפט-הדגימה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>הוכחת משפט הדגימה</a></li></ul>
+                    <!-- begin toc.html -->
+<ul><li ><a href="#איך-חוסמים-את-התדירות-של-פונקציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>איך חוסמים את התדירות של פונקציה</a></li><li ><a href="#למה-פונקציות-שחסומות-בתדר-מעניינות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>למה פונקציות שחסומות בתדר מעניינות?</a></li><li ><a href="#הוכחת-משפט-הדגימה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>הוכחת משפט הדגימה</a></li></ul>
 
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_bounded_frequency">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    חסימות בתדר
-                </a>
-                
-                    <ul><li ><a href="#איך-חוסמים-את-התדירות-של-פונקציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>איך חוסמים את התדירות של פונקציה</a></li><li ><a href="#למה-פונקציות-שחסומות-בתדר-מעניינות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>למה פונקציות שחסומות בתדר מעניינות?</a></li><li ><a href="#הוכחת-משפט-הדגימה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>הוכחת משפט הדגימה</a></li></ul>
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -348,7 +354,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >חסימות בתדר</a>
+                        <a href="." >Fourier Analysis notes : חסימות בתדר</a>
                     
                 </h1>
             </div>
@@ -398,7 +404,7 @@
                     
                     <h1 id="/notes/FourierHebrew/hebrew_bounded_frequency" class="centered">חסימות בתדר</h1>
                     <hr/>
-                    <h1 id="איך-חוסמים-את-התדירות-של-פונקציה">איך חוסמים את התדירות של פונקציה</h1>
+                    <h2 id="איך-חוסמים-את-התדירות-של-פונקציה">איך חוסמים את התדירות של פונקציה</h2>
 
 <p>כאשר נתונה לנו פונקציה על הישר  <span> $f:\RR \to \RR$ </span> , הרבה פעמים יש לה יחסית “מעט מסה” בקצוות של הישר. למשל, אם האינטגרל   <span> $\int_{-\infty} ^\infty |f(x)|\dx < \infty$ </span>   הוא סופי, אז לכל  <span> $\varepsilon>0$ </span>  נוכל למצוא  <span> $M_\varepsilon$ </span>  כך שהאינטגרל מחוץ ל  <span> $[-M_\varepsilon,M_\varepsilon]$ </span>  הוא קטן, כלומר    <span> $\int_{|x|< M_\varepsilon}  |f(x)|\dx < \varepsilon$ </span>   . במקרים כאלו הרבה פעמים נסתכל על הפונקציה  <span> $f(x)\chi_{[-M_\varepsilon, M_\varepsilon]}(x)$ </span>  שמכילה את “רב האינפורמציה” מהפונקציה המקורית ויש לה תומך סופי (היא שווה לאפס מחוץ לקטע הסופי  <span> $[-M_\varepsilon,M_\varepsilon]$ </span> .)</p>
 
@@ -413,13 +419,13 @@ $$? \;\;\;\widehat{f_M}(\omega)=\cases{\hat{f}(\omega) & |\omega|\leq M \\ 0 & |
 $$\cf\left[ f*\frac{\sin(xM)}{\pi x}\right](\omega) = \cf\left[ f\right](\omega) \cdot \cf\left[ \frac{2\sin(xM)}{x}\right]= \cf\left[ f\right](\omega) \cdot \chi_{[-M,M]}(\omega)$$
  </span> </p>
 
-<h1 id="למה-פונקציות-שחסומות-בתדר-מעניינות">למה פונקציות שחסומות בתדר מעניינות?</h1>
+<h2 id="למה-פונקציות-שחסומות-בתדר-מעניינות">למה פונקציות שחסומות בתדר מעניינות?</h2>
 
 <p>אחת הסיבות שנרצה לעבוד עם פונקציות שחסומות בתדר היא המשפט הבא:</p>
 
 <div class="callout" data-callout="משפט">
 
-  <div class="callout-title">משפט הדגימה של נייקוויסט-שנון (Nyquist-Shannon Sampling Theorem)</div>
+  <div class="callout-title"><span class="callout-title-inner">משפט הדגימה של נייקוויסט-שנון (Nyquist-Shannon Sampling Theorem)</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>תהא  <span> $f\in E^1(\RR)$ </span>  ו  <span> $\hat{f}(\omega)=0$ </span>  לכל  <span> $|\omega|\geq L$ </span>  אז כמעט לכל  <span> $x$ </span>  מתקיים:</p>
@@ -439,7 +445,7 @@ $$.f(x)=\sum_{-\infty}^\infty f\left(\frac{n\pi}{L}\right)\frac{\sin(Lx-n\pi)}{L
 
 <div class="callout" data-callout="הערה" collapsible="hide">
 
-  <div class="callout-title">הערה: אינטרפולצית פולינומים:</div>
+  <div class="callout-title"><span class="callout-title-inner">הערה: אינטרפולצית פולינומים:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>אנחנו בעצם מכירים מקרה דומה עם אינטרפולציה של פולינומים. אם רוצים לשחזר פולינום מדרגה  <span> $d$ </span>  אז צריך לדעת את הערכים שלו ב  <span> $d+1$ </span>  נקודות שונות. אם יודעים פחות נקודות, אז פתאום יש יותר מפולינום אחד שיתאים לדגימה.</p>
@@ -453,7 +459,7 @@ $$.f(x)=\sum_{-\infty}^\infty f\left(\frac{n\pi}{L}\right)\frac{\sin(Lx-n\pi)}{L
 
 <div class="callout" data-callout="דוגמא" collapsible="hide">
 
-  <div class="callout-title">דוגמא: Aliasing in animation</div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: Aliasing in animation</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <iframe src="js/wheel_aliasing/index.html" width="500" height="500" frameborder="0" scrolling="no"></iframe>
@@ -467,7 +473,7 @@ $$.f(x)=\sum_{-\infty}^\infty f\left(\frac{n\pi}{L}\right)\frac{\sin(Lx-n\pi)}{L
 
 <div class="callout" data-callout="דוגמא" collapsible="hide">
 
-  <div class="callout-title">דוגמא: Aliasing in checkered tiles</div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: Aliasing in checkered tiles</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>נניח שאנחנו רוצים להציג משבצות שחורות-לבנות, אבל הן מאוד קטנות (מתאים לפונקציה עם תדר מאוד גבוה) והרזולוציה שלנו לא מספיק גדולה (אין מספיק דגימות) . למשל נניח שכל פיקסל שמיוצג בתמונה למטה ע”י מסגרת כחולה מכסה כמה משבצות:</p>
@@ -483,11 +489,11 @@ $$.f(x)=\sum_{-\infty}^\infty f\left(\frac{n\pi}{L}\right)\frac{\sin(Lx-n\pi)}{L
     </div>
   </div>
 </div>
-<h1 id="הוכחת-משפט-הדגימה">הוכחת משפט הדגימה</h1>
+<h2 id="הוכחת-משפט-הדגימה">הוכחת משפט הדגימה</h2>
 
 <div class="callout" data-callout="הוכחה">
 
-  <div class="callout-title">הוכחה למשפט הדגימה:</div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה למשפט הדגימה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
@@ -730,12 +736,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/hebrew_bounded_frequency.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

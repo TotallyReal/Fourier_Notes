@@ -68,7 +68,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -295,6 +295,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -318,27 +338,13 @@
                     תכונות בסיסיות
                 </a>
                 
-                    
+                    <!-- begin toc.html -->
 
+
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/basic%20properties">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    תכונות בסיסיות
-                </a>
-                
-                    
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -348,7 +354,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >תכונות בסיסיות</a>
+                        <a href="." >Fourier Analysis notes : תכונות בסיסיות</a>
                     
                 </h1>
             </div>
@@ -404,7 +410,7 @@
 
 <div class="callout" data-callout="טענה">
 
-  <div class="callout-title">טענה: פעולות אריתמטיות</div>
+  <div class="callout-title"><span class="callout-title-inner">טענה: פעולות אריתמטיות</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>תהא  <span> $f\in E^1(\RR)$ </span>  . אז :</p>
@@ -441,7 +447,7 @@ $$.\overline{\cf[f](\omega)}=\cf[\overline{f}](-\omega)$$
 
 <div class="callout" data-callout="הוכחה" collapsible="hide">
 
-  <div class="callout-title">הוכחה: </div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה: </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
@@ -486,7 +492,7 @@ $$2\pi \overline{\hat{f}(\omega)} = \overline{\int_{-\infty}^{\infty} f(x) e^{-i
 
 <div class="callout" data-callout="דוגמא" collapsible="hide">
 
-  <div class="callout-title">דוגמא: הפונקציות  <span> $\chi_{[a,b]}(x)$ </span>  ו  <span> $e^{-|ax|}$ </span> .</div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא: הפונקציות  <span> $\chi_{[a,b]}(x)$ </span>  ו  <span> $e^{-|ax|}$ </span> .</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>כבר חישבנו את התמרה של   <span> $\chi_{[a,b]}(x)$ </span>  :</p>
@@ -523,7 +529,7 @@ $$\hat{\chi}_{[a,b]}(\omega)=e^{i\frac{a+b}{a-b}\omega}\cdot \frac{b-a}{2}\cdot 
 
 <div class="callout" data-callout="דוגמא" collapsible="hide">
 
-  <div class="callout-title">הפונקציה  <span> $f(x)=e^{-x}\cdot \chi_{[0,\infty)}(x)$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">הפונקציה  <span> $f(x)=e^{-x}\cdot \chi_{[0,\infty)}(x)$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>החישוב היחיד של ההתמרה של הפונקציה הזאת הוא לא קשה:</p>
@@ -553,7 +559,7 @@ $$\sqrt{|\lambda|} \cdot f(\lambda x) \Rightarrow \sqrt{|\lambda|^{-1}} \hat{f}(
 
 <div class="callout" data-callout="מסקנה">
 
-  <div class="callout-title">טענה: סיבוב  <span> $\Leftarrow$ </span>  הזזה, בעולם הממשי</div>
+  <div class="callout-title"><span class="callout-title-inner">טענה: סיבוב  <span> $\Leftarrow$ </span>  הזזה, בעולם הממשי</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>עבור כפל בסינוסים וקוסינוסים נקבל:</p>
@@ -569,7 +575,7 @@ $$\align{ \cf[f(x)\sin(cx)]&=\frac{\cf[f](\omega-c)-\cf[f](\omega+c)}{2i} \\    
 
 <div class="callout" data-callout="טענה">
 
-  <div class="callout-title">טענה: פונקציות שמורות</div>
+  <div class="callout-title"><span class="callout-title-inner">טענה: פונקציות שמורות</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>אם פונקציה  <span> $f$ </span>  היא זוגית (בהתאם אי זוגית), אז  <span> $\cf[f]$ </span>  היא זוגית (בהתאם אי זוגית).</p>
@@ -584,7 +590,7 @@ $$\align{ \cf[f(x)\sin(cx)]&=\frac{\cf[f](\omega-c)-\cf[f](\omega+c)}{2i} \\    
 
 <div class="callout" data-callout="הוכחה" collapsible="hide">
 
-  <div class="callout-title">הוכחה: </div>
+  <div class="callout-title"><span class="callout-title-inner">הוכחה: </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>נסתכל על זהות הכפל בסקלר עם  <span> $\lambda = -1$ </span> , ונסמן  <span> $g(x)=f(-x)$ </span> . במקרה הזה נקבל ש  <span> $\hat{g}(\omega)=\hat{f}(-\omega)$ </span> .</p>
@@ -605,7 +611,7 @@ $$\hat{f}(\omega)=\hat{g}(\omega)=\hat {f}(-\omega)$$
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title">דוגמא:</div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>ראינו כבר את ההתמרות של הפונקציות הממשיות וזוגיות:</p>
@@ -807,12 +813,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/basic properties.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

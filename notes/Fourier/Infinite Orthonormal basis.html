@@ -68,7 +68,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -295,6 +295,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -318,27 +338,13 @@
                     Infinite Orthonormal basis
                 </a>
                 
-                    <ul><li ><a href="#orthonormal-basis---from-finite-to-infinite" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthonormal basis - from finite to infinite</a></li><li ><a href="#convergence-in-norm" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Convergence in norm</a><ul><li ><a href="#pointwise-convergence" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Pointwise convergence</a></li></ul></li><li ><a href="#continuous-functions" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Continuous functions</a></li><li ><a href="#infinite-sums-and-complete-orthonormal-bases" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Infinite sums and complete orthonormal bases</a></li></ul>
+                    <!-- begin toc.html -->
+<ul><li ><a href="#orthonormal-basis---from-finite-to-infinite" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthonormal basis - from finite to infinite</a></li><li ><a href="#convergence-in-norm" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Convergence in norm</a><ul><li ><a href="#pointwise-convergence" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Pointwise convergence</a></li></ul></li><li ><a href="#continuous-functions" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Continuous functions</a></li><li ><a href="#infinite-sums-and-complete-orthonormal-bases" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Infinite sums and complete orthonormal bases</a></li></ul>
 
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Infinite%20Orthonormal%20basis">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    Infinite Orthonormal basis
-                </a>
-                
-                    <ul><li ><a href="#orthonormal-basis---from-finite-to-infinite" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthonormal basis - from finite to infinite</a></li><li ><a href="#convergence-in-norm" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Convergence in norm</a><ul><li ><a href="#pointwise-convergence" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Pointwise convergence</a></li></ul></li><li ><a href="#continuous-functions" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Continuous functions</a></li><li ><a href="#infinite-sums-and-complete-orthonormal-bases" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Infinite sums and complete orthonormal bases</a></li></ul>
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -348,7 +354,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >Infinite Orthonormal basis</a>
+                        <a href="." >Fourier Analysis notes : Infinite Orthonormal basis</a>
                     
                 </h1>
             </div>
@@ -398,9 +404,7 @@
                     
                     <h1 id="/notes/Fourier/Infinite Orthonormal basis" class="centered">Infinite Orthonormal basis</h1>
                     <hr/>
-                    <p>Course: <a href="\Fourier_Notes\notes\Fourier/Fourier Course Information">Fourier Course Information</a></p>
-
-<h1 id="orthonormal-basis---from-finite-to-infinite">Orthonormal basis - from finite to infinite</h1>
+                    <h2 id="orthonormal-basis---from-finite-to-infinite">Orthonormal basis - from finite to infinite</h2>
 
 <p>The concept of a basis is fundamental in linear algebra (and generally in mathematics). Its formal definition is just a set of linearly independent vectors which span the given vector space. The other equivalent definition, was that  <span> $\{v_1,...,v_n\}$ </span>  is a basis for  <span> $V$ </span> , if and only if any vector  <span> $v\in V$ </span>  has a unique presentation as a linear combination
  <span> 
@@ -415,13 +419,13 @@ Moreover, when our vector space can be spanned by finitely many vectors, we have
   <li><strong>The analytic approach</strong>: In special and interesting cases, we might be able to define infinite sums, namely   <span> $\sum_1^\infty \alpha_i v_i$ </span>  , and then the definition is the analogue to what we have for finite sets. As the spaces we deal with are special and interesting, this will be our next step.</li>
 </ol>
 
-<h1 id="convergence-in-norm">Convergence in norm</h1>
+<h2 id="convergence-in-norm">Convergence in norm</h2>
 
 <p>As usually, before talking about the limit of infinite sums, we need to define what are limits.</p>
 
 <div class="callout" data-callout="def">
 
-  <div class="callout-title">Definition: Convergence in norm</div>
+  <div class="callout-title"><span class="callout-title-inner">Definition: Convergence in norm</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $V$ </span>  be a normed vector space. We say that a sequence of vectors  <span> $v_n$ </span>  converges in norm to  <span> $v$ </span>  in  <span> $V$ </span>  if  <span> $\norm{v_n - v}\to 0$ </span>  and we denote it by  <span> $v_n \overset{\norm{\cdot}}{\longrightarrow} v$ </span> , or just  <span> $v_n \to v$ </span>  if there is no ambiguity.</p>
@@ -432,7 +436,7 @@ Moreover, when our vector space can be spanned by finitely many vectors, we have
 
 <div class="callout" data-callout="remark">
 
-  <div class="callout-title">Remark:</div>
+  <div class="callout-title"><span class="callout-title-inner">Remark:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Note that we have defined convergence with convergence, namely:</p>
@@ -462,7 +466,7 @@ $$\align{\norm{f}_1& = \int_0^1|f(x)|\dx \\ \norm{f}_2& = \sqrt{\int_0^1|f(x)|^2
 
 <div class="callout" data-callout="example" collapsible="hide">
 
-  <div class="callout-title">Example 1: The functions  <span> $f_n(x) = \frac{x}{n}$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">Example 1: The functions  <span> $f_n(x) = \frac{x}{n}$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p><img src="\Fourier_Notes\notes\Fourier\images\infinite basis/x divided by n.png" width="400" /></p>
@@ -479,7 +483,7 @@ $$\align{\norm{f_n}_1&=\frac{1}{2n} \to 0 \\ \norm{f_n}_2&=\frac{1}{\sqrt{3n^2}}
 
 <div class="callout" data-callout="example" collapsible="hide">
 
-  <div class="callout-title">Example 2: The functions  <span> $f_n(x) = x^n$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">Example 2: The functions  <span> $f_n(x) = x^n$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p><img src="\Fourier_Notes\notes\Fourier\images\infinite basis/x power n.png" width="400" /></p>
@@ -498,7 +502,7 @@ $$\align{\norm{f_n}_1&=\frac{1}{n+1} \to 0 \\ \norm{f_n}_2&=\frac{1}{\sqrt{2n+1}
 
 <div class="callout" data-callout="exc" collapsible="hide">
 
-  <div class="callout-title">Excercise:</div>
+  <div class="callout-title"><span class="callout-title-inner">Excercise:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Show that in the space  <span> $C[0,1]$ </span>  of continuous functions with the  <span> $\cl^\infty$ </span>  norm, the sequence  <span> $x^n$ </span>  of functions does not converge.</p>
@@ -509,7 +513,7 @@ $$\align{\norm{f_n}_1&=\frac{1}{n+1} \to 0 \\ \norm{f_n}_2&=\frac{1}{\sqrt{2n+1}
 
 <div class="callout" data-callout="cor">
 
-  <div class="callout-title">Corollary:</div>
+  <div class="callout-title"><span class="callout-title-inner">Corollary:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Different norm can have different convergence of the same sequence.</p>
@@ -520,7 +524,7 @@ $$\align{\norm{f_n}_1&=\frac{1}{n+1} \to 0 \\ \norm{f_n}_2&=\frac{1}{\sqrt{2n+1}
 
 <div class="callout" data-callout="exc">
 
-  <div class="callout-title">Excercise:</div>
+  <div class="callout-title"><span class="callout-title-inner">Excercise:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Show that for any  <span> $f\in C[0,1]$ </span>  we have that  <span> $\norm{f}_1 \leq \norm{f}_2 \leq \norm{f}_\infty$ </span> .</p>
@@ -532,13 +536,13 @@ $$\align{\norm{f_n}_1&=\frac{1}{n+1} \to 0 \\ \norm{f_n}_2&=\frac{1}{\sqrt{2n+1}
     </div>
   </div>
 </div>
-<h2 id="pointwise-convergence">Pointwise convergence</h2>
+<h3 id="pointwise-convergence">Pointwise convergence</h3>
 
 <p>One more important type of convergence for functions which we learned about in calculus, which is not a norm convergence (why?) is the pointwise convergence:</p>
 
 <div class="callout" data-callout="def">
 
-  <div class="callout-title">Definition: Pointwise convergence of functions</div>
+  <div class="callout-title"><span class="callout-title-inner">Definition: Pointwise convergence of functions</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>We say that a sequence of functions  <span> $f_n$ </span>  converges pointwise in a set  <span> $X$ </span> , if  <span> $f_n(x)$ </span>  is a convergent sequence for any  <span> $x\in X$ </span> .</p>
@@ -549,7 +553,7 @@ $$\align{\norm{f_n}_1&=\frac{1}{n+1} \to 0 \\ \norm{f_n}_2&=\frac{1}{\sqrt{2n+1}
 
 <div class="callout" data-callout="lem">
 
-  <div class="callout-title">Lemma:</div>
+  <div class="callout-title"><span class="callout-title-inner">Lemma:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>If  <span> $f_n \to f$ </span>  in  <span> $\cl^\infty$ </span>  (unifrom convergence) then  <span> $f_n \to f$ </span>  pointwise.</p>
@@ -562,7 +566,7 @@ Unfortunately, there is no such connection with the induced norm.</p>
 
 <div class="callout" data-callout="example" collapsible="hide">
 
-  <div class="callout-title">Example: Pointwise convergence doesn't imply  <span> $\norm{\cdot}_2$ </span>  convergence </div>
+  <div class="callout-title"><span class="callout-title-inner">Example: Pointwise convergence doesn't imply  <span> $\norm{\cdot}_2$ </span>  convergence </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Consider the functions  <span> $f_n(x)=\cases{n& x\in(0,\frac{1}{n}) \\ 0 & else}$ </span> .</p>
@@ -579,7 +583,7 @@ $$\norm {f_n - 0}_2^2 = \int_0^{1/n} n^2 \dx =n \not \to 0 . $$
 
 <div class="callout" data-callout="example" collapsible="hide">
 
-  <div class="callout-title">Example:  <span> $\norm{\cdot}_2$ </span>  convergence doesn't imply pointwise convergence</div>
+  <div class="callout-title"><span class="callout-title-inner">Example:  <span> $\norm{\cdot}_2$ </span>  convergence doesn't imply pointwise convergence</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>The idea is to build functions which are (1) have very small area, and (2) this area “shifts” around. Then (1) will imply norm convergence, and (2) will mean that no one point will actually converge.</p>
@@ -597,13 +601,13 @@ $$\align{f_1(x) \equiv 1=\chi_{[0,1]} \\ f_2(x)=\chi_{[0,1/2]} \; &, \; f_3(x) =
     </div>
   </div>
 </div>
-<h1 id="continuous-functions">Continuous functions</h1>
+<h2 id="continuous-functions">Continuous functions</h2>
 
 <p>Given an inner product space  <span> $V$ </span>  with the inner product  <span> $\angles{\cdot,\cdot}$ </span> , we now know how to generate a norm  <span> $\norm{v}:=\sqrt{\angles{v,v}}$ </span> , and from the previous section use this norm to define limits. Of course, once we have “limits” we can ask whether given functions are continuous, and fortunately our standard arithmetic functions are continuous.</p>
 
 <div class="callout" data-callout="theorem">
 
-  <div class="callout-title">Theorem: Inner products are continuous</div>
+  <div class="callout-title"><span class="callout-title-inner">Theorem: Inner products are continuous</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $V$ </span>  be an inner product space and suppose that  <span> $v_n \normto v$ </span>  and  <span> $u_n \normto u$ </span> . In addition, let  <span> $\alpha_n \to \alpha$ </span>  in the field. Then the following functions are continuous:</p>
@@ -632,7 +636,7 @@ $$\align{f_1(x) \equiv 1=\chi_{[0,1]} \\ f_2(x)=\chi_{[0,1/2]} \; &, \; f_3(x) =
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>All of the proofs are similar to the standard continuity proofs in  <span> $\RR$ </span> . Let’s prove as example only parts (4) and (5). Indeed, for part (4) we have</p>
@@ -650,13 +654,13 @@ $$\align{|\angles{v_n, u_n}-\angles{v, u}| & \leq |\angles{v_n, u_n}-\angles{v_n
     </div>
   </div>
 </div>
-<h1 id="infinite-sums-and-complete-orthonormal-bases">Infinite sums and complete orthonormal bases</h1>
+<h2 id="infinite-sums-and-complete-orthonormal-bases">Infinite sums and complete orthonormal bases</h2>
 
 <p>Now that we have the definition of limits in our normed space, we can define infinite sums  <span> $\sum_1^\infty v_k$ </span>  as the limit (if exists) of the partial sums  <span> $\sum_1^N v_k$ </span> .</p>
 
 <div class="callout" data-callout="remark">
 
-  <div class="callout-title">Remark: Some notations issues</div>
+  <div class="callout-title"><span class="callout-title-inner">Remark: Some notations issues</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Since we work with convergence of functions, where norm convergence and pointwise convergence are different, we will use  <span> $\sum_1^\infty \angles{v,e_k}e_k \sim v$ </span>  to indicate norm convergence and  <span> $\sum_1^\infty \angles{v,e_k}e_k = v$ </span>  for pointwise convergence. Later we will see that they coincide in many cases.</p>
@@ -668,7 +672,7 @@ $$\align{|\angles{v_n, u_n}-\angles{v, u}| & \leq |\angles{v_n, u_n}-\angles{v_n
 
 <div class="callout" data-callout="lem">
 
-  <div class="callout-title">Lemma: Coefficients of orthonormal sets</div>
+  <div class="callout-title"><span class="callout-title-inner">Lemma: Coefficients of orthonormal sets</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Suppose that  <span> $\{e_k|k\in\NN\}$ </span>  is an orthonormal set, and  <span> $v=\sum_1^\infty \alpha_k v_k$ </span> . Then  <span> $\alpha_n = \angles{v, e_n}$ </span> .</p>
@@ -679,7 +683,7 @@ $$\align{|\angles{v_n, u_n}-\angles{v, u}| & \leq |\angles{v_n, u_n}-\angles{v_n
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>We have that</p>
@@ -697,7 +701,7 @@ $$\align{ \angles{v, e_n} & = \angles{\sum_1^\infty \alpha_k e_k, e_n} = \angles
 
 <div class="callout" data-callout="def">
 
-  <div class="callout-title">Definition: An orthonormal basis</div>
+  <div class="callout-title"><span class="callout-title-inner">Definition: An orthonormal basis</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $V$ </span>  be an inner product space, and  <span> $\{e_k\}$ </span>  an orthonormal set. We say that it is a orthonormal basis if every  <span> $v\in V$ </span>  is the limit  <span> $\sum_1^n\angles{v, e_k}e_k \normto v$ </span> .</p>
@@ -711,7 +715,7 @@ $$\align{ \angles{v, e_n} & = \angles{\sum_1^\infty \alpha_k e_k, e_n} = \angles
 
 <div class="callout" data-callout="theorem">
 
-  <div class="callout-title">Theorem: The Fourier system  <span> $E[-\pi, \pi]$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">Theorem: The Fourier system  <span> $E[-\pi, \pi]$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $V=E[-\pi,\pi]$ </span>  be the vector space of piecewise continuous functions on  <span> $[-\pi,\pi]$ </span> , with the inner product  <span> $\angles{f,g}:=\frac{1}{\pi}\int_{-\pi}^{\pi} f(x)\overline{g(x)} \dx$ </span> . Then the functions</p>
@@ -728,7 +732,7 @@ $$\{\frac {1}{2}\}\cup\{\cos(nx) \mid n\geq 1\} \cup \{\sin(nx) \mid n\geq 1\}$$
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>We already know that this system is orthonormal. The proof that it is “spanning” is more complicated and we will not prove in this course. However, for those interested, you should read about the <a href="https://en.wikipedia.org/wiki/Stone%E2%80%93Weierstrass_theorem">Stone-Weierstrass</a> theorem.</p>
@@ -740,7 +744,7 @@ $$\{\frac {1}{2}\}\cup\{\cos(nx) \mid n\geq 1\} \cup \{\sin(nx) \mid n\geq 1\}$$
 
 <div class="callout" data-callout="claim">
 
-  <div class="callout-title">Claim:</div>
+  <div class="callout-title"><span class="callout-title-inner">Claim:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $V$ </span>  be an inner product space with an orthonormal system  <span> $\{e_k \mid k\in\NN\}$ </span> .</p>
@@ -767,7 +771,7 @@ $$\angles{u,v} = \sum_1^\infty \angles{u,e_i}\overline{\angles{v,e_i}}.$$
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>The claim here is in a sense the limit of the analogue claim for finite dimensional spaces, indeed, the main object here is none other than</p>
@@ -810,7 +814,7 @@ $$\align{\angles{u,v}&=\angles{\sum_{i=1}^\infty\angles{u,e_i}e_i,\sum_{j=1}^\in
 
 <div class="callout" data-callout="example">
 
-  <div class="callout-title">Example: The function  <span> $f(x)=x$ </span> </div>
+  <div class="callout-title"><span class="callout-title-inner">Example: The function  <span> $f(x)=x$ </span> </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Recall that we have already seen that  <span> $\angles{x, \sin(nx)}=2\frac{(-1)^{n+1}}{n}$ </span> . On the other hand,</p>
@@ -835,7 +839,7 @@ $$\frac{2\pi^2}{3}=\frac{1}{\pi}\int_{-\pi}^{\pi} x^2\dx = \sum_1^\infty \frac{4
 
 <div class="callout" data-callout="lem">
 
-  <div class="callout-title">Lemma: The Riemann Lebesgue Lemma</div>
+  <div class="callout-title"><span class="callout-title-inner">Lemma: The Riemann Lebesgue Lemma</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>For an orthonormal basis  <span> $\{e_k \mid k\in \NN \}$ </span>  and any vector  <span> $v$ </span>  we have that  <span> $\angles{v,e_k}\to 0$ </span> .</p>
@@ -847,7 +851,7 @@ $$\frac{2\pi^2}{3}=\frac{1}{\pi}\int_{-\pi}^{\pi} x^2\dx = \sum_1^\infty \frac{4
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>We know that  <span> $\norm v = \sum_1^\infty |\angles{v,e_k}|^2$ </span>  so we must have that  <span> $\limfi{n} |\angles{v,e_k}| = 0$ </span> .</p>
@@ -855,11 +859,6 @@ $$\frac{2\pi^2}{3}=\frac{1}{\pi}\int_{-\pi}^{\pi} x^2\dx = \sum_1^\infty \frac{4
     </div>
   </div>
 </div>
-
-<hr />
-
-<p>&lt;-<a href="\Fourier_Notes\notes\Fourier/Orthogonal sets - a reminder">Previous: Orthogonal sets</a>    ,    False[[invalid wikilink: Fourier Course Information#Table of contents]]    ,   <a href="\Fourier_Notes\notes\Fourier/Fourier Series">Next: Fourier series</a> -&gt;</p>
-
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -1040,12 +1039,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_Fourier/Infinite Orthonormal basis.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

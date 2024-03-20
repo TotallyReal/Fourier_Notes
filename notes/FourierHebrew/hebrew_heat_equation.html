@@ -68,7 +68,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -295,6 +295,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -318,27 +338,13 @@
                     משוואת החום
                 </a>
                 
-                    <ul><li ><a href="#אינטואיציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>אינטואיציה</a></li><li ><a href="#פתרון-משוואת-החום" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פתרון משוואת החום</a></li></ul>
+                    <!-- begin toc.html -->
+<ul><li ><a href="#אינטואיציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>אינטואיציה</a></li><li ><a href="#פתרון-משוואת-החום" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פתרון משוואת החום</a></li></ul>
 
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heat_equation">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    משוואת החום
-                </a>
-                
-                    <ul><li ><a href="#אינטואיציה" onclick="mobilePageScrollToAnchor(this)"  border=#000000>אינטואיציה</a></li><li ><a href="#פתרון-משוואת-החום" onclick="mobilePageScrollToAnchor(this)"  border=#000000>פתרון משוואת החום</a></li></ul>
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -348,7 +354,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >משוואת החום</a>
+                        <a href="." >Fourier Analysis notes : משוואת החום</a>
                     
                 </h1>
             </div>
@@ -404,7 +410,7 @@ $$u'_t(x,t)=k\cdot u''_{xx}(x,t)$$
  </span> 
 כאשר  <span> $k$ </span>  הוא קבוע התלוי בחומר איתו עובדים. נסיון לפתור את משוואת החום זה אחת הסיבות שפורייה פיתח את ההתמרות שאנחנו לומדים.</p>
 
-<h1 id="אינטואיציה">אינטואיציה</h1>
+<h2 id="אינטואיציה">אינטואיציה</h2>
 <p>כדי לקבל קצת אינטואיציה על הקשר בין הנגזרת לפי הזמן ולפי המקום, בואו נסתכל על הפונקציה  <span> $f(x)=\frac{x^2(x-2)}{4}+1$ </span>  ועל שתי הנגזרות שלה:
 <img src="\Fourier_Notes\notes\FourierHebrew\images/heat_equation_poly.png" width="600" />
 נניח שהפונקציה הזאת מתארת את החום על מוט בזמן  <span> $t=0$ </span>  ונסתכל על שלוש נקודות  <span> $x=-1,0,1$ </span>  ונשאל איך החום שם צריך להשתנות.</p>
@@ -428,7 +434,7 @@ $$.\frac{1}{2h}\left(\frac{u(x+h)-u(x)}{h}-\frac{u(x-h)-u(x)}{-h}\right)$$
 $$.\lim_{h\to 0}\frac{u(x+h)+u(x-h)-2u(x)}{2h^2}=\lim_{h\to 0}\frac{u'(x+h)-u'(x-h)}{4h}=\frac{u''_{xx}(x)}{2}$$
  </span> </p>
 
-<h1 id="פתרון-משוואת-החום">פתרון משוואת החום</h1>
+<h2 id="פתרון-משוואת-החום">פתרון משוואת החום</h2>
 
 <p>נחזור לנסיון של פורייה לפתור את משוואת החום:
  <span> 
@@ -466,7 +472,7 @@ $$.\dboxed{u(x,t)=\frac{1}{\sqrt{4\pi kt}}\int_{-\infty}^\infty u(y,0)e^{-\frac{
 
 <div class="callout" data-callout="דוגמא" collapsible="hide">
 
-  <div class="callout-title">סימולציה של משוואת החום</div>
+  <div class="callout-title"><span class="callout-title-inner">סימולציה של משוואת החום</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>לחצו על המסך כדי ליצור נקודות חום. לחצו על הכפתור הפעלה בצד שמאל למטה (שקצת מוחבא) כדי להתחיל את הסימולציה.</p>
@@ -656,12 +662,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/hebrew_heat_equation.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

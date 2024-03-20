@@ -68,7 +68,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -295,6 +295,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -318,27 +338,13 @@
                     Inner product spaces - a reminder
                 </a>
                 
-                    <ul><li ><a href="#the-euclidean-prototype" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The Euclidean prototype</a></li><li ><a href="#the-inner-product" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The inner product</a></li><li ><a href="#the-norm" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The norm</a></li></ul>
+                    <!-- begin toc.html -->
+<ul><li ><a href="#the-euclidean-prototype" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The Euclidean prototype</a></li><li ><a href="#the-inner-product" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The inner product</a></li><li ><a href="#the-norm" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The norm</a></li></ul>
 
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Inner%20product%20spaces%20-%20a%20reminder">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    Inner product spaces - a reminder
-                </a>
-                
-                    <ul><li ><a href="#the-euclidean-prototype" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The Euclidean prototype</a></li><li ><a href="#the-inner-product" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The inner product</a></li><li ><a href="#the-norm" onclick="mobilePageScrollToAnchor(this)"  border=#000000>The norm</a></li></ul>
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -348,7 +354,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >Inner product spaces - a reminder</a>
+                        <a href="." >Fourier Analysis notes : Inner product spaces - a reminder</a>
                     
                 </h1>
             </div>
@@ -398,8 +404,7 @@
                     
                     <h1 id="/notes/Fourier/Inner product spaces - a reminder" class="centered">Inner product spaces - a reminder</h1>
                     <hr/>
-                    <p>Course: <a href="\Fourier_Notes\notes\Fourier/Fourier Course Information">Fourier Course Information</a></p>
-<h1 id="the-euclidean-prototype">The Euclidean prototype</h1>
+                    <h2 id="the-euclidean-prototype">The Euclidean prototype</h2>
 <p>We start by recalling some elements from the theory of inner products, which are our ways to give standard vector spaces a new geometric structure. The prototype of this structure is the standard Euclidean dot product on  <span> $\RR^3$ </span>  defined by</p>
 
 <p> <span> 
@@ -429,13 +434,13 @@ This structure stands at the heart of the standard Euclidean geometry that we li
 <p><strong>The Pythagorean theorem</strong>”: If  <span> $u \perp v$ </span>  are perpendicular, then  <span> $\norm{u+v}^2 = \norm u^2 + \norm v^2$ </span> </p>
 
 <p><img src="\Fourier_Notes\notes\Fourier\images\inner products/pythagoras.jpg" width="400" /></p>
-<h1 id="the-inner-product">The inner product</h1>
+<h2 id="the-inner-product">The inner product</h2>
 
 <p>With this geometric intuition, let us recall its generalization as “False[[invalid wikilink: Inner product]]”. In the following, our field will always be one of  <span> $\FF = \RR,\CC$ </span> .</p>
 
 <div class="callout" data-callout="def">
 
-  <div class="callout-title">Definition: Inner Products</div>
+  <div class="callout-title"><span class="callout-title-inner">Definition: Inner Products</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $V$ </span>  be a vector space. An <strong>inner product</strong> on  <span> $V$ </span>  is a function  <span> 
@@ -467,7 +472,7 @@ $$\angles {u+\alpha v,w} = \angles {u,w} + \alpha \angles {v,w}.$$
 
 <div class="callout" data-callout="example" collapsible="hide">
 
-  <div class="callout-title">Examples:</div>
+  <div class="callout-title"><span class="callout-title-inner">Examples:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
@@ -523,7 +528,7 @@ converges in absolute value (and is at most  <span> $\int_0^1 \abs{f(x)}^2 dx + 
 
 <div class="callout" data-callout="def">
 
-  <div class="callout-title">Definition: The space of piecewise continuous functions.</div>
+  <div class="callout-title"><span class="callout-title-inner">Definition: The space of piecewise continuous functions.</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>For a segment  <span> $I\subseteq \RR$ </span>  we define:</p>
@@ -537,18 +542,19 @@ $$E^2(I)=\{f:I\to \CC\;\mid\;f\text{ piecewise continuous, }\int_I\abs{f(x)}^2\d
     </div>
   </div>
 </div>
+
 <blockquote>
   <p>[!remark] Remark:  <span> $\mathcal{L}^2$ </span> v-functions.
 This space can (and should be) extended a little bit, and instead of piecewise continuous function, we can talk about integrable functions, and then it is denoted by  <span> $\mathcal{L}^2$ </span> . However, for simplicity we will continue to work with the piecewise continuous functions.</p>
 </blockquote>
 
-<h1 id="the-norm">The norm</h1>
+<h2 id="the-norm">The norm</h2>
 
 <p>Once we have the inner product (which “corresponds” to angles), we also have the norm (which is the “length” of a vector):</p>
 
 <div class="callout" data-callout="def">
 
-  <div class="callout-title">Definition: Norms</div>
+  <div class="callout-title"><span class="callout-title-inner">Definition: Norms</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $V$ </span>  be a vector space. A <strong>norm</strong> on  <span> $V$ </span>  is a function</p>
@@ -582,7 +588,7 @@ $$\norm {u+v} \leq \norm u + \norm v.$$
 
 <div class="callout" data-callout="theorem">
 
-  <div class="callout-title">Theorem: The induced norm.</div>
+  <div class="callout-title"><span class="callout-title-inner">Theorem: The induced norm.</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>If  <span> $V$ </span>  is an inner product space, then  <span> $\norm v := \sqrt {\angles {v,v}}$ </span>  is a norm function.</p>
@@ -621,10 +627,6 @@ $$\begin{align} \norm f_p & := \left(\int_0^1 |f(x)|^p\dx\right)^{1/p} & \norm {
 <center><iframe scrolling="no" title="L_p norms in the plane" src="https://www.geogebra.org/material/iframe/id/tqp6ewcv/width/700/height/333/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false" width="700px" height="333px" style="border:0px; "> </iframe></center>
 
 <p>As you can see, the standard unit circle for  <span> $p=2$ </span>  is an actual circle, while for  <span> $p=1$ </span>  we get a diamond, and as  <span> $p\to \infty$ </span>  it approaches (and in the limit is) a square lined up to the X and Y axes. Also, for  <span> $p< 1$ </span>  the formula defined above is not a norm, and we can “see” it, since the interior of the unit circle is not convex.</p>
-
-<hr />
-
-<p>&lt;-False[[invalid wikilink: Fourier/Motivation]]    ,    <a href="\Fourier_Notes\notes\Fourier/Fourier Course Information">Back to table of contents</a>    ,    <a href="\Fourier_Notes\notes\Fourier/Orthogonal sets - a reminder">Next: Orthogonal sets</a>-&gt;</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -805,12 +807,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_Fourier/Inner product spaces - a reminder.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {

@@ -68,7 +68,7 @@
 
 \newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
         </div>
-        <div class="book">
+        <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
     <script type="text/javascript">
         // Fixes the page links scroll problem on both desktop and mobile browsers
@@ -295,6 +295,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
+                                11. משוואות דיפרנציאליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" onclick="pageScrollToTop(this)">
+                                12. פונקציית הביסייד
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -318,27 +338,13 @@
                     Orthogonal sets - a reminder
                 </a>
                 
-                    <ul><li ><a href="#orthonormal-sets" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthonormal sets</a></li><li ><a href="#orthogonal-projection" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthogonal projection</a></li><li ><a href="#examples" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Examples</a></li></ul>
+                    <!-- begin toc.html -->
+<ul><li ><a href="#definition-and-basic-properties" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Definition and basic properties</a></li><li ><a href="#orthogonal-projection" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthogonal projection</a></li><li ><a href="#examples" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Examples</a></li></ul>
 
+<!-- end toc.html -->
                 
             </li>
-            <!--
             
-
-            
-
-            <li class="divider"></li>
-            <li>Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/Fourier/Orthogonal%20sets%20-%20a%20reminder">
-                <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    Orthogonal sets - a reminder
-                </a>
-                
-                    <ul><li ><a href="#orthonormal-sets" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthonormal sets</a></li><li ><a href="#orthogonal-projection" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Orthogonal projection</a></li><li ><a href="#examples" onclick="mobilePageScrollToAnchor(this)"  border=#000000>Examples</a></li></ul>
-
-                
-            </li>
-        -->
         </ul>
     </nav>
 </div>
@@ -348,7 +354,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >Orthogonal sets - a reminder</a>
+                        <a href="." >Fourier Analysis notes : Orthogonal sets - a reminder</a>
                     
                 </h1>
             </div>
@@ -398,9 +404,7 @@
                     
                     <h1 id="/notes/Fourier/Orthogonal sets - a reminder" class="centered">Orthogonal sets - a reminder</h1>
                     <hr/>
-                    <p>Course: <a href="\Fourier_Notes\notes\Fourier/Fourier Course Information">Fourier Course Information</a></p>
-<h1 id="orthonormal-sets">Orthonormal sets</h1>
-<p>Once we have a vector space, usually the next step is finding a nice basis. In the finite dimensional case, we had the standard basis, denoted by  <span> $\{e_1,...,e_n\}$ </span>  where
+                    <p>Once we have a vector space, usually the next step is finding a nice basis. In the finite dimensional case, we had the standard basis, denoted by  <span> $\{e_1,...,e_n\}$ </span>  where
  <span> 
 $$e_i= (0,...,0,\overbrace{1}^i,0,...,0).$$
  </span> 
@@ -408,11 +412,13 @@ This is a simple yet powerful basis which arises naturally and used in many plac
 
 <p><img src="\Fourier_Notes\notes\Fourier\images\orthogonality/standard_basis2.jpg" width="500" /></p>
 
+<h2 id="definition-and-basic-properties">Definition and basic properties</h2>
+
 <p>Trying to understand and generalize this properties, led to the definition of orthonormal bases.</p>
 
 <div class="callout" data-callout="def">
 
-  <div class="callout-title">Definition: Orthogonal and orthonormal bases</div>
+  <div class="callout-title"><span class="callout-title-inner">Definition: Orthogonal and orthonormal bases</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $V$ </span>  be an inner product space and let  <span> $\Omega \subseteq V$ </span>  be a subset. The set is called:</p>
@@ -437,7 +443,7 @@ The main advantage of this orthogonality definition, is that it lets us take our
 
 <div class="callout" data-callout="theorem">
 
-  <div class="callout-title">Theorem: Orthonormal coefficients</div>
+  <div class="callout-title"><span class="callout-title-inner">Theorem: Orthonormal coefficients</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Suppose that  <span> $\{v_1,...,v_n\}\subseteq V$ </span>  is an orthogonal set. Then:</p>
@@ -463,7 +469,7 @@ $$v = \sum_1^n \angles {v,v_i} v_i \; , \text{ and } \; \norm{v}^2 = \sum_1^n |\
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
@@ -492,7 +498,7 @@ $$\angles {v,v_j}= \angles{\sum_{i=1}^n \alpha_i v_i,v_j} = \sum_{i=1}^n \alpha_
 
 <div class="callout" data-callout="lem">
 
-  <div class="callout-title">Lemma:</div>
+  <div class="callout-title"><span class="callout-title-inner">Lemma:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Any orthogonal set is linearly independent.</p>
@@ -505,7 +511,7 @@ $$\angles {v,v_j}= \angles{\sum_{i=1}^n \alpha_i v_i,v_j} = \sum_{i=1}^n \alpha_
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $\Omega$ </span>  be an orthogonal set, and suppose that we can write zero as linear combination of its elements (which by definition is a finite combination). This means that</p>
@@ -525,7 +531,7 @@ $$ 0 = \sum_1^n \alpha_i \omega_i $$
 
 <div class="callout" data-callout="example" collapsible="hide">
 
-  <div class="callout-title">Example: Orthogonal step functions</div>
+  <div class="callout-title"><span class="callout-title-inner">Example: Orthogonal step functions</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Consider the following set of functions which contains the constant 1 function, and for each integer  <span> $0\leq p$ </span> , and integer  <span> $0\leq n \leq 2^p - 1$ </span>  the function</p>
@@ -548,7 +554,7 @@ $$s_{p,i}(x) = \begin{cases}-1 & \frac{n}{2^p}< x< \frac{n+0.5}{2^p} \\ 1  & \fr
 
 <div class="callout" data-callout="theorem">
 
-  <div class="callout-title">Theorem: Sines and Cosines</div>
+  <div class="callout-title"><span class="callout-title-inner">Theorem: Sines and Cosines</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Consider the inner product on functions on  <span> $[-\pi,\pi]$ </span>  defined by</p>
@@ -573,7 +579,7 @@ Once you do have a proof, you are welcome to check on of these three proof metho
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof: Using **Complex integrations**:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof: Using **Complex integrations**:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
 
@@ -601,7 +607,7 @@ $$\angles {e^{inx},e^{imx}} = \frac{1}{\pi} \frac{1}{i(m-n)}e^{i(m-n)x} \mid_{-\
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof: Using **Trigonometric identities**: </div>
+  <div class="callout-title"><span class="callout-title-inner">Proof: Using **Trigonometric identities**: </span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
 
@@ -625,7 +631,7 @@ $$\begin{align} \angles {\cos(mx),\cos(nx)} & =\frac {1}{\pi}\int_{-\pi}^\pi \co
 
 <div class="callout" data-callout="proof" collapsible="hide">
 
-  <div class="callout-title">Proof: Using **Integration tricks**:</div>
+  <div class="callout-title"><span class="callout-title-inner">Proof: Using **Integration tricks**:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
 
@@ -658,13 +664,13 @@ $$ \angles {\cos(nx),\overline{\cos(nx)}} = 1.$$
 </div>
 <p>The importance of orthogonal, and in particular orthonormal bases, is that it is very easy to find the coefficients in these bases.</p>
 
-<h1 id="orthogonal-projection">Orthogonal projection</h1>
+<h2 id="orthogonal-projection">Orthogonal projection</h2>
 
 <p>At this point we already have one very interesting property of orthogonal (and better yet) orthonormal sets - it is very easy to find the coefficients for orthogonal bases. However, these sets have more interesting properties, and one of them is related to a very interesting problem that rises up naturally in many places:</p>
 
 <div class="callout" data-callout="problem">
 
-  <div class="callout-title">Problem:</div>
+  <div class="callout-title"><span class="callout-title-inner">Problem:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Given a point  <span> $v\in V$ </span>  and a set  <span> $W\subseteq V$ </span> , find the distance from  <span> $v$ </span>  to  <span> $W$ </span> , and if possible find the closest point to  <span> $v$ </span> .</p>
@@ -684,7 +690,7 @@ $$ \angles {\cos(nx),\overline{\cos(nx)}} = 1.$$
 
 <div class="callout" data-callout="theorem">
 
-  <div class="callout-title">Theorem: Orthogonal projection</div>
+  <div class="callout-title"><span class="callout-title-inner">Theorem: Orthogonal projection</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let  <span> $W\leq V$ </span>  be a finite dimensional subspace, and let  <span> $\{w_1,...,w_k\}$ </span>  be an orthonormal basis for  <span> $W$ </span> . The <strong>orthogonal projection</strong> to  <span> $W$ </span>  is defined by</p>
@@ -698,11 +704,11 @@ $$P_W(v):=\sum_1^k \angles {v,w_i}w_i.$$
     </div>
   </div>
 </div>
-<h1 id="examples">Examples</h1>
+<h2 id="examples">Examples</h2>
 
 <div class="callout" data-callout="example" collapsible="hide">
 
-  <div class="callout-title">Example: Orthogonal step function approximation</div>
+  <div class="callout-title"><span class="callout-title-inner">Example: Orthogonal step function approximation</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Let’s try to approximate the function  <span> $f(x)=x$ </span>  using the orthogonal step functions we defined previously, and we shall use only the first four such functions.</p>
@@ -737,7 +743,7 @@ $$ x \sim \frac{1}{2}\cdot f_1 + \frac{1}{4}\cdot f_2 + \frac{1}{16} \cdot 2 \cd
 
 <div class="callout" data-callout="exc" collapsible="hide">
 
-  <div class="callout-title">Exercise</div>
+  <div class="callout-title"><span class="callout-title-inner">Exercise</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
 
@@ -752,7 +758,7 @@ $$ x \sim \frac{1}{2}\cdot f_1 + \frac{1}{4}\cdot f_2 + \frac{1}{16} \cdot 2 \cd
 
 <div class="callout" data-callout="example">
 
-  <div class="callout-title">Example: Approximation with sine waves.</div>
+  <div class="callout-title"><span class="callout-title-inner">Example: Approximation with sine waves.</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>Similar to the previous example, we can try to approximate  <span> $f(x)=x$ </span>  using sine waves (explain why we don’t need cosines).</p>
@@ -775,7 +781,7 @@ $$\int_{-\pi}^\pi (f(x)-2\sum_1^N (-1)^{k+1} \frac{\sin(kx)}{k})^2 \dx \to 0.$$
 
 <div class="callout" data-callout="problem">
 
-  <div class="callout-title">Problem:</div>
+  <div class="callout-title"><span class="callout-title-inner">Problem:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>When does the norm convergence implies also pointwise convergence? And if there isn’t pointwise convergence, then what can we say?</p>
@@ -784,9 +790,9 @@ $$\int_{-\pi}^\pi (f(x)-2\sum_1^N (-1)^{k+1} \frac{\sin(kx)}{k})^2 \dx \to 0.$$
   </div>
 </div>
 
-<div class="callout" data-callout="exercise" collapsible="hide">
+<div class="callout" data-callout="exc" collapsible="hide">
 
-  <div class="callout-title">Exexcise: Sine and cosine approximation</div>
+  <div class="callout-title"><span class="callout-title-inner">Exercise: Sine and cosine approximation</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <p>To get some intuition about the last question, try to approximate some other “nice” function and try to guess the answer for this question for those functions. Try it on a range of families of functions like: constant, linear, polynomial, exponential, unbounded function, noncontinuous, etc.</p>
@@ -794,8 +800,6 @@ $$\int_{-\pi}^\pi (f(x)-2\sum_1^N (-1)^{k+1} \frac{\sin(kx)}{k})^2 \dx \to 0.$$
     </div>
   </div>
 </div>
-
-<p>&lt;-<a href="\Fourier_Notes\notes\Fourier/Inner product spaces - a reminder">Previous: Inner products</a>    ,    False[[invalid wikilink: Fourier Course Information#Table of contents]]    ,   <a href="\Fourier_Notes\notes\Fourier/Infinite Orthonormal basis">Next: Orthonormal basis</a> -&gt;</p>
 </section>
             </div><div class="search-results">
     <div class="has-results">
@@ -976,12 +980,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_Fourier/Orthogonal sets - a reminder.md",
-        "mtime": "2024-03-12 12:26:11 +0200",
+        "mtime": "2024-03-20 15:49:49 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-12 12:26:11 +0200"
+        "time": "2024-03-20 15:49:49 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {
