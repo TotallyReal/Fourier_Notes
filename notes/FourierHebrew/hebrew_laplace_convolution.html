@@ -542,14 +542,13 @@ $$.\cl\left[f*g\right](s)=\cl[f](s)\cdot \cl[g](s)$$
   <div class="callout-content-wrapper">
     <div class="callout-content">
       <ol>
-        <li>עבור  <span> $x\geq 0$ </span>  מתקיים ש</li>
-      </ol>
+        <li>
+          <p>עבור  <span> $x\geq 0$ </span>  מתקיים ש</p>
 
-      <p> <span> 
+          <p> <span> 
 $$.|(f*g)(x)|\leq \int_0^x|f(x-t)|\cdot|g(t)|\dt\leq \int_0^xK_fK_ge^{s_0(x-t+t)}\dt=K_fK_ge^{s_0x}\int_0^x1\dt=K_fK_ge^{s_0x}x$$
  </span> </p>
-
-      <ol>
+        </li>
         <li>
           <p>מהחלק הראשון נקבל שהתמרת לפלס של  <span> $f*g$ </span>  מוגדת לכל  <span> $s>s_0$ </span> , ושווה ל:</p>
 
@@ -558,8 +557,10 @@ $$.\cl[f*g](s) = \int_0^\infty \left(\int_0^tf(t-y)g(y)\dy\right)e^{-st}\dt$$
  </span> </p>
 
           <p>בגלל שכל האינטגרלים מתכנסים בהחלט, ניתן להשתמש ב<a href="\Fourier_Notes\notes\FourierHebrew/hebrew_convolution">משפט פוביני</a> כדי להחליף סדר אינטגרציה. התחום מוגדר ע”י  <span> $0\leq y\leq t$ </span>  ולכן  <span> 
-$$.\int_0^\infty \left[\int_0^t (\cdots) \dt \right]\dy = \int_0^\infty \left[\int_0^\infty \chi_{[0,t]}(y)(\cdots) \dt\right] \dy = \int_0^\infty \left[\int_0^\infty \chi_{[0,t]}(y)(\cdots) \dt \right]\dy= \int_0^\infty \left[\int_y^\infty (\cdots) \dt \right]\dy$$
+$$.\int_0^\infty \left[\int_0^t (\cdots) \dy \right]\dt = \int_0^\infty \left[\int_0^\infty \chi_{[0,t]}(y)(\cdots) \dy\right] \dt = \int_0^\infty \left[\int_0^\infty \chi_{[0,t]}(y)(\cdots) \dt \right]\dy= \int_0^\infty \left[\int_y^\infty (\cdots) \dt \right]\dy$$
  </span> </p>
+
+          <p><img src="\Fourier_Notes\notes\FourierHebrew\images/integration order.png" width="400" /></p>
 
           <p>סה”כ נקבל ש</p>
 
@@ -755,12 +756,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/hebrew_laplace_convolution.md",
-        "mtime": "2024-03-27 18:22:40 +0200",
+        "mtime": "2024-03-27 21:52:12 +0200",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-27 18:22:40 +0200"
+        "time": "2024-03-27 21:52:12 +0200"
     },
     "basePath": "/Fourier_Notes",
     "book": {
