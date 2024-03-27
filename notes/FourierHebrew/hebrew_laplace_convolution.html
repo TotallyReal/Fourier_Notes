@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" dir="rtl">
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>נוסחת פלנשרל · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>קונבולוציה · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Learn Fourier Analysis
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Ofir David"><link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/style.css">
 <link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
@@ -27,10 +27,8 @@
 <link rel="stylesheet" href="http://tikzjax.com/v1/fonts.css">
 
 
-        <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function" />
+        <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" />
 
-        
-            <link rel="next" href="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution"/>
         
     </head>
     <body  class="hebrew">
@@ -249,7 +247,7 @@
 
                         
                         
-                        <li class="chapter active" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel">
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel" onclick="pageScrollToTop(this)">
                                 6. נוסחת פלנשרל
                             </a>
@@ -329,7 +327,7 @@
 
                         
                         
-                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_convolution">
+                        <li class="chapter active" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_convolution">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_convolution" onclick="pageScrollToTop(this)">
                                 14. קונבולוציה
                             </a>
@@ -353,13 +351,13 @@
 
             <li class="divider"></li>
             <li class="chapter">Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_plancharel">
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_convolution">
                 <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    נוסחת פלנשרל
+                    קונבולוציה
                 </a>
                 
                     <!-- begin toc.html -->
-<ul><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li><li ><a href="#התמרות-פורייה-ב-" onclick="mobilePageScrollToAnchor(this)"  border=#000000>התמרות פורייה ב  <span> $E^2 (\RR)$ </span> </a></li></ul>
+<ul><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul>
 
 <!-- end toc.html -->
                 
@@ -374,7 +372,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >Fourier Analysis notes : נוסחת פלנשרל</a>
+                        <a href="." >Fourier Analysis notes : קונבולוציה</a>
                     
                 </h1>
             </div>
@@ -422,42 +420,115 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                    <h1 id="/notes/FourierHebrew/hebrew_plancharel" class="centered">נוסחת פלנשרל</h1>
+                    <h1 id="/notes/FourierHebrew/hebrew_laplace_convolution" class="centered">קונבולוציה</h1>
                     <hr/>
-                    <p>אם נחזור שוב לעולם של טורי פורייה, אז יכולנו להשתמש שם בשוויון פרסיבל ולקבל שעבור פונקציה  <span> $f:[-\pi,\pi]\to\CC$ </span>  רציפה למקוטעין עם מקדמי פורייה  <span> $a_n,b_n$ </span>  מתקיים ש
+                    <p> <span> $\newcommand{\Hs}[1]{H_{[#1, \infty)}}$ </span> 
+בדיוק כמו בהתמרת פורייה, גם בהתמרת לפלס נרצה לדעת מה זו ההתמרה של מכפלה של פונקציות, וגם פה זה יוביל אותנו לפעולת הקונבולוציה. בנוסף, בגלל שהתמרת לפלס היא על פונקציות שמוגדרות ב  <span> $[0,\infty)$ </span>  אז החישוב הוא אפילו יותר פשוט.</p>
+
+<p>נזכיר שעבור פונקציות עם תומך ב  <span> $[0,\infty)$ </span> , כלומר פונקציות המתאפסות מחוץ לקבוצה הזאת :  <span> $f(x)=0, x< 0$ </span> , נח לחשוב עליהן כ  <span> $H(t)f(t)$ </span>  כאשר  <span> $H(t)$ </span>  היא פונקציית הביסייד, ועבור פונקציות כאלו כאשר  <span> $x\geq 0$ </span>  נקבל ש 
  <span> 
-$$.\norm{f}_2^2=\frac{\abs{a_0}^2}{2}+ \sum_1^\infty \left(\abs{a_n}^2+\abs{b_n}^2\right)$$
- </span> </p>
+$$\left[\;H(t)f(t)\;*\;H(t)g(t)\;\right]\;(x) = \int_{-\infty}^\infty H(x-t)f(x-t)\cdot H(t)g(t)\dt = \int_{0}^\infty H(x-t)f(x-t)\cdot g(t)\dt = \int_{0}^x f(x-t)\cdot g(t)\dt$$
+ </span> 
+כלומר, האינטגרל בתוך הקונבולוציה הוא תמיד על קטע סופי  <span> $[0,x]$ </span>  .
+בדוגמא למטה אנחנו רואים את  <span> $H(t)g(t)$ </span>  באדום, את  <span> $H(x-t)f(x-t)$ </span>  בסגול, ואת המכפלה שלהם שנמצאת רק בתחום  <span> $[0,x]$ </span>  בשחור.</p>
+<iframe src="https://www.desmos.com/calculator/ojkqu75uok?embed" width="800" height="400" style="border: 1px solid #ccc" frameborder="0"></iframe>
 
-<p>כאשר  המקדמים שלנו הם ההתמרה  <span> $\hat{f}(\omega)$ </span>  שמוגדרים לכל מספר ממשי, לכן היינו מצפים לקבל שוויון (עד כדי קבוע) מהצורה:
- <span> 
-$$.\norm{f}_2^2=C\int_{-\infty}^\infty \abs{\hat{f}(\omega)}^2\dom=C\norm{\hat{f}}_2^2$$
- </span> </p>
+<div class="callout" data-callout="מסקנה">
 
-<p>אבל, מייד יש לנו בעיות עם ההגדרה הזאת - עד עכשיו ההתמרה הוגדרה עבור פונקציות שעבורן  <span> $\norm f_1< \infty$ </span>  והן לא בהכרח מקיימות ש  <span> $\norm {f}_2 < \infty$ </span>  וגם הכיוון ההפוך לא נכון. למזלנו יש הרבה פונקציות שעבורן שתי הנורמות האלו סופיות, ואז הטענה הזאת תהיה נכונה.</p>
-
-<div class="callout" data-callout="משפט">
-
-  <div class="callout-title"><span class="callout-title-inner">משפט פלנשרל:</span></div>
+  <div class="callout-title"><span class="callout-title-inner">מסקנה: קונבולוציה על פונקציות על מספרים חיוביים</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>יהיו  <span> $f,g\in E^1(\RR)\cap E^2 (\RR)$ </span>  אז:</p>
+      <p>אם  <span> $f,g$ </span>  נתמכות ב  <span> $[0,\infty)$ </span>  אז הקונבולוציה שלהם מקיימת:</p>
+
+      <p> <span> 
+$$.\dboxed{(f*g)(x)=\cases{\int_0^x f(x-t)g(t)\dt & x\geq 0 \\ 0 & x< 0}}$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="טענה">
+
+  <div class="callout-title"><span class="callout-title-inner">טענה: מכפלה של פונקציות הביסייד</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>לכל  <span> $a,b\in \RR$ </span>  מתקיים ש</p>
+
+      <p> <span> 
+$$.(H(t-a)*H(t-b))(x) = (x-a-b)H(x-a-b)$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="הוכחה" collapsible="hide">
+
+  <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>חישוב של הקונבולוציה יתן:</p>
+
+      <p> <span> 
+$$(H(t-a)*H(t-b))(x)= \int_{-\infty}^\infty H(x-t-a)\cdot H(t-b) \dt= \int_{b}^\infty H(x-t-a)\dt= \int_{-\infty}^{x-a-b} H(s)\ds$$
+ </span> </p>
+
+      <p>אם  <span> $x-a-b< 0$ </span>  אז האינטגרנד הוא זהותית אפס בתוך התחום  <span> $(-\infty,x-a-b]$ </span> . אחרת הוא שווה ל 1 ב  <span> $s\geq 0$ </span>  ולכן נקבל ש</p>
+
+      <p> <span> 
+$$\int_{-\infty}^{x-a-b} H(s)\ds=\left\{\begin{array}{lr}0 & :x< a+b \\ x-a-b & :a+b \leq x\end{array}\right\}=(x-a-b)\cdot H(x-a-b)$$
+ </span> </p>
+
+    </div>
+  </div>
+</div>
+<p>התכונות הרגילות של הקונבולוציה נכונות גם במקרה שלנו:</p>
+
+<div class="callout" data-callout="טענה">
+
+  <div class="callout-title"><span class="callout-title-inner">טענה:</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>יהיו  <span> $f,g,h$ </span>  פונקציות הנתמכות ב  <span> $[0,\infty)$ </span> . אז בכל מקום בו הקונבולוציה קיימת מתקיים ש:</p>
 
       <ol>
         <li>
-          <p>ההתמרות  <span> $\hat{f}, \hat{g}$ </span>  גם נמצאות ב  <span> $E^2(\RR)$ </span> ,</p>
+          <p><strong>אסוציאטיביות</strong>:  <span> $f*(g*h)=(f*g)*h$ </span> .</p>
         </li>
         <li>
-          <p>מתקיים ש:</p>
+          <p><strong>קומוטטיביות</strong>:  <span> $f*g=g*f$ </span> .</p>
+        </li>
+        <li>
+          <p><strong>לינאריות</strong>: לכל  <span> $\alpha \in \CC$ </span>  מתקיים  <span> $(f+\alpha g)*h=f*h+\alpha f*g$ </span> .</p>
+        </li>
+      </ol>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="משפט">
+
+  <div class="callout-title"><span class="callout-title-inner">משפט הקונבולוציה</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>יהיו  <span> $f,g$ </span>  פונקציות הנתמכות ב  <span> $[0,\infty)$ </span> , ונניח שקיימים קבועים  <span> $K_f, K_g, s_0$ </span>  כך ש  <span> $|f(t)|\leq K_fe^{s_0t}$ </span>  ו  <span> $|g(t)|\leq K_g e^{s_0t}$ </span> . אז:</p>
+
+      <ol>
+        <li>
+          <p>לכל  <span> $x\geq 0$ </span>  מתקיים ש</p>
 
           <p> <span> 
-$$\int_{-\infty}^\infty \hat{f}(\omega) \overline{\hat{g}(\omega)} \dom = \frac{1}{2\pi} \int _{-\infty}^\infty f(x)\overline{g(x)} \dx$$
+$$.|(f*g)(x)|\leq K_fK_gxe^{s_0x}$$
  </span> </p>
-
-          <p>או בכתיב של מכפלות פנימיות  <span> $2\pi\angles{\hat{f}, \hat{g}}=\angles{f,g}$ </span> ,</p>
         </li>
         <li>
-          <p>ובפרט מתקיים ש  <span> $\norm{f}_2=\norm{\hat{f}}_2$ </span> .</p>
+          <p>לכל  <span> $s>s_0$ </span>  ההתמרה של הקונבולוציה מוגדרת היטב ומתקיים ש</p>
+
+          <p> <span> 
+$$.\cl\left[f*g\right](s)=\cl[f](s)\cdot \cl[g](s)$$
+ </span> </p>
         </li>
       </ol>
 
@@ -470,37 +541,33 @@ $$\int_{-\infty}^\infty \hat{f}(\omega) \overline{\hat{g}(\omega)} \dom = \frac{
   <div class="callout-title"><span class="callout-title-inner">הוכחה:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>הרעיון באופן כללי הוא החלפת סדרי אינטגרציה, ואם מותר לנו לעשות אותם אז “קל” להראות שהטענה נכונה.</p>
-
-      <p>מבחינה פורמלית, נראה תחילה שכאשר ל  <span> $f,g$ </span>  יש תומכים סופיים, כלומר קיים  <span> $M>0$ </span>  מספיק גדול כך ש  <span> $f(x)=g(x)=0$ </span>  עבור  <span> $|x|>M$ </span> , אז ההחלפות מותרות. באופן כללי, יש צורך להשתמש בקירובים של פונקציות כלליות ע”י צמצום שלהם לקטעים סופיים, כלומר  <span> $f_M(x):=f(x)\cdot \chi_{[-M,M]}$ </span>  אבל לא נכנס לפרטים האלו כאן.</p>
-
-      <p>בנוסף, נתחיל גם עם ההנחה שגבולות אינטגרציה ששואפים ל  <span> $\pm \infty$ </span>  באותו קצב, ואז נראה איך נפתרים מזה. תחת ההנחות האלו נקבל ש</p>
+      <ol>
+        <li>עבור  <span> $x\geq 0$ </span>  מתקיים ש</li>
+      </ol>
 
       <p> <span> 
-$$\align{\int_{-N}^N \hat{f}(\omega) \overline{\hat{g}(\omega)} \dom & = \frac{1}{4\pi^2} \int_{-N}^N \left(\int_{-\infty}^\infty f(x)e^{-i \omega x} \dx \overline{\int_{-\infty}^\infty g(y)e^{-i \omega y} \dy} \right)\dom \\ & = \frac{1}{4\pi^2} \int_{-N}^N \left(\int_{-M}^M f(x)e^{-i \omega x} \dx \overline{\int_{-M}^M g(y)e^{-i \omega y} \dy} \right)\dom \\ & = \frac{1}{2\pi} \int_{-M}^M \int_{-M}^M  f(x)\overline{g(y)} \left( \int_{-N}^N\frac{e^{-i \omega (x-y)}}{2\pi} \dom \right)\dx \dy} $$
+$$.|(f*g)(x)|\leq \int_0^x|f(x-t)|\cdot|g(t)|\dt\leq \int_0^xK_fK_ge^{s_0(x-t+t)}\dt=K_fK_ge^{s_0x}\int_0^x1\dt=K_fK_ge^{s_0x}x$$
  </span> </p>
 
-      <p>אם נשאיף את  <span> $N\to\infty$ </span>  אז נקבל את פונקצית דירק בנקודה  <span> $x-y$ </span>  באינטגרל הפנימי, לכן סה”כ האינטגרל למעלה יהיה שווה ל</p>
+      <ol>
+        <li>
+          <p>מהחלק הראשון נקבל שהתמרת לפלס של  <span> $f*g$ </span>  מוגדת לכל  <span> $s>s_0$ </span> , ושווה ל:</p>
 
-      <p> <span> 
-$$.(*)=\frac{1}{2\pi} \int_{-M}^M f(x)\overline{g(x)} \dx=\frac{1}{2\pi} \int_{-\infty}^\infty f(x)\overline{g(x)} \dx$$
+          <p> <span> 
+$$.\cl[f*g](s) = \int_0^\infty \left(\int_0^tf(t-y)g(y)\dy\right)e^{-st}\dt$$
  </span> </p>
 
-      <p>אם נבחר  <span> $f=g$ </span>  אז נקבל ש</p>
-
-      <p> <span> 
-$$.\limfi{N}\int_{-N}^N \abs{\hat{f}(\omega)}^2 \dom = \frac{1}{2\pi} \int_{-\infty}^\infty \abs{f(x)}^2 \dx$$
+          <p>בגלל שכל האינטגרלים מתכנסים בהחלט, ניתן להשתמש ב<a href="\Fourier_Notes\notes\FourierHebrew/hebrew_convolution">משפט פוביני</a> כדי להחליף סדר אינטגרציה. התחום מוגדר ע”י  <span> $0\leq y\leq t$ </span>  ולכן  <span> 
+$$.\int_0^\infty \left[\int_0^t (\cdots) \dt \right]\dy = \int_0^\infty \left[\int_0^\infty \chi_{[0,t]}(y)(\cdots) \dt\right] \dy = \int_0^\infty \left[\int_0^\infty \chi_{[0,t]}(y)(\cdots) \dt \right]\dy= \int_0^\infty \left[\int_y^\infty (\cdots) \dt \right]\dy$$
  </span> </p>
 
-      <p>מאחר ופה האינטגרלים הם על פונקציות אי שליליות, קצב השאיפה ל  <span> $\pm \infty$ </span>  בגבולות האינטגרציה לא משנה את ההתכנסות, ולכן נקבל ש  <span> $\norm {\hat{f}}_2^2= \frac{1}{2\pi}\norm{f}_2^2< \infty$ </span> , וזה כבר מראה ש  <span> $\hat{f}\in E^2(\RR)$ </span> , וכמובן גם  <span> $\hat{g}\in E^2(\RR)$ </span> .</p>
+          <p>סה”כ נקבל ש</p>
 
-      <p>אם נחזור עכשיו לחישוב הראשון למעלה, אז נוכל להשתמש באי שוויון קושי שוורץ (או בכך שהמכפלה הפנימית מוגדרת היטב על  <span> $E^2(\RR)$ </span>  ), כדי לקבל ש</p>
-
-      <p> <span> 
-$$.\int_{-N}^N \abs{\hat{f}(\omega) \overline{\hat{g}(\omega)}} \dom =\angles{|\hat{f}|,|\hat{g}|} \leq \norm{\hat{f}}_2 \norm{\hat{g}}_2 = \frac{1}{4\pi^2}\norm{f}_2 \norm{g}_2 <  \infty $$
+          <p> <span> 
+$$.\align{\cl[f*g](s) &= \int_0^\infty \left(\int_y^\infty f(t-y)g(y)e^{-st}\dt\right)\dy = \int_0^\infty g(y)e^{-sy}\left(\int_y^\infty f(t-y)e^{-s(t-y)}\dt\right)\dy \\ &= \int_0^\infty g(y)e^{-sy}\left(\int_0^\infty f(t)e^{-st}\dt\right)\dy = \cl[g](s)\cdot \cl[f](s)}$$
  </span> </p>
-
-      <p>זה אומר שהאינטגרל מתכנס בהחלט, ולכן גם בלי הערך המוחלט הוא מתכנס, ללא קשר לקצב שאיפת הגבולות אינטגרציה ל  <span> $\pm \infty$ </span> . זה מסיים את ההוכחה עבור פונקציות עם תומך סופי.</p>
+        </li>
+      </ol>
 
     </div>
   </div>
@@ -509,126 +576,13 @@ $$.\int_{-N}^N \abs{\hat{f}(\omega) \overline{\hat{g}(\omega)}} \dom =\angles{|\
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title"><span class="callout-title-inner">דוגמא: הפונקציה  <span> $e^{-a|x|}$ </span>  עבור  <span> $a>0$ </span> </span></div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא 1</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>ראינו כבר שההתמרה של הפונקציה הזאת היא  <span> $\cf[e^{-a|x|}](\omega)=\frac{a}{\pi(\omega^2+a^2)}$ </span> . אם נחשב את הנורמה של הפונקציה נקבל ש</p>
+      <p><a href="\Fourier_Notes\notes\FourierHebrew/hebrew_laplace">כבר ראינו</a> שבהינתן  <span> $f$ </span>  רציפה למקוטעין, אם מגדירים את  <span> $g(t)=\int_0^tf(x)\dx$ </span>  אז  <span> $\cl[g](s)=\frac{1}{s}\cl[f](s)$ </span>  כאשר הרעיון היה להשתמש בתכונת הנגזרת, ואז להפוך אותה כדי לקבל אינטגרל. בנוסף, אנחנו יודעים ש  <span> $\frac{1}{s}=\cl[1](s)$ </span>  (או יותר נכון  <span> $\frac{1}{s}=\cl[H(t)](s)$ </span> ) ולכן יש לנו מכפלה של התמרות. מצד שני, ניתן לכתוב  <span> $g(t)=(f(t)*H(t))(t)$ </span>  ולכן בעצם התוצאה הזאת נובעת גם ממשפט הקונבולוציה:</p>
 
       <p> <span> 
-$$.\norm{e^{-a|x|}}_2^2 = \int_{-\infty}^\infty e^{-2a|x|}\dx=2 \int_{0}^\infty e^{-2ax}\dx=\frac{e^{-2ax}}{-a}\mid_0^\infty = \frac{1}{a}$$
- </span> </p>
-
-      <p>מצד שני, שימוש בפלנשרל נותן ש</p>
-
-      <p> <span> 
-$$.\int_{-\infty}^\infty \left(\frac{a}{\pi(\omega^2+a^2)}\right)^2 \dom = \frac{1}{2\pi} \frac{1}{a}$$
- </span> </p>
-
-      <p>אם נעביר אגפים ונשתמש בזוגיות של הפונקציה, נקבל ש</p>
-
-      <p> <span> 
-$$.\dboxed{\int_{0}^\infty \frac{1}{(\omega^2+a^2)^2} \dom = \frac{\pi}{4a^3}} $$
- </span> </p>
-
-    </div>
-  </div>
-</div>
-
-<div class="callout" data-callout="דוגמא">
-
-  <div class="callout-title"><span class="callout-title-inner">דוגמא: פונקציות מדרגה סימטריות</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>עבור  <span> $a>0$ </span>  נסתכל על הפונקציה</p>
-
-      <p> <span> 
-$$.f_a(x)=\chi_{[-a,a]}(x)=\cases{1 & |x|\leq a \\ 0 & |x| > a}$$
- </span> </p>
-
-      <p>עבור הפונקציות האלו ראינו ש  <span> $\hat{f}_a(\omega)=\frac{\sin(\omega a)}{\omega \pi}$ </span> . שימוש בפלנשרל עבור המכפלה הפנימית יתן לנו ש:</p>
-
-      <p> <span> 
-$$\align{\int_{-\infty}^\infty \frac{\sin(\omega a)}{\omega \pi} \cdot \frac{\sin(\omega b)}{\omega \pi} \dom &= \frac{1}{2\pi} \int_{-\infty}^\infty f_a(x) f_b(x) \dx = \frac{1}{2\pi} \int_{-\infty}^\infty f_{\min(a,b)}(x) \dx \\&= \frac{\min(a,b)}{\pi}}$$
- </span> </p>
-
-    </div>
-  </div>
-</div>
-
-<h2 id="התמרות-פורייה-ב-">התמרות פורייה ב  <span> $E^2 (\RR)$ </span> </h2>
-
-<p>אם נתונה פונקציה  <span> $f\in E^2(\RR)$ </span>  שלא ידוע מראש שהיא גם ב  <span> $E^1(\RR)$ </span> , אז באופן כללי אין סיבה שהאינטגרל בהתמרת פורייה יתכנס. למרות זאת, יש דרך להרחיב את ההגדרה של התמרת פורייה גם לפונקציות כאלו.</p>
-
-<div class="callout" data-callout="הגדרה">
-
-  <div class="callout-title"><span class="callout-title-inner">התמרת פורייה ב  <span> $E^2(\RR)$ </span> </span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>תהא  <span> $f\in E^2(\RR)$ </span>  ועבור  <span> $M>0$ </span>  נסמן</p>
-
-      <p> <span> 
-$$.f_M(x):=f(x)\cdot \chi_{[-M,M]}(x)=\cases{f(x) & |x|\leq M \\ 0 & |x|>M}$$
- </span> </p>
-
-      <p>הפונקציות  <span> $f_M(x)$ </span>  נמצאות ב  <span> $E^1(\RR) \cap E^2(\RR)$ </span>  ונגדיר את התמרת פורייה של  <span> $f$ </span>  להיות</p>
-
-      <p> <span> 
-$$\hat{f}(\omega) = \limfi{M} \hat{f}_M(\omega)= \limfi{M} \frac{1}{2\pi} \int_{-M}^M f(x)e^{-i \omega x}\dx$$
- </span> </p>
-
-      <p>כאשר הגבול הוא בנורמת  <span> $\norm{\cdot}_2$ </span> .</p>
-
-    </div>
-  </div>
-</div>
-
-<div class="callout" data-callout="הערה">
-
-  <div class="callout-title"><span class="callout-title-inner">הערה:</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>דבר ראשון כדאי לשים לב שקל להראות ש  <span> $f_M$ </span>  אינטגרביליות בהחלט, כי</p>
-
-      <p> <span> 
-$$\norm{f_M}_1=\int_{-\infty}^\infty \abs{f_M} \dx=\int_{-M}^M \abs{f}\cdot 1 \dx\overset{(*)}{\leq} \sqrt{\int_{-M}^M |f|^2(x)\dx \int_{-M}^M |1|^2(x)\dx}\leq \norm{f}_2 \sqrt{2M} $$
- </span> </p>
-
-      <p>כאשר האי שוויון ב  <span> $(*)$ </span>  הוא אי שוויון קושי שוורץ.</p>
-
-      <p>החלק היותר מסובך בהגדרה, הוא שאם  <span> $f$ </span>  הייתה מראש ב  <span> $E^1(\RR)$ </span>  אז בעצם עכשיו יש לנו שתי הגדרות להתמרה שלה, וצריך להראות ששתיהן מחזירות את אותה פונקציה. הטענה הזאת נכונה, אבל לא נוכיח אותה פה.</p>
-
-      <p>לבסוף, ההתמרה של פונקציה ב  <span> $E^2(\RR)$ </span>  כמו שמוגדרת למעלה, מחזירה גבול של פונקציות אינטגרבילית בריבוע, שהוא בפרט פונקציה אינטגרבילית בריבוע שהן לא מוגדרות <strong>נקודתית</strong>. כלומר כאשר אנחנו אומרים ששתי פונקציות כאלו הן שוות, אז הן שוות כמעט לכל  <span> $x$ </span> .</p>
-
-    </div>
-  </div>
-</div>
-<p>תחת ההגדרה הזאת, מקבלים שהתמרת פורייה לוקחת פונקציות מהמרחב הפונקציות האינטגרביליות בריבוע לעצמו והתכונות שתיארנו עד עכשיו להתמרה עדיין נכונות, ובפרט ההתמרה ההפוכה ומשפט פלנשרל.</p>
-
-<div class="callout" data-callout="דוגמא">
-
-  <div class="callout-title"><span class="callout-title-inner">דוגמא: הפונקציה  <span> $f(x)=\frac{\sin(x)}{x}$ </span> </span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>הפונקציה  <span> $f(x)$ </span>  היא לא אינטגרבילית בהחלט אבל היא כן אינטגרבילית בריבוע כי  <span> $|f(x)|^2\leq \frac{1}{x^2}$ </span>  והאינטגרל של הפונקציות הזאת מתכנס באינסוף.</p>
-
-      <p>לפי ההגדרה החדשה שלנו מתקיים ש</p>
-
-      <p> <span> 
-$$.\hat{f}(\omega)=\limfi{M} \frac{1}{2\pi} \int_{-M}^M \frac{\sin(x)}{x}e^{-i \omega x}\dx$$
- </span> </p>
-
-      <p>החישוב עצמו הוא די מסובך, אבל למזלנו כבר נתקלנו בפונקציה הזאת ואנחנו יודעים ש  <span> $\cf[\chi_{[-T,T]}](\omega)=\frac{\sin(\omega T)}{\omega \pi}$ </span>  , ולכן בפרט   <span> $\pi\cf[\chi_{[-1,1]}](\omega)=\frac{\sin(\omega)}{\omega}$ </span> .</p>
-
-      <p>אם נשתמש במשפט ההתמרה ההפוכה נקבל ש</p>
-
-      <p> <span> 
-$$.\cf\left[\frac{\sin(\omega)}{\omega}\right](x) = \pi \cf\left[\cf\left[\chi_{[-1,1]}\right]\right](x) = \frac{1}{2} \chi_{[-1,1]}(-x) = \frac{1}{2} \chi_{[-1,1]}(x)$$
- </span> </p>
-
-      <p>ובאופן כללי יותר נקבל ש</p>
-
-      <p> <span> 
-$$.\cf\left[\frac{\sin(\omega T)}{\omega}\right](x) = \frac{1}{2} \chi_{[-T,T]}(x)$$
+$$.\cl[g](s)=\cl[H(t)*f(t)](s)=\cl[H](s)\cl[f](s)=\frac{1}{s}\cl[f](s)$$
  </span> </p>
 
     </div>
@@ -695,14 +649,10 @@ window.MathJax = {
 
 <!-- Finish Body.html -->
 
-                <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_delta_function" class="navigation navigation-prev navigation-unique" aria-label="Previous page: התמרת פורייה ההפוכה">
+                <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" class="navigation navigation-prev navigation-unique" aria-label="Previous page: פונקציית הביסייד">
                     <i class="fa fa-angle-left"/>
                 </a>
 
-                
-                    <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_convolution" class="navigation navigation-next navigation-unique" aria-label="Next page: קונבולוציה">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </div>
         </div>
@@ -715,15 +665,6 @@ window.MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
-        
-        "next": {
-            "title": "קונבולוציה",
-            "level": "1.2",
-            "depth": 1,
-            "path": "_FourierHebrew/hebrew_convolution.md",
-            "ref": "_FourierHebrew/hebrew_convolution.md",
-            "articles": []
-        },
         
         "dir": "ltr"
     },    "config": {
@@ -813,7 +754,7 @@ window.MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_FourierHebrew/hebrew_plancharel.md",
+        "path": "_FourierHebrew/hebrew_laplace_convolution.md",
         "mtime": "2024-03-27 18:22:40 +0200",
         "type": "markdown"
     },
