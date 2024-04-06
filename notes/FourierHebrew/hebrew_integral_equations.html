@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" dir="rtl">
     <head><meta charset="UTF-8">
-<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>משוואות דיפרנציאליות · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"><title>משוואות אינטגרליות · Fourier Analysis notes</title><meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="description" content="Learn Fourier Analysis
 "><meta name="generator" content="Jekyll (using style of GitBook 3.2.3)"><meta name="author" content="Ofir David"><link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/style.css">
 <link rel="stylesheet" href="/Fourier_Notes/assets/gitbook/gitbook-plugin-back-to-top-button/plugin.css">
@@ -27,10 +27,10 @@
 <link rel="stylesheet" href="http://tikzjax.com/v1/fonts.css">
 
 
-        <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace" />
+        <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_convolution" />
 
         
-            <link rel="next" href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside"/>
+            <link rel="next" href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_summerization"/>
         
     </head>
     <body  class="hebrew">
@@ -310,7 +310,7 @@
 
                         
                         
-                        <li class="chapter active" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations" onclick="pageScrollToTop(this)">
                                 12. משוואות דיפרנציאליות
                             </a>
@@ -340,7 +340,7 @@
 
                         
                         
-                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_integral_equations">
+                        <li class="chapter active" data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_integral_equations">
                             <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_integral_equations" onclick="pageScrollToTop(this)">
                                 15. משוואות אינטגרליות
                             </a>
@@ -374,13 +374,13 @@
 
             <li class="divider"></li>
             <li class="chapter">Inside this page:</li>
-            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_differential_equations">
+            <li class="chapter active" data-level="1.4" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_integral_equations">
                 <a href="/Fourier_Notes" onclick="pageScrollToTop(this)">
-                    משוואות דיפרנציאליות
+                    משוואות אינטגרליות
                 </a>
                 
                     <!-- begin toc.html -->
-<ul><li ><a href="#מה-קורה-אם-התנאי-התחלה-לא-נתונים-ב-" onclick="mobilePageScrollToAnchor(this)"  border=#000000><strong>מה קורה אם התנאי התחלה לא נתונים ב  <span> $t=0$ </span> ?</strong></a></li></ul>
+<ul><li ><a href="#דוגמאות" onclick="mobilePageScrollToAnchor(this)"  border=#000000>דוגמאות</a></li></ul>
 
 <!-- end toc.html -->
                 
@@ -395,7 +395,7 @@
                 <h1>
                     <i class="fa fa-circle-o-notch fa-spin"></i>
                     
-                        <a href="." >Fourier Analysis notes : משוואות דיפרנציאליות</a>
+                        <a href="." >Fourier Analysis notes : משוואות אינטגרליות</a>
                     
                 </h1>
             </div>
@@ -444,119 +444,140 @@
             <div class="search-noresults">
                 <section class="normal markdown-section">
                     
-                    <h1 id="/notes/FourierHebrew/hebrew_laplace_differential_equations" class="centered">משוואות דיפרנציאליות</h1>
+                    <h1 id="/notes/FourierHebrew/hebrew_integral_equations" class="centered">משוואות אינטגרליות</h1>
                     <hr/>
-                    <p>כמו עם התמרת פורייה, גם בהתמרת לפלס ניתן להשתמש כדי לפתור משוואות דיפרנציאליות. היתרון בהתמרת לפלס הוא שאין לנו את הדרישה שהפתרון יהיה אינטגרבילי בהחלט (או בריבוע) אבל מצד שני הפתרון צריך להיות בתחום  <span> $[0,\infty)$ </span>  (או באופן כללי קטע חצי אינסופי). הרעיון הוא שההתמרה הופכת נגזרות למכפלות במשתנה של הפונקציה, ולכן משוואות דיפרנציאליות יהפכו למשוואות אלגבריות.</p>
+                    <p>אחד השימושים למשפט הקונבולוציה הוא בפתרון משוואות אינטגרליות. בפרט, אם נתונות הפונקציות  <span> $g,h$ </span>  ורוצים למצוא פונקציה  <span> $f$ </span>  המקיימת משוואה מהצורה:
+ <span> 
+$$,\int_0^t f(t-y)g(y)\dy=h(t)$$
+ </span> 
+מאחר ואגף שמאל הוא פשוט  <span> $(f*g)(t)$ </span> , תחת ההנחה ששתי הפונקציות נתמכות ב  <span> $[0,\infty)$ </span> , אז נוכל להפעיל את משפט הקונבולוציה כדי לקבל ש:
+ <span> 
+$$.\cl[f](s)\cdot \cl[g](s)=\cl[h](s)$$
+ </span> 
+עכשיו אפשר לנסות לחלץ את  <span> $\cl[f]$ </span>  ואז לבצע התמרה הפוכה.</p>
 
-<p>נתחיל עם דוגמא של משוואות דיפרנציאליות לינאריות. באופן כללי ניתן לפתור משוואות כאלו  עם כלים בסיסיים (למשל, אלגברה לינארית), אבל נראה שניתן גם להשתמש בהתמרת פורייה.</p>
+<h2 id="דוגמאות">דוגמאות</h2>
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title"><span class="callout-title-inner">דוגמא: משוואה לינארית הומוגנית</span></div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא 1:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>נחפש פתרון למשוואה הבאה:</p>
+      <p>ננסה למצוא פונקציה  <span> $f$ </span>  המקיימת:</p>
 
       <p> <span> 
-$$\align{0 &= y''(t)-7y'(t)+12y(t) \\    .y(0)&=3,\;\;y'(0)=10}$$
+$$.\int_0^tf(y)\cos(y-t)\dy = t\cdot \sin(t)$$
  </span> </p>
 
-      <p>נניח שמותר לבצע התמרת לפלס בנקודה  <span> $s$ </span> . יכול להיות שלא מותר ואז אולי נקבל פתרון שגוי, אך בכל מקרה בסוף התהליך נוכל לבדוק האם הפתרון שקיבלנו מקיים את המשוואה. חישוב ההתמרה על שני האגפים יתן ש</p>
+      <p>התמרת לפלס של אגף שמאל תיתן:</p>
 
       <p> <span> 
-$$\align{0 & = \cl[0] = \cl\left[y''-7y'+12y]\right]=\left(s^2\cl[y]-sy(0)-y'(0)\right)-7\left(\cl[y]-y(0)\right)+12\cl[y] \\   & =(s^2-7y+12)\cl[y]-(s-7)y(0)-y'(0)=(s^2-7y+12)\cl[y]-3s+11}$$
+$$,\cl[f](s)\cdot \cl[\cos(t)](s)=\cl[f](s)\cdot \frac {s}{s^2+a^2}$$
  </span> </p>
 
-      <p>נעביר אגפים ונקבל ש:</p>
+      <p>והתמרת אגף ימין:</p>
 
       <p> <span> 
-$$.\cl[y]=\frac{3s-11}{s^2-7y+12}=\frac{3s-11}{(s-3)(s-4)} = \frac{1}{s-4} + \frac{2}{s-3}$$
+$$\cl[t\cdot\sin(t)](s)=-\cl[\sin(t)]'(s)=-\frac{d}{\ds}\left(\frac{1}{s^2+1}\right)=\frac{2s}{(s^2+1)^2}$$
  </span> </p>
 
-      <p>כבר ראינו ש  <span> $\cl[e^{zt}](s) = \frac{1}{s-z}$ </span>  ולכן סה”כ קיבלנו ש</p>
+      <p>לכן, סה”כ נקבל ש:</p>
 
       <p> <span> 
-$$.\cl[y(t)]=\cl[e^{4t}+2e^{3t}]$$
+$$,\cl[f](s)=\frac{2}{s^2+1}=\cl[2\sin(t)](s)$$
  </span> </p>
 
-      <p>כמובן ש  <span> $y(t)=e^{4t}+2e^{3t}$ </span>  פותר את המשוואה האחרונה (ואם וכאשר נראה את קיום ההתמרה ההפוכה  <span> $\cl^{-1}$ </span>  אז זה גם בעצם יהיה הפתרון היחיד). עכשיו ניתן לחזור למשוואה הדיפרנציאלית המקורית ולראות שזה אכן פתרון שלה (ובנוסף  <span> $\frac{|y(t)|}{e^{4t}}$ </span>  חסומה ולכן גם כל המהלכים בדרך נכונים).</p>
+      <p>כלומר, כדאי לנחש (התמרה הפוכה) ש  <span> $f(t)=2\sin(t)$ </span> , ובאמת קל לבדוק שבאמת הפונקציה הזאת פותרת את המשוואה האינטגרלית.</p>
 
     </div>
   </div>
 </div>
-
-<div class="callout" data-callout="הערה" collapsible="hide">
-
-  <div class="callout-title"><span class="callout-title-inner">הערה: הפולינום האופייני של מד"ר</span></div>
-  <div class="callout-content-wrapper">
-    <div class="callout-content">
-      <p>עבור מד”ר מהצורה  <span> $\sum_0^d a_k y^{(k)}(t)=0$ </span>  מגדירים את הפולינום האופייני להיות  <span> $\sum_0^d a_kx^k$ </span> . כמו שרואים בפתרון למעלה, כאשר התמרנו את המד”ר הופיע לנו בצורה טבעית הפולינום האופייני שלה, והמקדמים  <span> $3,4$ </span>  שהופיעו בחזקות של האקספוננטים הם בדיוק השורשים של הפולינום.</p>
-
-    </div>
-  </div>
-</div>
-<h3 id="מה-קורה-אם-התנאי-התחלה-לא-נתונים-ב-"><strong>מה קורה אם התנאי התחלה לא נתונים ב  <span> $t=0$ </span> ?</strong></h3>
-
-<p>נניח שלמשל נתונים התנאי התחלה ב  <span> $y(1),y(3)$ </span>  במקום ב  <span> $y(0),y'(0)$ </span> . במקרה הזה, נעשה את אותו חישוב, אבל נשאיר את  <span> $y(0),y'(0)$ </span>  כפרמטרים שאפשר לבחור, ואז נקבל את המשוואה:
- <span> 
-$$\cl[y](s)=\frac{(7-s)y(0)-y'(0)}{(s-3)(s-4)} =\overbrace{(y'(0)-4y(0))}^A\frac{1}{s-3} + \overbrace{(3y(0)-y'(0))}^B\frac{1}{s-4} =\cl\left[Ae^{3t}+Be^{4t}\right](s)$$
- </span> 
-לכן, סה”כ נוכל לנחש שהפתרון ללא תנאי התחלה הוא
- <span> 
-$$.y(t)=Ae^{3t}+Be^{4t}$$
- </span> 
-מפה נוכל לנחש את הפתרון עם תנאי ההתחלה ע”י הצבה של  <span> $t=1,3$ </span>  (או באופן כללי כל שני תנאי התחלה כלשהם).
-נשים לב שבשלב הזה אנחנו עוד לא יודעים כלום על התנאי התחלה ובגלל ש
- <span> 
-$$\align{A & =\phantom{-}y'(0)-4y(0) \\ B &=-y'(0)+3y(0)}$$
- </span> 
-מוגדרים ע”י מערכת לינארית הפיכה, ולכן הגדרת  <span> $A,B$ </span>  שקולה להגדרת  <span> $y(0),y'(0)$ </span> , כלומר לא “איבדנו” שום דבר במעבר ל  <span> $A,B$ </span> .</p>
 
 <div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title"><span class="callout-title-inner">דוגמא: פתרון פרטי למשוואה דיפרנציאלית רגילה</span></div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא 2:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>נחפש פתרון למשוואה הבאה:</p>
+      <p>נשנה את המשוואה מהדוגמא הראשונה ל:</p>
 
       <p> <span> 
-$$\align{12t+5 &= y''(t)-7y'(t)+12y(t) \\ .y(0) &= 4,\;\; y'(0)=11}$$
+$$.\int_0^tf(y^2)\cos(y-t)\dy = t\cdot \sin(t)$$
  </span> </p>
 
-      <p>החלק ההומוגני של המשוואה הוא כמו בדוגמא הקודמת ולכן נצפה לראות שוב את  <span> $e^{4t}$ </span>  ואת  <span> $e^{3t}$ </span>   ומה שחסר לנו זה פתרון פרטי. נפעיל שוב את התמרת פורייה ונקבל בצורה דומה לחישוב מהדוגמא הקודמת:</p>
+      <p>עכשיו אין לנו בדיוק קונבולוציה, אך נוכל לשנות קצת את המשוואה כדי שכן תהיה. אם נגדיר  <span> $g(t)=f(t^2)$ </span>  , אז נקבל את המשוואה</p>
 
       <p> <span> 
-$$.\cl[y''-7y'+12y] = (s^2-7y+12)\cl[y]-(s-7)y(0)-y'(0) = (s^2-7y+12)\cl[y]-4s+17$$
+$$,\int_0^tg(y)\cos(y-t)\dy = t\cdot \sin(t)$$
  </span> </p>
 
-      <p>ההתמרה של אגף שמאל מהמד”ר למעלה תהיה:</p>
+      <p>שראינו מקודם שיש לה פתרון  <span> $f(t^2)=g(t)=2\sin(t)$ </span> . זה אומר שהפתרון של המשוואה המקורית יהיה  <span> $f(t)=2\sin(\sqrt{t})$ </span> . נשים לב שהפתרון הזה רק תקף עבור  <span> $t\geq 0$ </span>  כי אחרת לא נוכל לקחת שורש, אבל מראש זו הייתה ההנחה שלנו כי אנחנו עושים התמרת לפלס (ומעבר לזה, בתנאי האינטגרלי מופיעים רק הערכים של  <span> $f$ </span>  על  <span> $t\geq 0$ </span>  כלומר בשום שיטה אחרת לא נקבל מה קורה ב  <span> $t< 0$ </span> ).</p>
 
-      <p> <span> 
-$$.\cl[12t+5](s)=12\cl[t](s)+\cl[5](s)=12\cdot \frac{1}{s^2} +5\cdot\frac{1}{s} = \frac {12+5s}{s^2}$$
- </span> </p>
-
-      <p>שוב נבצע העברת אגפים ונקבל ש</p>
-
-      <p> <span> 
-$$.\cl[y]=\frac{\frac{12+5s}{s^2}+4s-17}{s^2-7s+12} = \frac{4s^3-17s^2+5s+12}{s^2(s-3)(s-4)} = \frac{1}{s-4}+\frac{2}{s-3}+\frac{1}{s}+\frac{1}{s^2}$$
- </span> </p>
-
-      <p>כמו בדוגמא הקודמת, גם פה נקבל את ה”ניחוש” שהוא גם יהיה הפתרון:</p>
-
-      <p> <span> 
-$$.y(t)=e^{4t}+2e^{3t}+1+t$$
- </span> </p>
+      <p>סה”כ, הדוגמא הזאת באה להראות שגם דברים שלא נראים במבט ראשון כמו קונבולוציה, אפשר להמיר לקונבולוציה אמיתית.</p>
 
     </div>
   </div>
 </div>
 
-<div class="callout" data-callout="בעיה">
+<div class="callout" data-callout="דוגמא">
 
-  <div class="callout-title"><span class="callout-title-inner">בעיה:</span></div>
+  <div class="callout-title"><span class="callout-title-inner">דוגמא 3:</span></div>
   <div class="callout-content-wrapper">
     <div class="callout-content">
-      <p>הפתרונות שקיבלנו הם לא אינטגרבילים בהחלט או בריבוע. מה יקרה אם ננסה לפתור את המד”ר האלו עם התמרת פורייה? האם ואיזה פתרון נקבל?</p>
+      <p>פתרו את המשוואה:</p>
+
+      <p> <span> 
+$$.\int_0^t e^{t-y}f(y)\dy=f(t)-1$$
+ </span> </p>
+
+      <p>אגף שמאל זה הקונבולוציה  <span> $f*e^t$ </span>  (תחת ההנחה הרגילה שהפונקציות שלנו נתמכות ב  <span> $[0,\infty)$ </span> ) ולכן התמרת לפלס של שני האגפים תיתן:</p>
+
+      <p> <span> 
+$$.\frac{1}{s-1}\cdot \cl[f](s)=\cl[e^{1\cdot t}](s)\cdot\cl[f](s)=\cl[f](s)-\cl[1](s)=\cl[f](s)-\frac{1}{s}$$
+ </span> </p>
+
+      <p>בידוד של  <span> $\cl[f]$ </span>  יתן ש:</p>
+
+      <p> <span> 
+$$\cl[f](s)=\frac{s-1}{s(s-2)}=\frac{1}{2}\left(\frac{1}{s}+\frac{1}{s-2}\right)=\frac{1}{2}\left(\cl[1+e^{2t}](s)\right)$$
+ </span> </p>
+
+      <p>לכן סה”כ נקבל ש  <span> $f(t)=\frac{1+e^{2t}}{2}$ </span>  יהיה פתרון למשוואה.</p>
+
+    </div>
+  </div>
+</div>
+
+<div class="callout" data-callout="דוגמא">
+
+  <div class="callout-title"><span class="callout-title-inner">דוגמא 4:</span></div>
+  <div class="callout-content-wrapper">
+    <div class="callout-content">
+      <p>פתרו את המשוואה</p>
+
+      <p> <span> 
+$$.\int_0^tf(y)\dy=t-f'(t)$$
+ </span> </p>
+
+      <p>במקרה הזה נראה שאין לנו קונבולוציה, אבל היא באמצ כן מתחבאת שם, כי  <span> $\int_0^tf(y)\dy = (f*1)(t)$ </span> . שימוש בתמרת לפלס יתן לנו:</p>
+
+      <p> <span> 
+$$\frac{\cl[f](s)}{s} = \cl[f](s)\cdot\cl[1](s)=\cl[t](s)-\cl[f'](s)=\frac{1}{s^2}-\left(s\cl[f](s)-f(0)\right)$$
+ </span> </p>
+
+      <p>חילוץ של  <span> $\cl[f]$ </span>  יתן ש:</p>
+
+      <p> <span> 
+$$,\cl[f](s)=\frac{\frac{1}{s}+sf(0)}{1+s^2}=\frac{1}{s}-(1-f(0))\frac{s}{s^2+1}=\cl[1-(1-f(0))\cos(t)](s)$$
+ </span> </p>
+
+      <p>ולכן נקבל ש</p>
+
+      <p> <span> 
+$$.f(t)=1-(1-f(0))\cos(t)$$
+ </span> </p>
+
+      <p>נשים לב שהצבה של  <span> $t=0$ </span>  תיתן ש  <span> $f(0)=f(0)$ </span> , כלומר יש לנו בעצם פרמטר חופשי (או לחלופין צריך תנאי התחלה בשביל פתרון יחיד). אפשר לראות שבאמת אם מוסיפים  <span> $\cos(t)$ </span>  לפונקציה  <span> $f(t)$ </span>  אז הפונקציה החדשה שנקבל עדיין תפתור את המשוואה האינטגרלית/דיפרנציאלית.</p>
+
     </div>
   </div>
 </div>
@@ -621,12 +642,12 @@ window.MathJax = {
 
 <!-- Finish Body.html -->
 
-                <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace" class="navigation navigation-prev navigation-unique" aria-label="Previous page: התמרת לפלס">
+                <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_convolution" class="navigation navigation-prev navigation-unique" aria-label="Previous page: קונבולוציה">
                     <i class="fa fa-angle-left"/>
                 </a>
 
                 
-                    <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" class="navigation navigation-next navigation-unique" aria-label="Next page: פונקציית הביסייד">
+                    <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_summerization" class="navigation navigation-next navigation-unique" aria-label="Next page: התמרת לפלס - סיכום">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -643,11 +664,11 @@ window.MathJax = {
         "depth": 1,
         
         "next": {
-            "title": "פונקציית הביסייד",
+            "title": "התמרת לפלס - סיכום",
             "level": "1.2",
             "depth": 1,
-            "path": "_FourierHebrew/hebrew_heaviside.md",
-            "ref": "_FourierHebrew/hebrew_heaviside.md",
+            "path": "_FourierHebrew/hebrew_laplace_summerization.md",
+            "ref": "_FourierHebrew/hebrew_laplace_summerization.md",
             "articles": []
         },
         
@@ -739,7 +760,7 @@ window.MathJax = {
         "gitbook": "*"
     },
     "file": {
-        "path": "_FourierHebrew/hebrew_laplace_differential_equations.md",
+        "path": "_FourierHebrew/hebrew_integral_equations.md",
         "mtime": "2024-04-06 22:57:29 +0300",
         "type": "markdown"
     },

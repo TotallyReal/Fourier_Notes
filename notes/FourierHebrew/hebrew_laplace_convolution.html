@@ -30,6 +30,8 @@
         <link rel="prev" href="/Fourier_Notes/notes/FourierHebrew/hebrew_heaviside" />
 
         
+            <link rel="next" href="/Fourier_Notes/notes/FourierHebrew/hebrew_integral_equations"/>
+        
     </head>
     <body  class="hebrew">
         <div id="hiddenDiv" style="display: none;">
@@ -64,7 +66,8 @@
 \newcommand{\dt}{\operatorname{dt}}
 \newcommand{\ds}{\operatorname{ds}}
 
-\newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
+\newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}
+\newcommand{\Hs}[1]{H_{[#1, \infty)}}$
         </div>
         <div class="book"><!-- toc-date.html -->
 <div class="book-summary">
@@ -333,6 +336,26 @@
                             </a>
                         </li>
                     
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_integral_equations">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_integral_equations" onclick="pageScrollToTop(this)">
+                                15. משוואות אינטגרליות
+                            </a>
+                        </li>
+                    
+                        
+
+                        
+                        
+                        <li class="chapter " data-level="1.1" data-path="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_summerization">
+                            <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_laplace_summerization" onclick="pageScrollToTop(this)">
+                                16. התמרת לפלס - סיכום
+                            </a>
+                        </li>
+                    
 
                     
                         <li class="divider"></li>
@@ -410,7 +433,8 @@
 \newcommand{\dt}{\operatorname{dt}}
 \newcommand{\ds}{\operatorname{ds}}
 
-\newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}$
+\newcommand{\dboxed}[1]{\boxed{\boxed{#1}}}
+\newcommand{\Hs}[1]{H_{[#1, \infty)}}$
                 </div><!-- Body.html -->
 <div class="page-wrapper" tabindex="-1" role="main">
     
@@ -422,8 +446,7 @@
                     
                     <h1 id="/notes/FourierHebrew/hebrew_laplace_convolution" class="centered">קונבולוציה</h1>
                     <hr/>
-                    <p> <span> $\newcommand{\Hs}[1]{H_{[#1, \infty)}}$ </span> 
-בדיוק כמו בהתמרת פורייה, גם בהתמרת לפלס נרצה לדעת מה זו ההתמרה של מכפלה של פונקציות, וגם פה זה יוביל אותנו לפעולת הקונבולוציה. בנוסף, בגלל שהתמרת לפלס היא על פונקציות שמוגדרות ב  <span> $[0,\infty)$ </span>  אז החישוב הוא אפילו יותר פשוט.</p>
+                    <p>בדיוק כמו בהתמרת פורייה, גם בהתמרת לפלס נרצה לדעת מה זו ההתמרה של מכפלה של פונקציות, וגם פה זה יוביל אותנו לפעולת הקונבולוציה. בנוסף, בגלל שהתמרת לפלס היא על פונקציות שמוגדרות ב  <span> $[0,\infty)$ </span>  אז החישוב הוא אפילו יותר פשוט.</p>
 
 <p>נזכיר שעבור פונקציות עם תומך ב  <span> $[0,\infty)$ </span> , כלומר פונקציות המתאפסות מחוץ לקבוצה הזאת :  <span> $f(x)=0, x< 0$ </span> , נח לחשוב עליהן כ  <span> $H(t)f(t)$ </span>  כאשר  <span> $H(t)$ </span>  היא פונקציית הביסייד, ועבור פונקציות כאלו כאשר  <span> $x\geq 0$ </span>  נקבל ש 
  <span> 
@@ -655,6 +678,10 @@ window.MathJax = {
                 </a>
 
                 
+                    <a href="/Fourier_Notes/notes/FourierHebrew/hebrew_integral_equations" class="navigation navigation-next navigation-unique" aria-label="Next page: משוואות אינטגרליות">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
             </div>
         </div>
 
@@ -666,6 +693,15 @@ window.MathJax = {
         "title": "Introduction",
         "level": "1.1",
         "depth": 1,
+        
+        "next": {
+            "title": "משוואות אינטגרליות",
+            "level": "1.2",
+            "depth": 1,
+            "path": "_FourierHebrew/hebrew_integral_equations.md",
+            "ref": "_FourierHebrew/hebrew_integral_equations.md",
+            "articles": []
+        },
         
         "dir": "ltr"
     },    "config": {
@@ -756,12 +792,12 @@ window.MathJax = {
     },
     "file": {
         "path": "_FourierHebrew/hebrew_laplace_convolution.md",
-        "mtime": "2024-03-27 21:52:12 +0200",
+        "mtime": "2024-04-06 22:57:29 +0300",
         "type": "markdown"
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2024-03-27 21:52:12 +0200"
+        "time": "2024-04-06 22:57:29 +0300"
     },
     "basePath": "/Fourier_Notes",
     "book": {
